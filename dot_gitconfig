@@ -1,0 +1,10 @@
+[user]
+	name = Brandon J. T. Noguera
+	email = brandonjtnoguera+github@gmail.com
+[init]
+	defaultBranch = main
+[color]
+	ui = auto
+[core]
+	excludesfile = /Users/bnog/.config/git/.gitignore_global
+	autocrlf = input
