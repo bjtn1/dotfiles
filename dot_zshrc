@@ -7,14 +7,22 @@ fi
 
 autoload -U compinit; compinit
 
+alias update="brew update && brew upgrade && brew cleanup && brew autoremove && brew doctor && brew missing && brew outdated && brew tap --repair && brew bundle dump -f --file=~/.config/brewfile"
+
+alias tm="tmux"
+
+alias lvzr="lvim ~/.zshrc"
+alias lvze="lvim ~/.zshenv"
+
 alias py="python3"
+alias pip="pip3"
 
 # LunarVim aliases
 alias lv="lvim"
 
 # ls 
 alias l="ls -lah"
-alias ls="ls --color=auto"
+alias ls="ls -lh --color=auto"
 
 # Git 
 alias gs='git status'

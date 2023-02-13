@@ -32,6 +32,15 @@ lvim.plugins = {
     end
   },
 
+  {
+    "iamcco/markdown-preview.nvim",
+    run = "cd app && npm install",
+    ft = "markdown",
+    config = function()
+      vim.g.mkdp_auto_start = 1
+    end,
+  },
+
   -- You must install glow globally
   -- https://github.com/charmbracelet/glow
   -- yay -S glow
@@ -79,5 +88,13 @@ lvim.plugins = {
   -- Github copilot
   {
     "github/copilot.vim"
+  },
+
+  {
+    "folke/todo-comments.nvim",
+    event = "BufRead",
+    config = function()
+      require("todo-comments").setup()
+    end,
   },
 }

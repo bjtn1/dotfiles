@@ -1,7 +1,10 @@
-export PATH="$PATH:$HOME/.local/bin:/opt/homebrew/bin"
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/bnog/.local/bin"
 
 export EDITOR="lvim"
 export VISUAL="lvim"
 
 export HISTSIZE=10000
 export SAVEHIST=10000
+
+export POKEMON_CALENDAR_ID="scjnc5gp5gkp5cpravur377d3g@group.calendar.google.com"
+export GECKODRIVER_PATH="/Users/bnog/geckodriver"
