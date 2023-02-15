@@ -13,6 +13,9 @@ alias cl="clear"
 
 alias update="brew update && brew upgrade && brew cleanup && brew autoremove && brew doctor && brew missing && brew outdated && brew tap --repair && brew bundle dump -f --file=~/.config/brewfile"
 
+alias cmr="chezmoi re-add"
+alias cmcd="chezmoi cd"
+
 alias tm="tmux"
 alias tmn="tmux new -s"
 alias tma="tmux attach"
