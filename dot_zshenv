@@ -1,4 +1,4 @@
-export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/bnog/.local/bin"
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/bnog/.local/bin:/Users/bnog/.config/rust/cargo/bin"
 
 export EDITOR="lvim"
 export VISUAL="lvim"
@@ -9,4 +9,8 @@ export SAVEHIST=10000
 export POKEMON_CALENDAR_ID="scjnc5gp5gkp5cpravur377d3g@group.calendar.google.com"
 export GECKODRIVER_PATH="/Users/bnog/geckodriver"
 
+export RUSTUP_HOME="/Users/bnog/.config/rust/rustup"
+export CARGO_HOME="/Users/bnog/.config/rust/cargo"
+
 unset zle_bracketed_paste
+. "$CARGO_HOME/env"
