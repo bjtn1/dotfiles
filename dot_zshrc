@@ -5,7 +5,11 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+unset zle_bracketed_paste
+
 autoload -U compinit; compinit
+
+alias cl="clear"
 
 alias update="brew update && brew upgrade && brew cleanup && brew autoremove && brew doctor && brew missing && brew outdated && brew tap --repair && brew bundle dump -f --file=~/.config/brewfile"
 
@@ -16,8 +20,8 @@ alias tml="tmux ls"
 alias tmd="tmux detach"
 alias tmk="tmux kill-session -t"
 
-alias lvzr="lvim ~/.zshrc"
-alias lvze="lvim ~/.zshenv"
+alias zshrc="lvim ~/.zshrc"
+alias zshenv="lvim ~/.zshenv"
 
 alias py="python3"
 alias pip="pip3"
