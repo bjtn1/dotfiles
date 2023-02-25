@@ -9,6 +9,8 @@ unset zle_bracketed_paste
 
 autoload -U compinit; compinit
 
+alias nv="nvim"
+
 alias cl="clear"
 
 alias update="brew update && brew upgrade && brew cleanup && brew autoremove && brew doctor && brew missing && brew outdated && brew tap --repair && brew bundle dump -f --file=~/.config/brewfile && chezmoi re-add"
