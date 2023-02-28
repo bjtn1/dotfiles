@@ -39,6 +39,9 @@ wk.register({
   ["<S-h>"] = {":BufferLineCyclePrev<CR>", "Cycle left buffer"},
 
   ["<leader>L"] = {":Lazy<CR>", "Open Lazy.nvim"},
+
+  ['<leader>l'] = {name = '+LSP'},
+  ['<leader>lm'] = {':Mason<CR>', 'Mason Info'}
 }, n)
 
 wk.register({
