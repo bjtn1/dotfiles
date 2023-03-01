@@ -41,7 +41,9 @@ wk.register({
   ["<leader>L"] = {":Lazy<CR>", "Open Lazy.nvim"},
 
   ['<leader>l'] = {name = '+LSP'},
-  ['<leader>lm'] = {':Mason<CR>', 'Mason Info'}
+  ['<leader>lm'] = {':Mason<CR>', 'Mason Info'},
+
+  ['<leader>;'] = {':Alpha<CR>', 'Dashboard'}
 }, n)
 
 wk.register({
