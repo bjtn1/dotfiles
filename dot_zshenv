@@ -1,5 +1,5 @@
 # export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/bnog/.local/bin:/Users/bnog/.config/rust/cargo/bin"
-export PATH="/opt/homebrew/sbin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/Users/bnog/.local/bin/:/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/Users/bnog/.local/bin/:/opt/homebrew/bin:$PATH"
 
 export EDITOR="lvim"
 export VISUAL="lvim"
