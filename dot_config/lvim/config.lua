@@ -1,7 +1,7 @@
-reload('core.colorscheme')
-reload('core.keybinds')
-reload('core.options')
-reload('plugins')
+require("colorscheme")
+require("keybinds")
+require("options")
+require("plugins")
 -- reload('lsp')
 
 --[[
