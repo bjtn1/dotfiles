@@ -23,7 +23,7 @@ wk.register({
 
   ["<C-s>"] = {"<cmd>w<CR>", "Save file"},
 
-  ["<leader>e"] = {"<cmd>NvimTreeToggle<CR>", "Toggle file explorer"},
+  ["<leader>e"] = {"<cmd>NeoTreeFloatToggle<CR>", "Toggle file explorer"},
 
   ["<leader>f"] = {name = "+File"},
   ["<leader>ff"] = {"<cmd>Telescope find_files<cr>", "Find files in pwd"},

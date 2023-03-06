@@ -1,5 +1,8 @@
 return {
-  "folke/tokyonight.nvim",
-  lazy = true,
-  opts = { style = "night" },
+  'folke/tokyonight.nvim',
+  config = function ()
+    require('tokyonight').setup({
+      style = "night"
+    })
+  end
 }
