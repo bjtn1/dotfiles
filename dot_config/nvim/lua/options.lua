@@ -31,3 +31,5 @@ o.timeout = true
 o.timeoutlen = 500
 
 o.laststatus = 3
+
+o.cmdheight = 0
