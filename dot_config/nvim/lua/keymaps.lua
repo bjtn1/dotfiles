@@ -10,11 +10,17 @@ local v = {mode = "v"}
 
 wk.register({
   ["<C-s>"] = {"<esc><cmd>w<cr>", "Save file"},
-}, i)
+
+  ["<leader>l"] = {"<cmd>Lazy<cr>", "Open Lazy"},
+
+  ["<leader>e"] = {"<cmd>NeoTreeFloatToggle<cr>", "Toggle NeoTree"},
+}, n)
+
 
 wk.register({
   ["<C-s>"] = {"<esc><cmd>w<cr>", "Save file"},
-}, n)
+}, i)
+
 
 -- local Util = require("lazyvim.util")
 
