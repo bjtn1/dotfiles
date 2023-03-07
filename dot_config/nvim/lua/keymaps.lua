@@ -14,6 +14,8 @@ wk.register({
   ["<leader>l"] = {"<cmd>Lazy<cr>", "Open Lazy"},
 
   ["<leader>e"] = {"<cmd>NeoTreeFloatToggle<cr>", "Toggle NeoTree"},
+
+  ["<leader>;"] = {"<cmd>Alpha<cr>", "Dashboard"},
 }, n)
 
 
