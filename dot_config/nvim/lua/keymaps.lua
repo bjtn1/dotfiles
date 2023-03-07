@@ -2,6 +2,12 @@
 --
 
 -- TODO pick what you like and leave what you dont
+local wk = require("which-key")
+
+local i = {mode = "i"}
+local n = {mode = "n"}
+local v = {mode = "v"}
+
 
 local Util = require("lazyvim.util")
 
