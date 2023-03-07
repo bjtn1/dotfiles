@@ -12,6 +12,10 @@ wk.register({
   ["<C-s>"] = {"<esc><cmd>w<cr>", "Save file"},
 }, i)
 
+wk.register({
+  ["<C-s>"] = {"<esc><cmd>w<cr>", "Save file"},
+}, n)
+
 -- local Util = require("lazyvim.util")
 
 -- local function map(mode, lhs, rhs, opts)
