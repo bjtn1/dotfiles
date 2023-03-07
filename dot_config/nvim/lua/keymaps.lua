@@ -18,7 +18,7 @@ wk.register({
   ["<leader>;"] = {"<cmd>Alpha<cr>", "Dashboard"},
 
   ["L"] = {"<cmd>BufferLineCycleNext<cr>", "Cycle to next tab"},
-  -- ["H"] = {"<cmd>BufferLineCyclePrev<cr>", "Cycle to prev tab"},
+  ["H"] = {"<cmd>BufferLineCyclePrev<cr>", "Cycle to prev tab"},
 }, n)
 
 
