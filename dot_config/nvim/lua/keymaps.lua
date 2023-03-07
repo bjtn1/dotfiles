@@ -8,6 +8,9 @@ local i = {mode = "i"}
 local n = {mode = "n"}
 local v = {mode = "v"}
 
+wk.register({
+  ["<C-s>"] = {"<esc><cmd>w<cr>", "Save file"},
+}, i)
 
 local Util = require("lazyvim.util")
 
