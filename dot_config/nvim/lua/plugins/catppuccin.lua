@@ -1,10 +1,9 @@
 return {
   "catppuccin/nvim",
   name = "catppuccin",
-  opts = {
-    flavour = "mocha"
-  },
   config = function ()
-    require("catppuccin").setup(opts)
+    require("catppuccin").setup({
+      flavour = "mocha",
+    })
   end
 }

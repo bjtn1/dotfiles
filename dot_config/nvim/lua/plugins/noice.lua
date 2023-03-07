@@ -1,6 +1,6 @@
 return {
   "folke/noice.nvim",
-  requires = {
+  dependencies = {
     -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
     "MunifTanjim/nui.nvim",
     -- OPTIONAL:
@@ -8,8 +8,7 @@ return {
     --   If not available, we use `mini` as the fallback
     "rcarriga/nvim-notify",
   },
-  opts = {},
   config = function()
-    require("noice").setup(opts)
+    require("noice").setup()
   end,
 }
