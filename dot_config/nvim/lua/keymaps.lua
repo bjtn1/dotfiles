@@ -19,8 +19,18 @@ wk.register({
 
   ["L"] = {"<cmd>BufferLineCycleNext<cr>", "Cycle to next tab"},
   ["H"] = {"<cmd>BufferLineCyclePrev<cr>", "Cycle to prev tab"},
+
+  ["<leader>bd"] = {"<cmd>lua MiniBufremove.delete()<cr>", "Buffer delete"},
 }, n)
 
+wk.register({
+  ["<leader>f"] = {
+    name = "+File",
+    f = { "<cmd>Telescope find_files<cr>", "Find File" },
+    r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
+    n = { "<cmd>enew<cr>", "New File" },
+  },
+}, n)
 
 wk.register({
   ["<C-s>"] = {"<esc><cmd>w<cr>", "Save file"},
