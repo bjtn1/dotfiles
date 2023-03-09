@@ -7,7 +7,6 @@ local wk = require("which-key")
 local i = {mode = "i"}
 local n = {mode = "n"}
 local v = {mode = "v"}
--- local tb = require("telescope.builtin")
 
 wk.register({
   ["<C-s>"] = {"<esc><cmd>w<cr>", "Save file"},
