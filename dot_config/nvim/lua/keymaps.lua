@@ -27,6 +27,14 @@ wk.register({
 }, n)
 
 wk.register({
+  ["<leader>v"] = {
+    name = "+Vimtex",
+    c = {"<cmd>VimtexCompile<cr>", "Compile .tex"},
+    o = {"<cmd>!firefox --new-tab /Users/bnog/tmp/test.pdf<cr>", "Open in Firefox"}
+  }
+})
+
+wk.register({
   ["<C-Bslash>"] = {"<cmd>ToggleTerm<cr>", "Toggle terminal"},
 })
 

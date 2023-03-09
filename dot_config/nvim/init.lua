@@ -32,7 +32,7 @@ require("lazy").setup("plugins", {
   },
 })
 
-require("lsp-setup")
 require("keymaps")
 require("options")
 require("colorscheme")
+require("lsp-setup")
