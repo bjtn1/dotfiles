@@ -7,6 +7,7 @@ local wk = require("which-key")
 local i = {mode = "i"}
 local n = {mode = "n"}
 local v = {mode = "v"}
+-- local tb = require("telescope.builtin")
 
 wk.register({
   ["<C-s>"] = {"<esc><cmd>w<cr>", "Save file"},
@@ -21,15 +22,6 @@ wk.register({
   ["H"] = {"<cmd>BufferLineCyclePrev<cr>", "Cycle to prev tab"},
 
   ["<leader>bd"] = {"<cmd>lua MiniBufremove.delete()<cr>", "Buffer delete"},
-}, n)
-
-wk.register({
-  ["<leader>f"] = {
-    name = "+File",
-    f = { "<cmd>Telescope find_files<cr>", "Find File" },
-    r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
-    n = { "<cmd>enew<cr>", "New File" },
-  },
 }, n)
 
 wk.register({
