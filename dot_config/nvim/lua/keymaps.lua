@@ -28,6 +28,32 @@ wk.register({
   ["<C-s>"] = {"<esc><cmd>w<cr>", "Save file"},
 }, i)
 
+-- NOTE do `:help Telescope.builtin` for more telescope commands
+wk.register({
+  ["<leader>f"] = {
+    name = "+Telescope",
+    f = { "<cmd>Telescope find_files<cr>", "Find File" },
+    r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
+    n = { "<cmd>enew<cr>", "New File" },
+    s = {"<cmd>Telescope live_grep<cr>", "Find string (all files)"},
+    
+  },
+})
+
+wk.register({
+  ["<leader>x"] = {
+    name = "+Diagnostics",
+    x = {"<cmd>TroubleToggle<cr>", "Toggle Trouble"},
+    w = {"<cmd>TroubleToggle workspace_diagnostics<cr>", "Show workspace diagnostics"},
+    d = {"<cmd>TroubleToggle document_diagnostics<cr>", "Show document diagnostics"},
+    q = {"<cmd>TroubleToggle quickfix<cr>", "Quickfix"},
+    l = {"<cmd>TroubleToggle loclist<cr>", "Show loclist"},
+  }
+})
+
+wk.register({
+  ["gR"] = {"<cmd>TroubleToggle lsp_references", "LSP references"}
+})
 
 -- local Util = require("lazyvim.util")
 
