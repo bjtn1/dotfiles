@@ -1,7 +1,7 @@
 -- This file is automatically loaded by lazyvim.plugins.config
 --
 
--- TODO pick what you like and leave what you dont
+-- todo pick what you like and leave what you dont
 local wk = require("which-key")
 
 local i = {mode = "i"}
@@ -28,7 +28,7 @@ wk.register({
   ["<C-s>"] = {"<esc><cmd>w<cr>", "Save file"},
 }, i)
 
--- NOTE do `:help Telescope.builtin` for more telescope commands
+-- note do `:help Telescope.builtin` for more telescope commands
 wk.register({
   ["<leader>f"] = {
     name = "+Telescope",
@@ -36,7 +36,6 @@ wk.register({
     r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
     n = { "<cmd>enew<cr>", "New File" },
     s = {"<cmd>Telescope live_grep<cr>", "Find string (all files)"},
-    
   },
 })
 
@@ -53,6 +52,14 @@ wk.register({
 
 wk.register({
   ["gR"] = {"<cmd>TroubleToggle lsp_references", "LSP references"}
+})
+
+wk.register({
+  ["<leader>r"] = {
+    name = "+Restore",
+    c = {"<cmd>lua require(\"persistence\").load()<cr>", "Current directory's last session"},
+    l = {"<cmd>lua require(\"persistence\").load({last = true})<cr>", "Last session"},
+  }
 })
 
 -- local Util = require("lazyvim.util")
