@@ -8,6 +8,9 @@ local i = {mode = "i"}
 local n = {mode = "n"}
 local v = {mode = "v"}
 
+--------------------
+-- General keymaps
+--------------------
 wk.register({
   ["<C-s>"] = {"<esc><cmd>w<cr>", "Save file"},
 
@@ -22,6 +25,10 @@ wk.register({
 
   ["<leader>bd"] = {"<cmd>lua MiniBufremove.delete()<cr>", "Buffer delete"},
 }, n)
+
+wk.register({
+  ["<C-Bslash>"] = {"<cmd>ToggleTerm<cr>", "Toggle terminal"},
+})
 
 wk.register({
   ["<C-s>"] = {"<esc><cmd>w<cr>", "Save file"},
