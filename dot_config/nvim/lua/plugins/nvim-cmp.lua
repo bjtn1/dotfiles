@@ -1,4 +1,5 @@
----@diagnostic disable: redundant-parameter
+
+-- @diagnostic disable: redundant-parameter
 return {
   "hrsh7th/nvim-cmp",
   dependencies = {
