@@ -47,7 +47,7 @@ wk.register({
 })
 
 wk.register({
-  ["<leader>x"] = {
+  ["<leader>d"] = {
     name = "+Diagnostics",
     x = {"<cmd>TroubleToggle<cr>", "Toggle Trouble"},
     w = {"<cmd>TroubleToggle workspace_diagnostics<cr>", "Show workspace diagnostics"},
