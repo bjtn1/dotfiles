@@ -27,12 +27,12 @@ require("lazy").setup("plugins", {
     -- automatically check for plugin updates
     enabled = true,
     concurrency = nil, ---@type number? set to 1 to check for updates very slowly
-    notify = true, -- get a notification when new updates are found
+    notify = true,    -- get a notification when new updates are found
     frequency = 3600, -- check for updates every hour
   },
-
 })
 
+require("lsp-setup")
 require("keymaps")
 require("options")
 require("colorscheme")
