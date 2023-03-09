@@ -30,12 +30,13 @@ wk.register({
 
 -- note do `:help Telescope.builtin` for more telescope commands
 wk.register({
-  ["<leader>f"] = {
+  ["<leader>t"] = {
     name = "+Telescope",
     f = { "<cmd>Telescope find_files<cr>", "Find File" },
     r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
     n = { "<cmd>enew<cr>", "New File" },
     s = {"<cmd>Telescope live_grep<cr>", "Find string (all files)"},
+    p = {"<cmd>Telescope colorscheme<cr>", "Preview colorschemes"},
   },
 })
 
