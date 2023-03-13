@@ -1,16 +1,9 @@
--- This file is automatically loaded by lazyvim.plugins.config
---
-
--- todo pick what you like and leave what you dont
 local wk = require("which-key")
 
 local i = {mode = "i"}
 local n = {mode = "n"}
 local v = {mode = "v"}
 
---------------------
--- General keymaps
---------------------
 wk.register({
   ["<C-s>"] = {"<esc><cmd>w<cr>", "Save file"},
 
@@ -24,26 +17,9 @@ wk.register({
   ["H"] = {"<cmd>BufferLineCyclePrev<cr>", "Cycle to prev tab"},
 
   ["<leader>bd"] = {"<cmd>lua MiniBufremove.delete()<cr>", "Buffer delete"},
-}, n)
 
-wk.register({
-  ["<leader>v"] = {
-    name = "+Vimtex",
-    c = {"<cmd>VimtexCompile<cr>", "Compile .tex"},
-    o = {"<cmd>!firefox --new-tab /Users/bnog/tmp/test.pdf<cr>", "Open in Firefox"}
-  }
-})
-
-wk.register({
   ["<C-Bslash>"] = {"<cmd>ToggleTerm<cr>", "Toggle terminal"},
-})
 
-wk.register({
-  ["<C-s>"] = {"<esc><cmd>w<cr>", "Save file"},
-}, i)
-
--- note do `:help Telescope.builtin` for more telescope commands
-wk.register({
   ["<leader>t"] = {
     name = "+Telescope",
     f = { "<cmd>Telescope find_files<cr>", "Find File" },
@@ -52,6 +28,16 @@ wk.register({
     s = {"<cmd>Telescope live_grep<cr>", "Find string (all files)"},
     p = {"<cmd>Telescope colorscheme<cr>", "Preview colorschemes"},
   },
+
+}, n)
+
+
+wk.register({
+  ["<C-s>"] = {"<esc><cmd>w<cr>", "Save file"},
+}, i)
+
+-- note do `:help Telescope.builtin` for more telescope commands
+wk.register({
 })
 
 wk.register({
