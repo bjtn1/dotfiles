@@ -32,7 +32,7 @@ opt.timeoutlen = 500
 
 opt.laststatus = 3
 
-opt.cmdheight = 0
+opt.cmdheight = 2
 
 -- vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]]
 

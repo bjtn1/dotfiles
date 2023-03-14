@@ -1,4 +1,3 @@
-
 -- @diagnostic disable: redundant-parameter
 return {
   "hrsh7th/nvim-cmp",
@@ -21,7 +20,7 @@ return {
       },
       window = {
         completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered()
       },
       sources = cmp.config.sources({
         { name = "nvim_lsp" },
