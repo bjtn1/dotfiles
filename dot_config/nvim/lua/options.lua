@@ -34,6 +34,8 @@ opt.laststatus = 3
 
 opt.cmdheight = 0
 
+-- vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]]
+
 -- opt.autowrite = true -- Enable auto write
 -- opt.clipboard = "unnamedplus" -- Sync with system clipboard
 -- opt.completeopt = "menu,menuone,noselect"

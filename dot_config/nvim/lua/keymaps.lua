@@ -2,7 +2,7 @@ local wk = require("which-key")
 
 local i = {mode = "i"}
 local n = {mode = "n"}
-local v = {mode = "v"}
+-- local v = {mode = "v"}
 
 wk.register({
   ["<C-s>"] = {"<esc><cmd>w<cr>", "Save file"},
@@ -20,6 +20,7 @@ wk.register({
 
   ["<C-Bslash>"] = {"<cmd>ToggleTerm<cr>", "Toggle terminal"},
 
+-- note do `:help Telescope.builtin` for more telescope commands
   ["<leader>t"] = {
     name = "+Telescope",
     f = { "<cmd>Telescope find_files<cr>", "Find File" },
@@ -29,18 +30,6 @@ wk.register({
     p = {"<cmd>Telescope colorscheme<cr>", "Preview colorschemes"},
   },
 
-}, n)
-
-
-wk.register({
-  ["<C-s>"] = {"<esc><cmd>w<cr>", "Save file"},
-}, i)
-
--- note do `:help Telescope.builtin` for more telescope commands
-wk.register({
-})
-
-wk.register({
   ["<leader>d"] = {
     name = "+Diagnostics",
     x = {"<cmd>TroubleToggle<cr>", "Toggle Trouble"},
@@ -48,20 +37,23 @@ wk.register({
     d = {"<cmd>TroubleToggle document_diagnostics<cr>", "Show document diagnostics"},
     q = {"<cmd>TroubleToggle quickfix<cr>", "Quickfix"},
     l = {"<cmd>TroubleToggle loclist<cr>", "Show loclist"},
-  }
-})
+  },
 
-wk.register({
-  ["gR"] = {"<cmd>TroubleToggle lsp_references", "LSP references"}
-})
-
-wk.register({
   ["<leader>r"] = {
     name = "+Restore",
     c = {"<cmd>lua require(\"persistence\").load()<cr>", "Current directory's last session"},
     l = {"<cmd>lua require(\"persistence\").load({last = true})<cr>", "Last session"},
-  }
-})
+  },
+
+  ["gR"] = {"<cmd>TroubleToggle lsp_references<cr>", "LSP references"}
+
+
+}, n)
+
+
+wk.register({
+  ["<C-s>"] = {"<esc><cmd>w<cr>", "Save file"},
+}, i)
 
 -- local Util = require("lazyvim.util")
 
