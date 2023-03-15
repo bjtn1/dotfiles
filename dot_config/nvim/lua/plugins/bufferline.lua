@@ -12,17 +12,7 @@ return {
           style = "none",
         },
         color_icons = true,
-        -- separator_style = "padded_slant",
       },
-      -- fix i dont know how to fix this
-      highlights = {
-        fill = {
-          bg = {
-            attribute = "fg",
-            highlight = "Pmenu"
-          }
-        }
-      }
     })
   end
 }

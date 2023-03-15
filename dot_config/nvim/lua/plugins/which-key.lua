@@ -8,8 +8,8 @@ return {
         border = "single"
       },
       layout = {
-        spacing = 5,
-        align = "center",
+        spacing = 10,
+        align = "left",
       }
     })
   end

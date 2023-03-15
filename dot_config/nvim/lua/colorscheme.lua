@@ -1,1 +1,2 @@
-vim.cmd.colorscheme "tokyonight-night"
+-- Lua
+vim.cmd[[colorscheme tokyonight]]
