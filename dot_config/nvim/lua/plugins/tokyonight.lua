@@ -1,6 +1,6 @@
 return {
   "folke/tokyonight.nvim",
-  config = function ()
+  config = function()
     require("tokyonight").setup({
       style = "night",
     })
