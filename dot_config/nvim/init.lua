@@ -15,11 +15,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins", {
-  install = {
-    colorscheme = {
-      "catppuccin"
-    }
-  },
   ui = {
     border = "single"
   },

@@ -6,13 +6,13 @@ return {
   },
   config = function ()
     require("bufferline").setup({
-      options = {
-        diagnostics = "nvim_lsp",
-        indicator = {
-          style = "none",
-        },
-        color_icons = true,
-      },
+      -- options = {
+      --   diagnostics = "nvim_lsp",
+      --   indicator = {
+      --     style = "none",
+      --   },
+      --   color_icons = true,
+      -- },
     })
   end
 }
