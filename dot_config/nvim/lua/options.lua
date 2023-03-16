@@ -32,4 +32,4 @@ vim.opt.laststatus = 3
 vim.opt.cmdheight = 0
 
 -- For lsp-zero
-vim.opt.completeopt = { "menu", "menuone", "noselect" }
+-- vim.opt.completeopt = { "menu", "noselect" }

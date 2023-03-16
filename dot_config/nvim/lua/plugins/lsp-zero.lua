@@ -106,13 +106,13 @@ return {
     --------------------------------------------------------
     mason.setup({
       ui = {
-        border = "single",
+        border = "rounded",
       },
     })
 
     local null_opts = lsp.build_options("null-ls", {
       on_attach = function(client)
-        if client.resolved_capabilities.document_formatting then
+        if client.server_capabilities.document_formatting then
           vim.api.nvim_create_autocmd("BufWritePre", {
             desc = "Auto format before save",
             pattern = "<buffer>",
@@ -123,11 +123,9 @@ return {
     })
 
     null_ls.setup({
+      border = "rounded",
       on_attach = null_opts.on_attach,
       sources = {
-        -- TODO add sources to enable format on save from here
-        -- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#stylua
-        null_ls.builtins.formatting.stylua,
       }
     })
 
