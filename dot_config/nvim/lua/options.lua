@@ -1,34 +1,35 @@
-local opt = vim.opt
+vim.opt.relativenumber = true
+vim.opt.number = true
 
-opt.relativenumber = true
-opt.number = true
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
+vim.opt.autoindent = true
 
-opt.tabstop = 2
-opt.shiftwidth = 2
-opt.expandtab = true
-opt.autoindent = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
-opt.ignorecase = true
-opt.smartcase = true
+vim.opt.cursorline = true
 
-opt.cursorline = true
+vim.opt.termguicolors = true
+vim.opt.background = "dark"
+vim.opt.signcolumn = "yes"
 
-opt.termguicolors = true
--- opt.background = "dark"
-opt.signcolumn = "yes"
+vim.opt.backspace = "indent,eol,start"
 
-opt.backspace = "indent,eol,start"
+vim.opt.clipboard:append("unnamedplus")
 
-opt.clipboard:append("unnamedplus")
+vim.opt.splitright = true
+vim.opt.splitbelow = true
 
-opt.splitright = true
-opt.splitbelow = true
+vim.opt.iskeyword:append("-")
 
-opt.iskeyword:append("-")
+vim.opt.timeout = true
+vim.opt.timeoutlen = 500
 
-opt.timeout = true
-opt.timeoutlen = 500
+vim.opt.laststatus = 3
 
-opt.laststatus = 3
+vim.opt.cmdheight = 0
 
-opt.cmdheight = 2
+-- For lsp-zero
+vim.opt.completeopt = { "menu", "menuone", "noselect" }

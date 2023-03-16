@@ -11,11 +11,11 @@ return {
           -- signs = false, -- configure signs for some keywords individually
         },
         todo = { icon = " ", color = "info" },
-        hack = { icon = " ", color = "warning" },
-        warn = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
-        perf = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
-        note = { icon = " ", color = "hint", alt = { "INFO" } },
-        test = { icon = "⏲ ", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
+        HACK = { icon = " ", color = "warning" },
+        WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
+        PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
+        NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
+        TEST = { icon = "⏲ ", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
       },
 
       highlight = {
@@ -27,3 +27,4 @@ return {
     })
   end
 }
+

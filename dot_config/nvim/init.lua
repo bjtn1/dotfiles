@@ -12,23 +12,19 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
 
 local opts = {
+  install = {
+    colorscheme = { "tokyonight-night" },
+  },
   ui = {
-    border = "single"
+    border = "single",
   },
   checker = {
-    -- automatically check for plugin updates
     enabled = true,
-    concurrency = nil, ---@type number? set to 1 to check for updates very slowly
-    notify = true,    -- get a notification when new updates are found
-    frequency = 3600, -- check for updates every hour
   },
 }
 
-require("lazy").setup("plugins", opts)
-
 require("options")
+require("lazy").setup("plugins", opts)
 require("keymaps")
-vim.cmd[[colorscheme tokyonight-night]]

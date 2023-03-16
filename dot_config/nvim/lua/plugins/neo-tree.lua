@@ -1,15 +1,18 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
-  branch = "v2.x",
+  version = "v2.x",
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
     "MunifTanjim/nui.nvim",
   },
-  config = function ()
+  config = function()
+    vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
     require("neo-tree").setup({
-      window = {
-        position = "float",
+      filesystem = {
+        filtered_items = {
+          hide_dotfiles = false,
+        }
       },
     })
   end

@@ -40,3 +40,4 @@ return {
     alpha.setup(dashboard.config)
   end
 }
+
