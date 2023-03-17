@@ -30,6 +30,3 @@ vim.opt.timeoutlen = 500
 vim.opt.laststatus = 3
 
 vim.opt.cmdheight = 0
-
--- For lsp-zero
--- vim.opt.completeopt = { "menu", "noselect" }
