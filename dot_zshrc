@@ -27,6 +27,8 @@ alias cmanv="chezmoi add ~/.config/nvim/*"  # Use this for whenever you add a ne
 alias cmr="chezmoi re-add"
 alias cmcd="chezmoi cd"
 
+alias nf="neofetch"
+
 alias tm="tmux"
 alias tmn="tmux new -s"
 alias tma="tmux attach"
@@ -34,8 +36,8 @@ alias tml="tmux ls"
 alias tmd="tmux detach"
 alias tmk="tmux kill-session -t"
 
-alias zshrc="lvim ~/.zshrc"
-alias zshenv="lvim ~/.zshenv"
+alias zshrc="nvim ~/.zshrc"
+alias zshenv="nvim ~/.zshenv"
 
 alias py="python3"
 alias pip="pip3"
