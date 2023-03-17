@@ -16,7 +16,7 @@ return {
         enable = true,
         enable_autocmd = true,
       },
-      ensure_installed = "all",
+    auto_install = true,
     })
   end
 }

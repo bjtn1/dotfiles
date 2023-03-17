@@ -3,13 +3,22 @@ local wk = require("which-key")
 local i = { mode = "i" }
 local n = { mode = "n" }
 -- local v = {mode = "v"}
+local t = { mode = "t" }
+
+-- vim.keymap.set('n', '<space>cl', function()
+--   return vim.v.count == 0
+--     and '<Plug>(comment_toggle_linewise_current)'
+--     or '<Plug>(comment_toggle_linewise_count)'
+-- end, { expr = true })
+--
+-- vim.keymap.set('n', '<space>c', '<Plug>(comment_toggle_linewise)')
 
 wk.register({
   ["<C-s>"] = { "<esc><cmd>w<cr>", "Save file" },
 
   ["<leader>l"] = { "<cmd>Lazy<cr>", "Open Lazy" },
   ["<leader>e"] = { "<cmd>NeoTreeFloatToggle<cr>", "Toggle NeoTree" },
-  ["<leader>;"] = { "<cmd>Alpha<cr>", "Dashboard" },
+  ["<leader>;"] = { "<cmd>Alpha<cr>", "Toggle dashboard" },
 
   ["L"] = { "<cmd>BufferLineCycleNext<cr>", "Cycle to next tab" },
   ["H"] = { "<cmd>BufferLineCyclePrev<cr>", "Cycle to prev tab" },
@@ -48,9 +57,13 @@ wk.register({
   },
 
   ["gR"] = { "<cmd>TroubleToggle lsp_references<cr>", "LSP references" },
+
   ["<leader>h"] = { "<cmd>noh<cr>", "Clear highlights" },
 
-  ["<leader>/"] = { "gcc", "Toggle comment"},
+  ["<leader>c"] = { "<Plug>(comment_toggle_linewise)", "Toggle comment" },
+
+  ["<leader>/"] = { "<Plug>(comment_toggle_linewise_current)", "Toggle comment line" },
+
 
   ["<leader>w"] = {
     name = "+Window",
@@ -58,13 +71,20 @@ wk.register({
     h = { "<C-w>s", "Split horizontally" },
     e = { "<C-w>=", "Equalize" },
     c = { "<cmd>close<cr>", "Close" },
+  },
 
+  ["<leader>g"] = { "<cmd>lua _Lazygit_toggle()<CR>", "Toggle lazygit" },
 
-  }
 }, n)
+
 
 
 wk.register({
   ["<C-s>"] = { "<esc><cmd>w<cr>", "Save file" },
 }, i)
 
+wk.register({
+  ["<C-Bslash>"] = { "<cmd>wincmd h<cr>" , "" },
+  ["<esc>"] = { "<C-\\><C-n>", "" },
+
+}, t)
