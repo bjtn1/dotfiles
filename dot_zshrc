@@ -29,6 +29,9 @@ alias cmcd="chezmoi cd"
 
 alias nf="neofetch"
 
+alias baknv="mv ~/.config/nvim ~/.config/nvim.bak && mv ~/.local/share/nvim ~/.local/share/nvim.bak && mv ~/.local/state/nvim ~/.local/state/nvim.bak && mv ~/.cache/nvim ~/.cache/nvim.bak"
+alias resnv="mv ~/.config/nvim.bak ~/.config/nvim && mv ~/.local/share/nvim.bak ~/.local/share/nvim && mv ~/.local/state/nvim.bak ~/.local/state/nvim && mv ~/.cache/nvim.bak ~/.cache/nvim"
+
 alias tm="tmux"
 alias tmn="tmux new -s"
 alias tma="tmux attach"
