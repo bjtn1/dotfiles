@@ -25,7 +25,7 @@ wk.register({
 
   ["<leader>b"] = {
     name = "+Buffer",
-    d = { "<cmd>lua MiniBufremove.delete()<cr>", "Buffer delete" },
+    c = { "<cmd>lua MiniBufremove.delete()<cr>", "Buffer close" },
   },
 
   ["<C-Bslash>"] = { "<cmd>ToggleTerm<cr>", "Toggle terminal" },
