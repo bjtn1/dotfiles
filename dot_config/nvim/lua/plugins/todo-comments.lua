@@ -24,7 +24,7 @@ return {
       },
 
       highlight = {
-        -- TODO hi
+        -- TODO
         -- HACK
         -- PERF
         -- FIX
