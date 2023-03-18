@@ -15,7 +15,7 @@ vim.g.mapleader = " "
 
 local opts = {
   install = {
-    colorscheme = { "tokyonight-night" },
+    colorscheme = {"tokyonight-night"},
   },
   ui = {
     border = "single",
@@ -29,10 +29,11 @@ require("options")
 require("lazy").setup("plugins", opts)
 require("keymaps")
 
-
-vim.cmd([[highlight Visual guifg=#15161e guibg=#7aa2f7 gui=none]])
-
 vim.cmd([[
+  colorscheme everforest
+  
+  highlight Visual guifg=#15161e guibg=#7aa2f7 gui=none
+
   augroup highlight_yank
   autocmd!
   au TextYankPost * silent! lua vim.highlight.on_yank({higroup="IncSearch", timeout=500})
