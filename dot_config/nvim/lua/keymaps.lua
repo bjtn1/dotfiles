@@ -6,6 +6,9 @@ local n = { mode = "n" }
 local t = { mode = "t" }
 
 wk.register({
+  -------------------
+  -- Single mappings
+  -------------------
   ["<C-Bslash>"] = { "<cmd>ToggleTerm<cr>", "Toggle terminal" },
   ["<C-s>"] = { "<esc><cmd>w<cr>", "Save file" },
   ["<leader>p"] = { "<cmd>Lazy<cr>", "Open plugin manager" },
@@ -18,6 +21,9 @@ wk.register({
   ["<leader>c"] = { "<Plug>(comment_toggle_linewise)", "Toggle comment" },
   ["<leader>/"] = { "<Plug>(comment_toggle_linewise_current)", "Toggle comment line" },
   ["<leader>g"] = { "<cmd>lua _Lazygit_toggle()<CR>", "Toggle lazygit" },
+  --------------------
+  -- Menu Mappings
+  --------------------
   ["<leader>b"] = {
     name = "+Buffer",
     c = { "<cmd>lua MiniBufremove.delete()<cr>", "Buffer close" },
@@ -33,12 +39,9 @@ wk.register({
     p = { "<cmd>Telescope projects<cr>", "Projects" },
   },
   ["<leader>d"] = {
-    name = "+Trouble",
-    x = { "<cmd>TroubleToggle<cr>", "Toggle Trouble" },
-    w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Show workspace diagnostics" },
-    s = { "<cmd>TroubleToggle document_diagnostics<cr>", "Show document diagnostics" },
-    q = { "<cmd>TroubleToggle quickfix<cr>", "Quickfix" },
-    l = { "<cmd>TroubleToggle loclist<cr>", "Show loclist" },
+    name = "+Diagnostics",
+    a = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Diagnostics from all buffers" },
+    c = { "<cmd>TroubleToggle document_diagnostics<cr>", "Diagnostics from current buffer" },
   },
   ["<leader>r"] = {
     name = "+Restore",
@@ -55,9 +58,14 @@ wk.register({
   },
   ["<leader>l"] = {
     name = "+LSP",
+    a = { "<cmd>Lspsaga code_action<cr>", "Code actions" },
     s = { "<cmd>LspInfo<cr>", "Show attached servers" },
     f = { "<cmd>NullLsInfo<cr>", "Show attached formatters & linters" },
     m = { "<cmd>Mason<cr>", "Open Mason" },
+    d = { "<cmd>Lspsaga lsp_finder<cr>", "View definition and references" },
+    r = { "<cmd>Lspsaga rename<cr>", "Rename at cursor" },
+    p = { "<cmd>Lspsaga peek_definition<cr>", "Peek definition (editable)" },
+    k = { "<cmd>Lspsaga hover_doc ++keep<cr>", "Show documentation" },
   },
 }, n)
 

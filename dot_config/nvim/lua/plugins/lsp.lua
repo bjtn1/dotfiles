@@ -28,6 +28,8 @@ local mlsp = {
 
     -- For lua_ls
     "folke/neodev.nvim",
+
+    "glepnir/lspsaga.nvim",
   },
   config = function()
     local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
@@ -35,6 +37,7 @@ local mlsp = {
     local cmp = require("cmp")
     local lsp_config = require("lspconfig")
     local lsp_kind = require("lspkind")
+    local lsp_saga = require("lspsaga")
     local luasnip = require("luasnip")
     local mason = require("mason")
     local mason_lsp_config = require("mason-lspconfig")
@@ -142,6 +145,11 @@ local mlsp = {
         border = "rounded",
       },
     })
+
+    ---------------------
+    -- LSP saga
+    ---------------------
+    lsp_saga.setup({})
 
     ---------------------
     -- Mason-lspconfig
