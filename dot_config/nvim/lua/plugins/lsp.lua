@@ -81,34 +81,30 @@ local mlsp = {
         { name = "buffer" },
         { name = "path" },
       }),
-
       -- Set configuration for specific filetype.
       cmp.setup.filetype("gitcommit", {
         sources = cmp.config.sources({
           { name = "cmp_git" }, -- You can specify the `cmp_git` source if you were installed it.
         }, {
-            { name = "buffer" },
-          })
+          { name = "buffer" },
+        }),
       }),
-
       -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won"t work anymore).
       cmp.setup.cmdline({ "/", "?" }, {
         mapping = cmp.mapping.preset.cmdline(),
         sources = {
-          { name = "buffer" }
-        }
+          { name = "buffer" },
+        },
       }),
-
       -- Use cmdline & path source for ":" (if you enabled `native_menu`, this won"t work anymore).
       cmp.setup.cmdline(":", {
         mapping = cmp.mapping.preset.cmdline(),
         sources = cmp.config.sources({
-          { name = "path" }
+          { name = "path" },
         }, {
-            { name = "cmdline" }
-          })
+          { name = "cmdline" },
+        }),
       }),
-
       formatting = {
         format = lsp_kind.cmp_format({
           maxwidth = 50,
@@ -150,28 +146,21 @@ local mlsp = {
     ---------------------
     -- Mason-lspconfig
     ---------------------
-    -- FIXME 
-    -- autopep8 gets attached to .py files, but stylua doesn"t. Figure out why
-    -- what i"m goin to do is uninstall every server from mason and install lua_ls, stylua, and luacheck one by one and cofigure them
-
     mason_lsp_config.setup({
       ensure_installed = {
         "arduino_language_server",
+        "asm_lsp",
+        "bashls",
+        "cssls",
         "clangd",
         "cmake",
-        "cssls",
         "html",
         "jdtls",
-        "tsserver",
-        "ltex",
-        "lua_ls", -- Neodev takes care of this one
-        "marksman",
+        "lua_ls",
         "pyright",
-        "rust_analyzer",
-        "tailwindcss",
+        "tsserver",
       },
     })
-
 
     ---------------------
     -- Mason-null-ls
@@ -182,44 +171,24 @@ local mlsp = {
         ---------------------
         -- Formatters
         ---------------------
-        "autopep8",
+        "beautysh",
+        "black",
         "clang-format",
         "cmakelang",
-        "google-java-format",
         "isort",
-        "jq",
-        "latexindent",
-        "markdownlint",
         "prettierd",
-        "reorder-python-imports",
         "rustfmt",
-        "shellharden",
         "stylua",
         ---------------------
         -- Linters
         ---------------------
-        "alex",
-        -- "cmakelang"
-        "codespell",
-        "commitlint",
-        "cpplint",
-        "cspell",
-        "eslint_d",
-        "flake8",
-        "gitlint",
-        "jsonlint",
-        -- "markdownlint"
         "misspell",
-        "mypy",
-        "proselint",
-        "pydocstyle",
-        "pyflakes",
-        "pyproject-flake8",
-        -- "shellharden",
-        "textlint",
-        "vale",
-        "vulture",
-        "write-good",
+        "cmakelint",
+        "cpplint",
+        "eslint_d",
+        "erb-lint",
+        "flake8",
+        "shellcheck",
       },
       automatic_setup = true,
     })
@@ -233,46 +202,8 @@ local mlsp = {
     null_ls.setup({
       border = "rounded",
       sources = {
-        ---------------------------------------------------------------------------------------------------------------------------------------------------
-        -- Formatters: https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#formatting
-        ---------------------------------------------------------------------------------------------------------------------------------------------------
-        f.autopep8,
-        f.clang_format,
-        f.cmakelang,
-        f.google_java_format,
-        f.isort,
-        f.jq,
-        f.latexindent,
-        f.markdownlint,
-        f.prettierd,
-        f.reorder_python_imports,
-        f.rustfmt,
-        f.stylua,
-
-        ---------------------------------------------------------------------------------------------------------------------------------------------------
-        -- Linters/Diagnostics: https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#diagnostics
-        ---------------------------------------------------------------------------------------------------------------------------------------------------
-        d.alex,
-        d.cmakelang,
-        d.codespell,
-        d.commitlint,
-        d.cpplint,
-        d.cspell,
-        d.eslint_d,
-        d.flake8,
-        d.gitlint,
-        d.jsonlint,
-        d.markdownlint,
-        d.misspell,
-        d.mypy,
-        d.proselint,
-        d.pydocstyle,
-        d.pyflakes,
-        d.pyproject_flake8,
-        d.textlint,
-        d.vale,
-        d.vulture,
-        d.write_good,
+        -- NOTE
+        -- Add anything not supported by mason here
       },
       on_attach = function(client, bufnr)
         if client.supports_method("textDocument/formatting") then
@@ -289,6 +220,7 @@ local mlsp = {
       end,
     })
 
+    mason_null_ls.setup_handlers()
     -- TODO mason-null-ls add shit. When i do :Mason and check the formatter, stylua aint there why tf is that
 
     ---------------------

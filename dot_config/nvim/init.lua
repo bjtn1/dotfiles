@@ -15,7 +15,7 @@ vim.g.mapleader = " "
 
 local opts = {
   install = {
-    colorscheme = {"tokyonight-night"},
+    colorscheme = { "tokyonight-night" },
   },
   ui = {
     border = "single",
@@ -30,8 +30,8 @@ require("lazy").setup("plugins", opts)
 require("keymaps")
 
 vim.cmd([[
-  colorscheme everblush
-  
+  colorscheme catppuccin-mocha
+
   " highlight Visual guifg=#15161e guibg=#7aa2f7 gui=none
 
   augroup highlight_yank
