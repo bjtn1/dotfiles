@@ -19,7 +19,12 @@ return {
             ["<C-k>"] = actions.move_selection_previous,
           }
         }
-      }
+      },
+      pickers = {
+        colorscheme = {
+          enable_preview = true,
+        },
+      },
     })
     require('telescope').load_extension('projects')
   end

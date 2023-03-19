@@ -30,9 +30,9 @@ require("lazy").setup("plugins", opts)
 require("keymaps")
 
 vim.cmd([[
-  colorscheme everforest
+  colorscheme ayu-dark
   
-  highlight Visual guifg=#15161e guibg=#7aa2f7 gui=none
+  " highlight Visual guifg=#15161e guibg=#7aa2f7 gui=none
 
   augroup highlight_yank
   autocmd!
