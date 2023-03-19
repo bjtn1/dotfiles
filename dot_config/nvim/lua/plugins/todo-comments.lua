@@ -23,12 +23,12 @@ return {
       },
       highlight = {
         multiline_context = 1000,
-        -- TODO
-        -- HACK
-        -- PERF
-        -- FIX
-        -- WARN
-        -- NOTE
+        -- TODO ooga
+        -- HACK booga
+        -- PERF ooga
+        -- FIX Dick
+        -- WARN ooga
+        -- NOTE booga
         before = "",                -- "fg" or "bg" or empty
         keyword = "bg",             -- "fg", "bg", "wide", "wide_bg", "wide_fg" or empty. (wide and wide_bg is the same as bg, but will also highlight surrounding characters, wide_fg acts accordingly but with fg)
         after = "fg",               -- "fg" or "bg" or empty
