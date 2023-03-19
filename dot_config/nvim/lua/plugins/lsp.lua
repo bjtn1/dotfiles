@@ -157,6 +157,7 @@ local mlsp = {
         "html",
         "jdtls",
         "lua_ls",
+        "marksman",
         "pyright",
         "tsserver",
       },
@@ -174,7 +175,6 @@ local mlsp = {
         "beautysh",
         "black",
         "clang-format",
-        "cmakelang",
         "isort",
         "prettierd",
         "rustfmt",
@@ -182,6 +182,7 @@ local mlsp = {
         ---------------------
         -- Linters
         ---------------------
+        "alex",
         "misspell",
         "cmakelint",
         "cpplint",
@@ -189,6 +190,11 @@ local mlsp = {
         "erb-lint",
         "flake8",
         "shellcheck",
+        ----------------------------
+        -- Formatters & Linters
+        ----------------------------
+        "cmakelang",
+        -- "markdownlint",
       },
       automatic_setup = true,
     })
@@ -221,7 +227,6 @@ local mlsp = {
     })
 
     mason_null_ls.setup_handlers()
-    -- TODO mason-null-ls add shit. When i do :Mason and check the formatter, stylua aint there why tf is that
 
     ---------------------
     -- nvim-lspconfig

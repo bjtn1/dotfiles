@@ -6,17 +6,22 @@ local n = { mode = "n" }
 local t = { mode = "t" }
 
 wk.register({
+  ["<C-Bslash>"] = { "<cmd>ToggleTerm<cr>", "Toggle terminal" },
   ["<C-s>"] = { "<esc><cmd>w<cr>", "Save file" },
-  ["<leader>L"] = { "<cmd>Lazy<cr>", "Open Lazy" },
+  ["<leader>p"] = { "<cmd>Lazy<cr>", "Open plugin manager" },
   ["<leader>e"] = { "<cmd>NeoTreeFloatToggle<cr>", "Toggle NeoTree" },
   ["<leader>;"] = { "<cmd>Alpha<cr>", "Toggle dashboard" },
   ["L"] = { "<cmd>BufferLineCycleNext<cr>", "Cycle to next tab" },
   ["H"] = { "<cmd>BufferLineCyclePrev<cr>", "Cycle to prev tab" },
+  ["gR"] = { "<cmd>TroubleToggle lsp_references<cr>", "LSP references" },
+  ["<leader>h"] = { "<cmd>noh<cr>", "Clear highlights" },
+  ["<leader>c"] = { "<Plug>(comment_toggle_linewise)", "Toggle comment" },
+  ["<leader>/"] = { "<Plug>(comment_toggle_linewise_current)", "Toggle comment line" },
+  ["<leader>g"] = { "<cmd>lua _Lazygit_toggle()<CR>", "Toggle lazygit" },
   ["<leader>b"] = {
     name = "+Buffer",
     c = { "<cmd>lua MiniBufremove.delete()<cr>", "Buffer close" },
   },
-  ["<C-Bslash>"] = { "<cmd>ToggleTerm<cr>", "Toggle terminal" },
   -- NOTE
   -- do `:help Telescope.builtin` for more telescope commands
   ["<leader>s"] = {
@@ -40,10 +45,6 @@ wk.register({
     c = { '<cmd>lua require("persistence").load()<cr>', "Current directory's last session" },
     l = { '<cmd>lua require("persistence").load({last = true})<cr>', "Last session" },
   },
-  ["gR"] = { "<cmd>TroubleToggle lsp_references<cr>", "LSP references" },
-  ["<leader>h"] = { "<cmd>noh<cr>", "Clear highlights" },
-  ["<leader>c"] = { "<Plug>(comment_toggle_linewise)", "Toggle comment" },
-  ["<leader>/"] = { "<Plug>(comment_toggle_linewise_current)", "Toggle comment line" },
   ["<leader>w"] = {
     name = "+Window",
     v = { "<C-w>v", "Split vertically" },
@@ -52,7 +53,6 @@ wk.register({
     c = { "<cmd>close<cr>", "Close" },
     m = { "<cmd>MaximizerToggle<cr>", "Maximize window" },
   },
-  ["<leader>g"] = { "<cmd>lua _Lazygit_toggle()<CR>", "Toggle lazygit" },
   ["<leader>l"] = {
     name = "+LSP",
     s = { "<cmd>LspInfo<cr>", "Show attached servers" },
@@ -67,5 +67,5 @@ wk.register({
 
 wk.register({
   ["<C-Bslash>"] = { "<cmd>wincmd h<cr>", "" },
-  ["<esc>"] = { "<C-\\><C-n>", "" },
+  -- ["<esc>"] = { "<C-\\><C-n>", "" },
 }, t)
