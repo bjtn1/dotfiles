@@ -83,29 +83,29 @@ local mlsp = {
       }),
 
       -- Set configuration for specific filetype.
-      cmp.setup.filetype('gitcommit', {
+      cmp.setup.filetype("gitcommit", {
         sources = cmp.config.sources({
-          { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
+          { name = "cmp_git" }, -- You can specify the `cmp_git` source if you were installed it.
         }, {
-            { name = 'buffer' },
+            { name = "buffer" },
           })
       }),
 
-      -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
-      cmp.setup.cmdline({ '/', '?' }, {
+      -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won"t work anymore).
+      cmp.setup.cmdline({ "/", "?" }, {
         mapping = cmp.mapping.preset.cmdline(),
         sources = {
-          { name = 'buffer' }
+          { name = "buffer" }
         }
       }),
 
-      -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-      cmp.setup.cmdline(':', {
+      -- Use cmdline & path source for ":" (if you enabled `native_menu`, this won"t work anymore).
+      cmp.setup.cmdline(":", {
         mapping = cmp.mapping.preset.cmdline(),
         sources = cmp.config.sources({
-          { name = 'path' }
+          { name = "path" }
         }, {
-            { name = 'cmdline' }
+            { name = "cmdline" }
           })
       }),
 
@@ -150,8 +150,9 @@ local mlsp = {
     ---------------------
     -- Mason-lspconfig
     ---------------------
-    -- FIXME autopep8 gets attached to .py files, but stylua doesn't. Figure out why
-    -- what i'm goin to do is uninstall every server from mason and install lua_ls, stylua, and luacheck one by one and cofigure them
+    -- FIXME 
+    -- autopep8 gets attached to .py files, but stylua doesn"t. Figure out why
+    -- what i"m goin to do is uninstall every server from mason and install lua_ls, stylua, and luacheck one by one and cofigure them
 
     mason_lsp_config.setup({
       ensure_installed = {
@@ -293,7 +294,7 @@ local mlsp = {
     ---------------------
     -- nvim-lspconfig
     ---------------------
-    require('lspconfig.ui.windows').default_options.border = "rounded"
+    require("lspconfig.ui.windows").default_options.border = "rounded"
     local lsp_capabilities = cmp_nvim_lsp.default_capabilities() -- to enable autocompletion
 
     local lsp_attach = function(client, bufnr)

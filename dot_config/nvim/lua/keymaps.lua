@@ -5,14 +5,6 @@ local n = { mode = "n" }
 -- local v = {mode = "v"}
 local t = { mode = "t" }
 
--- vim.keymap.set('n', '<space>cl', function()
---   return vim.v.count == 0
---     and '<Plug>(comment_toggle_linewise_current)'
---     or '<Plug>(comment_toggle_linewise_count)'
--- end, { expr = true })
---
--- vim.keymap.set('n', '<space>c', '<Plug>(comment_toggle_linewise)')
-
 wk.register({
   ["<C-s>"] = { "<esc><cmd>w<cr>", "Save file" },
 
@@ -30,15 +22,15 @@ wk.register({
 
   ["<C-Bslash>"] = { "<cmd>ToggleTerm<cr>", "Toggle terminal" },
 
-  -- NOTE do `:help Telescope.builtin` for more telescope commands
-  ["<leader>t"] = {
-    name = "+Telescope",
-    f = { "<cmd>Telescope find_files<cr>", "Find File" },
-    r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
-    n = { "<cmd>enew<cr>", "New File" },
-    s = { "<cmd>Telescope live_grep<cr>", "Find string (all files)" },
-    c = { "<cmd>Telescope colorscheme<cr>", "Preview colorschemes" },
-    p = { "<cmd>Telescope projects<cr>", "View projects" },
+  -- NOTE
+  -- do `:help Telescope.builtin` for more telescope commands
+  ["<leader>s"] = {
+    name = "+Search",
+    f = { "<cmd>Telescope find_files<cr>", "Files" },
+    r = { "<cmd>Telescope oldfiles<cr>", "Recent Files" },
+    s = { "<cmd>Telescope live_grep<cr>", "String (all files)" },
+    c = { "<cmd>Telescope colorscheme<cr>", "Colorschemes" },
+    p = { "<cmd>Telescope projects<cr>", "Projects" },
   },
 
   ["<leader>d"] = {
@@ -71,9 +63,17 @@ wk.register({
     h = { "<C-w>s", "Split horizontally" },
     e = { "<C-w>=", "Equalize" },
     c = { "<cmd>close<cr>", "Close" },
+    m = { "<cmd>MaximizerToggle<cr>", "Maximize window" },
   },
 
   ["<leader>g"] = { "<cmd>lua _Lazygit_toggle()<CR>", "Toggle lazygit" },
+
+  ["<leader>L"] = {
+    name = "+LSP",
+    s = { "<cmd>LspInfo<cr>", "Show attached servers" },
+    f = { "<cmd>NullLsInfo<cr>", "Show attached formatters & linters" },
+
+  }
 
 }, n)
 
