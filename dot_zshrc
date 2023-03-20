@@ -27,7 +27,7 @@ alias cl="clear"
 alias update="brew update ; brew upgrade ; brew cleanup ; brew autoremove ; brew bundle dump -f --file=~/.config/brewfile ; chezmoi add ~/.config/nvim/*"
 
 alias cm="chezmoi"
-alias cmanv="chezmoi add ~/.config/nvim/*"  # Use this for whenever you add a new file anywhere inside nvim/
+alias cmanv="rm -rf ~/.local/share/chezmoi/dot_config/nvim | chezmoi add ~/.config/nvim/*"  # Use this for whenever you add a new file anywhere inside nvim/
 alias cmr="chezmoi re-add"
 alias cmcd="chezmoi cd"
 
