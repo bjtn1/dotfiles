@@ -40,8 +40,9 @@ wk.register({
   },
   ["<leader>d"] = {
     name = "+Diagnostics",
-    a = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Diagnostics from all buffers" },
+    a = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Diagnostics from workspace" },
     c = { "<cmd>TroubleToggle document_diagnostics<cr>", "Diagnostics from current buffer" },
+    t = { "<cmd>echo 'LOL THIS DONT WORK YET, ILL FIGURE IT OUT LATER'<cr>", "View TODOs in current directory" },
   },
   ["<leader>r"] = {
     name = "+Restore",
