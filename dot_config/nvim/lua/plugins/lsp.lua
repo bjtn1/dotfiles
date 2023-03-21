@@ -83,6 +83,7 @@ local mlsp = {
         { name = "luasnip" },
         { name = "buffer" },
         { name = "path" },
+        { name = "neorg" },
       }),
       -- Set configuration for specific filetype.
       cmp.setup.filetype("gitcommit", {
