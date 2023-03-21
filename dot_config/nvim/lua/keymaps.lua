@@ -9,9 +9,11 @@ wk.register({
   -------------------
   -- Single mappings
   -------------------
+  ["<leader>pm"] = { "<cmd>MarkdownPreviewToggle<cr>", "Preview markdown" },
+  ["<leader>Cg"] = { "<cmd>CreateGistFromFile<cr>", "Create gist" },
   ["<C-Bslash>"] = { "<cmd>ToggleTerm<cr>", "Toggle terminal" },
   ["<C-s>"] = { "<esc><cmd>w<cr>", "Save file" },
-  ["<leader>p"] = { "<cmd>Lazy<cr>", "Open plugin manager" },
+  ["<leader>L"] = { "<cmd>Lazy<cr>", "Open Lazy" },
   ["<leader>e"] = { "<cmd>NeoTreeFloatToggle<cr>", "Toggle NeoTree" },
   ["<leader>;"] = { "<cmd>Alpha<cr>", "Toggle dashboard" },
   ["L"] = { "<cmd>BufferLineCycleNext<cr>", "Cycle to next tab" },
@@ -20,10 +22,18 @@ wk.register({
   ["<leader>h"] = { "<cmd>noh<cr>", "Clear highlights" },
   ["<leader>c"] = { "<Plug>(comment_toggle_linewise)", "Toggle comment<motion>" },
   ["<leader>/"] = { "<Plug>(comment_toggle_linewise_current)", "Toggle comment line" },
-  ["<leader>g"] = { "<cmd>lua _Lazygit_toggle()<CR>", "Toggle lazygit" },
+  ["<leader>G"] = { "<cmd>lua _Lazygit_toggle()<CR>", "Open lazygit" },
+  ["<leader>gd"] = { "<cmd>Neogen<cr>", "Generate doc comment" },
   --------------------
   -- Menu Mappings
   --------------------
+  ["s"] = {
+    name = "+Surround",
+    a = { "<Plug>Ysurround", "Add<motion><delimiter>" },
+    d = { "<Plug>Dsurround", "Delete<delimiter>" },
+    c = { "<Plug>Csurround", "Change<old_delimiter><new_delimiter>" },
+    A = { "<Plug>Yssurround", "Add in line" },
+  },
   ["<leader>b"] = {
     name = "+Buffer",
     c = { "<cmd>lua MiniBufremove.delete()<cr>", "Buffer close" },
