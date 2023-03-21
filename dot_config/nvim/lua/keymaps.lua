@@ -18,7 +18,7 @@ wk.register({
   ["H"] = { "<cmd>BufferLineCyclePrev<cr>", "Cycle to prev tab" },
   ["gR"] = { "<cmd>TroubleToggle lsp_references<cr>", "LSP references" },
   ["<leader>h"] = { "<cmd>noh<cr>", "Clear highlights" },
-  ["<leader>c"] = { "<Plug>(comment_toggle_linewise)", "Toggle comment" },
+  ["<leader>c"] = { "<Plug>(comment_toggle_linewise)", "Toggle comment<motion>" },
   ["<leader>/"] = { "<Plug>(comment_toggle_linewise_current)", "Toggle comment line" },
   ["<leader>g"] = { "<cmd>lua _Lazygit_toggle()<CR>", "Toggle lazygit" },
   --------------------
