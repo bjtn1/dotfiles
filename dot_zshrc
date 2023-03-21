@@ -18,6 +18,8 @@ unset zle_bracketed_paste
 
 autoload -U compinit; compinit
 
+alias lz="XDG_CONFIG_HOME=~/.config/lazyvim/ nvim"
+
 alias e="exit"
 
 alias nv="nvim"
