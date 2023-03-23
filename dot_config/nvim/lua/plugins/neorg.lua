@@ -6,29 +6,10 @@ return {
     load = {
       ["core.defaults"] = {
         config = {},
-      }, -- Loads default behaviour
-      ["core.autocommands"] = {
-        config = {},
       },
-      ["core.presenter"] = {
-        config = {
-          zen_mode = "truezen",
-        },
-      },
-      ["core.norg.journal"] = {
-        config = {},
-      },
-      ["core.integrations.treesitter"] = {
-        config = {},
-      },
-      ["core.integrations.nvim-cmp"] = {
-        config = {},
-      },
-      ["core.norg.concealer"] = {
-        config = {
-          folds = false,
-        },
-      }, -- Adds pretty icons to your documents
+      ---------------------
+      -- Other modules
+      --------------------
       ["core.export"] = {
         config = {},
       },
@@ -42,14 +23,68 @@ return {
           engine = "nvim-cmp",
         },
       },
-      ["core.norg.dirman"] = { -- Manages Neorg workspaces
+      ["core.norg.concealer"] = {
+        config = {
+          folds = false,
+        },
+      },
+      ["core.norg.dirman"] = {
         config = {
           workspaces = {
             main = "~/neorg",
-            notes = "~/neorg/notes",
           },
           default_workspace = "main",
         },
+      },
+      ["core.norg.manoeuvre"] = { -- WARN deprecated according to the documentation
+        config = {},
+      },
+      ["core.presenter"] = {
+        config = {
+          zen_mode = "truezen",
+        },
+      },
+      ----------------------
+      -- Developer modules
+      ----------------------
+      ["core.keybinds"] = {
+        config = {},
+      },
+      ["core.norg.esupports.metagen"] = {
+        config = {
+          type = "auto",
+          template = {
+            { "Authors", "Brandon J. T. Noguera" },
+            {
+              "Created",
+              function()
+                return os.date("%Y-%m-%d")
+              end,
+            },
+            {
+              "Updated",
+              function()
+                return os.date("%Y-%m-%d")
+              end,
+            },
+            { "Version", "0.1.0" },
+          },
+        },
+      },
+      ["core.autocommands"] = { -- WARN will be deprecated soon
+        config = {},
+      },
+      ["core.clipboard"] = {
+        config = {},
+      },
+      ["core.norg.journal"] = {
+        config = {},
+      },
+      ["core.integrations.treesitter"] = {
+        config = {},
+      },
+      ["core.integrations.nvim-cmp"] = {
+        config = {},
       },
     },
   },

@@ -13,7 +13,6 @@ wk.register({
   ["<leader>Cg"] = { "<cmd>CreateGistFromFile<cr>", "Create gist" },
   ["<C-Bslash>"] = { "<cmd>ToggleTerm<cr>", "Toggle terminal" },
   ["<C-s>"] = { "<esc><cmd>w<cr>", "Save file" },
-  ["<leader>L"] = { "<cmd>Lazy<cr>", "Open Lazy" },
   ["<leader>e"] = { "<cmd>NeoTreeFloatToggle<cr>", "Toggle NeoTree" },
   ["<leader>;"] = { "<cmd>Alpha<cr>", "Toggle dashboard" },
   ["L"] = { "<cmd>BufferLineCycleNext<cr>", "Cycle to next tab" },
@@ -23,7 +22,7 @@ wk.register({
   ["<leader>c"] = { "<Plug>(comment_toggle_linewise)", "Toggle comment<motion>" },
   ["<leader>/"] = { "<Plug>(comment_toggle_linewise_current)", "Toggle comment line" },
   ["<leader>G"] = { "<cmd>lua _Lazygit_toggle()<CR>", "Open lazygit" },
-  ["<leader>gd"] = { "<cmd>Neogen<cr>", "Generate doc comment" },
+  ["<leader>gdc"] = { "<cmd>Neogen<cr>", "Generate doc comment" },
   --------------------
   -- Menu Mappings
   --------------------
@@ -38,8 +37,40 @@ wk.register({
     name = "+Buffer",
     c = { "<cmd>lua MiniBufremove.delete()<cr>", "Buffer close" },
   },
-  -- NOTE
-  -- do `:help Telescope.builtin` for more telescope commands
+  ["<leader>d"] = {
+    name = "+Diagnostics",
+    a = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Diagnostics from workspace" },
+    c = { "<cmd>TroubleToggle document_diagnostics<cr>", "Diagnostics from current buffer" },
+    t = { "<cmd>echo 'LOL THIS DONT WORK YET, ILL FIGURE IT OUT LATER'<cr>", "View TODOs in current directory" },
+  },
+  ["<leader>l"] = {
+    name = "+LSP",
+    a = { "<cmd>Lspsaga code_action<cr>", "Code actions" },
+    s = { "<cmd>LspInfo<cr>", "Show attached servers" },
+    f = { "<cmd>NullLsInfo<cr>", "Show attached formatters & linters" },
+    d = { "<cmd>Lspsaga lsp_finder<cr>", "View definition and references" },
+    r = { "<cmd>Lspsaga rename<cr>", "Rename at cursor" },
+    p = { "<cmd>Lspsaga peek_definition<cr>", "Peek definition (editable)" },
+    k = { "<cmd>Lspsaga hover_doc ++keep<cr>", "Show documentation" },
+  },
+  ["<leader>n"] = {
+    name = "+Neorg",
+    e = { "<cmd>Neorg export to-file<cr>", "Export current .norg to .md" },
+    i = { "<cmd>Neorg inject-metadata<cr>", "Inject metadata" },
+    u = { "<cmd>Neorg update-metadata<cr>", "Update metadata" },
+    w = { "<cmd>Neorg workspace<cr>", "cd ~/neorg" },
+  },
+  ["<leader>o"] = {
+    name = "+Open",
+    g = { "<cmd>lua _Lazygit_toggle()<CR>", "LazyGit" },
+    l = { "<cmd>Lazy<cr>", "Lazy (plugin manager)" },
+    m = { "<cmd>Mason<cr>", "Mason" },
+  },
+  ["<leader>r"] = {
+    name = "+Restore",
+    c = { '<cmd>lua require("persistence").load()<cr>', "Current directory's last session" },
+    l = { '<cmd>lua require("persistence").load({last = true})<cr>', "Last session" },
+  },
   ["<leader>s"] = {
     name = "+Search",
     f = { "<cmd>Telescope find_files<cr>", "Files" },
@@ -48,17 +79,6 @@ wk.register({
     c = { "<cmd>Telescope colorscheme<cr>", "Colorschemes" },
     p = { "<cmd>Telescope projects<cr>", "Projects" },
   },
-  ["<leader>d"] = {
-    name = "+Diagnostics",
-    a = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Diagnostics from workspace" },
-    c = { "<cmd>TroubleToggle document_diagnostics<cr>", "Diagnostics from current buffer" },
-    t = { "<cmd>echo 'LOL THIS DONT WORK YET, ILL FIGURE IT OUT LATER'<cr>", "View TODOs in current directory" },
-  },
-  ["<leader>r"] = {
-    name = "+Restore",
-    c = { '<cmd>lua require("persistence").load()<cr>', "Current directory's last session" },
-    l = { '<cmd>lua require("persistence").load({last = true})<cr>', "Last session" },
-  },
   ["<leader>w"] = {
     name = "+Window",
     v = { "<C-w>v", "Split vertically" },
@@ -66,17 +86,6 @@ wk.register({
     e = { "<C-w>=", "Equalize" },
     c = { "<cmd>close<cr>", "Close" },
     m = { "<cmd>MaximizerToggle<cr>", "Maximize window" },
-  },
-  ["<leader>l"] = {
-    name = "+LSP",
-    a = { "<cmd>Lspsaga code_action<cr>", "Code actions" },
-    s = { "<cmd>LspInfo<cr>", "Show attached servers" },
-    f = { "<cmd>NullLsInfo<cr>", "Show attached formatters & linters" },
-    m = { "<cmd>Mason<cr>", "Open Mason" },
-    d = { "<cmd>Lspsaga lsp_finder<cr>", "View definition and references" },
-    r = { "<cmd>Lspsaga rename<cr>", "Rename at cursor" },
-    p = { "<cmd>Lspsaga peek_definition<cr>", "Peek definition (editable)" },
-    k = { "<cmd>Lspsaga hover_doc ++keep<cr>", "Show documentation" },
   },
 }, n)
 

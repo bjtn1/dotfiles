@@ -191,7 +191,6 @@ local mlsp = {
         ---------------------
         -- Linters
         ---------------------
-        "alex",
         "misspell",
         "cmakelint",
         "cpplint",
