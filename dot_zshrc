@@ -20,6 +20,10 @@ autoload -U compinit; compinit
 
 alias lz="XDG_CONFIG_HOME=~/.config/lazyvim/ nvim"
 
+alias v="fd --type f --hidden --exclude .git | fzf-tmux -p | xargs -r nvim"
+
+alias lg="lazygit"
+
 alias e="exit"
 
 alias nv="nvim"
@@ -29,8 +33,8 @@ alias cl="clear"
 alias update="brew update ; brew upgrade ; brew cleanup ; brew autoremove ; brew bundle dump -f --file=~/.config/brewfile ; chezmoi add ~/.config/nvim/*"
 
 alias cm="chezmoi"
-alias cmanv="rm -rf ~/.local/share/chezmoi/dot_config/nvim | chezmoi add ~/.config/nvim/*"  # Use this for whenever you add a new file anywhere inside nvim/
-alias cmr="chezmoi re-add"
+alias cmr="rm -rf ~/.local/share/chezmoi/dot_config/nvim && chezmoi add ~/.config/nvim/* ; rm -rf ~/.local/share/chezmoi/dot_config/tmux/ && chezmoi add ~/.config/tmux/* ; rm ~/.local/share/chezmoi/dot_config/brewfile && chezmoi add ~/.config/brewfile ; rm ~/.local/share/chezmoi/dot_zshrc && chezmoi add ~/.zshrc"  # Use this for whenever you add a new file anywhere inside nvim/
+# alias cmr="chezmoi re-add"
 alias cmcd="chezmoi cd"
 
 alias nf="neofetch"
