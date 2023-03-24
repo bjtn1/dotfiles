@@ -30,7 +30,7 @@ alias nv="nvim"
 
 alias cl="clear"
 
-alias update="brew update ; brew upgrade ; brew cleanup ; brew autoremove ; brew bundle dump -f --file=~/.config/brewfile ; chezmoi add ~/.config/nvim/*"
+alias update="brew update ; brew upgrade ; brew cleanup ; brew autoremove ; brew bundle dump -f --file=~/.config/brewfile ; cmr"
 
 alias cm="chezmoi"
 alias cmr="rm -rf ~/.local/share/chezmoi/dot_config/nvim && chezmoi add ~/.config/nvim/* ; rm -rf ~/.local/share/chezmoi/dot_config/tmux/ && chezmoi add ~/.config/tmux/* ; rm ~/.local/share/chezmoi/dot_config/brewfile && chezmoi add ~/.config/brewfile ; rm ~/.local/share/chezmoi/dot_zshrc && chezmoi add ~/.zshrc"  # Use this for whenever you add a new file anywhere inside nvim/
