@@ -22,7 +22,9 @@ return {
         -- don't delete if the next character is xx
             :with_del(cond.not_after_regex("xx"))
         -- disable adding a newline when you press <cr>
-            :with_cr(cond.none()),
+            :with_cr(cond.none())
+        -- Dont add pait if next char is "$"
+            :with_cr(cond.not_after_regex("$")),
       },
       -- disable for .vim files, but it work for another filetypes
       Rule("a", "a", "-vim")
@@ -36,6 +38,10 @@ return {
           return false
         end
       end),
+    })
+
+    autopairs.add_rules({
+      Rule("$", "||$", { "norg" }),
     })
   end,
 }

@@ -7,9 +7,6 @@ return {
       ["core.defaults"] = {
         config = {},
       },
-      ---------------------
-      -- Other modules
-      --------------------
       ["core.export"] = {
         config = {},
       },
@@ -31,13 +28,10 @@ return {
       ["core.norg.dirman"] = {
         config = {
           workspaces = {
-            main = "~/neorg",
+            main = "~/notes",
           },
           default_workspace = "main",
         },
-      },
-      ["core.norg.manoeuvre"] = { -- WARN deprecated according to the documentation
-        config = {},
       },
       ["core.presenter"] = {
         config = {
@@ -54,7 +48,7 @@ return {
         config = {
           type = "auto",
           template = {
-            { "Authors", "Brandon J. T. Noguera" },
+            { "Author(s)", "Brandon J. T. Noguera" },
             {
               "Created",
               function()
@@ -67,12 +61,8 @@ return {
                 return os.date("%Y-%m-%d")
               end,
             },
-            { "Version", "0.1.0" },
           },
         },
-      },
-      ["core.autocommands"] = { -- WARN will be deprecated soon
-        config = {},
       },
       ["core.clipboard"] = {
         config = {},
@@ -83,7 +73,13 @@ return {
       ["core.integrations.treesitter"] = {
         config = {},
       },
+      ["core.neorgcmd"] = {
+        config = {},
+      },
       ["core.integrations.nvim-cmp"] = {
+        config = {},
+      },
+      ["core.mode"] = {
         config = {},
       },
     },
