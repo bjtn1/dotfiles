@@ -1,3 +1,6 @@
+-- NOTE list of all options
+-- https://neovim.io/doc/user/quickref.html#option-list
+
 vim.opt.relativenumber = true
 vim.opt.number = true
 
