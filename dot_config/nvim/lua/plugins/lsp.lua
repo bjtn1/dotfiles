@@ -182,7 +182,7 @@ local mlsp = {
         -- Formatters
         ---------------------
         "beautysh",
-        "black",
+        -- "black",
         "clang-format",
         "isort",
         "prettierd",
