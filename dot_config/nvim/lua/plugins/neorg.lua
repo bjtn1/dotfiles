@@ -27,10 +27,9 @@ return {
       },
       ["core.norg.dirman"] = {
         config = {
-          workspaces = {
-            main = "~/notes",
-          },
-          default_workspace = "main",
+          -- workspaces = {
+          --   main = "~/notes",
+          -- },
         },
       },
       ["core.presenter"] = {

@@ -30,7 +30,7 @@ require("lazy").setup("plugins", opts)
 require("keymaps")
 
 vim.cmd([[
-  colorscheme tokyonight-night
+  colorscheme catppuccin-mocha
 
   " highlight Visual guifg=#15161e guibg=#7aa2f7 gui=none
 

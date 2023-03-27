@@ -41,7 +41,7 @@ return {
     })
 
     autopairs.add_rules({
-      Rule("$", "||$", { "norg" }),
+      Rule("$|", "|$", { "norg" }),
     })
   end,
 }
