@@ -31,4 +31,4 @@ vim.opt.laststatus = 3
 
 vim.opt.cmdheight = 0
 
-vim.opt.guicursor = "a:blinkon50"
+vim.opt.guicursor = "i-c-ci-sm:ver25-blinkon100,n-v-ve-o-r-cr:blinkon100"
