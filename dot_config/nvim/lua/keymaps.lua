@@ -58,8 +58,8 @@ wk.register({
     name = "+Neorg",
     e = { "<cmd>Neorg export to-file<cr>", "Export current .norg to .md" },
     i = { "<cmd>Neorg inject-metadata<cr>", "Inject metadata" },
+    t = { "<cmd>e ~/todo.norg<cr>", "See todo.norg" },
     u = { "<cmd>Neorg update-metadata<cr>", "Update metadata" },
-    w = { "<cmd>Neorg workspace<cr>", "cd ~/neorg" },
   },
   ["<leader>o"] = {
     name = "+Open",

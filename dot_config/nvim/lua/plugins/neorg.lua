@@ -54,12 +54,6 @@ return {
                 return os.date("%Y-%m-%d")
               end,
             },
-            {
-              "Updated",
-              function()
-                return os.date("%Y-%m-%d")
-              end,
-            },
           },
         },
       },
