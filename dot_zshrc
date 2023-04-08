@@ -18,7 +18,8 @@ unset zle_bracketed_paste
 
 autoload -U compinit; compinit
 
-alias lz="XDG_CONFIG_HOME=~/.config/lazyvim/ nvim"
+alias lz="NVIM_APPNAME=lazyvim nvim"
+alias nc="NVIM_APPNAME=nvchad nvim"
 
 alias v="fd --type f --hidden --exclude .git | fzf-tmux -p | xargs -r nvim"
 
