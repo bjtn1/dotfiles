@@ -234,7 +234,8 @@ local mlsp = {
       end,
     })
 
-    mason_null_ls.setup_handlers()
+    -- NOTE This has been deprecated as of 9th of pApril, 2023
+    -- mason_null_ls.setup_handlers() 
 
     ---------------------
     -- nvim-lspconfig
