@@ -29,3 +29,17 @@ nvm install --lts
 ```bash
 nvm use --lts
 ```
+
+## Rust and Rustup
+
+> ❗️ Make sure ~/Workspace/rust-speedrun/ exists before running this command
+
+```bash
+curl -L https://raw.githubusercontent.com/rust-lang/rustlings/main/install.sh | bash -s ~/Workspace/rust-speedrun
+```
+
+### Rustlings (Small interactive rust lessons)
+
+```bash
+curl -L https://raw.githubusercontent.com/rust-lang/rustlings/main/install.sh | bash -s ~/Workspace/rust-speedrun/rustlings
+```
