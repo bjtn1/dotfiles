@@ -168,7 +168,7 @@ local mlsp = {
         "lua_ls",
         "marksman",
         "pyright",
-        "rust-analyzer",
+        "rust_analyzer",
         "tsserver",
       },
     })
