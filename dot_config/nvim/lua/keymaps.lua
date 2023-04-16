@@ -24,6 +24,8 @@ wk.register({
   ["<leader>G"] = { "<cmd>lua _Lazygit_toggle()<CR>", "Open lazygit" },
   ["<leader>gdc"] = { "<cmd>Neogen<cr>", "Generate doc comment" },
   ["<C-c>"] = { "<cmd>Neorg keybind norg core.norg.qol.todo_items.todo.task_cycle<cr>", "Cycle Neorg todo items" },
+  ["md"] = { " <esc><cmd>m .+1<cr>=", "Move line down" },
+  ["mu"] = { " <esc><cmd>m .-2<cr>==", "Move lineup" },
   --------------------
   -- Menu Mappings
   --------------------
