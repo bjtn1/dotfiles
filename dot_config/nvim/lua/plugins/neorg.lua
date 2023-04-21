@@ -1,4 +1,5 @@
-return {
+-- FIX new neorg breaking changes just dropped 2023-04-20
+plugin = {
   "nvim-neorg/neorg",
   build = ":Neorg sync-parsers",
   dependencies = { { "nvim-lua/plenary.nvim" } },
@@ -78,3 +79,4 @@ return {
     },
   },
 }
+return {}
