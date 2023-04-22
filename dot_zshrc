@@ -18,6 +18,11 @@ unset zle_bracketed_paste
 
 autoload -U compinit; compinit
 
+alias bdp="mv ~/Downloads/*.plugin.js ~/Library/Application\ Support/BetterDiscord/plugins/"
+
+
+alias bdt="mv ~/Downloads/*.theme.css ~/Library/Application\ Support/BetterDiscord/themes/"
+
 alias al="py /Users/bnog/Workspace/al/src/main.py"
 
 alias lazyvim="NVIM_APPNAME=lazyvim nvim"
