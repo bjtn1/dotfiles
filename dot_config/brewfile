@@ -45,6 +45,7 @@ brew "zegervdv/zathura/zathura", args: ["with-synctex"]
 cask "alfred"
 cask "anki"
 cask "arduino-ide"
+cask "betterdiscord-installer"
 cask "bitwarden"
 cask "discord"
 cask "firefox"
