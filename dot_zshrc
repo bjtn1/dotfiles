@@ -18,6 +18,8 @@ unset zle_bracketed_paste
 
 autoload -U compinit; compinit
 
+alias al="py /Users/bnog/Workspace/al/src/main.py"
+
 alias lazyvim="NVIM_APPNAME=lazyvim nvim"
 alias nvchad="NVIM_APPNAME=nvchad nvim"
 
