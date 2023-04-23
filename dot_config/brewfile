@@ -40,8 +40,6 @@ brew "tree"
 brew "zip"
 brew "zsh-autosuggestions"
 brew "zsh-fast-syntax-highlighting"
-brew "koekeishiya/formulae/skhd"
-brew "koekeishiya/formulae/yabai"
 brew "osx-cross/avr/avr-gcc@9"
 brew "romkatv/powerlevel10k/powerlevel10k"
 brew "zegervdv/zathura/zathura", args: ["with-synctex"]
