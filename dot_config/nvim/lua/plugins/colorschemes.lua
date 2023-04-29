@@ -3,9 +3,10 @@ return {
   lazy = false,
   priority = 1000,
   dependencies = {
+    "Shatur/neovim-ayu",
     "catppuccin/nvim",
     "Mofiqul/dracula.nvim",
-    "Everblush/nvim",
+    -- NOTE idk why this one aint working "Everblush/nvim",
     "neanias/everforest-nvim",
     "ellisonleao/gruvbox.nvim",
     "lunarvim/horizon.nvim",
@@ -20,9 +21,10 @@ return {
     "shaunsingh/nord.nvim",
   },
   config = function()
+    local ayu = require("ayu")
     local catpuccin = require("catppuccin")
     local dracula = require("dracula")
-    local everblush = require("everblush")
+    -- local everblush = require("everblush")
     local everforest = require("everforest")
     local gruvbox = require("gruvbox")
     local horizon = require("horizon")
@@ -32,9 +34,10 @@ return {
     local nightfox = require("nightfox")
     local synthwave84 = require("synthwave84")
 
+    ayu.setup({})
     catpuccin.setup({})
     dracula.setup({})
-    everblush.setup({})
+    -- everblush.setup({})
     everforest.setup({
       background = "hard",
     })
