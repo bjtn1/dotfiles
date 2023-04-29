@@ -197,7 +197,7 @@ local mlsp = {
         "cpplint",
         "eslint_d",
         "erb-lint",
-        "flake8",
+        -- "flake8", this mf too annoying ngl
         "shellcheck",
         ----------------------------
         -- Formatters & Linters

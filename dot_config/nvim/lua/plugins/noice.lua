@@ -9,10 +9,17 @@ return {
     "rcarriga/nvim-notify",
   },
   config = function()
-    require("noice").setup({
+    local noice = require("noice")
+    local notify = require("notify")
+    noice.setup({
       presets = {
         lsp_doc_border = "single",
-      }
+      },
+    })
+
+    notify.setup({
+      background_color = "#00000000",
+      stages = "static",
     })
   end,
 }
