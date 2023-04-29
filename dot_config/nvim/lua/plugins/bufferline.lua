@@ -8,8 +8,8 @@ return {
     require("bufferline").setup({
       options = {
         indicator = {
-          style = "icon"
-        }
+          style = "icon",
+        },
       },
     })
   end,
