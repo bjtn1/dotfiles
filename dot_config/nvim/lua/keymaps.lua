@@ -1,9 +1,19 @@
 local wk = require("which-key")
+local vk = vim.keymap
 
 local i = { mode = "i" }
 local n = { mode = "n" }
--- local v = {mode = "v"}
+local v = { mode = "v" }
 local t = { mode = "t" }
+
+vk.set("n", "K", "<cmd>m .-2<CR>==")
+vk.set("n", "J", "<cmd>m .+1<CR>==")
+
+vk.set("v", "K", "<cmd>m '<-2<CR>gv=gv")
+vk.set("v", "J", "<cmd>m '>+1<CR>gv=gv")
+
+vk.set("n", "<C-u>", "<C-u>zz")
+vk.set("n", "<C-d>", "<C-d>zz")
 
 wk.register({
   -------------------
@@ -24,8 +34,10 @@ wk.register({
   ["<leader>G"] = { "<cmd>lua _Lazygit_toggle()<CR>", "Open lazygit" },
   ["<leader>gdc"] = { "<cmd>Neogen<cr>", "Generate doc comment" },
   ["<C-c>"] = { "<cmd>Neorg keybind norg core.norg.qol.todo_items.todo.task_cycle<cr>", "Cycle Neorg todo items" },
-  ["md"] = { " <esc><cmd>m .+1<cr>=", "Move line down" },
-  ["mu"] = { " <esc><cmd>m .-2<cr>==", "Move lineup" },
+  ["<leader>j"] = { " <esc><cmd>m .+1<cr>=", "Move line down" },
+  ["<leader>k"] = { " <esc><cmd>m .-2<cr>==", "Move line up" },
+  ["<leader>z"] = { "<cmd>ZenMode<cr>", "Toggle Zen Mode" },
+
   --------------------
   -- Menu Mappings
   --------------------
@@ -98,5 +110,4 @@ wk.register({
 
 wk.register({
   ["<C-Bslash>"] = { "<cmd>wincmd h<cr>", "" },
-  -- ["<esc>"] = { "<C-\\><C-n>", "" },
 }, t)
