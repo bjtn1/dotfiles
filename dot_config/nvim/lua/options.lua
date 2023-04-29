@@ -30,13 +30,13 @@ vim.opt.iskeyword:append("-")
 vim.opt.timeout = true
 vim.opt.timeoutlen = 500
 
-vim.opt.laststatus = 3
+vim.opt.laststatus = 0
 
-vim.opt.cmdheight = 0
-vim.opt.statusline = "%f - %y %=%S %l / %L"
-vim.opt.showcmdloc = "statusline"
+-- vim.opt.cmdheight = 0
+-- vim.opt.statusline = "%f - %y %=%S %l / %L"
+-- vim.opt.showcmdloc = "statusline"
 
 vim.opt.guicursor = "i-c-ci-sm:ver25-blinkon100,n-v-ve-o-r-cr:blinkon100"
 
-vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
