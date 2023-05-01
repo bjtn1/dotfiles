@@ -1,8 +1,10 @@
 -- FIX new neorg breaking changes just dropped 2023-04-20
-plugin = {
+local plugin = {
   "nvim-neorg/neorg",
   build = ":Neorg sync-parsers",
-  dependencies = { { "nvim-lua/plenary.nvim" } },
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+  },
   opts = {
     load = {
       ["core.defaults"] = {
@@ -24,18 +26,6 @@ plugin = {
       ["core.norg.concealer"] = {
         config = {
           folds = false,
-        },
-      },
-      ["core.norg.dirman"] = {
-        config = {
-          -- workspaces = {
-          --   main = "~/notes",
-          -- },
-        },
-      },
-      ["core.presenter"] = {
-        config = {
-          zen_mode = "truezen",
         },
       },
       ----------------------
