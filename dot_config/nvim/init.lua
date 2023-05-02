@@ -34,8 +34,8 @@ vim.cmd([[
 
   " highlight Visual guifg=#15161e guibg=#7aa2f7 gui=none
 
-  augroup highlight_yank
-  autocmd!
-  au TextYankPost * silent! lua vim.highlight.on_yank({higroup="IncSearch", timeout=500})
-  augroup END
+  " augroup highlight_yank
+  " autocmd!
+  " au TextYankPost * silent! lua vim.highlight.on_yank({higroup="IncSearch", timeout=500})
+  " augroup END
 ]])
