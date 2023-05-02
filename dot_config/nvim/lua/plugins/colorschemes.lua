@@ -48,7 +48,9 @@ return {
     })
     gruvbox.setup({})
     horizon.setup({})
-    kanagawa.setup({})
+    kanagawa.setup({
+      transparent = true,
+    })
     material.setup({})
     monokai.setup({})
     nightfox.setup({})
