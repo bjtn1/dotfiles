@@ -29,12 +29,6 @@ require("options")
 require("lazy").setup("plugins", opts)
 require("keymaps")
 
-local transparent_backgrounds = {
-  "tokyonight-mooon",
-  "rose-pine",
-  "catppuccin-mocha",
-}
-
 local color = "rose-pine"
 
 vim.cmd.colorscheme(color)
