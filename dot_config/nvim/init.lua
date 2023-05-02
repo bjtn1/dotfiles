@@ -1,3 +1,7 @@
+-- TODO
+-- FIX
+-- NOTE
+-- WARN
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -23,6 +27,14 @@ local opts = {
   checker = {
     enabled = true,
   },
+}
+
+local colors = {
+  "kanagawa-dragon",
+  "kanagawa-wave",
+  "tokyonight-night",
+  "rose-pine",
+  "catppuccin-mocha",
 }
 
 require("options")
