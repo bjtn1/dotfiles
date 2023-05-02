@@ -29,13 +29,12 @@ require("options")
 require("lazy").setup("plugins", opts)
 require("keymaps")
 
-vim.cmd([[
-  colorscheme tokyonight-night
+local transparent_backgrounds = {
+  "tokyonight-mooon",
+  "rose-pine",
+  "catppuccin-mocha",
+}
 
-  " highlight Visual guifg=#15161e guibg=#7aa2f7 gui=none
+local color = "catppuccin-mocha"
 
-  " augroup highlight_yank
-  " autocmd!
-  " au TextYankPost * silent! lua vim.highlight.on_yank({higroup="IncSearch", timeout=500})
-  " augroup END
-]])
+vim.cmd.colorscheme(color)

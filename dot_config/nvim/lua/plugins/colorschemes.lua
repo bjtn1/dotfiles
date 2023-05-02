@@ -19,6 +19,7 @@ return {
     "LunarVim/synthwave84.nvim",
     "decaycs/decay.nvim",
     "shaunsingh/nord.nvim",
+    "rose-pine/neovim",
   },
   config = function()
     local ayu = require("ayu")
@@ -32,10 +33,14 @@ return {
     local material = require("material")
     local monokai = require("monokai")
     local nightfox = require("nightfox")
+    local rose_pine = require("rose-pine")
     local synthwave84 = require("synthwave84")
+    local tokyonight = require("tokyonight")
 
     ayu.setup({})
-    catpuccin.setup({})
+    catpuccin.setup({
+      transparent_background = true,
+    })
     dracula.setup({})
     -- everblush.setup({})
     everforest.setup({
@@ -47,6 +52,23 @@ return {
     material.setup({})
     monokai.setup({})
     nightfox.setup({})
+    rose_pine.setup({
+      disable_background = true,
+    })
+
+    tokyonight.setup({
+      transparent = true,
+    })
+
+    -- function ColorMyPencils(color)
+    -- 	color = color or "rose-pine"
+    -- 	vim.cmd.colorscheme(color)
+    --
+    -- 	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+    -- 	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+    -- end
+    --
+    -- ColorMyPencils()
     synthwave84.setup({})
   end,
 }
