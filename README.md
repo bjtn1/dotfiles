@@ -4,7 +4,21 @@ These are my personal dotfiles managed by chezmoi. Pics coming soon
 
 Most of everything I've downloaded with homebrew. However, some things I've had to download the intended way.
 
-# Wallpaper
+# iterm2 settings
+
+## Colors
+
+tokyonight-night
+
+## NerdFont
+
+Hack Nerd Font Mono, size of 13
+
+## Transparency
+
+50
+
+# Wallpapers
 
 All wallpapers were downloaded from one of these websites
 
