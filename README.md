@@ -4,6 +4,18 @@ These are my personal dotfiles managed by chezmoi. Pics coming soon
 
 Most of everything I've downloaded with homebrew. However, some things I've had to download the intended way.
 
+# Wallpaper
+
+All wallpapers were downloaded from one of these websites
+
+1. https://www.uhdpaper.com/
+
+2. https://hdqwalls.com/
+
+3. https://wall.alphacoders.com/
+
+4. https://www.wallpaperflare.com/
+
 # Non-homebrew stuff
 
 ## NPM (Node package manager) and NVM (Node version manager)
