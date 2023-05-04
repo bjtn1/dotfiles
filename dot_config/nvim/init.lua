@@ -1,4 +1,4 @@
--- TODO
+-- TODO ooga booga
 -- FIX
 -- NOTE
 -- WARN
@@ -41,7 +41,7 @@ require("options")
 require("lazy").setup("plugins", opts)
 require("keymaps")
 
-local color = "rose-pine"
+local color = "catppuccin-mocha"
 
 vim.cmd.colorscheme(color)
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
