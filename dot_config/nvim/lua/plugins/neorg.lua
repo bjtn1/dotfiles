@@ -8,8 +8,13 @@ return {
     require("neorg").setup({
       load = {
         ["core.defaults"] = {},
+        ["core.concealer"] = {
+          config = {
+            folds = false,
+            icon_preset = "diamond",
+          },
+        },
       },
     })
   end,
 }
-
