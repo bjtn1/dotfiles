@@ -25,6 +25,18 @@ return {
         ["core.autocommands"] = {
           config = {},
         },
+        ["core.highlights"] = {
+          config = {},
+        },
+        ["core.keybinds"] = {
+          config = {},
+        },
+        ["core.mode"] = {
+          config = {},
+        },
+        ["core.neorgcmd"] = {
+          config = {},
+        },
       },
     })
   end,
