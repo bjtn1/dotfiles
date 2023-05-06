@@ -14,6 +14,17 @@ return {
             icon_preset = "diamond",
           },
         },
+        ["core.completion"] = {
+          config = {
+            engine = "nvim-cmp",
+          },
+        },
+        ["core.integrations.treesitter"] = {
+          config = {},
+        },
+        ["core.autocommands"] = {
+          config = {},
+        },
       },
     })
   end,
