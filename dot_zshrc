@@ -20,7 +20,7 @@ autoload -U compinit; compinit
 
 alias bdp="mv ~/Downloads/*.plugin.js ~/Library/Application\ Support/BetterDiscord/plugins/"
 
-alias pogocal="py ~/Workspace/pogocal/src/pogocal.py"
+alias pogocal="cd ~/Workspace/pogocal/ && py src/pogocal.py"
 
 alias bdt="mv ~/Downloads/*.theme.css ~/Library/Application\ Support/BetterDiscord/themes/"
 
