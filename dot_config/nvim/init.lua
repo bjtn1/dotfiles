@@ -1,4 +1,4 @@
--- TODO ooga booga
+-- TODO
 -- FIX
 -- NOTE
 -- WARN
@@ -27,14 +27,6 @@ local opts = {
   checker = {
     enabled = true,
   },
-}
-
-local colors = {
-  "kanagawa-dragon",
-  "kanagawa-wave",
-  "tokyonight-night",
-  "rose-pine",
-  "catppuccin-mocha",
 }
 
 require("options")
