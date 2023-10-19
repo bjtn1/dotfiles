@@ -36,7 +36,7 @@ alias nv="nvim"
 
 alias cl="clear"
 
-alias update="brew update ; brew upgrade ; brew cleanup ; brew autoremove ; brew bundle dump -f --file=~/.config/brewfile ; cmr ; rustup update ; npm install -g npm@latest ; nvm install node ; curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash ; py -m pip install --upgrade pip"
+alias update="brew update ; brew upgrade ; brew cleanup ; brew autoremove ; brew bundle dump -f --file=~/.config/brewfile ; cmr ; rustup update ; py -m pip install --upgrade pip"
 
 alias cm="chezmoi"
 
