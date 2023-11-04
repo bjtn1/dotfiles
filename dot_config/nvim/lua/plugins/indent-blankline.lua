@@ -1,9 +1,9 @@
 return {
   "lukas-reineke/indent-blankline.nvim",
   main = "ibl",
-  -- opts = {},
   config = function()
-    require("ibl").setup({
+    local ibl = require("ibl")
+    ibl.setup({
       -- for example, context is off by default, use this to turn it on
       -- char = "│",
       -- filetype_exclude = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy" },
