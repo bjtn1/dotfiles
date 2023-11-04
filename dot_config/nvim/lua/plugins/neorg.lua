@@ -98,6 +98,9 @@ return {
         ["core.neorgcmd"] = {
           config = {},
         },
+        ["core.export"] = {
+          config = {},
+        },
       },
     })
   end,

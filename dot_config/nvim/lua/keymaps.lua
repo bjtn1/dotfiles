@@ -23,7 +23,8 @@ wk.register({
   ["<leader>Cg"] = { "<cmd>CreateGistFromFile<cr>", "Create gist" },
   ["<C-Bslash>"] = { "<cmd>ToggleTerm<cr>", "Toggle terminal" },
   ["<C-s>"] = { "<esc><cmd>w<cr>", "Save file" },
-  ["<leader>e"] = { "<cmd>NeoTreeFloatToggle<cr>", "Toggle NeoTree" },
+  ["<leader>e"] = { "<cmd>NvimTreeToggle<cr>", "Toggle NeoTree" },
+  -- ["<leader>e"] = { "<cmd>NeoTreeFloatToggle<cr>", "Toggle NeoTree" },
   ["<leader>;"] = { "<cmd>Alpha<cr>", "Toggle dashboard" },
   ["L"] = { "<cmd>BufferLineCycleNext<cr>", "Cycle to next tab" },
   ["H"] = { "<cmd>BufferLineCyclePrev<cr>", "Cycle to prev tab" },
@@ -70,6 +71,7 @@ wk.register({
   },
   ["<leader>n"] = {
     name = "+Neorg",
+    -- :Neorg export to-file /path/you/want/file/saved then_name_the_file.md
     e = { "<cmd>Neorg export to-file<cr>", "Export current .norg to .md" },
     i = { "<cmd>Neorg inject-metadata<cr>", "Inject metadata" },
     t = { "<cmd>Neorg toggle-concealer<cr>", "Toggle concealer" },
