@@ -158,7 +158,7 @@ local mlsp = {
       ensure_installed = {
         "arduino_language_server",
         "asm_lsp",
-        -- "bashls", -- NOTE dog i cannot get this shit to download LMAO
+        "bashls", -- NOTE dog i cannot get this shit to download LMAO
         "cssls",
         "clangd",
         "cmake",
