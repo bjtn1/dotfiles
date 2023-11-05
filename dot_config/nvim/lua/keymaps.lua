@@ -59,16 +59,16 @@ wk.register({
     c = { "<cmd>TroubleToggle document_diagnostics<cr>", "Diagnostics from current buffer" },
     t = { "<cmd>echo 'LOL THIS DONT WORK YET, ILL FIGURE IT OUT LATER'<cr>", "View TODOs in current directory" },
   },
-  ["<leader>l"] = {
-    name = "+LSP",
-    a = { "<cmd>Lspsaga code_action<cr>", "Code actions" },
-    s = { "<cmd>LspInfo<cr>", "Show attached servers" },
-    f = { "<cmd>NullLsInfo<cr>", "Show attached formatters & linters" },
-    d = { "<cmd>Lspsaga lsp_finder<cr>", "View definition and references" },
-    r = { "<cmd>Lspsaga rename<cr>", "Rename at cursor" },
-    p = { "<cmd>Lspsaga peek_definition<cr>", "Peek definition (editable)" },
-    k = { "<cmd>Lspsaga hover_doc ++keep<cr>", "Show documentation" },
-  },
+  -- ["<leader>l"] = {
+  --   name = "+LSP",
+  --   a = { "<cmd>Lspsaga code_action<cr>", "Code actions" },
+  --   s = { "<cmd>LspInfo<cr>", "Show attached servers" },
+  --   f = { "<cmd>NullLsInfo<cr>", "Show attached formatters & linters" },
+  --   d = { "<cmd>Lspsaga lsp_finder<cr>", "View definition and references" },
+  --   r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename at cursor" },
+  --   p = { "<cmd>Lspsaga peek_definition<cr>", "Peek definition (editable)" },
+  --   k = { "<cmd>Lspsaga hover_doc ++keep<cr>", "Show documentation" },
+  -- },
   ["<leader>n"] = {
     name = "+Neorg",
     -- :Neorg export to-file /path/you/want/file/saved then_name_the_file.md

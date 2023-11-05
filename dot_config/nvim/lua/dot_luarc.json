@@ -64,5 +64,6 @@
         "/Users/bnog/.local/share/nvim/lazy/presence.nvim/lua",
         "/Users/bnog/.config/nvim/lua",
         "${3rd}/luv/library"
-    ]
+    ],
+    "workspace.checkThirdParty": false
 }
