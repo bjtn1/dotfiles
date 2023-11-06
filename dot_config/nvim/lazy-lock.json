@@ -12,7 +12,7 @@
   "cmp_luasnip": { "branch": "master", "commit": "05a9ab28b53f71d1aece421ef32fee2cb857a843" },
   "decay.nvim": { "branch": "main", "commit": "e1cb1a8a80b2ac86f3a153884a90ba963ecb1f51" },
   "dracula.nvim": { "branch": "main", "commit": "7200e64c589f899d29f8963aad7543856d1c2545" },
-  "everforest-nvim": { "branch": "main", "commit": "64f290dd2d00ae54132589b55bf9454370eb7cd8" },
+  "everforest-nvim": { "branch": "main", "commit": "026a7be903252adbca8a65ef718242b68b9a52c8" },
   "fd": { "branch": "master", "commit": "8bbbd7679b7eaf8782559c0320fc6cc86314319f" },
   "friendly-snippets": { "branch": "main", "commit": "43727c2ff84240e55d4069ec3e6158d74cb534b6" },
   "gist.nvim": { "branch": "main", "commit": "92b13e486dd9fd083750450e0d262fcc68a62b91" },
