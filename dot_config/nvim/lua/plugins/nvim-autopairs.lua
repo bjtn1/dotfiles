@@ -5,7 +5,6 @@ return {
     local Rule = require("nvim-autopairs.rule")
     local autopairs = require("nvim-autopairs")
     local cond = require("nvim-autopairs.conds")
-    print(vim.inspect(cond))
     autopairs.setup({})
 
     autopairs.add_rules(
