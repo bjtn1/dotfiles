@@ -44,9 +44,9 @@ return {
       transparent_background = true,
     })
     everforest.setup({
-    dracula.setup({})
       background = "hard",
     })
+    dracula.setup({})
     gruvbox.setup({})
     horizon.setup({})
     kanagawa.setup({
