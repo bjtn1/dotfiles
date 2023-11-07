@@ -64,7 +64,6 @@ return {
           config = {
             template = {
               {
-                -- TODO
                 "Title",
                 get_file_name()
               },
@@ -73,12 +72,10 @@ return {
                 "Brandon J. T. Noguera"
               },
               {
-                -- TODO
                 "Created",
                 get_current_date() .. " (" .. get_timestamp() .. ")"
               },
               {
-                -- TODO
                 "Updated",
                 get_current_date() .. " (" .. get_timestamp() .. ")"
 
@@ -99,7 +96,9 @@ return {
           config = {},
         },
         ["core.export"] = {
-          config = {},
+          config = {
+            -- TODO make a function so that exporting always creates a .md file with the same name as tghe .norg file being exported in the same path as the .norg file
+          },
         },
       },
     })
