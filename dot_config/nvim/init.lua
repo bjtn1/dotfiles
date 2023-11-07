@@ -38,9 +38,7 @@ local opts = {
 }
 
 require("options")
-print("BEFORE REQURING LAZY")
 require("lazy").setup("plugins", opts)
-print("AFTER REQURING LAZY")
 require("keymaps")
 
 local color = "tokyonight-night"
@@ -49,3 +47,32 @@ vim.cmd.colorscheme(color)
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 vim.opt.fillchars:append("eob: ")
+
+
+local group = vim.api.nvim_create_augroup(
+  "AutoInstallNewLSPs",
+  {
+    clear = true
+  }
+)
+vim.api.nvim_create_autocmd(
+  "BufRead",
+  {
+    callback = function()
+      -- Get file path of current buffer
+      -- TODO find the correct evet so that the autocommand gets called anytipe we open a file
+      local file_path = vim.api.nvim_buf_get_name(0)
+      local file = io.open(file_path, "r")
+      if file~=nil then
+        print(file_path .. " is a file")
+        -- TODO figure out if theres an LSP attached to this buffer
+        io.close(file)
+        return true
+      else
+        return false
+      end
+
+    end,
+    group = group,
+  }
+)
