@@ -38,7 +38,9 @@ local opts = {
 }
 
 require("options")
+print("HELLO FROM BEFORE LAZY")
 require("lazy").setup("plugins", opts)
+print("HELLO FROM AFTER LAZY")
 require("keymaps")
 
 local color = "tokyonight-night"
