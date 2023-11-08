@@ -43,18 +43,27 @@ return {
     catpuccin.setup({
       transparent_background = true,
     })
+
     everforest.setup({
       background = "hard",
     })
+
     dracula.setup({})
+
     gruvbox.setup({})
+
     horizon.setup({})
+
     kanagawa.setup({
       transparent = true,
     })
+
     material.setup({})
+
     monokai.setup({})
+
     nightfox.setup({})
+
     rose_pine.setup({
       disable_background = true,
     })
