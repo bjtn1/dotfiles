@@ -22,6 +22,9 @@ unset zle_bracketed_paste
 
 autoload -U compinit; compinit
 
+# ROM aliases
+alias khcom="mgba ~/ROMs/Kingdom_Hearts/cartridge.gba"
+
 # This is the alias used to run the pogocal thingie I made
 alias pogocal="cd ~/Workspace/pogocal/ && py src/pogocal.py"
 
