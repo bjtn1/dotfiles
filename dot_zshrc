@@ -21,6 +21,9 @@ fi
 unset zle_bracketed_paste
 
 autoload -U compinit; compinit
+ # ImageMagick alias
+ alias convert='function magick_wrapper { magick "$1" "$2" && rm -i "$1"; }; magick_wrapper'
+
 
 # ROM aliases
 alias khcom="mgba ~/ROMs/Kingdom_Hearts/cartridge.gba"
