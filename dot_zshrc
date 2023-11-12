@@ -24,6 +24,11 @@ autoload -U compinit; compinit
 
 # ROM aliases
 alias khcom="mgba ~/ROMs/Kingdom_Hearts/cartridge.gba"
+alias radicalred="mgba ~/ROMs/Pokemon/Radical_Red/cartridge.gba"
+alias emeraldkaizo="mgba ~/ROMs/Pokemon/Kaizo_Emerald/cartridge.gba"
+alias rocketedition="mgba ~/ROMs/Pokemon/Radical_Red/cartridge.gba"
+alias emerald="mgba ~/ROMs/Pokemon/Emerald/cartridge.gba"
+alias unbound="mgba ~/ROMs/Pokemon/Unbound/cartridge.gba"
 
 # This is the alias used to run the pogocal thingie I made
 alias pogocal="cd ~/Workspace/pogocal/ && py src/pogocal.py"
