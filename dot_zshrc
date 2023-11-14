@@ -17,8 +17,6 @@ autoload -U compinit; compinit
 alias resetpath="source /etc/zprofile"
 alias path='echo $PATH | tr ":" "\n"'
 
-alias delete="~/bin/delete.sh"
-
 # ImageMagick alias
 alias convert='function magick_wrapper { magick "$1" "$2" && rm -i "$1"; }; magick_wrapper'
 
