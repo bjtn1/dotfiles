@@ -40,7 +40,7 @@ alias nv="nvim"
 
 alias cl="clear"
 
-alias update="brew update ; brew upgrade ; brew cleanup ; brew autoremove ; rm -rf ~/.config/brewfile ; brew bundle dump -f --file=~/.config/brewfile ; cmr ; py -m pip install --upgrade pip"
+alias update="brew update ; brew upgrade ; brew cleanup ; brew autoremove ; brew bundle dump -f --file=~/.config/brewfile ; cmr ; py -m pip install --upgrade pip"
 
 alias cm="chezmoi"
 
