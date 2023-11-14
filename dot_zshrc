@@ -21,17 +21,16 @@ fi
 unset zle_bracketed_paste
 
 autoload -U compinit; compinit
- # ImageMagick alias
- alias convert='function magick_wrapper { magick "$1" "$2" && rm -i "$1"; }; magick_wrapper'
 
+# NOTE I really hate that wehn I put a controller, the home button triggers the game launchapd, so these are the commands I used to turn it off
+# defaults write com.apple.GameController bluetoothPrefsMenuLongPressAction -integer 0
+# defaults write com.apple.GameController bluetoothPrefsShareLongPressSystemGestureMode -integer -1
 
-# ROM aliases
-alias khcom="mgba ~/ROMs/Kingdom_Hearts/cartridge.gba"
-alias radicalred="mgba ~/ROMs/Pokemon/Radical_Red/cartridge.gba"
-alias emeraldkaizo="mgba ~/ROMs/Pokemon/Kaizo_Emerald/cartridge.gba"
-alias rocketedition="mgba ~/ROMs/Pokemon/Radical_Red/cartridge.gba"
-alias emerald="mgba ~/ROMs/Pokemon/Emerald/cartridge.gba"
-alias unbound="mgba ~/ROMs/Pokemon/Unbound/cartridge.gba"
+# ImageMagick alias
+alias convert='function magick_wrapper { magick "$1" "$2" && rm -i "$1"; }; magick_wrapper'
+
+# Unar(chiver) alias
+alias unzip='function unzip_wrapper { unar "$1" && rm -i "$1"; }; unzip_wrapper'
 
 # This is the alias used to run the pogocal thingie I made
 alias pogocal="cd ~/Workspace/pogocal/ && py src/pogocal.py"
