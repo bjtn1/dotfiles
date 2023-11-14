@@ -40,7 +40,7 @@ alias nv="nvim"
 
 alias cl="clear"
 
-alias update="brew update ; brew upgrade ; brew cleanup ; brew autoremove ; brew bundle dump -f --file=~/.config/brewfile ; cmr ; py -m pip install --upgrade pip"
+alias update="brew update ; brew upgrade ; brew cleanup ; brew autoremove ; cmr ; py -m pip install --upgrade pip"
 
 alias cm="chezmoi"
 
@@ -48,8 +48,6 @@ alias cm="chezmoi"
 alias cmr="rm -rf ~/.local/share/chezmoi/dot_config/nvim && chezmoi add ~/.config/nvim/* ; rm -rf ~/.local/share/chezmoi/dot_config/tmux/ && chezmoi add ~/.config/tmux/* ; rm ~/.local/share/chezmoi/dot_config/brewfile && chezmoi add ~/.config/brewfile ; rm ~/.local/share/chezmoi/dot_zshrc && chezmoi add ~/.zshrc ; rm -rf ~/.local/share/chezmoi/private_Pictures && chezmoi add ~/Pictures/wallpapers/ ; rm -rf ~/.local/share/chezmoi/dot_config/iterm2/themes/ && chezmoi add ~/.config/iterm2/themes/"
 
 alias cmcd="chezmoi cd"
-
-alias nf="neofetch"
 
 alias tm="tmux"
 alias tmn="tmux new -s"
