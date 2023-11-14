@@ -17,7 +17,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-
 unset zle_bracketed_paste
 
 autoload -U compinit; compinit
@@ -25,6 +24,7 @@ autoload -U compinit; compinit
 # NOTE I really hate that wehn I put a controller, the home button triggers the game launchapd, so these are the commands I used to turn it off
 # defaults write com.apple.GameController bluetoothPrefsMenuLongPressAction -integer 0
 # defaults write com.apple.GameController bluetoothPrefsShareLongPressSystemGestureMode -integer -1
+# THESE DID NOT WORK
 
 # ImageMagick alias
 alias convert='function magick_wrapper { magick "$1" "$2" && rm -i "$1"; }; magick_wrapper'
