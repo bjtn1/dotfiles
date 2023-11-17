@@ -35,14 +35,16 @@ autoload -U compinit; compinit
 # defaults write com.apple.GameController bluetoothPrefsShareLongPressSystemGestureMode -integer -1
 # THESE DID NOT WORK
 
-alias resetpath="source /etc/zprofile"
+alias unpack='function _unpack() { dest=${2:-.}; mv -i $1/* $dest && rm -ri $1; }; _unpack'
 alias path='echo $PATH | tr ":" "\n"'
 
 # ImageMagick alias
 alias convert='function magick_wrapper { magick "$1" "$2" && rm -i "$1"; }; magick_wrapper'
 
 # Unar(chiver) alias
-alias unzip='function unzip_wrapper { unar "$1" && rm -i "$1"; }; unzip_wrapper'
+# alias unzip='function unzip_wrapper { unar "$1" && rm -i "$1"; }; unzip_wrapper'
+alias unzip='function unzip_wrapper { dest=${2:-.}; unar "$1" -o "$dest" && rm -i "$1"; }; unzip_wrapper'
+
 
 # This is the alias used to run the pogocal thingie I made
 alias pogocal="cd ~/Workspace/pogocal/ && py src/pogocal.py"
