@@ -96,6 +96,11 @@ return {
         ["core.neorgcmd"] = {
           config = {},
         },
+        ["core.export.markdown"] = {
+          config = {
+            extensions = "all",
+          },
+        },
         ["core.export"] = {
           config = {
             -- [[
