@@ -35,6 +35,8 @@ autoload -U compinit; compinit
 # defaults write com.apple.GameController bluetoothPrefsShareLongPressSystemGestureMode -integer -1
 # THESE DID NOT WORK
 
+
+alias copy='cat $1 | pbcopy'
 alias unpack='function _unpack() { dest=${2:-.}; mv -i $1/* $dest && rm -ri $1; }; _unpack'
 alias path='echo $PATH | tr ":" "\n"'
 
