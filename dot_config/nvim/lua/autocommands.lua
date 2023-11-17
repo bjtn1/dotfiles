@@ -13,7 +13,7 @@ vim.api.nvim_create_autocmd(
       local file_path = vim.api.nvim_buf_get_name(0)
       local file = io.open(file_path, "r")
       if file~=nil then
-        print(file_path .. " is a file")
+        -- print(file_path .. " is a file")
         -- TODO figure out if theres an LSP attached to this buffer
         io.close(file)
         return true
