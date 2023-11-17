@@ -98,7 +98,13 @@ return {
         },
         ["core.export"] = {
           config = {
-            -- TODO make a function so that exporting always creates a .md file with the same name as tghe .norg file being exported in the same path as the .norg file
+            -- [[
+            -- TODO make a function so that exporting always creates a .md file with the same name as the .norg file being exported in the same path as the .norg file
+            -- requires more arguments so for example if you wanted to export a file to markdown you would do 
+            -- :Neorg export to-file /path/you/want/file/saved then_name_the_file.md
+            -- to-file tells it that you want to take the current file and export it to a single file
+            -- you can find details like that on the wiki page of each module, but it would be nice if an error message was made eventually
+            -- ]]
           },
         },
       },
