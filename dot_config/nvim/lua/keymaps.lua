@@ -71,6 +71,7 @@ wk.register({
   -- },
   ["<leader>n"] = {
     name = "+Neorg",
+    -- TODO
     -- :Neorg export to-file /path/you/want/file/saved then_name_the_file.md
     e = { "<cmd>Neorg export to-file<cr>", "Export current .norg to .md" },
     i = { "<cmd>Neorg inject-metadata<cr>", "Inject metadata" },
