@@ -66,7 +66,7 @@ alias nv="nvim"
 
 alias cl="clear"
 
-alias update="brew update ; brew upgrade ; brew cleanup ; brew autoremove ; cmr ; py -m pip install --upgrade pip"
+alias update="brew update ; brew upgrade ; brew cleanup --prune=1 -s -n ; brew autoremove ; cmr ; py -m pip install --upgrade pip"
 
 alias cm="chezmoi"
 
