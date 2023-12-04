@@ -22,6 +22,18 @@ vim.opt.backspace = "indent,eol,start"
 
 vim.opt.clipboard:append("unnamedplus")
 
+-- Map 'y' and 'p' to yank and put to the system clipboard
+vim.api.nvim_set_keymap('n', 'y', '"+y', { noremap = true })
+vim.api.nvim_set_keymap('v', 'y', '"+y', { noremap = true })
+vim.api.nvim_set_keymap('n', 'p', '"+p', { noremap = true })
+vim.api.nvim_set_keymap('v', 'p', '"+p', { noremap = true })
+
+-- -- Map 'd', and 'c' to use the default register, not affecting the system clipboard
+-- vim.api.nvim_set_keymap('n', 'd', '"_d', { noremap = true })
+-- vim.api.nvim_set_keymap('v', 'd', '"_d', { noremap = true })
+-- vim.api.nvim_set_keymap('n', 'c', '"_c', { noremap = true })
+-- vim.api.nvim_set_keymap('v', 'c', '"_c', { noremap = true })
+
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
