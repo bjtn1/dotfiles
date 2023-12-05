@@ -35,6 +35,7 @@ end
 
 return {
   "nvim-neorg/neorg",
+  ft = ".norg",
   build = ":Neorg sync-parsers", -- This is the important bit!
   -- ft = "norg",  -- lazy load on filetype
   -- cmd = "Neorg", -- lazy load on command, allows you to autocomplete :Neorg regardless of whether it's loaded yet
