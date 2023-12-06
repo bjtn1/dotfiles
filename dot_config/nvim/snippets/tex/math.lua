@@ -28,9 +28,7 @@ return
       i(2),
       t("}"),
     }
-  ),
-
-
+  ),     
 }
 -- return {
 -- -- Combining text and insert nodes to create basic LaTeX commands

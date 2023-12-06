@@ -54,10 +54,10 @@ return {
     ---------------------
     neodev.setup({
       library = {
-        plugins = true,
-        -- {
-        --   "luasnip",
-        -- }
+        plugins =
+        {
+          "luasnip.nvim",
+        }
       }
     })
 
@@ -291,5 +291,25 @@ return {
         capabilities = lsp_capabilities,
       })
     end
+
+    -- This is for luasnip, these are the globals they use, this is so lua_ls doesnt yell at me when it doesnt recognize the globals
+    -- that luasnip declares
+    lsp_config.lua_ls.setup({
+      settings = {
+        Lua = {
+          diagnostics = {
+            globals = {
+              "s",
+              "t",
+              "i",
+              "sn",
+              "f",
+              "c",
+              "d",
+            }
+          }
+        }
+      }
+    })
   end,
 }
