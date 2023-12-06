@@ -47,11 +47,22 @@ return {
     local neodev = require("neodev")
     local null_ls = require("null-ls")
     local wk = require("which-key")
+    local ls = require("luasnip")
 
     ---------------------
     -- Neodev
     ---------------------
     neodev.setup({})
+
+    --------------------
+    -- LuaSnip
+    --------------------
+    ls.config.set_config 
+    {
+      history = true,
+      updateevents = "TextChanged, TexChangedI",
+      enable_autosnippets = true,
+    }
 
     ---------------------
     -- autocompletion
