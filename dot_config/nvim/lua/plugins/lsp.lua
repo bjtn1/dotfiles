@@ -60,7 +60,6 @@ return {
     ls.config.set_config 
     {
       history = true,
-      updateevents = "TextChanged, TexChangedI",
       enable_autosnippets = true,
     }
 
