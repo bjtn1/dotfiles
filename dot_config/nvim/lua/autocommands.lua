@@ -1,28 +1,17 @@
-local group = vim.api.nvim_create_augroup(
-  "AutoInstallNewLSPs",
-  {
-    clear = true
-  }
-)
-vim.api.nvim_create_autocmd(
-  "BufEnter",
-  {
-    callback = function()
-      -- Get file path of current buffer
-      -- TODO find the correct event so that the autocommand gets called anytipe we open a file
-      local file_path = vim.api.nvim_buf_get_name(0)
-      local file = io.open(file_path, "r")
-      if file~=nil then
-        -- print(file_path .. " is a file")
-        -- TODO figure out if theres an LSP attached to this buffer
-        io.close(file)
-        return true
-      else
-        return false
-      end
+-- You wrote this to be able to return focus to Neovim after inverse search on macOS:
+-- Src = https://www.ejmastnak.com/tutorials/vim-latex/pdf-reader/#refocus-nvim-macos-inverse
+function TexFocusNeovim()
+  -- Replace 'TERMINAL' with the name of your terminal application
+  -- Example: vim.fn.system('open -a iTerm')
+  -- Example: vim.fn.system('open -a Alacritty')
+  vim.fn.system('open -a TERMINAL')
+  vim.api.nvim_command('redraw!')
+end
 
-    end,
-    group = group,
-  }
-)
-
+-- Define the autocmd group
+vim.api.nvim_exec([[
+  augroup vimtex_event_focus
+    autocmd!
+    autocmd User VimtexEventViewReverse lua TexFocusNeovim()
+  augroup END
+]], false)
