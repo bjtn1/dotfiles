@@ -101,7 +101,8 @@ wk.register({
   ["<leader>v"] = {
     name = "+VimTex",
     i = {"<cmd>VimtexInfo<cr>", "VimTex Info"},
-    c = {"<cmd>VimtexCompile<cr>", "VimTex Compile"}
+    c = {"<cmd>VimtexCompile<cr>", "VimTex Compile"},
+    a = {"<cmd>VimtexView<cr>", "Trigger forward search"},
   },
   ["<leader>w"] = {
     name = "+Window",
