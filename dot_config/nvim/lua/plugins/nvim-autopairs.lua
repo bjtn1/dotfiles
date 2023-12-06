@@ -12,6 +12,8 @@ return {
         Rule("$", "$", { "tex", "latex", "md", "markdown" })
         -- don't add a pair if the next character is %
             :with_pair(cond.not_after_regex("%%"))
+        -- don't add a pair if the next character is %
+            :with_pair(cond.not_after_regex("$"))
         -- don't add a pair if  the previous character is xxx
             :with_pair(
               cond.not_before_regex("xxx", 3)
