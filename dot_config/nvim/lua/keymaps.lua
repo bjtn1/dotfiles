@@ -83,6 +83,7 @@ wk.register({
     g = { "<cmd>lua _Lazygit_toggle()<CR>", "LazyGit" },
     l = { "<cmd>Lazy<cr>", "Lazy (plugin manager)" },
     m = { "<cmd>Mason<cr>", "Mason" },
+    w = {"<cmd>WhichKey<cr>", "WhichKey"},
   },
   ["<leader>r"] = {
     name = "+Restore",
@@ -96,6 +97,11 @@ wk.register({
     s = { "<cmd>Telescope live_grep<cr>", "String (all files)" },
     c = { "<cmd>Telescope colorscheme<cr>", "Colorschemes" },
     p = { "<cmd>Telescope projects<cr>", "Projects" },
+  },
+  ["<leader>v"] = {
+    name = "+VimTex",
+    i = {"<cmd>VimtexInfo<cr>", "VimTex Info"},
+    c = {"<cmd>VimtexCompile<cr>", "VimTex Compile"}
   },
   ["<leader>w"] = {
     name = "+Window",

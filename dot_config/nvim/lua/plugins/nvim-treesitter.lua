@@ -13,7 +13,7 @@ return {
         "html",
         "java",
         "javascript",
-        "latex",
+        -- "latex",
         "lua",
         "markdown",
         "markdown_inline",
@@ -26,6 +26,12 @@ return {
       },
       highlight = {
         enable = true,
+        -- These two lines com from:
+        -- https://github.com/lervag/vimtex/issues/2469
+        disable = {
+          "latex",
+        },
+        additional_vim_regex_highlighting = { "latex", "markdown" },
       },
       indent = {
         enable = true,
