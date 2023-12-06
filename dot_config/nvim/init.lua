@@ -41,6 +41,8 @@ local opts = {
 require("options")
 require("lazy").setup("plugins", opts)
 require("keymaps")
+-- Load snippets from ~/.config/nvim/LuaSnip/
+require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/LuaSnip/"})
 require("autocommands")
 
 vim.cmd.colorscheme(color)
