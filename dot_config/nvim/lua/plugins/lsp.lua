@@ -52,12 +52,19 @@ return {
     ---------------------
     -- Neodev
     ---------------------
-    neodev.setup({})
+    neodev.setup({
+      library = {
+        plugins = true,
+        -- {
+        --   "luasnip",
+        -- }
+      }
+    })
 
     --------------------
     -- LuaSnip
     --------------------
-    ls.config.set_config 
+    ls.config.set_config
     {
       history = true,
       enable_autosnippets = true,
