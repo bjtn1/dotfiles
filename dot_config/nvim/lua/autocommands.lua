@@ -15,3 +15,10 @@ vim.cmd([[
     autocmd User VimtexEventViewReverse lua TexFocusNeovim()
   augroup END
 ]])
+
+vim.cmd([[
+  augroup MyVimtex
+    autocmd!
+    autocmd User VimtexEventQuit call vimtex#latexmk#clean(0)
+  augroup END
+]])
