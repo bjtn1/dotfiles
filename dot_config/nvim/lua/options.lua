@@ -20,13 +20,20 @@ vim.opt.signcolumn = "yes"
 
 vim.opt.backspace = "indent,eol,start"
 
-vim.opt.clipboard:append("unnamedplus")
+-- vim.opt.clipboard:append("unnamedplus")
 
 -- Map 'y' and 'p' to yank and put to the system clipboard
--- vim.api.nvim_set_keymap('n', 'y', '"+y', { noremap = true })
--- vim.api.nvim_set_keymap('v', 'y', '"+y', { noremap = true })
--- vim.api.nvim_set_keymap('n', 'p', '"+p', { noremap = true })
--- vim.api.nvim_set_keymap('v', 'p', '"+p', { noremap = true })
+vim.api.nvim_set_keymap('n', 'y', '"+y', { noremap = true })
+vim.api.nvim_set_keymap('v', 'y', '"+y', { noremap = true })
+
+vim.api.nvim_set_keymap('n', 'Y', '"+Y', { noremap = true })
+vim.api.nvim_set_keymap('v', 'Y', '"+Y', { noremap = true })
+
+vim.api.nvim_set_keymap('n', 'p', '"+p', { noremap = true })
+vim.api.nvim_set_keymap('v', 'p', '"+p', { noremap = true })
+
+vim.api.nvim_set_keymap('n', 'P', '"+P', { noremap = true })
+vim.api.nvim_set_keymap('v', 'P', '"+P', { noremap = true })
 
 -- -- Map 'd', and 'c' to use the default register, not affecting the system clipboard
 -- vim.api.nvim_set_keymap('n', 'd', '"_d', { noremap = true })
