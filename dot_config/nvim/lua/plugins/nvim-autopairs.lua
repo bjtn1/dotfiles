@@ -12,7 +12,7 @@ return {
         Rule("$", "$", { "tex", "latex", "md", "markdown" })
         -- don't add a pair if the next character is %
             :with_pair(cond.not_after_regex("%%"))
-        -- don't add a pair if the next character is %
+        -- don't add a pair if the next character is $
             :with_pair(cond.not_after_regex("$"))
         -- don't add a pair if  the previous character is xxx
             :with_pair(
@@ -43,6 +43,10 @@ return {
 
     autopairs.add_rules({
       Rule("$|", "|$", { "norg" }),
+    })
+
+    autopairs.add_rules({
+      Rule("\\[", "\\]", { "tex", "latex" })
     })
   end,
 }

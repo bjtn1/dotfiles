@@ -9,9 +9,9 @@ function TexFocusNeovim()
 end
 
 -- Define the autocmd group
-vim.api.nvim_exec([[
+vim.cmd([[
   augroup vimtex_event_focus
     autocmd!
     autocmd User VimtexEventViewReverse lua TexFocusNeovim()
   augroup END
-]], false)
+]])
