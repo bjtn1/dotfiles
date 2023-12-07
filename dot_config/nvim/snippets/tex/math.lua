@@ -1,54 +1,105 @@
 return
-{
-  s(
-    {
-      trig="tt",
-      dscr="Expands 'tt' into '\text{}'",
-      snippetType="autosnippet",
-    },
+  {
+    s(
+      {
+        trig="tt",
+        dscr="Expands 'tt' into '\text{}'",
+        snippetType="autosnippet",
+      },
+      fmta(
+        [[
+          \text{<>}
+        ]],
+        {
+          i(1)
+        }
+      )
+    ),
 
-    {
-      t("\\text{"),
-      i(1),
-      t("}"),
-    }
-  ),
+    s(
+      {
+        trig="ff",
+        dscr="Expands 'ff' into '\frac{}{}'",
+        snippetType="autosnippet",
+      },
+      fmta(
+        [[
+          \frac{<>}{<>}
+        ]],
+        {
+          i(1),
+          i(2)
+        }
+      )
+    ),
 
-  s(
-    {
-      trig="ff",
-      dscr="Expands 'ff' into '\frac{}{}'",
-      snippetType="autosnippet",
-    },
+    s(
+      {
+        trig="eq",
+        dscr="A LaTeX equation environment",
+        snippetType="autosnippet"
+      },
+      fmta(
+        [[
+          \begin{equation*}
+            <>
+          \end{equation*}
+        ]],
+        {
+          i(1),
+        }
+      )
+    ),
 
-    {
-      t("\\frac{"),
-      i(1),
-      t("}{"),
-      i(2),
-      t("}"),
-    }
-  ),     
-}
--- return {
--- -- Combining text and insert nodes to create basic LaTeX commands
--- s({trig="tt", dscr="Expands 'tt' into '\texttt{}'"},
---   {
---     t("\\texttt{"), -- remember: backslashes need to be escaped
---     i(1),
---     t("}"),
---   }
--- ),
--- -- Yes, these jumbles of text nodes and insert nodes get messy fast, and yes,
--- -- there is a much better, human-readable solution: ls.fmt, described shortly.
--- s({trig="ff", dscr="Expands 'ff' into '\frac{}{}'"},
---   {
---     t("\\frac{"),
---     i(1),  -- insert node 1
---     t("}{"),
---     i(2),  -- insert node 2
---     t("}")
---   }
--- ),
--- }
---
+    s(
+      {
+        trig="env",
+        dscr="Begin environment",
+        snippetType="autosnippet",
+      },
+      fmta(
+        [[
+          \begin{<>}
+            <>
+          \end{<>}
+        ]],
+        {
+          i(1),
+          i(2),
+          rep(1),
+        }
+      )
+    ),
+
+    s(
+      {
+        trig="href",
+        dscr="The hyperref package's href{}{} command (for url links)",
+      },
+      fmta(
+        [[
+          \href{<>}{<>}
+        ]],
+        {
+          i(1, "url"),
+          i(2, "display name"),
+        }
+      )
+    ),
+
+    s(
+      {
+        trig="mm",
+        dscr="Inline math",
+        snippetType="autosnippet",
+      },
+      fmta(
+        [[
+        \[<>\]
+        ]],
+        {
+          i(1),
+        }
+      )
+    ),
+  }
