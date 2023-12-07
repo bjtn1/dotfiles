@@ -11,7 +11,27 @@ return {
   config = function()
     local noice = require("noice")
     local notify = require("notify")
+    -- This all came from the wiki
+    -- https://github.com/folke/noice.nvim/wiki/Configuration-Recipes#show-recording-messages
     noice.setup({
+      views = {
+        cmdline_popup = {
+          position = {
+            row = 5,
+            col = "50%",
+          },
+          size = {
+            width = 60,
+            height = "auto",
+          },
+        },
+      },
+      routes = {
+        {
+          view = "notify",
+          filter = { event = "msg_showmode" },
+        }
+      },
       presets = {
         lsp_doc_border = "single",
       },
