@@ -26,8 +26,8 @@ vim.opt.backspace = "indent,eol,start"
 vim.api.nvim_set_keymap('n', 'y', '"+y', { noremap = true })
 vim.api.nvim_set_keymap('v', 'y', '"+y', { noremap = true })
 
-vim.api.nvim_set_keymap('n', 'Y', '"+Y', { noremap = true })
-vim.api.nvim_set_keymap('v', 'Y', '"+Y', { noremap = true })
+vim.api.nvim_set_keymap('n', 'Y', '"+y$', { noremap = true })
+vim.api.nvim_set_keymap('v', 'Y', '"+y$', { noremap = true })
 
 vim.api.nvim_set_keymap('n', 'p', '"+p', { noremap = true })
 vim.api.nvim_set_keymap('v', 'p', '"+p', { noremap = true })
