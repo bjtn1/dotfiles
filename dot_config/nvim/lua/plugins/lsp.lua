@@ -68,6 +68,7 @@ return {
     {
       history = true,
       enable_autosnippets = true,
+      update_events = "TextChanged,TextChangedI",
     }
 
     ---------------------
@@ -306,6 +307,9 @@ return {
               "f",
               "c",
               "d",
+              "fmt",
+              "fmta",
+              "rep",
             }
           }
         }

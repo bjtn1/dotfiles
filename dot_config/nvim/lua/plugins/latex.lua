@@ -49,3 +49,72 @@ return {
     ]]
   end
 }
+
+-- NOTE
+-- These are commands.mappings that are ueful
+-- % SEE `:h vimtex-mapppings` for more mappings
+--
+-- % dse (Delete surrounding env)
+-- \begin{env}
+--   Using vimtex is lots of fun
+-- \end{env}
+--
+-- % cse (CHange surrounding env)
+-- \begin{equation}
+--   a + b &= c\\
+--   x + y &= z
+--   \label{eq:test}
+-- \end{equation}
+--
+-- % dsc (Delete surrounding command)
+-- \textit{Hello, world!}
+--
+-- % dsd (Delete surrounding delimeter)
+-- \left(X + Y\right)
+--
+-- % csd (Change surrounding delimeter)
+-- \left[X + Y\right]
+--
+-- % ds$ delete surrounding math
+-- $ 1 + 1 = 2 $
+--
+-- % cs$ change surrounding math 
+-- $1 + 1 = 2$
+--
+-- % cs$ change surrounding command
+-- \textit{Make me italic!}
+--
+-- % tsc toggle starred command
+-- \section{Toggling}
+--
+-- % tse toggle starred equation
+-- \begin{equation*}
+--   a + b &= c\\
+--   x + y &= z
+--   \label{eq:test}
+-- \end{equation*}
+--
+--
+-- % tsd toggle surrounding delimeter
+-- \left(x + y\right)
+--
+-- % tsf toggle surrounding fraction
+-- \frac{a}{b}
+--
+-- % `%` navigate matching content
+-- \begin{env}
+--   Using vimtex is lots of fun
+-- \end{env}
+--
+-- %  navigate sections
+-- \section{First secition}
+-- \lipsum[1]
+-- \section{Second section}
+-- \lipsum[2]
+-- \section{third section}
+--
+-- % ]m navigate environments
+--
+-- % ]n navigate math zones
+--
+-- % ]r navigate beamer frames
