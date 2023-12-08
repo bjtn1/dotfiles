@@ -105,6 +105,7 @@ wk.register({
     a = {"<cmd>VimtexView<cr>", "Trigger forward search"},
     s = {"<cmd>VimtexStop<cr><cmd>VimtexClean<cr>", "Stop compiler and clean up aux files"},
     C = {"<cmd>VimtexClean<cr>", "Clean aux files"},
+    l = {"<cmd>lua require('luasnip.loaders.from_lua').load({paths = '~/.config/nvim/lua/snippets/'})<cr>", "Reload snippets"},
   },
   ["<leader>w"] = {
     name = "+Window",

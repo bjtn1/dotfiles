@@ -5,7 +5,6 @@ return
     s(
       {
         trig="tt",
-        dscr="Expands 'tt' into '\text{}'",
         snippetType="autosnippet",
       },
       fmta(
@@ -21,6 +20,26 @@ return
         condition=utils.in_align
       }
     ),
+
+    s(
+      {
+        trig="te",
+        snippetType="autosnippet",
+      },
+      fmta(
+        [[
+          \text{<>}<>
+        ]],
+        {
+          i(1),
+          i(0),
+        }
+      ),
+      {
+        condition=utils.in_align
+      }
+    ),
+
     s(
       {
         trig="aa",

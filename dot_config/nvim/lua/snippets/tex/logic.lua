@@ -4,6 +4,38 @@ return
   {
     s(
       {
+        trig="nmo",
+        snippetType="autosnippet",
+      },
+      fmta(
+        [[
+        \not\models <>
+        ]],
+        {
+          i(0),
+        }
+      ),
+      {condition = utils.in_mathzone}
+    ),
+
+    s(
+      {
+        trig="ent",
+        snippetType="autosnippet",
+      },
+      fmta(
+        [[
+        \models <>
+        ]],
+        {
+          i(0),
+        }
+      ),
+      {condition = utils.in_mathzone}
+    ),
+
+    s(
+      {
         trig="land",
         snippetType="autosnippet",
       },
