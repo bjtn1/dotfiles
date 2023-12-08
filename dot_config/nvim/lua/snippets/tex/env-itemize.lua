@@ -11,10 +11,8 @@ return
       fmta(
         [[
         \begin{itemize}
-
             \item <>
             <>
-
         \end{itemize}
         ]],
         {

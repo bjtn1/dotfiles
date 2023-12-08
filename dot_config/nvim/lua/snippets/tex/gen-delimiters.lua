@@ -45,15 +45,19 @@ return
     -- LEFT/RIGHT PARENTHESES --
     s(
       {
-        trig="l(",
+        trig="([^%a])lp",
+        regTrig=true,
+        wordTrig=false,
         snippetType="autosnippet",
       },
       fmta(
         [[
-        \left(<>\right
+        <>\left(<>\right)<>
         ]],
         {
+          f( function(_, snip) return snip.captures[1] end ),
           i(1),
+          i(0)
         }
       ),
       {condition=utils.in_mathzone}
@@ -62,15 +66,19 @@ return
     -- LEFT/RIGHT SQUARE BRACES --
     s(
       {
-        trig="l[",
+        trig="([^%a])ls",
+        regTrig=true,
+        wordTrig=false,
         snippetType="autosnippet",
       },
       fmta(
         [[
-        \left[<>\right
+        <>\left[<>\right]<>
         ]],
         {
+          f( function(_, snip) return snip.captures[1] end ),
           i(1),
+          i(0)
         }
       ),
       {condition=utils.in_mathzone}
@@ -79,15 +87,19 @@ return
     -- LEFT/RIGHT CURLY BRACES --
     s(
       {
-        trig="l{",
+        trig="([^%a])lc",
+        regTrig=true,
+        wordTrig=false,
         snippetType="autosnippet",
       },
       fmta(
         [[
-        \left\{<>\right\
+        <>\left\{<>\right\}<>
         ]],
         {
+          f( function(_, snip) return snip.captures[1] end ),
           i(1),
+          i(0)
         }
       ),
       {condition=utils.in_mathzone}
@@ -96,7 +108,7 @@ return
     -- LEFT/RIGHT BARS --
     s(
       {
-        trig="l|",
+        trig="l\\",
         snippetType="autosnippet",
       },
       fmta(
@@ -113,15 +125,19 @@ return
     -- LEFT/RIGHT ANGLED BRACES --
     s(
       {
-        trig="l<",
+        trig="([^%a])la",
+        regTrig=true,
+        wordTrig=false,
         snippetType="autosnippet",
       },
       fmta(
         [[
-        \left\langle{<>}\right\rangle
+        <>\left\langle{<>}\right\rangle<>
         ]],
         {
+          f( function(_, snip) return snip.captures[1] end ),
           i(1),
+          i(0)
         }
       ),
       {condition=utils.in_mathzone}
