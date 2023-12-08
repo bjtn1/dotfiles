@@ -2,26 +2,26 @@ local utils = require("helpers.tex.utils")
 
 return
   {
-    s(
-      {
-        trig="\\\\",
-        snippetType="autosnippet",
-      },
-      fmta(
-        [[
-        \\
-        <>
-        ]],
-        {
-          i(0),
-        }
-      ),
-      {condition=utils.in_mathzone}
-    ),
+    -- s(
+    --   {
+    --     trig="\\\\",
+    --     snippetType="autosnippet",
+    --   },
+    --   fmta(
+    --     [[
+    --     \\
+    --     <>
+    --     ]],
+    --     {
+    --       i(0),
+    --     }
+    --   ),
+    --   {condition=utils.in_mathzone}
+    -- ),
 
     s(
       {
-        trig="__",
+        trig="_",
         snippetType="autosnippet",
       },
       fmta(

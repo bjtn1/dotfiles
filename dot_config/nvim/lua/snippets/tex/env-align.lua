@@ -63,7 +63,7 @@ return
 
     s(
       {
-        trig="==",
+        trig="al=",
         snippetType="autosnippet"
       },
       fmta(
