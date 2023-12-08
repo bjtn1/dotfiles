@@ -3,6 +3,8 @@
 -- sources
 -- https://github.com/ejmastnak/dotfiles/blob/main/config/nvim/LuaSnip/tex/environments.lua
 -- https://www.ejmastnak.com/tutorials/vim-latex/luasnip/#hello-world
+-- TODO
+-- CLEAN THIS UP MAKE IT MODULAR LIKE YOU DID WITH env-ENVIRONEMTN.lua files
 local line_begin = require("luasnip.extras.expand_conditions").line_begin
 local utils = require("helpers.tex.utils")
 
