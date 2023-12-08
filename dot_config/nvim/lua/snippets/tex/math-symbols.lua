@@ -275,7 +275,7 @@ return
       },
       fmta(
         [[
-        \mod <>
+        \bmod <>
         ]],
         {
           i(0),
