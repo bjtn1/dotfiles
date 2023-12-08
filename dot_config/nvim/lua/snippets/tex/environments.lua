@@ -83,28 +83,6 @@ return
     ),
 
     -- ITEMIZE ENVIRONMENT --
-    s(
-      {
-        trig="itt",
-        dscr="Itemize environment",
-        snippetType="autosnippet"
-      },
-      fmta(
-        [[
-        \begin{itemize}
-
-            \item <>
-
-        \end{itemize}
-      ]],
-        {
-          i(0),
-        }
-      ),
-      {
-        condition=line_begin
-      }
-    ),
 
     -- ENUMERATE ENVIRONMENT --
     s(

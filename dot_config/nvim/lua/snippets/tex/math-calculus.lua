@@ -2,41 +2,6 @@ local utils = require("helpers.tex.utils")
 
 return
   {
-    -- s(
-    --   {
-    --     trig="prime",
-    --     snippetType="autosnippet"
-    --   },
-    --   fmta(
-    --     [[
-    --     \<>'<>
-    --     ]],
-    --     {
-    --       i(1),
-    --       i(0),
-    --     }
-    --   ),
-    --   {condition=utils.in_mathzone}
-    -- ),
-
-    s(
-      {
-        trig="derivative",
-        snippetType="autosnippet"
-      },
-      fmta(
-        [[
-        \frac{d<>}{d<>}<>
-        ]],
-        {
-          i(1),
-          i(2),
-          i(0),
-        }
-      ),
-      {condition=utils.in_mathzone}
-    ),
-
     s(
       {
         trig="dv",
@@ -45,24 +10,6 @@ return
       fmta(
         [[
         \frac{d<>}{d<>}<>
-        ]],
-        {
-          i(1),
-          i(2),
-          i(0),
-        }
-      ),
-      {condition=utils.in_mathzone}
-    ),
-
-    s(
-      {
-        trig="partial",
-        snippetType="autosnippet"
-      },
-      fmta(
-        [[
-        \frac{\partial <>}{\partial <>}<>
         ]],
         {
           i(1),
@@ -93,7 +40,7 @@ return
 
     s(
       {
-        trig="integer",
+        trig="integral",
         snippetType="autosnippet"
       },
       fmta(
