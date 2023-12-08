@@ -4,7 +4,7 @@ return
   {
     s(
       {
-        trig="bt",
+        trig="btt",
         desc="Begin tex template",
         snippetType="autosnippet"
       },
@@ -72,6 +72,7 @@ return
 
         \maketitle
         \tableofcontents
+        \newpage
 
         <>
         \end{document}
@@ -98,22 +99,13 @@ return
       },
       fmta(
         [[
-        % begin <>section <>
         \<>section{<>}
-        <>
-        % end <>section <>
-        
         <>
         ]],
         {
-          rep(1),
-          rep(2),
           i(1),
-          i(2, "Section name"),
+          i(2),
           i(3),
-          rep(1),
-          rep(2),
-          i(0),
         }
       ),
       {

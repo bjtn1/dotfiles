@@ -1,0 +1,56 @@
+local u = require "helpers.tex.utils"
+
+return
+  {
+    s(
+      {
+        trig="hr",
+        dscr="The hyperref package's href{}{} command (for url links)",
+        snippetType="autosnippet",
+      },
+      fmta(
+        [[
+        \href{<>}{<>}
+        ]],
+        {
+          i(1, "url"),
+          i(2, "display name"),
+        }
+      ),
+      {condition=u.in_text}
+    ),
+
+    s(
+      {
+        trig="**",
+        snippetType="autosnippet",
+      },
+      fmta(
+        [[
+        \textbf{<>}<>
+        ]],
+        {
+          i(1),
+          i(0),
+        }
+      ),
+      {condition=u.in_text}
+    ),
+
+    s(
+      {
+        trig="__",
+        snippetType="autosnippet",
+      },
+      fmta(
+        [[
+        \emph{<>}<>
+        ]],
+        {
+          i(1),
+          i(0),
+        }
+      ),
+      {condition=u.in_text}
+    ),
+  }
