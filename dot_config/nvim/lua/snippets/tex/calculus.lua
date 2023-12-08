@@ -93,7 +93,7 @@ return
 
     s(
       {
-        trig="int",
+        trig="integer",
         snippetType="autosnippet"
       },
       fmta(

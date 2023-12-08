@@ -4,6 +4,25 @@ return
   {
     s(
       {
+        trig="tt",
+        dscr="Expands 'tt' into '\text{}'",
+        snippetType="autosnippet",
+      },
+      fmta(
+        [[
+          \intertext{<>}<>
+        ]],
+        {
+          i(1),
+          i(0),
+        }
+      ),
+      {
+        condition=utils.in_align
+      }
+    ),
+    s(
+      {
         trig="aa",
         dsc="Align environment",
         snippetType="autosnippet"
