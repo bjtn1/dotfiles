@@ -4,14 +4,13 @@ return
   {
     s(
       {
-        trig="main",
-        regTrig=true,
-        wordTrig=false,
+        trig="bt",
+        desc="Begin tex template",
         snippetType="autosnippet"
       },
       fmta(
         [[
-        <>\documentclass{article}
+        \documentclass{article}
 
         \usepackage{amsmath} % For math
         \usepackage{amssymb} % For more math
@@ -78,7 +77,6 @@ return
         \end{document}
         ]],
         {
-          f( function(_, snip) return snip.captures[1] end ),
           rep(1),
           i(1, "Title"),
           i(2, "Date"),
@@ -92,28 +90,30 @@ return
 
     s(
       {
-        -- trig="sec",
-        trig="sec",
+        trig="bs",
+        desc="Begin <sub>section",
         regTrig=true,
         wordTrig=false,
         snippetType="autosnippet",
       },
       fmta(
         [[
-        <>% begin section <>
-        \section{<>}
+        % begin <>section <>
+        \<>section{<>}
         <>
-        % end section <>
+        % end <>section <>
         
         <>
         ]],
         {
-          f( function(_, snip) return snip.captures[1] end ),
           rep(1),
-          i(1, "Section name"),
-          i(2),
-          rep(1),
+          rep(2),
+          i(1),
+          i(2, "Section name"),
           i(3),
+          rep(1),
+          rep(2),
+          i(0),
         }
       ),
       {
@@ -121,57 +121,4 @@ return
       }
     ),
 
-    s(
-      {
-        trig="sse",
-        snippetType="autosnippet",
-      },
-      fmta(
-        [[
-        % begin subsection <>
-        \subsection{<>}
-        <>
-        % end subsection <>
-
-        <>
-        ]],
-        {
-          rep(1),
-          i(1, "Subsection name"),
-          i(2),
-          rep(1),
-          i(3),
-        }
-      ),
-      {
-        condition=utils.line_begin and utils.in_text
-      }
-    ),
-
-    s(
-      {
-        trig="sss",
-        snippetType="autosnippet",
-      },
-      fmta(
-        [[
-        % begin subsubsection <>
-        \subsubsection{<>}
-        <>
-        % end subsection <>
-
-        <>
-        ]],
-        {
-          rep(1),
-          i(1, "Subsection name"),
-          i(2),
-          rep(1),
-          i(3),
-        }
-      ),
-      {
-        condition=utils.line_begin and utils.in_text
-      }
-    ),
   }
