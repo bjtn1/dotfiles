@@ -4,7 +4,7 @@
 -- https://github.com/ejmastnak/dotfiles/blob/main/config/nvim/LuaSnip/tex/environments.lua
 -- https://www.ejmastnak.com/tutorials/vim-latex/luasnip/#hello-world
 local line_begin = require("luasnip.extras.expand_conditions").line_begin
-local text_utils = require("helpers.tex.utils")
+local utils = require("helpers.tex.utils")
 
 return
   {
@@ -33,63 +33,43 @@ return
     ),
 
     -- EQUATION ENVIRONMENT --
-    s(
-      {
-        trig="nn",
-        dscr="Equation environment",
-        snippetType="autosnippet",
-      },
-      fmta(
-        [[
-        \begin{equation}
-          <>
-        \end{equation}
-        ]],
-        {
-          i(1)
-        }
-      ),
-      {
-        condition=line_begin
-      }
-    ),
 
     -- SPLIT EQUATION ENVIRONMENT --
-    s(
-      {
-        trig="ss",
-        dscr="Split equation environment",
-        snippetType="autosnippet",
-      },
-      fmta(
-        [[
-        \begin{equation*}
-          \begin{split}
-              <>
-          \end{split}
-        \end{equation*}
-        ]],
-        {
-          i(1)
-        }
-      ),
-      {
-        condition=line_begin
-      }
-    ),
+    -- s(
+    --   {
+    --     trig="ss",
+    --     dscr="Split equation environment",
+    --     snippetType="autosnippet",
+    --   },
+    --   fmta(
+    --     [[
+    --     \begin{equation*}
+    --       \begin{split}
+    --           <>
+    --       \end{split}
+    --     \end{equation*}
+    --     ]],
+    --     {
+    --       i(1)
+    --     }
+    --   ),
+    --   {
+    --     condition=line_begin
+    --   }
+    -- ),
 
-    -- ALIGN ENVIRONMENT --
+    -- GATHER ENVIRONMENT --
     s(
       {
-        trig="aa",
-        dsc="Align environment",
+        trig="gg",
+        dsc="Gather environment",
         snippetType="autosnippet"
       },
       fmta(
         [[
-        \begin{align*}
+        \begin{gather*}
             <>
-        \end{align*}
+        \end{gather*}
         ]],
         {
           i(1)
@@ -175,7 +155,7 @@ return
       },
       fmta(
         [[
-        \[<>\]
+        \[\displaystyle <>\]
         ]],
         {
           i(1)
@@ -210,25 +190,42 @@ return
       }
     ),
 
-    -- TIKZPICTURE ENVIRONMENT --
+    -- PIECEWISE FUNCTION ENVIRONMENT --
+
     s(
       {
-        trig="tik",
-        dscr="Tikzpicture environment",
+        trig="pf",
         snippetType="autosnippet"
       },
       fmta(
         [[
-        \begin{tikzpicture}
-          <>
-        \end{tikzpicture}
+        \begin{cases}
+        <>
+        \end{cases}
         ]],
         {
-          i(1)
+          i(0),
         }
       ),
+      {condition=utils.in_mathzone}
+    ),
+
+    s(
       {
-        condition=line_begin
-      }
-    )
+        trig="piecewisefunc",
+        snippetType="autosnippet"
+      },
+      fmta(
+        [[
+        \begin{cases}
+        <>
+        \end{cases}
+        ]],
+        {
+          i(0),
+        }
+      ),
+      {condition=utils.in_mathzone}
+    ),
+
   }

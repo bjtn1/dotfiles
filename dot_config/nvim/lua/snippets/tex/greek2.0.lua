@@ -2,12 +2,12 @@
 -- Source:
 -- https://raw.githubusercontent.com/ejmastnak/dotfiles/main/config/nvim/LuaSnip/tex/greek.lua
 -- Return snippet tables
-local text_utils = require("helpers.tex.utils")
+local utils = require("helpers.tex.utils")
 
 return {
   s(
     {
-      trig = "alp",
+      trig = "alpha",
       dscr = "Lowercase alpha",
       snippetType = "autosnippet"
     },
@@ -20,13 +20,13 @@ return {
       }
     ),
     {
-      condition = text_utils.in_mathzone
+      condition = utils.in_mathzone
     }
   ),
 
   s(
     {
-      trig = "bet",
+      trig = "beta",
       dscr = "Lowercase beta",
       snippetType = "autosnippet"
     },
@@ -39,13 +39,13 @@ return {
       }
     ),
     {
-      condition = text_utils.in_mathzone
+      condition = utils.in_mathzone
     }
   ),
 
   s(
     {
-      trig = "gam",
+      trig = "gamma",
       dscr = "Lowercase gamma",
       snippetType = "autosnippet"
     },
@@ -58,13 +58,13 @@ return {
       }
     ),
     {
-      condition = text_utils.in_mathzone
+      condition = utils.in_mathzone
     }
   ),
 
   s(
     {
-      trig = "Gam",
+      trig = "Gamma",
       dscr = "Uppercase Gamma",
       snippetType = "autosnippet"
     },
@@ -77,13 +77,13 @@ return {
       }
     ),
     {
-      condition = text_utils.in_mathzone
+      condition = utils.in_mathzone
     }
   ),
 
   s(
     {
-      trig = "del",
+      trig = "delta",
       dscr = "Lowercase delta",
       snippetType = "autosnippet"
     },
@@ -96,13 +96,13 @@ return {
       }
     ),
     {
-      condition = text_utils.in_mathzone
+      condition = utils.in_mathzone
     }
   ),
 
   s(
     {
-      trig = "Del",
+      trig = "Delta",
       dscr = "Uppercase Delta",
       snippetType = "autosnippet"
     },
@@ -115,13 +115,13 @@ return {
       }
     ),
     {
-      condition = text_utils.in_mathzone
+      condition = utils.in_mathzone
     }
   ),
 
   s(
     {
-      trig = "eps",
+      trig = "epsilon",
       dscr = "Lowercase epsilon",
       snippetType = "autosnippet"
     },
@@ -134,13 +134,13 @@ return {
       }
     ),
     {
-      condition = text_utils.in_mathzone
+      condition = utils.in_mathzone
     }
   ),
 
   s(
     {
-      trig = "vareps",
+      trig = "varepsilon",
       dscr = "Lowercase varepsilon",
       snippetType = "autosnippet"
     },
@@ -153,13 +153,13 @@ return {
       }
     ),
     {
-      condition = text_utils.in_mathzone
+      condition = utils.in_mathzone
     }
   ),
 
   s(
     {
-      trig = "zet",
+      trig = "zeta",
       dscr = "Lowercase zeta",
       snippetType = "autosnippet"
     },
@@ -172,7 +172,7 @@ return {
       }
     ),
     {
-      condition = text_utils.in_mathzone
+      condition = utils.in_mathzone
     }
   ),
 
@@ -191,13 +191,13 @@ return {
       }
     ),
     {
-      condition = text_utils.in_mathzone
+      condition = utils.in_mathzone
     }
   ),
 
   s(
     {
-      trig = "the",
+      trig = "theta",
       dscr = "Lowercase theta",
       snippetType = "autosnippet"
     },
@@ -210,13 +210,13 @@ return {
       }
     ),
     {
-      condition = text_utils.in_mathzone
+      condition = utils.in_mathzone
     }
   ),
 
   s(
     {
-      trig = "varthe",
+      trig = "vartheta",
       dscr = "Lowercase vartheta",
       snippetType = "autosnippet"
     },
@@ -229,13 +229,13 @@ return {
       }
     ),
     {
-      condition = text_utils.in_mathzone
+      condition = utils.in_mathzone
     }
   ),
 
   s(
     {
-      trig = "The",
+      trig = "Theta",
       dscr = "Uppercase Theta",
       snippetType = "autosnippet"
     },
@@ -248,13 +248,13 @@ return {
       }
     ),
     {
-      condition = text_utils.in_mathzone
+      condition = utils.in_mathzone
     }
   ),
 
   s(
     {
-      trig = "kap",
+      trig = "kappa",
       dscr = "Lowercase kappa",
       snippetType = "autosnippet"
     },
@@ -267,13 +267,13 @@ return {
       }
     ),
     {
-      condition = text_utils.in_mathzone
+      condition = utils.in_mathzone
     }
   ),
 
   s(
     {
-      trig = "lam",
+      trig = "lambda",
       dscr = "Lowercase lambda",
       snippetType = "autosnippet"
     },
@@ -286,13 +286,13 @@ return {
       }
     ),
     {
-      condition = text_utils.in_mathzone
+      condition = utils.in_mathzone
     }
   ),
 
   s(
     {
-      trig = "Lam",
+      trig = "Lambda",
       dscr = "Uppercase Lambda",
       snippetType = "autosnippet"
     },
@@ -305,7 +305,7 @@ return {
       }
     ),
     {
-      condition = text_utils.in_mathzone
+      condition = utils.in_mathzone
     }
   ),
 
@@ -324,7 +324,7 @@ return {
       }
     ),
     {
-      condition = text_utils.in_mathzone
+      condition = utils.in_mathzone
     }
   ),
 
@@ -343,7 +343,7 @@ return {
       }
     ),
     {
-      condition = text_utils.in_mathzone
+      condition = utils.in_mathzone
     }
   ),
 
@@ -362,7 +362,7 @@ return {
       }
     ),
     {
-      condition = text_utils.in_mathzone
+      condition = utils.in_mathzone
     }
   ),
 
@@ -381,7 +381,7 @@ return {
       }
     ),
     {
-      condition = text_utils.in_mathzone
+      condition = utils.in_mathzone
     }
   ),
 
@@ -400,7 +400,7 @@ return {
       }
     ),
     {
-      condition = text_utils.in_mathzone
+      condition = utils.in_mathzone
     }
   ),
 
@@ -419,7 +419,7 @@ return {
       }
     ),
     {
-      condition = text_utils.in_mathzone
+      condition = utils.in_mathzone
     }
   ),
 
@@ -438,13 +438,13 @@ return {
       }
     ),
     {
-      condition = text_utils.in_mathzone
+      condition = utils.in_mathzone
     }
   ),
 
   s(
     {
-      trig = "sig",
+      trig = "sigma",
       dscr = "Lowercase sigma",
       snippetType = "autosnippet"
     },
@@ -457,13 +457,13 @@ return {
       }
     ),
     {
-      condition = text_utils.in_mathzone
+      condition = utils.in_mathzone
     }
   ),
 
   s(
     {
-      trig = "Sig",
+      trig = "Sigma",
       dscr = "Uppercase Sigma",
       snippetType = "autosnippet"
     },
@@ -476,7 +476,7 @@ return {
       }
     ),
     {
-      condition = text_utils.in_mathzone
+      condition = utils.in_mathzone
     }
   ),
 
@@ -495,7 +495,7 @@ return {
       }
     ),
     {
-      condition = text_utils.in_mathzone
+      condition = utils.in_mathzone
     }
   ),
 
@@ -514,13 +514,13 @@ return {
       }
     ),
     {
-      condition = text_utils.in_mathzone
+      condition = utils.in_mathzone
     }
   ),
 
   s(
     {
-      trig = "varph",
+      trig = "varphi",
       dscr = "Lowercase varphi",
       snippetType = "autosnippet"
     },
@@ -533,7 +533,7 @@ return {
       }
     ),
     {
-      condition = text_utils.in_mathzone
+      condition = utils.in_mathzone
     }
   ),
 
@@ -552,7 +552,7 @@ return {
       }
     ),
     {
-      condition = text_utils.in_mathzone
+      condition = utils.in_mathzone
     }
   ),
 
@@ -571,7 +571,7 @@ return {
       }
     ),
     {
-      condition = text_utils.in_mathzone
+      condition = utils.in_mathzone
     }
   ),
 
@@ -590,7 +590,7 @@ return {
       }
     ),
     {
-      condition = text_utils.in_mathzone
+      condition = utils.in_mathzone
     }
   ),
 
@@ -609,13 +609,13 @@ return {
       }
     ),
     {
-      condition = text_utils.in_mathzone
+      condition = utils.in_mathzone
     }
   ),
 
   s(
     {
-      trig = "ome",
+      trig = "omega",
       dscr = "Lowercase omega",
       snippetType = "autosnippet"
     },
@@ -628,13 +628,13 @@ return {
       }
     ),
     {
-      condition = text_utils.in_mathzone
+      condition = utils.in_mathzone
     }
   ),
 
   s(
     {
-      trig = "Ome",
+      trig = "Omega",
       dscr = "Uppercase Omega",
       snippetType = "autosnippet"
     },
@@ -647,8 +647,7 @@ return {
       }
     ),
     {
-      condition = text_utils.in_mathzone
+      condition = utils.in_mathzone
     }
   ),
 }
-
