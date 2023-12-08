@@ -58,34 +58,20 @@ return
 
     s(
       {
-        trig="text",
-        snippetType="autosnippet",
+        -- NOTE
+        -- When using regex, put <> at the beginning of the expansion and add the `f( function...)` node first.
+        -- You have to do this because regex "eats" whatever is right before the expansion
+        trig="([^%a])ff",
+        regTrig=true,
+        wordTrig=false,
+        snippetType="autosnippet"
       },
       fmta(
         [[
-          \text{<>}<>
+          <>\frac{<>}{<>}<>
         ]],
         {
-          i(1),
-          i(0),
-        }
-      ),
-      {
-        condition=utils.in_mathzone
-      }
-    ),
-
-    s(
-      {
-        trig="ff",
-        dscr="Expands 'ff' into '\frac{}{}'",
-        snippetType="autosnippet",
-      },
-      fmta(
-        [[
-          \frac{<>}{<>}<>
-        ]],
-        {
+          f( function(_, snip) return snip.captures[1] end ),
           i(1),
           i(2),
           i(0)
@@ -96,23 +82,4 @@ return
       }
     ),
 
-    s(
-      {
-        trig="frac",
-        snippetType="autosnippet",
-      },
-      fmta(
-        [[
-          \frac{<>}{<>}<>
-        ]],
-        {
-          i(1),
-          i(2),
-          i(0),
-        }
-      ),
-      {
-        condition=utils.in_mathzone
-      }
-    ),
   }

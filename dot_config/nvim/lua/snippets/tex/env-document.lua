@@ -5,11 +5,13 @@ return
     s(
       {
         trig="main",
+        regTrig=true,
+        wordTrig=false,
         snippetType="autosnippet"
       },
       fmta(
         [[
-        \documentclass{article}
+        <>\documentclass{article}
 
         \usepackage{amsmath} % For math
         \usepackage{amssymb} % For more math
@@ -76,6 +78,7 @@ return
         \end{document}
         ]],
         {
+          f( function(_, snip) return snip.captures[1] end ),
           rep(1),
           i(1, "Title"),
           i(2, "Date"),
@@ -89,12 +92,15 @@ return
 
     s(
       {
+        -- trig="sec",
         trig="sec",
+        regTrig=true,
+        wordTrig=false,
         snippetType="autosnippet",
       },
       fmta(
         [[
-        % begin section <>
+        <>% begin section <>
         \section{<>}
         <>
         % end section <>
@@ -102,6 +108,7 @@ return
         <>
         ]],
         {
+          f( function(_, snip) return snip.captures[1] end ),
           rep(1),
           i(1, "Section name"),
           i(2),
@@ -110,7 +117,7 @@ return
         }
       ),
       {
-        condition=utils.line_begin and utils.in_text
+        condition=utils.line_begin
       }
     ),
 
