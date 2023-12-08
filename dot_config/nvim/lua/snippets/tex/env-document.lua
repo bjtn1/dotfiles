@@ -52,6 +52,7 @@ return
 
         %%%%%%% Begin fancyhdr setup %%%%%%%
         \pagestyle{fancy}
+        \renewcommand{\footrulewidth}{0.4pt} % default is 0pt
         \lhead{<>} % Top left header
         \chead{} % Top center header
         \rhead{} % Top right header
@@ -88,7 +89,7 @@ return
 
     s(
       {
-        trig="ss",
+        trig="sec",
         snippetType="autosnippet",
       },
       fmta(
@@ -109,13 +110,13 @@ return
         }
       ),
       {
-        condition=utils.line_begin
+        condition=utils.line_begin and utils.in_text
       }
     ),
 
     s(
       {
-        trig="ssec",
+        trig="sse",
         snippetType="autosnippet",
       },
       fmta(
@@ -136,13 +137,13 @@ return
         }
       ),
       {
-        condition=utils.line_begin
+        condition=utils.line_begin and utils.in_text
       }
     ),
 
     s(
       {
-        trig="sssec",
+        trig="sss",
         snippetType="autosnippet",
       },
       fmta(
@@ -163,7 +164,7 @@ return
         }
       ),
       {
-        condition=utils.line_begin
+        condition=utils.line_begin and utils.in_text
       }
     ),
   }
