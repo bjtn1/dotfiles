@@ -31,7 +31,7 @@ return
       },
       fmta(
         [[
-        \draw [<>]
+        \draw[<>]
         ]],
         {
           i(1, "params")
