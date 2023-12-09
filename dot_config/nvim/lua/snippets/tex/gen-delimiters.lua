@@ -96,7 +96,7 @@ return
     s(
       {
         -- trig="([^%a])la",
-        trig="la",
+        trig="l<",
         regTrig=true,
         wordTrig=false,
         snippetType="autosnippet",
