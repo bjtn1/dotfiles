@@ -37,5 +37,7 @@ u.in_align = function() return u.in_env('align') end
 
 u.in_gather = function() return u.in_env('gather') end
 
+u.in_bmatrix = function() return u.in_env('bmatrix') end
+
 
 return u

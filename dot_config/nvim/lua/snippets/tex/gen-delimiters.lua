@@ -5,47 +5,15 @@ local utils      = require("helpers.tex.utils")
 return
   {
     -- LEFT/RIGHT PARENTHESES --
-    -- s(
-    --   {
-    --     trig="([^%a])l%(",
-    --     dscr="Left/right parentheses",
-    --     regTrig=true,
-    --     wordTrig=false,
-    --     snippetType="autosnippet",
-    --   },
-    --   fmta(
-    --     [[
-    --     \left(<>\right)
-    --     ]],
-    --     {
-    --       i(1)
-    --     }
-    --   )
-    -- ),
-
-    -- LEFT/RIGHT SQUARE BRACES --
-    -- s(
-    --   {
-    --     trig="([^%a])l%[",
-    --     dscr="Left/right square braces",
-    --     regTrig=true,
-    --     wordTrig=false,
-    --     snippetType="autosnippet",
-    --   },
-    --   fmta(
-    --     [[
-    --     \left[<>\right]
-    --     ]],
-    --     {
-    --       i(1)
-    --     }
-    --   )
-    -- ),
-
-    -- LEFT/RIGHT PARENTHESES --
+    -- NOTE
+    -- The commented out trig forces you to put a space after the thing you wanna put an opening parentheses on `O<space>(...)` vs `O(...)`
+    -- This does not make a difference once LaTeX gets rendered, but it's kind of annoying having to type a space before your parentheses trig
+    -- If errors related to any of these trigs come up, consider uncommenting trig to fix them
+    -- This relates to all of the bottom trigs
     s(
       {
-        trig="([^%a])lp",
+        -- trig="([^%a])lp",
+        trig="lp",
         regTrig=true,
         wordTrig=false,
         snippetType="autosnippet",
@@ -66,7 +34,8 @@ return
     -- LEFT/RIGHT SQUARE BRACES --
     s(
       {
-        trig="([^%a])ls",
+        -- trig="([^%a])ls",
+        trig="ls",
         regTrig=true,
         wordTrig=false,
         snippetType="autosnippet",
@@ -87,7 +56,8 @@ return
     -- LEFT/RIGHT CURLY BRACES --
     s(
       {
-        trig="([^%a])lc",
+        -- trig="([^%a])lc",
+        trig="lc",
         regTrig=true,
         wordTrig=false,
         snippetType="autosnippet",
@@ -125,7 +95,8 @@ return
     -- LEFT/RIGHT ANGLED BRACES --
     s(
       {
-        trig="([^%a])la",
+        -- trig="([^%a])la",
+        trig="la",
         regTrig=true,
         wordTrig=false,
         snippetType="autosnippet",

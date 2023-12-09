@@ -4,6 +4,22 @@ return
   {
     s(
       {
+        trig=" ",
+        snippetType="autosnippet",
+      },
+      fmta(
+        [[
+        & <>
+        ]],
+        {
+          i(1),
+        }
+      ),
+      {condition=u.in_bmatrix}
+    ),
+
+    s(
+      {
         trig="hr",
         dscr="The hyperref package's href{}{} command (for url links)",
         snippetType="autosnippet",
