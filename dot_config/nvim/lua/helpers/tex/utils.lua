@@ -39,5 +39,11 @@ u.in_gather = function() return u.in_env('gather') end
 
 u.in_bmatrix = function() return u.in_env('bmatrix') end
 
+u.in_table = function() return u.in_env('tabular') end
+
+-- F node for LuaSnip snippets, check ejmastnak's tutorial for an explanation
+u.f1 = f( function(_, snip) return snip.captures[1] end )
+
+
 
 return u

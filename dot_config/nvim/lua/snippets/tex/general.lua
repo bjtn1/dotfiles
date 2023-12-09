@@ -4,6 +4,26 @@ return
   {
     s(
       {
+        trig="\\\\",
+        regTrig=true,
+        wordTrig=false,
+        snippetType="autosnippet",
+      },
+      fmta(
+        [[
+        <>\\
+        <>
+        ]],
+        {
+          f( function(_, snip) return snip.captures[1] end ),
+          i(0),
+        }
+      ),
+      {condition=u.in_bmatrix or u.in_table}
+    ),
+
+    s(
+      {
         trig=" ",
         snippetType="autosnippet",
       },
@@ -15,7 +35,7 @@ return
           i(1),
         }
       ),
-      {condition=u.in_bmatrix}
+      {condition=u.in_bmatrix or u.in_table}
     ),
 
     s(
