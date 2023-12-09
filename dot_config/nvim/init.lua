@@ -45,4 +45,5 @@ vim.cmd.colorscheme(color)
 
 require("keymaps")
 require("autocommands")
+print("REQUIRING LUASNIP LAODERS")
 require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/lua/snippets/"})
