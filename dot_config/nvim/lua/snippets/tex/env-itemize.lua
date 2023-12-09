@@ -12,12 +12,10 @@ return
         [[
         \begin{itemize}
             \item <>
-            <>
         \end{itemize}
         ]],
         {
           i(1),
-          i(0),
         }
       ),
       {
