@@ -24,8 +24,6 @@ wk.register({
   ["<leader>;"] = { "<cmd>Alpha<cr>", "Toggle dashboard" },
   ["gR"] = { "<cmd>TroubleToggle lsp_references<cr>", "LSP references" },
   ["<leader>h"] = { "<cmd>noh<cr>", "Clear highlights" },
-  ["//"] = { "<Plug>(comment_toggle_linewise)", "Toggle comment<motion>" },
-  ["/"] = { "<Plug>(comment_toggle_linewise_current)", "Toggle comment line" },
 
   ["s"] = {
     name = "+Surround",
