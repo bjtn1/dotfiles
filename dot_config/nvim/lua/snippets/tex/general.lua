@@ -4,17 +4,17 @@ return
   {
     s(
       {
-        trig="ref",
-        -- regTrig=true,
-        -- wordTrig=false,
+        trig="([^%a])rr",
+        regTrig=true,
+        wordTrig=false,
         snippetType="autosnippet",
       },
       fmta(
         [[
-        \cref{<>}<>
+        <>\cref{<>}<>
         ]],
         {
-          -- f( function(_, snip) return snip.captures[1] end ),
+          f( function(_, snip) return snip.captures[1] end ),
           i(1),
           i(0),
         }
