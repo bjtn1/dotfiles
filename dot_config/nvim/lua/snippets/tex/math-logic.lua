@@ -4,12 +4,28 @@ return
   {
     s(
       {
+        trig="tf",
+        snippetType="autosnippet",
+      },
+      fmta(
+        [[
+        \therefore<>
+        ]],
+        {
+          i(0),
+        }
+      ),
+      {condition = utils.in_mathzone}
+    ),
+
+    s(
+      {
         trig="nmo",
         snippetType="autosnippet",
       },
       fmta(
         [[
-        \not\models <>
+        \not\models<>
         ]],
         {
           i(0),
@@ -25,7 +41,7 @@ return
       },
       fmta(
         [[
-        \models <>
+        \models<>
         ]],
         {
           i(0),
@@ -41,7 +57,7 @@ return
       },
       fmta(
         [[
-        \land <>
+        \land<>
         ]],
         {
           i(0),
@@ -57,7 +73,7 @@ return
       },
       fmta(
         [[
-        \lor <>
+        \lor<>
         ]],
         {
           i(0),
@@ -75,7 +91,7 @@ return
       },
       fmta(
         [[
-        \neg <>
+        \neg<>
         ]],
         {
           i(0),
@@ -91,7 +107,7 @@ return
       },
       fmta(
         [[
-        \implies <>
+        \implies<>
         ]],
         {
           i(0),
@@ -124,7 +140,7 @@ return
       },
       fmta(
         [[
-        \exists <>
+        \exists<>
         ]],
         {
           i(0),
@@ -140,7 +156,7 @@ return
       },
       fmta(
         [[
-        \forall <>
+        \forall<>
         ]],
         {
           i(0),
@@ -156,7 +172,7 @@ return
       },
       fmta(
         [[
-        \iff <>
+        \iff<>
         ]],
         {
           i(0),
@@ -172,7 +188,7 @@ return
       },
       fmta(
         [[
-        \equiv <>
+        \equiv<>
         ]],
         {
           i(0),
