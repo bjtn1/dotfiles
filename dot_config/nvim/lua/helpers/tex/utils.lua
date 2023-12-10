@@ -41,5 +41,6 @@ u.in_bmatrix = function() return u.in_env('bmatrix') end
 
 u.in_table = function() return u.in_env('tabular') end
 
+u.in_split = function() return u.in_env('split') end
 
 return u
