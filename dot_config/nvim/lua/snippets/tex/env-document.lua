@@ -203,13 +203,14 @@ return
       },
       fmta(
         [[
-        \<>section{<>}
+        \<>section{<>}\label{<>}
         <>
         ]],
         {
           i(1),
           i(2),
           i(3),
+          i(4),
         }
       ),
       {
