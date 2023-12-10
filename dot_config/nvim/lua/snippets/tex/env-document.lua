@@ -16,10 +16,10 @@ return
         \usepackage{amssymb} % For more math
         \usepackage{fancyhdr} % For fancy headers and footers
         \usepackage{fancyvrb} % For writing blocks of code verbatim (like LaTeX code)
-        \usepackage{cleveref} % Better cross refencing
         \usepackage{geometry} % For manipulating margins and meta doc stuff
         \usepackage{graphicx} % Required for inserting images
         \usepackage{hyperref} % For linking stuff
+        \usepackage{cleveref} % Better cross refencing % Must be loaded after hyperref
         \usepackage[utf8]{inputenc} % For encoding type (UTF-8)
         \usepackage{lastpage} % For doing "Page n of |n|"
         \usepackage{minted} % For color coding code sections
@@ -112,10 +112,10 @@ return
         \usepackage{amssymb} % For more math
         \usepackage{fancyhdr} % For fancy headers and footers
         \usepackage{fancyvrb} % For writing blocks of code verbatim (like LaTeX code)
-        \usepackage{cleveref} % Better cross refencing
         \usepackage{geometry} % For manipulating margins and meta doc stuff
         \usepackage{graphicx} % Required for inserting images
         \usepackage{hyperref} % For linking stuff
+        \usepackage{cleveref} % Better cross refencing % Must be loaded after hyperref
         \usepackage[utf8]{inputenc} % For encoding type (UTF-8)
         \usepackage{lastpage} % For doing "Page n of |n|"
         \usepackage{minted} % For color coding code sections
