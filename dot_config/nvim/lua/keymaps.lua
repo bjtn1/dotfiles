@@ -9,14 +9,14 @@ local x = { mode = "x" }
 -- Normal mode keymaps
 -- in WhichKey, noremap and silent options are true by default
 wk.register({
-  ["y"] = { '"+y', "Yank to system clipboard" },
-  ["Y"] = { '"+y$', "Yank to system clipboard (to end of line)" },
-  ["p"] = { '"+p', "Put from system clipboard" },
-  ["P"] = { '"+P', "Put from system clipboard (before cursor)" },
   ["H"] = { "<cmd>BufferLineCyclePrev<cr>", "Cycle to prev tab" },
   ["J"] = { "<Cmd>m .+1<CR>==", "Move line at cursor down" },
   ["K"] = { "<Cmd>m .-2<CR>==", "Move line at cursor up" },
   ["L"] = { "<cmd>BufferLineCycleNext<cr>", "Cycle to next tab" },
+  ["y"] = { '"+y', "Yank to system clipboard" },
+  ["Y"] = { '"+y$', "Yank to system clipboard (to end of line)" },
+  ["p"] = { '"+p', "Put from system clipboard" },
+  ["P"] = { '"+P', "Put from system clipboard (before cursor)" },
   ["<C-Bslash>"] = { "<cmd>ToggleTerm<cr>", "Toggle terminal" },
   ["<C-s>"] = { "<esc><cmd>w<cr>", "Save file" },
   ["<leader>e"] = { "<cmd>NvimTreeToggle<cr>", "Toggle NeoTree" },
@@ -95,8 +95,8 @@ wk.register({
 -- Visual block mode keymaps
 wk.register({
   -- Use K and J in normal mode to move line at cursor up or down respectively
-  ["K"] = { ":m '<-2<CR>gv=gv", "Move visual block selection up" },
-  ["J"] = { ":m '>+1<CR>gv=gv", "Move line at cursor down" },
+  ["K"] = { ":m '<-2<cr>gv=gv", "move visual block selection up" },
+  ["J"] = { ":m '>+1<cr>gv=gv", "move line at cursor down" },
 }, x)
 
 -- Visual mode keymaps
