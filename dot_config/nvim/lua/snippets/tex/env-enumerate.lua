@@ -1,6 +1,6 @@
 local u = require "helpers.tex.utils"
 
-return 
+return
   {
     s(
       {
@@ -9,13 +9,12 @@ return
       },
       fmta(
         [[
-        \begin{enumerate}
-
+        \begin{enumerate}\label{<>}
             \item <>
-
         \end{enumerate}
       ]],
         {
+          i(1),
           i(0),
         }
       )
