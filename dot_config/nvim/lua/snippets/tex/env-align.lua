@@ -48,12 +48,13 @@ return
       },
       fmta(
         [[
-        \begin{align*}
+        \begin{align}\label{<>}
             <>
-        \end{align*}
+        \end{align}
         ]],
         {
-          i(1)
+          i(1),
+          i(2)
         }
       ),
       {

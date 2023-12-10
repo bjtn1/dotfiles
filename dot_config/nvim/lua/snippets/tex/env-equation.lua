@@ -10,12 +10,13 @@ return
       },
       fmta(
         [[
-        \begin{equation*}
+        \begin{equation}\label{<>}
           <>
-        \end{equation*}
+        \end{equation}
         ]],
         {
-          i(1)
+          i(1),
+          i(2),
         }
       ),
       {
