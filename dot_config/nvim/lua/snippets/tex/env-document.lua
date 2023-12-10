@@ -4,8 +4,8 @@ return
   {
     s(
       {
-        trig="bmt",
-        desc="Begin main template",
+        trig="bnt",
+        desc="Begin notebook template",
         snippetType="autosnippet"
       },
       fmta(
@@ -16,6 +16,7 @@ return
         \usepackage{amssymb} % For more math
         \usepackage{fancyhdr} % For fancy headers and footers
         \usepackage{fancyvrb} % For writing blocks of code verbatim (like LaTeX code)
+        \usepackage{cleveref} % Better cross refencing
         \usepackage{geometry} % For manipulating margins and meta doc stuff
         \usepackage{graphicx} % Required for inserting images
         \usepackage{hyperref} % For linking stuff
@@ -111,6 +112,7 @@ return
         \usepackage{amssymb} % For more math
         \usepackage{fancyhdr} % For fancy headers and footers
         \usepackage{fancyvrb} % For writing blocks of code verbatim (like LaTeX code)
+        \usepackage{cleveref} % Better cross refencing
         \usepackage{geometry} % For manipulating margins and meta doc stuff
         \usepackage{graphicx} % Required for inserting images
         \usepackage{hyperref} % For linking stuff
@@ -218,6 +220,7 @@ return
     s(
       {
         trig="brt",
+        desc="Begin resume template",
         snippetType="autosnippet",
       },
       fmta(
