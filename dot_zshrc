@@ -1,3 +1,11 @@
+# Insturctions on downloading a cli monkey-type clone
+# debian dependencies
+# sudo apt install golang
+
+# clone and make
+# git clone https://github.com/lemnos/tt
+# cd tt
+# make && sudo make install
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/opt/homebrew/sbin:$PATH"
 export PATH="/Users/bnog/.local/bin:$PATH"
