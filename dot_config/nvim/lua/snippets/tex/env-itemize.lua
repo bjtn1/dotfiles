@@ -4,6 +4,27 @@ return
   {
     s(
       {
+        trig="-",
+        dscr="Itemize environment",
+        snippetType="autosnippet"
+      },
+      fmta(
+        [[
+        \begin{itemize}
+            \item <>
+        \end{itemize}
+        ]],
+        {
+          i(1),
+        }
+      ),
+      {
+        condition=u.line_begin and u.in_text
+      }
+    ),
+
+    s(
+      {
         trig="itt",
         dscr="Itemize environment",
         snippetType="autosnippet"

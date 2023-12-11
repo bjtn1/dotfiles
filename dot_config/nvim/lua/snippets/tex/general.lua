@@ -78,7 +78,7 @@ return
 
     s(
       {
-        trig="**",
+        trig="*",
         snippetType="autosnippet",
       },
       fmta(
