@@ -1,11 +1,8 @@
-# Insturctions on downloading a cli monkey-type clone
-# debian dependencies
-# sudo apt install golang
-
-# clone and make
-# git clone https://github.com/lemnos/tt
-# cd tt
-# make && sudo make install
+# Instructions on downloading a cli monkey-type clone
+# mkdir -p /usr/local/bin /usr/local/share/man/man1 # Usually created by brew
+#
+# sudo curl -L https://github.com/lemnos/tt/releases/download/v0.4.2/tt-osx -o /usr/local/bin/tt && sudo chmod +x /usr/local/bin/tt
+# sudo curl -o /usr/local/share/man/man1/tt.1.gz -L https://github.com/lemnos/tt/releases/download/v0.4.2/tt.1.gz
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/opt/homebrew/sbin:$PATH"
 export PATH="/Users/bnog/.local/bin:$PATH"
