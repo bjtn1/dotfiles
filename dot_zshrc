@@ -5,37 +5,27 @@ export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 
 # C compiler
 export CC="/opt/homebrew/Cellar/gcc/13.2.0/bin/aarch64-apple-darwin22-gcc-13"
-
 export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
-
 export PKG_CONFIG_PATH="/opt/homebrew/opt/ruby/lib/pkgconfig"
-
 export EDITOR="nvim"
 export VISUAL="nvim"
-
 export HISTSIZE=10000
 export SAVEHIST=10000
-
 export GECKODRIVER_PATH="/Users/bnog/geckodriver"
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 unset zle_bracketed_paste
 
 autoload -U compinit; compinit
 
-# NOTE I really hate that wehn I put a controller, the home button triggers the game launchapd, so these are the commands I used to turn it off
-# defaults write com.apple.GameController bluetoothPrefsMenuLongPressAction -integer 0
-# defaults write com.apple.GameController bluetoothPrefsShareLongPressSystemGestureMode -integer -1
-# THESE DID NOT WORK
-
-
+# Cant remember what these are for
 alias copy='cat $1 | pbcopy'
 alias unpack='function _unpack() { dest=${2:-.}; mv -i $1/* $dest && rm -ri $1; }; _unpack'
 alias path='echo $PATH | tr ":" "\n"'
@@ -44,38 +34,31 @@ alias path='echo $PATH | tr ":" "\n"'
 alias convert='function magick_wrapper { magick "$1" "$2" && rm -i "$1"; }; magick_wrapper'
 
 # Unar(chiver) alias
-# alias unzip='function unzip_wrapper { unar "$1" && rm -i "$1"; }; unzip_wrapper'
 alias unzip='function unzip_wrapper { dest=${2:-.}; unar "$1" -o "$dest" && rm -i "$1"; }; unzip_wrapper'
 
 # This is the alias used to run the pogocal thingie I made
 alias pogocal="cd ~/Workspace/pogocal/ && py src/pogocal.py"
-
-# This is the file organizer I created
-alias al="py /Users/bnog/Workspace/al/src/main.py"
-
 alias icd="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/"
-
 alias v="fd --type f --hidden --exclude .git | fzf-tmux -p | xargs -r nvim"
-
 alias lg="lazygit"
-
 alias e="exit"
-
 alias nv="nvim"
-
 alias cl="clear"
 
+# Most important alias
 alias update='brew update ; brew upgrade ; brew cleanup --prune=all -s ; brew autoremove ; echo "" > ~/.config/brewfile ; brew bundle dump -f --file=~/.config/brewfile ; cmr ; py -m pip install --upgrade pip'
-
 alias u="update"
 
+
+# Chezmoi
 alias cm="chezmoi"
 
 # Use this for whenever you add a new file anywhere inside nvim/
 alias cmr="rm -rf ~/.local/share/chezmoi/dot_config/nvim && chezmoi add ~/.config/nvim/* ; rm -rf ~/.local/share/chezmoi/dot_config/tmux/ && chezmoi add ~/.config/tmux/* ; rm ~/.local/share/chezmoi/dot_config/brewfile && chezmoi add ~/.config/brewfile ; rm ~/.local/share/chezmoi/dot_zshrc && chezmoi add ~/.zshrc ; rm -rf ~/.local/share/chezmoi/private_Pictures && chezmoi add ~/Pictures/wallpapers/ ; rm -rf ~/.local/share/chezmoi/dot_config/iterm2/themes/ && chezmoi add ~/.config/iterm2/themes/"
-
 alias cmcd="chezmoi cd"
 
+
+# Tmux
 alias tm="tmux"
 alias tmn="tmux new -s"
 alias tma="tmux attach"
@@ -83,14 +66,16 @@ alias tml="tmux ls"
 alias tmd="tmux detach"
 alias tmk="tmux kill-session -t"
 
+# To quickly edit zshrc and zshenv from anywhere
 alias zshrc="nvim ~/.zshrc"
 alias zshenv="nvim ~/.zshenv"
 
+# Python
 alias py="python3"
 alias pip="pip3"
-
-# LunarVim aliases
-alias lv="lvim"
+#
+# This is the file organizer I created
+alias al="py /Users/bnog/Workspace/al/src/main.py"
 
 # ls
 alias l="ls -lah"
@@ -114,6 +99,103 @@ alias gr='git remote'
 alias grs='git remote show'
 alias glo='git log --pretty="oneline"'
 alias glol='git log --graph --oneline --decorate'
+
+# web_search from terminal
+# Source:
+# https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/web-search/web-search.plugin.zsh
+function web_search() {
+  emulate -L zsh
+
+  # define search engine URLS
+  typeset -A urls
+  urls=(
+    $ZSH_WEB_SEARCH_ENGINES
+    google          "https://www.google.com/search?q="
+    bing            "https://www.bing.com/search?q="
+    brave           "https://search.brave.com/search?q="
+    yahoo           "https://search.yahoo.com/search?p="
+    duckduckgo      "https://www.duckduckgo.com/?q="
+    startpage       "https://www.startpage.com/do/search?q="
+    yandex          "https://yandex.ru/yandsearch?text="
+    github          "https://github.com/search?q="
+    baidu           "https://www.baidu.com/s?wd="
+    ecosia          "https://www.ecosia.org/search?q="
+    goodreads       "https://www.goodreads.com/search?q="
+    qwant           "https://www.qwant.com/?q="
+    givero          "https://www.givero.com/search?q="
+    stackoverflow   "https://stackoverflow.com/search?q="
+    wolframalpha    "https://www.wolframalpha.com/input/?i="
+    archive         "https://web.archive.org/web/*/"
+    scholar         "https://scholar.google.com/scholar?q="
+    ask             "https://www.ask.com/web?q="
+    youtube         "https://www.youtube.com/results?search_query="
+  )
+
+  # check whether the search engine is supported
+  if [[ -z "$urls[$1]" ]]; then
+    echo "Search engine '$1' not supported."
+    return 1
+  fi
+
+  # search or go to the main page depending on the number of arguments passed
+  if [[ $# -gt 1 ]]; then
+    # build search URL:
+    # join arguments passed with '+', then append to the search engine URL
+    url="${urls[$1]}$(printf "%s" "${@[2,-1]}" | sed 's/ /+/g')"
+  else
+    # build the main page URL:
+    # split by '/', then rejoin protocol (1) and domain (2) parts with '//'
+    url="${(j://:)${(s:/:)urls[$1]}[1,2]}"
+  fi
+
+  # open the URL using the default system handler
+  if command -v xdg-open &>/dev/null; then
+    xdg-open "$url"
+  elif command -v open &>/dev/null; then
+    open "$url"
+  else
+    echo "Error: Could not find a suitable command to open the URL."
+    return 1
+  fi
+}
+
+
+alias bing='web_search bing'
+alias brs='web_search brave'
+alias google='web_search google'
+alias yahoo='web_search yahoo'
+alias ddg='web_search duckduckgo'
+alias sp='web_search startpage'
+alias yandex='web_search yandex'
+alias github='web_search github'
+alias baidu='web_search baidu'
+alias ecosia='web_search ecosia'
+alias goodreads='web_search goodreads'
+alias qwant='web_search qwant'
+alias givero='web_search givero'
+alias stackoverflow='web_search stackoverflow'
+alias wolframalpha='web_search wolframalpha'
+alias archive='web_search archive'
+alias scholar='web_search scholar'
+alias ask='web_search ask'
+alias youtube='web_search youtube'
+
+#add your own !bang searches here
+alias wiki='web_search duckduckgo \!w'
+alias news='web_search duckduckgo \!n'
+alias map='web_search duckduckgo \!m'
+alias image='web_search duckduckgo \!i'
+alias ducky='web_search duckduckgo \!'
+
+# other search engine aliases
+if [[ ${#ZSH_WEB_SEARCH_ENGINES} -gt 0 ]]; then
+  typeset -A engines
+  engines=($ZSH_WEB_SEARCH_ENGINES)
+  for key in ${(k)engines}; do
+    alias "$key"="web_search $key"
+  done
+  unset engines key
+fi
 
 zmodload zsh/complist
 
