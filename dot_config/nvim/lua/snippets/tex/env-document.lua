@@ -4,46 +4,6 @@ return
   {
     s(
       {
-        trig="bmwe",
-        desc="Begin notebook template",
-        snippetType="autosnippet"
-      },
-      fmta(
-        [[
-        \documentclass{article}
-        % General document formatting
-        \usepackage[margin=0.7in]{geometry}
-        \usepackage[parfill]{parskip}
-        \usepackage[utf8]{inputenc}
-        
-        % Related to math
-        \usepackage{amsmath,amssymb,amsfonts,amsthm}
-
-        \begin{document}
-
-        Name, date, Exercise X
-
-        \section*{Part a}
-
-        Put your answer to part a here
-
-        \section*{Part b}
-
-        etc
-
-        \end{document}<>
-        ]],
-        {
-          i(0),
-        }
-      ),
-      {
-        condition=u.line_begin
-      }
-    ),
-
-    s(
-      {
         trig="bnt",
         desc="Begin notebook template",
         snippetType="autosnippet"
