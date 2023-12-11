@@ -4,6 +4,46 @@ return
   {
     s(
       {
+        trig="bmwe",
+        desc="Begin notebook template",
+        snippetType="autosnippet"
+      },
+      fmta(
+        [[
+        \documentclass{article}
+        % General document formatting
+        \usepackage[margin=0.7in]{geometry}
+        \usepackage[parfill]{parskip}
+        \usepackage[utf8]{inputenc}
+        
+        % Related to math
+        \usepackage{amsmath,amssymb,amsfonts,amsthm}
+
+        \begin{document}
+
+        Name, date, Exercise X
+
+        \section*{Part a}
+
+        Put your answer to part a here
+
+        \section*{Part b}
+
+        etc
+
+        \end{document}<>
+        ]],
+        {
+          i(0),
+        }
+      ),
+      {
+        condition=u.line_begin
+      }
+    ),
+
+    s(
+      {
         trig="bnt",
         desc="Begin notebook template",
         snippetType="autosnippet"
@@ -11,7 +51,9 @@ return
       fmta(
         [[
         %------------------------------------------------------------------------Begin preamble------------------------------------------------------------------------
-        \documentclass{article}
+        \documentclass[12pt]{article}
+        \usepackage{fontspec}
+        \setmainfont{Times New Roman}
 
         \usepackage{amsmath} % For math
         \usepackage{amssymb} % For more math
@@ -21,7 +63,6 @@ return
         \usepackage{graphicx} % Required for inserting images
         \usepackage{hyperref} % For linking stuff
         \usepackage{cleveref} % Better cross refencing % Must be loaded after hyperref
-        \usepackage[utf8]{inputenc} % For encoding type (UTF-8)
         \usepackage{lastpage} % For doing "Page n of |n|"
         \usepackage{minted} % For color coding code sections
         \usepackage{pgfplots} % For adding plots and graphs
@@ -45,8 +86,8 @@ return
         %%%%%%%%%% Begin hyperref setup %%%%%%%%%%%%%%%%%%%
         \hypersetup{
             colorlinks=true,
-            linkcolor=blue,
-            urlcolor=blue,
+            linkcolor=red,
+            urlcolor=red,
         }
         %%%%%%%%%% End hyperref setup %%%%%%%%%%%%%%%%%%%
 
@@ -109,7 +150,9 @@ return
       fmta(
         [[
         %------------------------------------------------------------------------Begin preamble------------------------------------------------------------------------
-        \documentclass{article}
+        \documentclass[12pt]{article}
+        \usepackage{fontspec}
+        \setmainfont{Times New Roman}
 
         \usepackage{amsmath} % For math
         \usepackage{amssymb} % For more math
@@ -119,7 +162,6 @@ return
         \usepackage{graphicx} % Required for inserting images
         \usepackage{hyperref} % For linking stuff
         \usepackage{cleveref} % Better cross refencing % Must be loaded after hyperref
-        \usepackage[utf8]{inputenc} % For encoding type (UTF-8)
         \usepackage{lastpage} % For doing "Page n of |n|"
         \usepackage{minted} % For color coding code sections
         \usepackage{pgfplots} % For adding plots and graphs
@@ -143,8 +185,8 @@ return
         %%%%%%%%%% Begin hyperref setup %%%%%%%%%%%%%%%%%%%
         \hypersetup{
             colorlinks=true,
-            linkcolor=blue,
-            urlcolor=blue,
+            linkcolor=red,
+            urlcolor=red,
         }
         %%%%%%%%%% End hyperref setup %%%%%%%%%%%%%%%%%%%
 
@@ -237,7 +279,7 @@ return
         % License : MIT
         %------------------------
 
-        \documentclass[letterpaper,11pt]{article}
+        \documentclass[letterpaper,12pt]{article}
 
         \usepackage{latexsym}
         \usepackage[empty]{fullpage}
@@ -263,7 +305,11 @@ return
         % serif
         % \usepackage{CormorantGaramond}
         % \usepackage{charter}
-        \usepackage{times}
+        % \usepackage{times}
+
+        % times new roman
+        \usepackage{fontspec}
+        \setmainfont{Times New Roman}
 
 
         \pagestyle{fancy}
