@@ -10,6 +10,7 @@ return
       },
       fmta(
         [[
+        %------------------------------------------------------------------------Begin preamble------------------------------------------------------------------------
         \documentclass{article}
 
         \usepackage{amsmath} % For math
@@ -70,6 +71,7 @@ return
         \renewcommand\maketitlehooka{\null\mbox{}\vfill}
         \renewcommand\maketitlehookd{\vfill\null}
         %%%%%% End titlingpage setup %%%%%%%
+        %------------------------------------------------------------------------End preamble------------------------------------------------------------------------
 
         \title{\textbf{<>}}
         \author{Brandon Jose Tenorio Noguera}
@@ -106,6 +108,7 @@ return
       },
       fmta(
         [[
+        %------------------------------------------------------------------------Begin preamble------------------------------------------------------------------------
         \documentclass{article}
 
         \usepackage{amsmath} % For math
@@ -166,6 +169,7 @@ return
         \renewcommand\maketitlehooka{\null\mbox{}\vfill}
         \renewcommand\maketitlehookd{\vfill\null}
         %%%%%% End titlingpage setup %%%%%%%
+        %------------------------------------------------------------------------End preamble------------------------------------------------------------------------
 
         \title{\textbf{<>}}
         \author{Brandon Jose Tenorio Noguera}
