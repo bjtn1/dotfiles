@@ -183,6 +183,8 @@ return
         \end{titlingpage}
 
         \newpage
+        \tableofcontents
+        \newpage
 
         <>
         \end{document}
