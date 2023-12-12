@@ -4,6 +4,66 @@ return
   {
     s(
       {
+        trig="%",
+        regTrig=true,
+        wordTrig=false,
+        snippetType="autosnippet",
+      },
+      fmta(
+        [[
+        <>\%<>
+        ]],
+        {
+          f( function(_, snip) return snip.captures[1] end ),
+          -- i(1),
+          i(0),
+        }
+      ),
+      {condition=u.in_text}
+    ),
+
+    s(
+      {
+        trig="&",
+        regTrig=true,
+        wordTrig=false,
+        snippetType="autosnippet",
+      },
+      fmta(
+        [[
+        <>\&<>
+        ]],
+        {
+          f( function(_, snip) return snip.captures[1] end ),
+          -- i(1),
+          i(0),
+        }
+      ),
+      {condition=u.in_text}
+    ),
+
+    s(
+      {
+        trig="_",
+        regTrig=true,
+        wordTrig=false,
+        snippetType="autosnippet",
+      },
+      fmta(
+        [[
+        <>\_<>
+        ]],
+        {
+          f( function(_, snip) return snip.captures[1] end ),
+          -- i(1),
+          i(0),
+        }
+      ),
+      {condition=u.in_text}
+    ),
+
+    s(
+      {
         trig="([^%a])rr",
         regTrig=true,
         wordTrig=false,
@@ -95,7 +155,7 @@ return
 
     s(
       {
-        trig="__",
+        trig="ee",
         snippetType="autosnippet",
       },
       fmta(
