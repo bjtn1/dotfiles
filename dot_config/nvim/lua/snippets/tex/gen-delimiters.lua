@@ -13,17 +13,17 @@ return
     s(
       {
         -- trig="([^%a])lp",
-        trig="lp",
-        regTrig=true,
-        wordTrig=false,
+        trig="(",
+        -- regTrig=true,
+        -- wordTrig=false,
         snippetType="autosnippet",
       },
       fmta(
         [[
-        <>\left(<>\right)<>
+        \left(<>\right)<>
         ]],
         {
-          f( function(_, snip) return snip.captures[1] end ),
+          -- f( function(_, snip) return snip.captures[1] end ),
           i(1),
           i(0)
         }
