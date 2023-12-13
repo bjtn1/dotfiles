@@ -2,46 +2,66 @@ local u = require "helpers.tex.utils"
 
 return
   {
-    -- s(
-    --   {
-    --     trig="%",
-    --     regTrig=true,
-    --     wordTrig=false,
-    --     snippetType="autosnippet",
-    --   },
-    --   fmta(
-    --     [[
-    --     <>\%<>
-    --     ]],
-    --     {
-    --       f( function(_, snip) return snip.captures[1] end ),
-    --       -- i(1),
-    --       i(0),
-    --     }
-    --   ),
-    --   {condition=u.in_text}
-    -- ),
-    --
-    -- s(
-    --   {
-    --     trig="&",
-    --     regTrig=true,
-    --     wordTrig=false,
-    --     snippetType="autosnippet",
-    --   },
-    --   fmta(
-    --     [[
-    --     <>\&<>
-    --     ]],
-    --     {
-    --       f( function(_, snip) return snip.captures[1] end ),
-    --       -- i(1),
-    --       i(0),
-    --     }
-    --   ),
-    --   {condition=u.in_text}
-    -- ),
-    --
+    s(
+      {
+        trig="{",
+        -- regTrig=true,
+        -- wordTrig=false,
+        snippetType="autosnippet",
+      },
+      fmta(
+        [[
+        {<>}<>
+        ]],
+        {
+          -- f( function(_, snip) return snip.captures[1] end ),
+          i(1),
+          i(0),
+        }
+      ),
+      {condition=u.in_text}
+    ),
+
+    s(
+      {
+        trig="[",
+        -- regTrig=true,
+        -- wordTrig=false,
+        snippetType="autosnippet",
+      },
+      fmta(
+        [[
+        [<>]<>
+        ]],
+        {
+          -- f( function(_, snip) return snip.captures[1] end ),
+          i(1),
+          i(0),
+        }
+      ),
+      {condition=u.in_text}
+    ),
+
+    s(
+      {
+        trig="(",
+        -- regTrig=true,
+        -- wordTrig=false,
+        snippetType="autosnippet",
+      },
+      fmta(
+        [[
+        (<>)<>
+        ]],
+        {
+          -- f( function(_, snip) return snip.captures[1] end ),
+          i(1),
+          i(0),
+        }
+      ),
+      {condition=u.in_text}
+    ),
+
     s(
       {
         trig="_",
@@ -102,21 +122,21 @@ return
       {condition=u.in_bmatrix or u.in_table}
     ),
 
-    -- s(
-    --   {
-    --     trig=" ",
-    --     snippetType="autosnippet",
-    --   },
-    --   fmta(
-    --     [[
-    --     & <>
-    --     ]],
-    --     {
-    --       i(1),
-    --     }
-    --   ),
-    --   {condition=u.in_bmatrix or u.in_table}
-    -- ),
+    s(
+      {
+        trig=" ",
+        snippetType="autosnippet",
+      },
+      fmta(
+        [[
+        & <>
+        ]],
+        {
+          i(1),
+        }
+      ),
+      {condition=u.in_bmatrix or u.in_table}
+    ),
 
     s(
       {
