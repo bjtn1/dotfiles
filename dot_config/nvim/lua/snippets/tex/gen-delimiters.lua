@@ -48,27 +48,6 @@ return
       {condition=utils.in_mathzone}
     ),
 
-    s(
-      {
-        -- trig="([^%a])ls",
-        trig="ls",
-        regTrig=true,
-        wordTrig=false,
-        snippetType="autosnippet",
-      },
-      fmta(
-        [[
-        <>\left[<>\right]<>
-        ]],
-        {
-          f( function(_, snip) return snip.captures[1] end ),
-          i(1),
-          i(0)
-        }
-      ),
-      {condition=utils.in_mathzone}
-    ),
-
     -- LEFT/RIGHT CURLY BRACES --
     s(
       {
@@ -84,27 +63,6 @@ return
         ]],
         {
           -- f( function(_, snip) return snip.captures[1] end ),
-          i(1),
-          i(0)
-        }
-      ),
-      {condition=utils.in_mathzone}
-    ),
-
-    s(
-      {
-        -- trig="([^%a])lc",
-        trig="lc",
-        regTrig=true,
-        wordTrig=false,
-        snippetType="autosnippet",
-      },
-      fmta(
-        [[
-        <>\left\{<>\right\}<>
-        ]],
-        {
-          f( function(_, snip) return snip.captures[1] end ),
           i(1),
           i(0)
         }
