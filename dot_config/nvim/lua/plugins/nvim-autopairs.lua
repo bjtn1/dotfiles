@@ -22,6 +22,5 @@ return {
       tabkey = "jk",
       backwards_tabkey = "kj",
     })
-
   end
 }
