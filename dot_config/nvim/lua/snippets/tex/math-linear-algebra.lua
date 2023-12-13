@@ -36,8 +36,6 @@ return
       {condition=utils.in_mathzone}
     ),
 
--- TODO
-    -- JUST MAKE THEM ALL MAT
     s(
       {
         trig="mat",
@@ -53,120 +51,6 @@ return
           i(1),
           i(2),
           rep(1),
-          i(0)
-        }
-      ),
-      {condition=utils.in_mathzone}
-    ),
-
-    s(
-      {
-        trig="pmat",
-        snippetType="autosnippet",
-      },
-      fmta(
-        [[
-        \begin{pmatrix}
-        <>
-        \end{pmatrix}<>
-        ]],
-        {
-          i(1),
-          i(0)
-        }
-      ),
-      {condition=utils.in_mathzone}
-    ),
-
-    s(
-      {
-        trig="bmat",
-        snippetType="autosnippet",
-      },
-      fmta(
-        [[
-        \begin{bmatrix}
-        <>
-        \end{bmatrix}<>
-        ]],
-        {
-          i(1),
-          i(0)
-        }
-      ),
-      {condition=utils.in_mathzone}
-    ),
-
-    s(
-      {
-        trig="Bmat",
-        snippetType="autosnippet",
-      },
-      fmta(
-        [[
-        \begin{Bmatrix}
-        <>
-        \end{Bmatrix}<>
-        ]],
-        {
-          i(1),
-          i(0)
-        }
-      ),
-      {condition=utils.in_mathzone}
-    ),
-
-    s(
-      {
-        trig="vmat",
-        snippetType="autosnippet",
-      },
-      fmta(
-        [[
-        \begin{vmatrix}
-        <>
-        \end{vmatrix}<>
-        ]],
-        {
-          i(1),
-          i(0)
-        }
-      ),
-      {condition=utils.in_mathzone}
-    ),
-
-    s(
-      {
-        trig="Vmat",
-        snippetType="autosnippet",
-      },
-      fmta(
-        [[
-        \begin{Vmatrix}
-        <>
-        \end{Vmatrix}<>
-        ]],
-        {
-          i(1),
-          i(0)
-        }
-      ),
-      {condition=utils.in_mathzone}
-    ),
-
-    s(
-      {
-        trig="smat",
-        snippetType="autosnippet",
-      },
-      fmta(
-        [[
-        \begin{smallmatrix}
-        <>
-        \end{smallmatrix}<>
-        ]],
-        {
-          i(1),
           i(0)
         }
       ),
