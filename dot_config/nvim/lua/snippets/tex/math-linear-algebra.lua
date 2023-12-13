@@ -36,7 +36,8 @@ return
       {condition=utils.in_mathzone}
     ),
 
-
+-- TODO
+    -- JUST MAKE THEM ALL MAT
     s(
       {
         trig="mat",
@@ -44,12 +45,14 @@ return
       },
       fmta(
         [[
-        \begin{matrix}
+        \begin{<>matrix}
         <>
-        \end{matrix}<>
+        \end{<>matrix}<>
         ]],
         {
           i(1),
+          i(2),
+          rep(1),
           i(0)
         }
       ),

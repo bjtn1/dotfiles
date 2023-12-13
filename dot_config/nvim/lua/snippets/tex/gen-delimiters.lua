@@ -5,11 +5,6 @@ local utils      = require("helpers.tex.utils")
 return
   {
     -- LEFT/RIGHT PARENTHESES --
-    -- NOTE
-    -- The commented out trig forces you to put a space after the thing you wanna put an opening parentheses on `O<space>(...)` vs `O(...)`
-    -- This does not make a difference once LaTeX gets rendered, but it's kind of annoying having to type a space before your parentheses trig
-    -- If errors related to any of these trigs come up, consider uncommenting trig to fix them
-    -- This relates to all of the bottom trigs
     s(
       {
         -- trig="([^%a])lp",
@@ -34,6 +29,27 @@ return
     -- LEFT/RIGHT SQUARE BRACES --
     s(
       {
+        -- trig="([^%a])lp",
+        trig="[",
+        -- regTrig=true,
+        -- wordTrig=false,
+        snippetType="autosnippet",
+      },
+      fmta(
+        [[
+        \left[<>\right]<>
+        ]],
+        {
+          -- f( function(_, snip) return snip.captures[1] end ),
+          i(1),
+          i(0)
+        }
+      ),
+      {condition=utils.in_mathzone}
+    ),
+
+    s(
+      {
         -- trig="([^%a])ls",
         trig="ls",
         regTrig=true,
@@ -54,6 +70,27 @@ return
     ),
 
     -- LEFT/RIGHT CURLY BRACES --
+    s(
+      {
+        -- trig="([^%a])lp",
+        trig="{",
+        -- regTrig=true,
+        -- wordTrig=false,
+        snippetType="autosnippet",
+      },
+      fmta(
+        [[
+        \left{<>\right}<>
+        ]],
+        {
+          -- f( function(_, snip) return snip.captures[1] end ),
+          i(1),
+          i(0)
+        }
+      ),
+      {condition=utils.in_mathzone}
+    ),
+
     s(
       {
         -- trig="([^%a])lc",
