@@ -64,11 +64,11 @@ return {
     --------------------
     -- LuaSnip
     --------------------
-    ls.config.set_config
-    {
-      history = true,
+    ls.config.set_config {
       enable_autosnippets = true,
       update_events = "TextChanged,TextChangedI",
+      history = true,
+      delete_check_events = "TextChanged",
     }
 
     ---------------------
