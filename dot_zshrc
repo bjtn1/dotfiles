@@ -10,7 +10,7 @@ export PATH="/Users/bjtn/.local/bin:$PATH"
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 
 # C compiler
-export CC="/opt/homebrew/Cellar/gcc/13.2.0/bin/aarch64-apple-darwin22-gcc-13"
+export CC="/opt/homebrew/Cellar/gcc/13.2.0/bin/aarch64-apple-darwin23-gcc-13"
 export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/ruby/lib/pkgconfig"
