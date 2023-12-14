@@ -62,25 +62,25 @@ return
       {condition=u.in_text}
     ),
 
-    s(
-      {
-        trig="_",
-        regTrig=true,
-        wordTrig=false,
-        snippetType="autosnippet",
-      },
-      fmta(
-        [[
-        <>\_<>
-        ]],
-        {
-          f( function(_, snip) return snip.captures[1] end ),
-          -- i(1),
-          i(0),
-        }
-      ),
-      {condition=u.in_text}
-    ),
+    -- s(
+    --   {
+    --     trig="_",
+    --     regTrig=true,
+    --     wordTrig=false,
+    --     snippetType="autosnippet",
+    --   },
+    --   fmta(
+    --     [[
+    --     <>\_<>
+    --     ]],
+    --     {
+    --       f( function(_, snip) return snip.captures[1] end ),
+    --       -- i(1),
+    --       i(0),
+    --     }
+    --   ),
+    --   {condition=u.in_text}
+    -- ),
 
     s(
       {

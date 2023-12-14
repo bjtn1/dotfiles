@@ -1,7 +1,13 @@
 -- Some LaTeX-specific conditional expansion functions (requires VimTeX)
--- source:
+-- source(s):
 -- https://www.ejmastnak.com/tutorials/vim-latex/luasnip/#hello-world
+-- https://github.com/ejmastnak/dotfiles/blob/main/config/nvim/lua/personal/luasnip-helper-funcs.lua
+-- https://github.com/ejmastnak/dotfiles/blob/main/config/nvim/LuaSnip/tex/delimiter.lua
 local u = {}
+local ls = require("luasnip")
+local sn = ls.snippet_node
+local i = ls.insert_node
+
 
 -- Line begin detection
 u.line_begin = require("luasnip.extras.expand_conditions").line_begin
@@ -42,5 +48,17 @@ u.in_bmatrix = function() return u.in_env('bmatrix') end
 u.in_table = function() return u.in_env('tabular') end
 
 u.in_split = function() return u.in_env('split') end
+
+function u.get_ISO_8601_date()
+  return os.date("%Y-%m-%d")
+end
+
+function u.get_visual(args, parent)
+  if (#parent.snippet.env.LS_SELECT_RAW > 0) then
+    return sn(nil, i(1, parent.snippet.env.LS_SELECT_RAW))
+  else
+    return sn(nil, i(1, ''))
+  end
+end
 
 return u
