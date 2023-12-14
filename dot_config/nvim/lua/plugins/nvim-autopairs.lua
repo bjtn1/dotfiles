@@ -12,11 +12,11 @@ return {
     local cond = require("nvim-autopairs.conds")
     local tabout = require("tabout")
 
-
     npairs.setup({})
     npairs.get_rules("(")[1].not_filetypes = { "tex", }
     npairs.get_rules("[")[1].not_filetypes = { "tex", }
     npairs.get_rules("{")[1].not_filetypes = { "tex", }
+    npairs.add_rule(Rule("\\[","\\]","tex"))
 
     tabout.setup({
       tabkey = "jk",
