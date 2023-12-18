@@ -1,5 +1,7 @@
 -- NOTE all taken from:
 -- https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/you-might-not-need-lsp-zero.md
+-- For key notation, see
+-- https://vimdoc.sourceforge.net/htmldoc/intro.html#key-notation
 -- TODO
 -- Make a function that does <cmd>LspInstall<cr> whenever we encounter a filetype that we do not have a server for
 return {
