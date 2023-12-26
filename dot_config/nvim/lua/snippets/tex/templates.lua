@@ -12,7 +12,7 @@ return
         [[
         %------------------------------------------------------------------------Begin preamble------------------------------------------------------------------------
         \documentclass[12pt]{article}
-        % Uncomment these two to use TimesNewRoman font
+        % Uncomment these two lines if you want to use Times New Roman (needs XeLaTeX)
         % \usepackage{fontspec}
         % \setmainfont{Times New Roman}
 
@@ -112,7 +112,7 @@ return
         [[
         %------------------------------------------------------------------------Begin preamble------------------------------------------------------------------------
         \documentclass[12pt]{article}
-        % Uncomment these two to use TimesNewRoman font
+        % Uncomment these two lines if you want to use Times New Roman (needs XeLaTeX)
         % \usepackage{fontspec}
         % \setmainfont{Times New Roman}
 
@@ -272,8 +272,9 @@ return
         % \usepackage{times}
 
         % times new roman
-        \usepackage{fontspec}
-        \setmainfont{Times New Roman}
+        % Uncomment these two lines if you want to use Times New Roman (needs XeLaTeX)
+        % \usepackage{fontspec}
+        % \setmainfont{Times New Roman}
 
 
         \pagestyle{fancy}
