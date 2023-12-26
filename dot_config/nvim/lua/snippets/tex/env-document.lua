@@ -12,8 +12,8 @@ return
         [[
         %------------------------------------------------------------------------Begin preamble------------------------------------------------------------------------
         \documentclass[12pt]{article}
-        \usepackage{fontspec}
-        \setmainfont{Times New Roman}
+        % \usepackage{fontspec}
+        % \setmainfont{Times New Roman}
 
         \usepackage{amsmath} % For math
         \usepackage{amssymb} % For more math
@@ -46,8 +46,8 @@ return
         %%%%%%%%%% Begin hyperref setup %%%%%%%%%%%%%%%%%%%
         \hypersetup{
             colorlinks=true,
-            linkcolor=red,
-            urlcolor=red,
+            linkcolor=blue,
+            urlcolor=blue,
         }
         %%%%%%%%%% End hyperref setup %%%%%%%%%%%%%%%%%%%
 
