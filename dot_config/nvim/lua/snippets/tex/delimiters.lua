@@ -1,3 +1,4 @@
+-- Taken from https://github.com/ejmastnak/dotfiles/blob/main/config/nvim/LuaSnip/tex/delimiter.lua
 local helpers = require('helpers.tex.utils')
 local get_visual = helpers.get_visual
 

@@ -140,7 +140,7 @@ return
 
     s(
       {
-        trig="hr",
+        trig="href",
         dscr="The hyperref package's href{}{} command (for url links)",
         snippetType="autosnippet",
       },
@@ -175,7 +175,7 @@ return
 
     s(
       {
-        trig="ee",
+        trig="emp",
         snippetType="autosnippet",
       },
       fmta(

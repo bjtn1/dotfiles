@@ -49,6 +49,7 @@ u.in_table = function() return u.in_env('tabular') end
 
 u.in_split = function() return u.in_env('split') end
 
+-- Taken from https://github.com/ejmastnak/dotfiles/blob/main/config/nvim/lua/personal/luasnip-helper-funcs.lua
 function u.get_ISO_8601_date()
   return os.date("%Y-%m-%d")
 end
