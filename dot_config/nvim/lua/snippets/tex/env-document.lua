@@ -12,6 +12,7 @@ return
         [[
         %------------------------------------------------------------------------Begin preamble------------------------------------------------------------------------
         \documentclass[12pt]{article}
+        % Uncomment these two to use TimesNewRoman font
         % \usepackage{fontspec}
         % \setmainfont{Times New Roman}
 
@@ -111,8 +112,9 @@ return
         [[
         %------------------------------------------------------------------------Begin preamble------------------------------------------------------------------------
         \documentclass[12pt]{article}
-        \usepackage{fontspec}
-        \setmainfont{Times New Roman}
+        % Uncomment these two to use TimesNewRoman font
+        % \usepackage{fontspec}
+        % \setmainfont{Times New Roman}
 
         \usepackage{amsmath} % For math
         \usepackage{amssymb} % For more math
