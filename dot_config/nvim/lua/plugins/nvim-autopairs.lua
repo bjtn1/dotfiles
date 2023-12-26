@@ -13,9 +13,27 @@ return {
     local tabout = require("tabout")
 
     npairs.setup({})
-    npairs.get_rules("(")[1].not_filetypes = { "tex", }
-    npairs.get_rules("[")[1].not_filetypes = { "tex", }
-    npairs.get_rules("{")[1].not_filetypes = { "tex", }
+    -- npairs.get_rules("(")[1].not_filetypes = { "tex", }
+    -- npairs.get_rules("[")[1].not_filetypes = { "tex", }
+    -- npairs.get_rules("{")[1].not_filetypes = { "tex", }
+
+  npairs.add_rules({
+    Rule("$", "$",{"tex", "latex", "md"})
+      -- don't add a pair if the next character is $
+      :with_pair(cond.not_after_regex("$$"))
+    })
+
+    npairs.add_rules({
+      Rule("$$","$$","tex")
+        :with_pair(function(opts)
+          print(vim.inspect(opts))
+          if opts.line=="aa $$" then
+            -- don't add pair on that line
+            return false
+          end
+        end)
+    })
+
     npairs.add_rule(Rule("\\[","\\]","tex"))
 
     tabout.setup({
