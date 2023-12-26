@@ -3,6 +3,24 @@ local u = require("helpers.tex.utils")
 return
   {
     ------------------------------ BEGIN GENERAL SECTION ------------------------------
+    -- For bold in math zones
+    s(
+      {
+        trig="*",
+        snippetType="autosnippet",
+      },
+      fmta(
+        [[
+        \mathbf{<>}<>
+        ]],
+        {
+          i(1),
+          i(0),
+        }
+      ),
+      {condition=u.in_mathzone}
+    ),
+
     -- FIX
     -- Taken from https://github.com/ejmastnak/dotfiles/blob/main/config/nvim/LuaSnip/tex/math.lua
     -- For subscripts
