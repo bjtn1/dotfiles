@@ -17,21 +17,10 @@ return {
     -- npairs.get_rules("[")[1].not_filetypes = { "tex", }
     -- npairs.get_rules("{")[1].not_filetypes = { "tex", }
 
-  npairs.add_rules({
-    Rule("$", "$",{"tex", "latex", "md"})
-      -- don't add a pair if the next character is $
-      :with_pair(cond.not_after_regex("$$"))
-    })
-
     npairs.add_rules({
-      Rule("$$","$$","tex")
-        :with_pair(function(opts)
-          print(vim.inspect(opts))
-          if opts.line=="aa $$" then
-            -- don't add pair on that line
-            return false
-          end
-        end)
+      Rule("$", "$",{"tex", "latex", "md", "markdown",})
+      -- Don't add $ if the next char is $
+      -- :with_pair(cond.not_after_regex("$"))
     })
 
     npairs.add_rule(Rule("\\[","\\]","tex"))
@@ -39,6 +28,16 @@ return {
     tabout.setup({
       tabkey = "jk",
       backwards_tabkey = "kj",
+      tabouts = {
+        {open = "'", close = "'"},
+        {open = '"', close = '"'},
+        {open = '`', close = '`'},
+        {open = '(', close = ')'},
+        {open = '[', close = ']'},
+        {open = '{', close = '}'},
+        {open = '$', close = '$'},
+      },
+      ignore_beginning = false,
     })
   end
 }

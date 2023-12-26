@@ -6,6 +6,7 @@
 -- Make a function that does <cmd>LspInstall<cr> whenever we encounter a filetype that we do not have a server for
 return {
   "neovim/nvim-lspconfig",
+  priority = 1000,
   dependencies = {
     -- LSP support
     "williamboman/mason.nvim",         -- Optional
