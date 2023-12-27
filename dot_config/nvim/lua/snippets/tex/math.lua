@@ -3,6 +3,24 @@ local u = require("helpers.tex.utils")
 return
   {
     ------------------------------ BEGIN GENERAL SECTION ------------------------------
+    -- For inline math
+    s(
+      {
+        trig="$",
+        snippetType="autosnippet",
+      },
+      fmta(
+        [[
+        $<>$<>
+        ]],
+        {
+          i(1),
+          i(0),
+        }
+      ),
+      {condition=u.in_mathzone or u.in_text}
+    ),
+
     -- For bold in math zones
     s(
       {

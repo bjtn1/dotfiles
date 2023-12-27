@@ -101,25 +101,27 @@ return
           i(0),
         }
       ),
-      {condition=u.in_bmatrix or u.in_table}
+      {
+        -- condition=u.in_bmatrix or u.in_table
+      }
     ),
 
     -- For adding column delimeter in matrices and tables
-    s(
-      {
-        trig=" ",
-        snippetType="autosnippet",
-      },
-      fmta(
-        [[
-        & <>
-        ]],
-        {
-          i(1),
-        }
-      ),
-      {condition=u.in_bmatrix or u.in_table}
-    ),
+    -- s(
+    --   {
+    --     trig=" ",
+    --     snippetType="autosnippet",
+    --   },
+    --   fmta(
+    --     [[
+    --     & <>
+    --     ]],
+    --     {
+    --       i(1),
+    --     }
+    --   ),
+    --   {condition=u.in_bmatrix or u.in_table}
+    -- ),
 
     -- For adding links
     s(
