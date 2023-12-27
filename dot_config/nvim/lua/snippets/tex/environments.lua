@@ -9,7 +9,7 @@ return
     -- GENERIC ENVIRONMENT --
     s(
       {
-        trig="new",
+        trig="bb",
         dscr="A generic new environment",
         snippetType="autosnippet"
       },
@@ -31,7 +31,7 @@ return
     ),
 
     -- ENVIRONMENT WITH ONE EXTRA ARGUMENT
-    s({trig="n2", snippetType="autosnippet"},
+    s({trig="b2", snippetType="autosnippet"},
       fmta(
         [[
         \begin{<>}{<>}
@@ -49,7 +49,7 @@ return
     ),
 
     -- ENVIRONMENT WITH TWO EXTRA ARGUMENTS
-    s({trig="n3", snippetType="autosnippet"},
+    s({trig="b3", snippetType="autosnippet"},
       fmta(
         [[
         \begin{<>}{<>}{<>}

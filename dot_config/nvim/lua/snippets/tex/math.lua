@@ -3,6 +3,22 @@ local u = require("helpers.tex.utils")
 return
   {
     ------------------------------ BEGIN GENERAL SECTION ------------------------------
+    -- For multiplication symbol math
+    s(
+      {
+        trig="times",
+        snippetType="autosnippet",
+      },
+      fmta(
+        [[
+        \cdot<>
+        ]],
+        {
+          i(0),
+        }
+      ),
+      {condition=u.in_mathzone}
+    ),
     -- For inline math
     s(
       {
