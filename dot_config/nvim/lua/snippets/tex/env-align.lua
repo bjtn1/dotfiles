@@ -4,7 +4,7 @@ return
   {
     s(
       {
-        trig="tt",
+        trig="itt",
         snippetType="autosnippet",
       },
       fmta(
@@ -23,7 +23,7 @@ return
 
     s(
       {
-        trig="te",
+        trig="tt",
         snippetType="autosnippet",
       },
       fmta(
@@ -48,13 +48,13 @@ return
       },
       fmta(
         [[
-        \begin{align}\label{<>}
+        \begin{align*}
             <>
-        \end{align}
+        \end{align*}<>
         ]],
         {
           i(1),
-          i(2)
+          i(0)
         }
       ),
       {
@@ -64,7 +64,7 @@ return
 
     s(
       {
-        trig="al=",
+        trig="l=",
         snippetType="autosnippet"
       },
       fmta(
