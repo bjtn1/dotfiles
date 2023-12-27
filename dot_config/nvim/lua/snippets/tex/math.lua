@@ -27,7 +27,7 @@ return
       },
       fmta(
         [[
-        $<>$<>
+        $<> $<>
         ]],
         {
           i(1),
@@ -184,7 +184,9 @@ return
           i(0),
         }
       ),
-      {condition=u.in_mathzone}
+      {
+        -- condition=u.in_mathzone
+      }
     ),
 
     -- For integrals (one or many)
