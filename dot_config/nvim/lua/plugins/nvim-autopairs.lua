@@ -17,11 +17,11 @@ return {
     -- npairs.get_rules("[")[1].not_filetypes = { "tex", }
     -- npairs.get_rules("{")[1].not_filetypes = { "tex", }
 
-    npairs.add_rules({
-      Rule("$", "$",{"tex", "latex", "md", "markdown",})
-      -- Don't add $ if the next char is $
-      -- :with_pair(cond.not_after_regex("$"))
-    })
+    -- npairs.add_rules({
+    --   Rule("$", "$",{"tex", "latex", "md", "markdown",})
+    --   -- Don't add $ if the next char is $
+    --   -- :with_pair(cond.not_after_regex("$"))
+    -- })
 
     npairs.add_rule(Rule("\\[","\\]","tex"))
 
@@ -35,7 +35,6 @@ return {
         {open = '(', close = ')'},
         {open = '[', close = ']'},
         {open = '{', close = '}'},
-        {open = '$', close = '$'},
       },
       ignore_beginning = false,
     })
