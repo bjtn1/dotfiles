@@ -10,9 +10,11 @@ return
       },
       fmta(
         [[
+        \begin{align*}
         \begin{tikzpicture}
           <>
         \end{tikzpicture}
+        \end{align*}
         ]],
         {
           i(1)
@@ -32,9 +34,10 @@ return
       fmta(
         [[
         \begin{axis}[
-          clip=false,
-          xmin=-<>, xmax=<>,
-          ymin=-<>, ymax=<>,
+          xmin=-<>,
+          xmax=<>,
+          ymin=-<>,
+          ymax=<>,
           axis lines=middle,
           xlabel=$ <> $,
           ylabel=$ <> $,
@@ -42,6 +45,7 @@ return
           xmajorgrids=true,
           ymajorgrids=true,
           grid style=dashed,
+          domain=<>:<>,
           ]
           <>
         \end{axis}<>
@@ -54,6 +58,8 @@ return
           i(2, "x"),
           i(3, "y"),
           i(4, "graph title"),
+          rep(1),
+          rep(1),
           i(5),
           i(0),
         }
@@ -99,13 +105,11 @@ return
       },
       fmta(
         [[
-        \addplot [<>] {<>} node[right, pos=1]{$<>=<>$};<>
+        \addplot [<>] {<>};<>
         ]],
         {
           i(1),
           i(2, "x^2"),
-          i(3, "f(x)"),
-          rep(2),
           i(0)
         }
       ),
@@ -116,16 +120,22 @@ return
 
     s(
       {
-        trig="dd",
-        dscr="Draw in tikzpicture env",
+        trig="tdv",
+        dscr="Tikz draw vector",
         snippetType="autosnippet"
       },
       fmta(
         [[
-        \draw[<>]
+        \draw[ultra thick, <>, <>] (<>,<>) -- (<>,<>);<>
         ]],
         {
-          i(1, "params")
+          i(1,"blue"),
+          i(2, "->"),
+          i(3),
+          i(4),
+          i(5),
+          i(6),
+          i(0)
         }
       ),
       {
