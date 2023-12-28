@@ -13,11 +13,13 @@ return
         \begin{align*}
         \begin{tikzpicture}
           <>
-        \end{tikzpicture}
-        \end{align*}
+        \end{tikzpicture}<>
+        \end{align*}<>
         ]],
         {
-          i(1)
+          i(1),
+          i(2),
+          i(0),
         }
       ),
       {
