@@ -2,6 +2,25 @@ local u = require "helpers.tex.utils"
 
 return
   {
+    s(
+      {
+        trig="tco",
+        -- regTrig=true,
+        -- wordTrig=false,
+        snippetType="autosnippet",
+      },
+      fmta(
+        [[
+        \textcolor{<>}{<>}<>
+        ]],
+        {
+          i(1, "blue"),
+          i(2),
+          i(0),
+        }
+      ),
+      {condition=u.in_text}
+    ),
     -- s(
     --   {
     --     trig="{",
