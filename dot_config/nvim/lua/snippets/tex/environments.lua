@@ -50,7 +50,7 @@ return
     -- For adding a new item to an itemize section
     s(
       {
-        trig="-",
+        trig="--",
         dscr="Itemize environment",
         snippetType="autosnippet"
       },
