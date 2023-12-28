@@ -32,9 +32,8 @@ return
       fmta(
         [[
         \begin{axis}[
-          clip=false,
-          xmin=<>, xmax=<>,
-          ymin=<>, ymax=<>,
+          xmin=-<>, xmax=<>,
+          ymin=-<>, ymax=<>,
           axis lines=middle,
           xlabel=$ <> $,
           ylabel=$ <> $,
@@ -102,7 +101,7 @@ return
         \addplot
         [<>]
         {<>}
-        node[right, pos=1]{$<><>$};<>
+        node[right, pos=1]{$<>=<>$};<>
         ]],
         {
           i(1),
