@@ -187,7 +187,7 @@ return
 
     s(
       {
-        trig="l=",
+        trig="==",
         snippetType="autosnippet"
       },
       fmta(
