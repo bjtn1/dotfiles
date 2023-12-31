@@ -147,8 +147,8 @@ return
         %%%%%%%%%% Begin hyperref setup %%%%%%%%%%%%%%%%%%%
         \hypersetup{
             colorlinks=true,
-            linkcolor=red,
-            urlcolor=red,
+            linkcolor=blue,
+            urlcolor=blue,
         }
         %%%%%%%%%% End hyperref setup %%%%%%%%%%%%%%%%%%%
 
