@@ -1,3 +1,24 @@
+return
+  {
+    s(
+      {
+        trig="sln",
+        snippetType="autosnippet",
+        dscr="showLineNumbers"
+      },
+      fmta(
+        [[
+          showLineNumbers<>
+        ]],
+        {
+          i(0),
+        }
+      ),
+      {
+        -- condition=
+      }
+    ),
+  }
 -- return 
 --   {
 --     s(
