@@ -11,6 +11,14 @@ return {
           style = "icon",
         },
         numbers = "ordinal",
+        offsets = {
+          {
+            filetype = "NeoTree",
+            text = "File Explorer",
+            text_align = "left", -- | "center" | "right"
+            separator = true
+          }
+        },
       },
     })
 
