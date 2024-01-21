@@ -305,6 +305,7 @@ return {
         Lua = {
           diagnostics = {
             globals = {
+              "vim",
               "s",
               "t",
               "i",
