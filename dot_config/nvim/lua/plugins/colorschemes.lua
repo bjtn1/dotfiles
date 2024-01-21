@@ -24,7 +24,7 @@ return {
   config = function()
     -- local everblush = require("everblush")
     local ayu = require("ayu")
-    local catpuccin = require("catppuccin")
+    local catppuccin = require("catppuccin")
     local dracula = require("dracula")
     local everforest = require("everforest")
     local gruvbox = require("gruvbox")
@@ -40,7 +40,15 @@ return {
     -- everblush.setup({})
 
     ayu.setup({})
-    catpuccin.setup({
+    catppuccin.setup({
+			-- color_overrides = {
+        -- This makes the colorscheme darker
+				-- mocha = {
+				-- 	base = "#000000",
+				-- 	mantle = "#000000",
+				-- 	crust = "#000000",
+				-- },
+			-- },
       transparent_background = true,
       integrations = {
         cmp = true,
