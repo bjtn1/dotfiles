@@ -42,6 +42,20 @@ return {
     ayu.setup({})
     catpuccin.setup({
       transparent_background = true,
+      integrations = {
+        cmp = true,
+        gitsigns = true,
+        nvimtree = true,
+        neotree = false,
+        noice = false,
+        treesitter = true,
+        notify = true,
+        which_key = false,
+        mini = {
+          enabled = true,
+          indentscope_color = "",
+        },
+      }
     })
 
     everforest.setup({
