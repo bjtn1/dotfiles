@@ -2,33 +2,35 @@ These are my personal dotfiles managed by chezmoi. Pics coming soon
 
 # Synopsis
 
-Most of everything I've downloaded with homebrew. However, some things I've had to download the intended way.
+~~Most of everything I've downloaded with homebrew. However, some things I've had to download the intended way.~~
+This has to be updated LOL
 
-# iterm2 settings
-
-## Colors
-
-tokyonight-night
-
-## NerdFont
-
-Hack Nerd Font Mono, size of 13
-
-## Transparency
-
-50
-
-# Wallpapers
-
-All wallpapers were downloaded from one of these websites
-
-1. https://www.uhdpaper.com/
-
-2. https://hdqwalls.com/
-
-3. https://wall.alphacoders.com/
-
-4. https://www.wallpaperflare.com/
+# Changing right-command key to ctrl key on mac
+> [Source](https://hidutil-generator.netlify.app/)
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.local.KeyRemapping</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/bin/hidutil</string>
+        <string>property</string>
+        <string>--set</string>
+        <string>{"UserKeyMapping":[
+            {
+              "HIDKeyboardModifierMappingSrc": 0x7000000E7,
+              "HIDKeyboardModifierMappingDst": 0x7000000E4
+            }
+        ]}</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+</dict>
+</plist>
+```
 
 # Non-homebrew stuff
 
