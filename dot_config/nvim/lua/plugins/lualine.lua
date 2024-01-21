@@ -7,6 +7,9 @@ return
     config = function ()
       local ll = require("lualine")
       ll.setup({
+        options = {
+          theme = "catppuccin",
+        },
         sections = {
           lualine_x = {
             {
