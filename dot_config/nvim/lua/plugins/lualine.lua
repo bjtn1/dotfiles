@@ -26,7 +26,6 @@ return
           a = { fg = colors.black, bg = colors.blue },
           b = { fg = colors.blue, bg = colors.grey },
           c = { fg = colors.green, bg = colors.black },
-          z = { fg = colors.green, bg = colors.grey },
         },
 
         insert = { a = { fg = colors.black, bg = colors.green } },
