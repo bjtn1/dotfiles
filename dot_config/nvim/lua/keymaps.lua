@@ -20,7 +20,7 @@ wk.register({
   ["<C-Bslash>"] = { "<cmd>ToggleTerm<cr>", "Toggle terminal" },
   ["<C-s>"] = { "<esc><cmd>w<cr>", "Save file" },
   -- ["<leader>e"] = { "<cmd>NvimTreeToggle<cr>", "Toggle NeoTree" },
-  ["<leader>e"] = { "<cmd>Neotree toggle current reveal_force_cwd<cr>", "Toggle NeoTree" },
+  ["<leader>e"] = { "<cmd>Neotree toggle current reveal_force_cwd<cr><cmd>set nu<cr><cmd>set rnu<cr>", "Toggle NeoTree" },
   ["<leader>pm"] = { "<cmd>MarkdownPreviewToggle<cr>", "Preview markdown" },
   ["<leader>;"] = { "<cmd>Alpha<cr>", "Toggle dashboard" },
   ["gR"] = { "<cmd>TroubleToggle lsp_references<cr>", "LSP references" },
