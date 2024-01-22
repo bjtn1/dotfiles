@@ -41,29 +41,6 @@ return {
 
     ayu.setup({})
     catppuccin.setup({
-			-- color_overrides = {
-        -- This makes the colorscheme darker
-				-- mocha = {
-				-- 	base = "#000000",
-				-- 	mantle = "#000000",
-				-- 	crust = "#000000",
-				-- },
-			-- },
-      transparent_background = true,
-      integrations = {
-        cmp = true,
-        gitsigns = true,
-        nvimtree = true,
-        neotree = false,
-        noice = false,
-        treesitter = true,
-        notify = true,
-        which_key = false,
-        mini = {
-          enabled = true,
-          indentscope_color = "",
-        },
-      }
     })
 
     everforest.setup({
