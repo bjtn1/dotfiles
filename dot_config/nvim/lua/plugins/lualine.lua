@@ -5,6 +5,8 @@ return
       "nvim-tree/nvim-web-devicons"
     },
     config = function ()
+      -- Inspired by...
+      -- https://github.com/nvim-lualine/lualine.nvim/blob/master/examples/bubbles.lua
       -- Bubbles config for lualine
       -- Author: lokesh-krishna
       -- MIT license, see LICENSE for more details.
@@ -37,11 +39,14 @@ return
         options = {
           theme = theme,
           component_separators = '|',
-          section_separators = { left = '', right = '' },
+          -- If you want rounded separators use
+          -- 
+          -- 
+          section_separators = { left = '', right = '' },
         },
         sections = {
           lualine_a = {
-            { 'mode', separator = { left = '' }, right_padding = 2 },
+            { 'mode', separator = { left = '' }, right_padding = 2 },
           },
           lualine_b = { 'filename' },
           lualine_c = { "branch" },
