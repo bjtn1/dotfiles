@@ -106,4 +106,5 @@ wk.register({
   ["Y"] = { '"+y$', "Yank to system clipboard (to end of line)" },
   ["p"] = { '"+p', "Put from system clipboard" },
   ["P"] = { '"+P', "Put from system clipboard (before cursor)" },
+  ["x"] = { '"+x', "Yank and delete to system clipboard"},
 }, v)
