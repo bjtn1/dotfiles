@@ -52,7 +52,7 @@ return
           lualine_c = { "branch" },
           lualine_x = {},
           lualine_y = {},
-          lualine_z = {},
+          lualine_z = { "location" },
         },
       }
     end
