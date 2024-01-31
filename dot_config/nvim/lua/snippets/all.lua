@@ -8,8 +8,8 @@ return
       fmta(
         [[
         <<details>>
-          <<summary>><><</summary>>
-          <<div>><><</div>>
+            <<summary>><><</summary>>
+            <<div>><><</div>>
         <</details>><>
         ]],
         {
