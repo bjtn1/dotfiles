@@ -2,6 +2,27 @@ return
   {
     s(
       {
+        trig="deet",
+        snippetType="autosnippet",
+      },
+      fmta(
+        [[
+        <<details>>
+          <<summary>><><</summary>>
+          <<div>><><</div>>
+        <</details>><>
+        ]],
+        {
+          i(1),
+          i(2),
+          i(0),
+        }
+      ),
+      {}
+    ),
+
+    s(
+      {
         trig="sln",
         snippetType="autosnippet",
         dscr="showLineNumbers"
