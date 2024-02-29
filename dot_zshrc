@@ -66,7 +66,7 @@ alias cmcd="chezmoi cd"
 
 # Tmux
 alias tm="tmux"
-alias tmn="tmux new -s"
+alias tmn="tmux new"
 alias tma="tmux attach"
 alias tml="tmux ls"
 alias tmd="tmux detach"
