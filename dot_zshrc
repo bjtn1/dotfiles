@@ -86,7 +86,7 @@ alias al="py /Users/bnog/Workspace/al/src/main.py"
 # ls
 alias l="ls -lah"
 alias ls="ls -lh --color=auto"
-alias vmbackup='rsync is83652@130.85.220.29:/home/is83652/vbox /Volumes/B/421cmsc/vbox -Pavz'
+alias vmbackup='rsync is83652@130.85.220.29:/home/is83652/vbox /Volumes/B/ -Pavz'
 
 
 # Git
