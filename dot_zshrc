@@ -52,7 +52,7 @@ alias nv="nvim"
 alias cl="clear"
 
 # Most important alias
-alias update='brew update ; brew upgrade ; brew cleanup --prune=all -s ; brew autoremove ; echo "" > ~/.config/brewfile ; brew bundle dump -f --file=~/.config/brewfile ; cmr ; py -m pip install --upgrade pip ; rustup update'
+alias update='brew update ; brew upgrade ; brew cleanup --prune=all -s ; brew autoremove ; echo "" > ~/.config/brewfile ; brew bundle dump -f --file=~/.config/brewfile ; cmr ; rustup update'
 alias u="update"
 
 
@@ -86,7 +86,6 @@ alias al="py /Users/bnog/Workspace/al/src/main.py"
 # ls
 alias l="ls -lah"
 alias ls="ls -lh --color=auto"
-alias vmbackup='rsync is83652@130.85.220.29:/home/is83652/vbox /Volumes/B/ -Pavz'
 
 
 # Git
