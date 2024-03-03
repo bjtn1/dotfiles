@@ -43,6 +43,13 @@ wk.register({
     c = { "<cmd>TroubleToggle document_diagnostics<cr>", "Diagnostics from current buffer" },
     t = { "<cmd>echo 'LOL THIS DONT WORK YET, ILL FIGURE IT OUT LATER'<cr>", "View TODOs in current directory" },
   },
+  ["<leader>n"] = {
+    name = "+Neorg",
+    e = { "<cmd>Neorg export to-file<cr>", "Export current .norg to .md" },
+    i = { "<cmd>Neorg inject-metadata<cr>", "Inject metadata" },
+    t = { "<cmd>Neorg toggle-concealer<cr>", "Toggle concealer" },
+    u = { "<cmd>Neorg update-metadata<cr>", "Update metadata" },
+  },
   ["<leader>o"] = {
     name = "+Open",
     g = { "<cmd>lua _Lazygit_toggle()<CR>", "LazyGit" },
