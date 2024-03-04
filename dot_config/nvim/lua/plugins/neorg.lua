@@ -83,7 +83,8 @@ return {
                 get_current_date() .. " (" .. get_timestamp() .. ")"
 
               }
-            }
+            },
+            update_date = true,
           },
         },
         ["core.highlights"] = {
