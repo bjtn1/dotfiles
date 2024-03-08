@@ -31,6 +31,8 @@ unset zle_bracketed_paste
 
 autoload -U compinit; compinit
 
+alias ip='ipconfig getifaddr en0'
+
 # Cant remember what these are for
 alias copy='cat $1 | pbcopy'
 alias unpack='function _unpack() { dest=${2:-.}; mv -i $1/* $dest && rm -ri $1; }; _unpack'
