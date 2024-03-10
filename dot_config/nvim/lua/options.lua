@@ -12,7 +12,7 @@ vim.opt.autoindent = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
--- vim.opt.cursorline = true
+vim.opt.cursorline = true
 
 vim.opt.termguicolors = true
 vim.opt.background = "dark"
@@ -36,5 +36,3 @@ vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 
 vim.opt.fillchars:append("eob: ")
-
-vim.opt.cursorline = true
