@@ -9,14 +9,15 @@ local x = { mode = "x" }
 -- Normal mode keymaps
 -- in WhichKey, noremap and silent options are true by default
 wk.register({
+  -- ["\""] = { "<cmd>reg<cr>", "Show registers" },
   ["H"] = { "<cmd>BufferLineCyclePrev<cr>", "Cycle to prev tab" },
   ["J"] = { "<Cmd>m .+1<CR>==", "Move line at cursor down" },
   ["K"] = { "<Cmd>m .-2<CR>==", "Move line at cursor up" },
   ["L"] = { "<cmd>BufferLineCycleNext<cr>", "Cycle to next tab" },
   ["y"] = { '"+y', "Yank to system clipboard" },
   ["Y"] = { '"+y$', "Yank to system clipboard (to end of line)" },
-  ["p"] = { '"+p', "Put from system clipboard" },
-  ["P"] = { '"+P', "Put from system clipboard (before cursor)" },
+  -- ["p"] = { '"+p', "Put from system clipboard" },
+  -- ["P"] = { '"+P', "Put from system clipboard (before cursor)" },
   ["<C-Bslash>"] = { "<cmd>ToggleTerm<cr>", "Toggle terminal" },
   ["<C-s>"] = { "<esc><cmd>w<cr>", "Save file" },
   -- ["<leader>e"] = { "<cmd>NvimTreeToggle<cr>", "Toggle NeoTree" },
@@ -111,7 +112,7 @@ wk.register({
 wk.register({
   ["y"] = { '"+y', "Yank to system clipboard" },
   ["Y"] = { '"+y$', "Yank to system clipboard (to end of line)" },
-  ["p"] = { '"+p', "Put from system clipboard" },
-  ["P"] = { '"+P', "Put from system clipboard (before cursor)" },
+  -- ["p"] = { '"+p', "Put from system clipboard" },
+  -- ["P"] = { '"+P', "Put from system clipboard (before cursor)" },
   ["x"] = { '"+x', "Yank and delete to system clipboard"},
 }, v)
