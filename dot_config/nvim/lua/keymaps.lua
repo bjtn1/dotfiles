@@ -63,14 +63,14 @@ wk.register({
     c = { '<cmd>lua require("persistence").load()<cr>', "Current directory's last session" },
     l = { '<cmd>lua require("persistence").load({last = true})<cr>', "Last session" },
   },
-  ["<leader>s"] = {
-    name = "+Search",
-    f = { "<cmd>Telescope find_files<cr>", "Files" },
-    R = { "<cmd>Telescope oldfiles<cr>", "Recent Files" },
-    s = { "<cmd>Telescope live_grep<cr>", "String (all files)" },
-    c = { "<cmd>Telescope colorscheme<cr>", "Colorschemes" },
-    p = { "<cmd>Telescope projects<cr>", "Projects" },
-    r = { ":%s/", "Searh and replace"},
+  ["<leader>t"] = {
+    name = "+Telescope",
+    f = { "<cmd>Telescope find_files<cr>", "Find files" },
+    R = { "<cmd>Telescope oldfiles<cr>", "Find recent Files" },
+    s = { "<cmd>Telescope live_grep<cr>", "Find string (all files)" },
+    c = { "<cmd>Telescope colorscheme<cr>", "Find colorschemes" },
+    p = { "<cmd>Telescope projects<cr>", "Find projects" },
+    r = { ":%s/", "Search and replace"},
   },
   ["<leader>v"] = {
     name = "+VimTex",
@@ -110,6 +110,7 @@ wk.register({
 
 -- Visual mode keymaps
 wk.register({
+  ["<leader>s"] = { "<cmd>Silicon<cr>", "Screenshot" },
   ["y"] = { '"+y', "Yank to system clipboard" },
   ["Y"] = { '"+y$', "Yank to system clipboard (to end of line)" },
   ["p"] = { '"+p', "Put from system clipboard" },
