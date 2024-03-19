@@ -27,12 +27,16 @@ wk.register({
   ["gR"] = { "<cmd>TroubleToggle lsp_references<cr>", "LSP references" },
   ["<leader>h"] = { "<cmd>noh<cr>", "Clear highlights" },
 
-  ["s"] = {
-    name = "+Surround",
-    a = { "<Plug>Ysurround", "Add<motion><delimiter>" },
-    d = { "<Plug>Dsurround", "Delete<delimiter>" },
-    c = { "<Plug>Csurround", "Change<old_delimiter><new_delimiter>" },
-    A = { "<Plug>Yssurround", "Add in line" },
+  -- ["s"] = {
+  --   name = "+Surround",
+  --   a = { "<Plug>Ysurround", "Add<motion><delimiter>" },
+  --   d = { "<Plug>Dsurround", "Delete<delimiter>" },
+  --   c = { "<Plug>Csurround", "Change<old_delimiter><new_delimiter>" },
+  --   A = { "<Plug>Yssurround", "Add in line" },
+  -- },
+  ["<leader>s"] = {
+    name = "+Screenshot",
+    f = { "<cmd>Silicon<cr>", "File" },
   },
   ["<leader>b"] = {
     name = "+Buffer",
@@ -110,10 +114,14 @@ wk.register({
 
 -- Visual mode keymaps
 wk.register({
-  ["<leader>s"] = { "<cmd>Silicon<cr>", "Screenshot" },
   ["y"] = { '"+y', "Yank to system clipboard" },
   ["Y"] = { '"+y$', "Yank to system clipboard (to end of line)" },
   ["p"] = { '"+p', "Put from system clipboard" },
   ["P"] = { '"+P', "Put from system clipboard (before cursor)" },
   ["x"] = { '"+x', "Yank and delete to system clipboard"},
+  ["<leader>s"] = {
+    name = "+Screenshot",
+    c = { ":Silicon<cr>", "Code" },
+    f = { "<cmd>Silicon<cr>", "File" },
+  },
 }, v)
