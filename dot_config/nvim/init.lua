@@ -26,7 +26,8 @@ vim.opt.rtp:prepend(lazypath)
 
 vim.g.mapleader = " "
 
-local color = "tokyonight-night"
+-- local color = "tokyonight-night"
+local color = "catppuccin-mocha"
 
 local opts = {
   install = {
