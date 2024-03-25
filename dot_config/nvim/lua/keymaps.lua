@@ -27,13 +27,13 @@ wk.register({
   ["gR"] = { "<cmd>TroubleToggle lsp_references<cr>", "LSP references" },
   ["<leader>h"] = { "<cmd>noh<cr>", "Clear highlights" },
 
-  -- ["s"] = {
-  --   name = "+Surround",
-  --   a = { "<Plug>Ysurround", "Add<motion><delimiter>" },
-  --   d = { "<Plug>Dsurround", "Delete<delimiter>" },
-  --   c = { "<Plug>Csurround", "Change<old_delimiter><new_delimiter>" },
-  --   A = { "<Plug>Yssurround", "Add in line" },
-  -- },
+  ["s"] = {
+    name = "+Surround",
+    a = { "<Plug>Ysurround", "Add<motion><delimiter>" },
+    d = { "<Plug>Dsurround", "Delete<delimiter>" },
+    c = { "<Plug>Csurround", "Change<old_delimiter><new_delimiter>" },
+    A = { "<Plug>Yssurround", "Add in line" },
+  },
   ["<leader>s"] = {
     name = "+Screenshot",
     f = { "<cmd>Silicon<cr>", "File" },
