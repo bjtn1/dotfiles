@@ -47,7 +47,7 @@ alias unzip='function unzip_wrapper { dest=${2:-.}; unar "$1" -o "$dest" && rm -
 # This is the alias used to run the pogocal thingie I made
 alias pogocal="cd ~/Workspace/pogocal/ && py src/pogocal.py"
 alias icd="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/"
-alias v="fd --type f --hidden --exclude .git | fzf-tmux -p -h 100% -w 100% | xargs -r nvim"
+alias v="fd --type f --hidden --exclude .git | fzf-tmux -p -h 100% -w 100% --reverse | xargs -r nvim"
 alias lg="lazygit"
 alias e="exit"
 alias nv="nvim"
