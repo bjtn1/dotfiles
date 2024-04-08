@@ -11,7 +11,16 @@ end
 -- Define the autocmd group
 vim.cmd([[
   augroup vimtex_event_focus
-    autocmd!
-    autocmd User VimtexEventViewReverse lua TexFocusNeovim()
+  autocmd!
+  autocmd User VimtexEventViewReverse lua TexFocusNeovim()
   augroup END
 ]])
+
+-- Opne Telescope find_files on enter
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    if vim.fn.argv(0) == "" then
+      require("telescope.builtin").find_files()
+    end
+  end,
+})
