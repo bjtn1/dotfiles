@@ -54,7 +54,7 @@ alias nv="nvim"
 alias cl="clear"
 
 # Most important alias
-alias update='brew update ; brew upgrade ; brew cleanup --prune=all -s ; brew autoremove ; echo "" > ~/.config/brewfile ; brew bundle dump -f --file=~/.config/brewfile ; cmr ; rustup update'
+alias update='brew update ; brew upgrade --greedy ; brew cleanup --prune=all -s ; brew autoremove ; echo "" > ~/.config/brewfile ; brew bundle dump -f --file=~/.config/brewfile ; cmr ; rustup update'
 alias u="update"
 
 
