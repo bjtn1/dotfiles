@@ -62,7 +62,7 @@ alias u="update"
 alias cm="chezmoi"
 
 # Use this for whenever you add a new file anywhere inside nvim/
-alias cmr="rm -rf ~/.local/share/chezmoi/dot_config/nvim && chezmoi add ~/.config/nvim/* ; rm -rf ~/.local/share/chezmoi/dot_config/tmux/ && chezmoi add ~/.config/tmux/* ; rm ~/.local/share/chezmoi/dot_config/brewfile && chezmoi add ~/.config/brewfile ; rm ~/.local/share/chezmoi/dot_zshrc && chezmoi add ~/.zshrc ; rm -rf ~/.local/share/chezmoi/private_Pictures && chezmoi add ~/Pictures/wallpapers/ ; rm -rf ~/.local/share/chezmoi/dot_config/iterm2/themes/ && chezmoi add ~/.config/iterm2/themes/"
+alias cmr="rm -rf ~/.local/share/chezmoi/dot_config/nvim && chezmoi add ~/.config/nvim/* --verbose; rm -rf ~/.local/share/chezmoi/dot_config/tmux/ && chezmoi add --verbose ~/.config/tmux/* ; rm ~/.local/share/chezmoi/dot_config/brewfile && chezmoi add --verbose ~/.config/brewfile ; rm ~/.local/share/chezmoi/dot_zshrc && chezmoi add --verbose ~/.zshrc ; rm -rf ~/.local/share/chezmoi/private_Pictures && chezmoi add --verbose ~/Pictures/wallpapers/ ; rm -rf ~/.local/share/chezmoi/dot_config/iterm2/themes/ && chezmoi add --verbose ~/.config/iterm2/themes/"
 alias cmcd="chezmoi cd"
 
 
