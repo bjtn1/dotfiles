@@ -33,38 +33,36 @@ autoload -U compinit; compinit
 
 alias ip='ipconfig getifaddr en0'
 
-# Cant remember what these are for
-alias copy='cat $1 | pbcopy'
-alias unpack='function _unpack() { dest=${2:-.}; mv -i $1/* $dest && rm -ri $1; }; _unpack'
 alias path='echo $PATH | tr ":" "\n"'
-
-# ImageMagick alias
-alias convert='function magick_wrapper { magick "$1" "$2" && rm -i "$1"; }; magick_wrapper'
-
-# Unar(chiver) alias
-alias unzip='function unzip_wrapper { dest=${2:-.}; unar "$1" -o "$dest" && rm -i "$1"; }; unzip_wrapper'
 
 # This is the alias used to run the pogocal thingie I made
 alias pogocal="cd ~/Workspace/pogocal/ && py src/pogocal.py"
+
 alias icd="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/"
-alias v='fd --type f --hidden --exclude .git | fzf-tmux -p -h 100% -w 100% --reverse | xargs -r nvim'
 alias lg="lazygit"
 alias e="exit"
 alias nv="nvim"
 alias cl="clear"
 
 # Most important alias
-alias update='brew update --verbose ; brew upgrade --greedy --verbose ; brew cleanup --prune=all -s --verbose ; brew autoremove --verbose ; echo "" > ~/.config/brewfile ; brew bundle dump -f --file=~/.config/brewfile ; cmr ; rustup update'
+alias update=' \
+brew update --verbose ; \
+brew upgrade --greedy --verbose ; \
+brew cleanup --prune=all -s --verbose ; \
+brew autoremove --verbose ; \
+echo "" > ~/.config/brewfile ; \
+brew bundle dump -f --file=~/.config/brewfile ; \
+cmr ; \
+rustup update \
+'
 alias u="update"
-
 
 # Chezmoi
 alias cm="chezmoi"
 
 # Use this for whenever you add a new file anywhere inside nvim/
-alias cmr="rm -rf ~/.local/share/chezmoi/dot_config/nvim && chezmoi add ~/.config/nvim/* --verbose; rm -rf ~/.local/share/chezmoi/dot_config/tmux/ && chezmoi add --verbose ~/.config/tmux/* ; rm ~/.local/share/chezmoi/dot_config/brewfile && chezmoi add --verbose ~/.config/brewfile ; rm ~/.local/share/chezmoi/dot_zshrc && chezmoi add --verbose ~/.zshrc ; rm -rf ~/.local/share/chezmoi/private_Pictures && chezmoi add --verbose ~/Pictures/wallpapers/ ; rm -rf ~/.local/share/chezmoi/dot_config/iterm2/themes/ && chezmoi add --verbose ~/.config/iterm2/themes/"
+alias cmr="rm -rf ~/.local/share/chezmoi/dot_config/nvim && chezmoi add ~/.config/nvim/* ; rm -rf ~/.local/share/chezmoi/dot_config/tmux/ && chezmoi add ~/.config/tmux/* ; rm ~/.local/share/chezmoi/dot_config/brewfile && chezmoi add ~/.config/brewfile ; rm ~/.local/share/chezmoi/dot_zshrc && chezmoi add ~/.zshrc ; rm -rf ~/.local/share/chezmoi/private_Pictures && chezmoi add ~/Pictures/wallpapers/ ; rm -rf ~/.local/share/chezmoi/dot_config/iterm2/themes/ && chezmoi add ~/.config/iterm2/themes/"
 alias cmcd="chezmoi cd"
-
 
 # Tmux
 alias tm="tmux"
@@ -81,14 +79,13 @@ alias zshenv="nvim ~/.zshenv"
 # Python
 alias py="python3"
 alias pip="pip3"
-#
+
 # This is the file organizer I created
 alias al="py /Users/bnog/Workspace/al/src/main.py"
 
 # ls
 alias l="ls -lah"
 alias ls="ls -lh --color=auto"
-
 
 # Git
 alias gs='git status'
