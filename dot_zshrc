@@ -46,6 +46,8 @@ alias cl="clear"
 
 # Most important alias
 alias update=' \
+echo -e "\033[34m==>\033[0m" \
+echo -e "\033[32mRunning brew update\033[0m" \
 brew update --verbose ; \
 brew upgrade --greedy --verbose ; \
 brew cleanup --prune=all -s --verbose ; \
