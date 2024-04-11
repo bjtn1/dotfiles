@@ -44,21 +44,27 @@ alias e="exit"
 alias nv="nvim"
 alias cl="clear"
 
+# Taken from here:
+# https://github.com/Homebrew/actions/blob/7657c9512f50e1c35b640971116425935bab3eea/setup-homebrew/main.sh#L17
+ohai() {
+  echo -e "\\033[34m==>\\033[0m \\033[32m$*\\033[0m"
+}
+
 # Most important alias
 alias update=' \
-echo -e "\033[34m==>\033[0m \033[32mRunning brew update...\033[0m" ; \
+ohai "Running brew update..." ; \
 brew update --verbose ; \
-echo -e "\033[34m==>\033[0m \033[32mRunning brew upgrade...\033[0m" ; \
+ohai "Running brew upgrade..." ; \
 brew upgrade --greedy --verbose ; \
-echo -e "\033[34m==>\033[0m \033[32mRunning brew cleanup...\033[0m" ; \
+ohai "Running brew cleanup..." ; \
 brew cleanup --prune=all -s --verbose ; \
-echo -e "\033[34m==>\033[0m \033[32mRunning brew autoremove...\033[0m" ; \
+ohai "Running brew autoremove..." ; \
 brew autoremove --verbose ; \
 echo "" > ~/.config/brewfile ; \
-echo -e "\033[34m==>\033[0m \033[32mRunning brew bundle dump...\033[0m" ; \
+ohai "Running brew bundle dump..." ; \
 brew bundle dump -f --file=~/.config/brewfile ; \
 cmr ; \
-echo -e "\033[34m==>\033[0m \033[32mRunning rustup update...\033[0m" ; \
+ohai "Running rustup update..." ; \
 rustup update \
 '
 alias u="update"
@@ -68,22 +74,22 @@ alias cm="chezmoi"
 
 # Use this for whenever you add a new file anywhere inside nvim/
 alias cmr=' \
-echo -e "\033[34m==>\033[0m \033[32mRunning chezmoi add ~/.config/nvim/*\033[0m" ; \
+ohai "Running chezmoi add ~/.config/nvim/*" ; \
 rm -rf ~/.local/share/chezmoi/dot_config/nvim && \
 chezmoi add ~/.config/nvim/* ; \
-echo -e "\033[34m==>\033[0m \033[32mRunning chezmoi add ~/.config/tmux/*\033[0m" ; \
+ohai "Running chezmoi add ~/.config/tmux/*" ; \
 rm -rf ~/.local/share/chezmoi/dot_config/tmux/ && \
 chezmoi add ~/.config/tmux/* ; \
-echo -e "\033[34m==>\033[0m \033[32mRunning chezmoi add ~/.config/brewfile\033[0m" ; \
+ohai "Running chezmoi add ~/.config/brewfile" ; \
 rm ~/.local/share/chezmoi/dot_config/brewfile && \
 chezmoi add ~/.config/brewfile ; \
-echo -e "\033[34m==>\033[0m \033[32mRunning chezmoi add ~/.zshrc\033[0m" ; \
+ohai "Running chezmoi add ~/.zshrc" ; \
 rm ~/.local/share/chezmoi/dot_zshrc && \
 chezmoi add ~/.zshrc ; \
-echo -e "\033[34m==>\033[0m \033[32mRunning chezmoi add ~/Pictures/wallpapers/\033[0m" ; \
+ohai "Running chezmoi add ~/Pictures/wallpapers/" ; \
 rm -rf ~/.local/share/chezmoi/private_Pictures && \
 chezmoi add ~/Pictures/wallpapers/ ; \
-echo -e "\033[34m==>\033[0m \033[32mRunning chezmoi add ~/.config/iterm2/themes/\033[0m" ; \
+ohai "Running chezmoi add ~/.config/iterm2/themes/" ; \
 rm -rf ~/.local/share/chezmoi/dot_config/iterm2/themes/ && \
 chezmoi add ~/.config/iterm2/themes/ \
 '
