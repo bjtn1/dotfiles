@@ -68,28 +68,22 @@ alias cm="chezmoi"
 
 # Use this for whenever you add a new file anywhere inside nvim/
 alias cmr=' \
-echo -e "\033[34m==>\033[0m" ; \
-echo -e "\033[32mRunning chezmoi add ~/.config/nvim/*\033[0m" ; \
+echo -e "\033[34m==>\033[0m \033[32mRunning chezmoi add ~/.config/nvim/*\033[0m" ; \
 rm -rf ~/.local/share/chezmoi/dot_config/nvim && \
 chezmoi add ~/.config/nvim/* ; \
-echo -e "\033[34m==>\033[0m" ; \
-echo -e "\033[32mRunning chezmoi add ~/.config/tmux/*\033[0m" ; \
+echo -e "\033[34m==>\033[0m \033[32mRunning chezmoi add ~/.config/tmux/*\033[0m" ; \
 rm -rf ~/.local/share/chezmoi/dot_config/tmux/ && \
 chezmoi add ~/.config/tmux/* ; \
-echo -e "\033[34m==>\033[0m" ; \
-echo -e "\033[32mRunning chezmoi add ~/.config/brewfile\033[0m" ; \
+echo -e "\033[34m==>\033[0m \033[32mRunning chezmoi add ~/.config/brewfile\033[0m" ; \
 rm ~/.local/share/chezmoi/dot_config/brewfile && \
 chezmoi add ~/.config/brewfile ; \
-echo -e "\033[34m==>\033[0m" ; \
-echo -e "\033[32mRunning chezmoi add ~/.zshrc\033[0m" ; \
+echo -e "\033[34m==>\033[0m \033[32mRunning chezmoi add ~/.zshrc\033[0m" ; \
 rm ~/.local/share/chezmoi/dot_zshrc && \
 chezmoi add ~/.zshrc ; \
-echo -e "\033[34m==>\033[0m" ; \
-echo -e "\033[32mRunning chezmoi add ~/Pictures/wallpapers/\033[0m" ; \
+echo -e "\033[34m==>\033[0m \033[32mRunning chezmoi add ~/Pictures/wallpapers/\033[0m" ; \
 rm -rf ~/.local/share/chezmoi/private_Pictures && \
 chezmoi add ~/Pictures/wallpapers/ ; \
-echo -e "\033[34m==>\033[0m" ; \
-echo -e "\033[32mRunning chezmoi add ~/.config/iterm2/themes/\033[0m" ; \
+echo -e "\033[34m==>\033[0m \033[32mRunning chezmoi add ~/.config/iterm2/themes/\033[0m" ; \
 rm -rf ~/.local/share/chezmoi/dot_config/iterm2/themes/ && \
 chezmoi add ~/.config/iterm2/themes/ \
 '
