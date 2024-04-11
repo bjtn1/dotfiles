@@ -47,7 +47,7 @@ alias cl="clear"
 # Taken from here:
 # https://github.com/Homebrew/actions/blob/7657c9512f50e1c35b640971116425935bab3eea/setup-homebrew/main.sh#L17
 ohai() {
-  echo -e "\\033[34m==>\\033[0m \\033[32m$*\\033[0m"
+  echo -e "\\033[34m==>\\033[0m \\033[1m$*\\033[0m"
 }
 
 # Most important alias
