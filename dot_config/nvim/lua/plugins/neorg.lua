@@ -39,7 +39,7 @@ return {
   -- cmd = "Neorg", -- lazy load on command, allows you to autocomplete :Neorg regardless of whether it's loaded yet
   --  (you could also just remove both lazy loading things)
   priority = 30, -- treesitter is on default priority of 50, neorg should load after it.
-  version = "v7.0.0", -- This is the important part!
+  -- version = "v7.0.0", -- This is the important part!
   -- dependencies = { "luarocks.nvim" },
   config = function()
     require("neorg").setup({
