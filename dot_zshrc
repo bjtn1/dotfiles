@@ -115,8 +115,11 @@ alias pip="pip3"
 alias al="py /Users/bnog/Workspace/al/src/main.py"
 
 # ls
-alias l="ls -lah"
-alias ls="ls -lh --color=auto"
+# alias l="ls -lah"
+# alias ls="ls -lh --color=auto"
+
+# eza (cooler ls)
+alias l="eza --oneline --long --all --header --git --total-size --classify=always --icons=always"
 
 # Git
 alias gs='git status'
