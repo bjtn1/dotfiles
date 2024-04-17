@@ -120,7 +120,7 @@ alias al="py /Users/bnog/Workspace/al/src/main.py"
 # alias ls="ls -lh --color=auto"
 
 # eza (cooler ls)
-alias l="eza --oneline --long --all --header --git --git-repos --classify=always --icons=always --group-directories-first"
+alias l="eza --oneline --long --all --header --git --git-repos --classify=always --icons=always --group-directories-first --no-quotes --hyperlink"
 
 # Git
 alias gs='git status'
