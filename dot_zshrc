@@ -35,6 +35,8 @@ alias ip='ipconfig getifaddr en0'
 
 alias path='echo $PATH | tr ":" "\n"'
 
+alias activate="source bin/activate"
+
 # This is the alias used to run the pogocal thingie I made
 alias pogocal="cd ~/Workspace/pogocal/ && py src/pogocal.py"
 
