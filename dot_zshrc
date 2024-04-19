@@ -69,17 +69,9 @@ brew autoremove --verbose ; \
 echo "" > ~/.config/brewfile ; \
 ohai "Running brew bundle dump..." ; \
 brew bundle dump -f --file=~/.config/brewfile ; \
-cmr ; \
-ohai "Running rustup update..." ; \
-rustup update \
-'
-alias u="update"
-
-# Chezmoi
-alias cm="chezmoi"
-
-# Use this for whenever you add a new file anywhere inside nvim/
-alias cmr=' \
+ohai "Running chezmoi add ~/.config/lvim/*" ; \
+rm -rf ~/.local/share/chezmoi/dot_config/lvim && \
+chezmoi add ~/.config/lvim/* ; \
 ohai "Running chezmoi add ~/.config/nvim/*" ; \
 rm -rf ~/.local/share/chezmoi/dot_config/nvim && \
 chezmoi add ~/.config/nvim/* ; \
@@ -98,7 +90,35 @@ chezmoi add ~/Pictures/wallpapers/ ; \
 ohai "Running chezmoi add ~/.config/iterm2/themes/" ; \
 rm -rf ~/.local/share/chezmoi/dot_config/iterm2/themes/ && \
 chezmoi add ~/.config/iterm2/themes/ \
+ohai "Running rustup update..." ; \
+rustup update \
 '
+alias u="update"
+
+# Chezmoi
+alias cm="chezmoi"
+
+# Use this for whenever you add a new file anywhere inside nvim/
+# alias cmr=' \
+# ohai "Running chezmoi add ~/.config/nvim/*" ; \
+# rm -rf ~/.local/share/chezmoi/dot_config/nvim && \
+# chezmoi add ~/.config/nvim/* ; \
+# ohai "Running chezmoi add ~/.config/tmux/*" ; \
+# rm -rf ~/.local/share/chezmoi/dot_config/tmux/ && \
+# chezmoi add ~/.config/tmux/* ; \
+# ohai "Running chezmoi add ~/.config/brewfile" ; \
+# rm ~/.local/share/chezmoi/dot_config/brewfile && \
+# chezmoi add ~/.config/brewfile ; \
+# ohai "Running chezmoi add ~/.zshrc" ; \
+# rm ~/.local/share/chezmoi/dot_zshrc && \
+# chezmoi add ~/.zshrc ; \
+# ohai "Running chezmoi add ~/Pictures/wallpapers/" ; \
+# rm -rf ~/.local/share/chezmoi/private_Pictures && \
+# chezmoi add ~/Pictures/wallpapers/ ; \
+# ohai "Running chezmoi add ~/.config/iterm2/themes/" ; \
+# rm -rf ~/.local/share/chezmoi/dot_config/iterm2/themes/ && \
+# chezmoi add ~/.config/iterm2/themes/ \
+# '
 alias cmcd="chezmoi cd"
 
 # Tmux
