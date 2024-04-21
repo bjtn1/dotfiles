@@ -27,14 +27,6 @@ return
             },
           },
         },
-        -- NOTE
-        -- This turned out to be annoying. Using lualine  instead
-        -- routes = {
-        --   {
-        --     view = "notify",
-        --     filter = { event = "msg_showmode" },
-        --   }
-        -- },
         presets = {
           lsp_doc_border = "single",
         },

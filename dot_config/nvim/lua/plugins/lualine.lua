@@ -2,7 +2,8 @@ return
   {
     "nvim-lualine/lualine.nvim",
     dependencies = {
-      "nvim-tree/nvim-web-devicons"
+      "nvim-tree/nvim-web-devicons",
+      "archibate/lualine-time"
     },
     config = function ()
       -- Inspired by...
@@ -46,13 +47,35 @@ return
         },
         sections = {
           lualine_a = {
-            { 'mode', separator = { left = '' }, right_padding = 2 },
+            {
+              "filename",
+              separator = {
+                left = ""
+              },
+              right_padding = 2
+            },
           },
-          lualine_b = { 'filename' },
-          lualine_c = { "branch" },
-          lualine_x = {},
-          lualine_y = {},
-          lualine_z = { "location" },
+          lualine_b = {
+            {
+              require("noice").api.statusline.mode.get,
+              cond = require("noice").api.statusline.mode.has,
+              color = { fg = "#ff9e64" },
+            }
+          },
+          lualine_c = {
+            "branch"
+          },
+          -- source:
+          -- https://github.com/folke/noice.nvim/wiki/Configuration-Recipes#show-recording-messages
+          lualine_x = {
+
+          },
+          lualine_y = {
+            "cdate"
+          },
+          lualine_z = {
+            "ctime"
+          },
         },
       }
     end
