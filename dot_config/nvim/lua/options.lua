@@ -26,7 +26,7 @@ vim.opt.splitbelow = true
 vim.opt.iskeyword:append("-")
 
 vim.opt.timeout = true
-vim.opt.timeoutlen = 500
+vim.opt.timeoutlen = 0
 
 vim.opt.laststatus = 0
 

@@ -1,5 +1,6 @@
-return {
-  "christoomey/vim-tmux-navigator",
-  config = function ()
-  end
-}
+return
+  {
+    "christoomey/vim-tmux-navigator",
+    config = function ()
+    end
+  }
