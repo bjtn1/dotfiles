@@ -9,7 +9,6 @@ local x = { mode = "x" }
 -- Normal mode keymaps
 -- in WhichKey, noremap and silent options are true by default
 wk.register({
-  -- ["\""] = { "<cmd>reg<cr>", "Show registers" },
   ["H"] = { "<cmd>BufferLineCyclePrev<cr>", "Cycle to prev tab" },
   ["J"] = { "<Cmd>m .+1<CR>==", "Move line at cursor down" },
   ["K"] = { "<Cmd>m .-2<CR>==", "Move line at cursor up" },
@@ -20,12 +19,14 @@ wk.register({
   ["P"] = { '"+P', "Put from system clipboard (before cursor)" },
   ["<C-Bslash>"] = { "<cmd>ToggleTerm<cr>", "Toggle terminal" },
   ["<C-s>"] = { "<esc><cmd>w<cr>", "Save file" },
-  ["<leader>e"] = { "<cmd>NvimTreeToggle<cr>", "Toggle NeoTree" },
-  -- ["<leader>e"] = { "<cmd>Neotree toggle current reveal_force_cwd<cr><cmd>set nu<cr><cmd>set rnu<cr>", "Toggle NeoTree" },
+  ["<leader>c"] = { "<cmd>lua MiniBufremove.delete()<cr>", "Close buffer" },
+  -- ["<leader>e"] = { "<cmd>NvimTreeToggle<cr>", "Toggle NeoTree" },
+  ["<leader>e"] = { "<cmd>Neotree toggle current reveal_force_cwd<cr><cmd>set nu<cr><cmd>set rnu<cr>", "Toggle NeoTree" },
   ["<leader>pm"] = { "<cmd>MarkdownPreviewToggle<cr>", "Preview markdown" },
   ["<leader>;"] = { "<cmd>Alpha<cr>", "Toggle dashboard" },
   ["gR"] = { "<cmd>TroubleToggle lsp_references<cr>", "LSP references" },
   ["<leader>h"] = { "<cmd>noh<cr>", "Clear highlights" },
+  ["<leader>/"] = { '<Plug>(comment_toggle_linewise_current)', "Toggle comment current line" },
 
   ["s"] = {
     name = "+Surround",
@@ -120,6 +121,7 @@ wk.register({
   -- Use K and J in normal mode to move line at cursor up or down respectively
   ["K"] = { ":m '<-2<cr>gv=gv", "move visual block selection up" },
   ["J"] = { ":m '>+1<cr>gv=gv", "move line at cursor down" },
+  ["<leader>/"] = { '<Plug>(comment_toggle_linewise_visual)', "Toggle comment current line" },
 }, x)
 
 -- Visual mode keymaps
