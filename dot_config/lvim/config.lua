@@ -2,6 +2,32 @@
 lvim.plugins =
 {
   {
+    "akinsho/bufferline.nvim",
+    version = "v3.*",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+    config = function()
+      require("bufferline").setup({
+        -- highlights = require("catppuccin.groups.integrations.bufferline").get(),
+        options = {
+          indicator = {
+            style = "icon",
+          },
+          numbers = "ordinal",
+          offsets = {
+            {
+              filetype = "NeoTree",
+              text = "File Explorer",
+              text_align = "left", -- | "center" | "right"
+              separator = true
+            }
+          },
+        },
+      })
+    end,
+  },
+  {
     "nvim-lualine/lualine.nvim",
     dependencies = {
       "nvim-tree/nvim-web-devicons"
@@ -219,14 +245,6 @@ lvim.plugins =
             },
           },
         },
-        -- NOTE
-        -- This turned out to be annoying. Using lualine  instead
-        -- routes = {
-        --   {
-        --     view = "notify",
-        --     filter = { event = "msg_showmode" },
-        --   }
-        -- },
         presets = {
           lsp_doc_border = "single",
         },
@@ -238,21 +256,17 @@ lvim.plugins =
       })
     end,
   },
-  {
-    "folke/tokyonight.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {},
-  }
-
 }
+
+
 -- colorscheme
+lvim.builtin.theme.tokyonight = true
 lvim.colorscheme = "tokyonight-night"
 
 -- options
 vim.opt.clipboard = ""
 vim.opt.timeout = true
-vim.opt.timeoutlen = 0
+vim.opt.timeoutlen = 100
 
 vim.opt.relativenumber = true
 vim.opt.number = true
