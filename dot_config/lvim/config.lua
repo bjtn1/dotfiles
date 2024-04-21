@@ -2,87 +2,33 @@
 lvim.plugins =
 {
   {
-    "akinsho/bufferline.nvim",
-    version = "v3.*",
+    "archibate/lualine-time"
+  },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
     dependencies = {
-      "nvim-tree/nvim-web-devicons",
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+      -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
     },
-    config = function()
-      require("bufferline").setup({
-        -- highlights = require("catppuccin.groups.integrations.bufferline").get(),
-        options = {
-          indicator = {
-            style = "icon",
+    config = function ()
+      local neotree = require("neo-tree")
+
+      neotree.setup({
+        filesystem = {
+          filtered_items = {
+            visible = true,
+            hide_dotfiles = false,
+            hide_gitignored = false,
+            hide_hidden = false,
           },
-          numbers = "ordinal",
-          offsets = {
-            {
-              filetype = "NeoTree",
-              text = "File Explorer",
-              text_align = "left", -- | "center" | "right"
-              separator = true
-            }
+          follow_current_file = {
+            enabled = true,
           },
         },
       })
-    end,
-  },
-  {
-    "nvim-lualine/lualine.nvim",
-    dependencies = {
-      "nvim-tree/nvim-web-devicons"
-    },
-    config = function ()
-      -- Inspired by...
-      -- https://github.com/nvim-lualine/lualine.nvim/blob/master/examples/bubbles.lua
-      -- Bubbles config for lualine
-      -- Author: lokesh-krishna
-      -- MIT license, see LICENSE for more details.
-
-      -- stylua: ignore
-      local colors = {
-        blue   = '#82aaff',
-        cyan   = '#86e1fc',
-        black  = '#1a1b26',
-        white  = '#c8d3f5',
-        red    = '#f38ba8',
-        violet = '#c099ff',
-        grey   = '#313244',
-        green  = "#c3e88d",
-      }
-
-      local theme = {
-        normal = {
-          a = { fg = colors.black, bg = colors.blue },
-          b = { fg = colors.blue, bg = colors.grey },
-          c = { fg = colors.green, bg = colors.black },
-        },
-
-        insert = { a = { fg = colors.black, bg = colors.green } },
-        visual = { a = { fg = colors.black, bg = colors.violet } },
-        replace = { a = { fg = colors.black, bg = colors.red } },
-      }
-
-      require('lualine').setup {
-        options = {
-          theme = theme,
-          component_separators = '|',
-          -- If you want rounded separators use
-          -- 
-          -- 
-          section_separators = { left = '', right = '' },
-        },
-        sections = {
-          lualine_a = {
-            { 'mode', separator = { left = '' }, right_padding = 2 },
-          },
-          lualine_b = { 'filename' },
-          lualine_c = { "branch" },
-          lualine_x = {},
-          lualine_y = {},
-          lualine_z = { "location" },
-        },
-      }
     end
   },
   {
@@ -157,7 +103,6 @@ lvim.plugins =
             config = {
               template = {
                 {
-                  -- TODO
                   "Title",
                   get_file_name()
                 },
@@ -166,12 +111,10 @@ lvim.plugins =
                   "Brandon J. T. Noguera"
                 },
                 {
-                  -- TODO
                   "Created",
                   get_current_date() .. " (" .. get_timestamp() .. ")"
                 },
                 {
-                  -- TODO
                   "Updated",
                   get_current_date() .. " (" .. get_timestamp() .. ")"
 
@@ -258,8 +201,34 @@ lvim.plugins =
   },
 }
 
+-- bultins
+lvim.builtin.nvimtree.active = false
+
+lvim.builtin.lualine.options.theme = "tokyonight"
+lvim.builtin.lualine.options.component_separators = "|"
+lvim.builtin.lualine.options.section_separators = { left = "", right = "" }
+lvim.builtin.lualine.sections.lualine_a = {
+  "filename"
+}
+
+lvim.builtin.lualine.sections.lualine_b = {
+  require("noice").api.statusline.mode.get,
+  cond = require("noice").api.statusline.mode.has,
+  color = { fg = {"#ff9e64"} },
+}
+
+lvim.builtin.lualine.sections.lualine_c = {
+  "branch"
+}
+lvim.builtin.lualine.sections.lualine_y = {
+  "cdate"
+}
+lvim.builtin.lualine.sections.lualine_z = {
+  "ctime"
+}
 
 -- colorscheme
+lvim.transparent_window = true
 lvim.builtin.theme.tokyonight = true
 lvim.colorscheme = "tokyonight-night"
 
@@ -301,7 +270,6 @@ vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 
 vim.opt.fillchars:append("eob: ")
 
-
 -- keybinds
 lvim.keys.normal_mode["<C-s>"]          = "<esc><cmd>w<cr>"
 lvim.keys.normal_mode["H"]              = "<cmd>BufferLineCyclePrev<cr>"
@@ -326,13 +294,14 @@ lvim.keys.visual_mode["p"]              = '"+p'
 lvim.keys.visual_mode["P"]              = '"+P'
 lvim.keys.visual_mode["J"]              = ":m '>+1<cr>gv=gv"
 lvim.keys.visual_mode["K"]              = ":m '<-2<cr>gv=gv"
+
 lvim.builtin.which_key.vmappings["s"] = {
   name = "+Screenshot",
   c = { "<cmd>Silicon<cr>", "Code" },
   f = { "<cmd>Silicon<cr>", "File" }
 }
 
-
+lvim.builtin.which_key.mappings["e"] = { "<cmd>Neotree toggle current reveal_force_cwd<cr><cmd>set nu<cr><cmd>set rnu<cr>", "Explorer" }
 
 lvim.keys.insert_mode["<C-s>"] = "<esc><cmd>w<cr>"
 
