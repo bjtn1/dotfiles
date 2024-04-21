@@ -1,10 +1,11 @@
--- NOTE all taken from:
--- https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/you-might-not-need-lsp-zero.md
--- For key notation, see
--- https://vimdoc.sourceforge.net/htmldoc/intro.html#key-notation
--- TODO
--- Make a function that does <cmd>LspInstall<cr> whenever we encounter a filetype that we do not have a server for
+
 return {
+  -- NOTE all taken from:
+  -- https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/you-might-not-need-lsp-zero.md
+  -- For key notation, see
+  -- https://vimdoc.sourceforge.net/htmldoc/intro.html#key-notation
+  -- TODO
+  -- Make a function that does <cmd>LspInstall<cr> whenever we encounter a filetype that we do not have a server for
   "neovim/nvim-lspconfig",
   priority = 1000,
   dependencies = {
@@ -36,6 +37,9 @@ return {
 
     -- For lua_ls
     "folke/neodev.nvim",
+
+    -- For breadcrumbs
+    "SmiteshP/nvim-navic",
   },
   config = function()
     -- local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
@@ -49,8 +53,9 @@ return {
     local mason_null_ls = require("mason-null-ls")
     local neodev = require("neodev")
     local null_ls = require("null-ls")
-    local wk = require("which-key")
+    -- local wk = require("which-key")
     local ls = require("luasnip")
+    local navic_breadcrumbs = require("nvim-navic")
 
     ---------------------
     -- Neodev
@@ -243,7 +248,6 @@ return {
     null_ls.setup({
       border = "rounded",
       sources = {
-        -- NOTE
         -- Add anything not supported by mason here
       },
     })
@@ -255,38 +259,25 @@ return {
     local lsp_capabilities = cmp_nvim_lsp.default_capabilities() -- to enable autocompletion
 
     local lsp_attach = function(client, bufnr)
-      -- NOTE Available keybinds
-      -- vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
-      -- vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)
-      -- vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", opts)
-      -- vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", opts)
-      -- vim.keymap.set("n", "go", "<cmd>lua vim.lsp.buf.type_definition()<cr>", opts)
-      -- vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", opts)
-      -- vim.keymap.set("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<cr>", opts)
-      -- vim.keymap.set("n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
-      -- vim.keymap.set({"n", "x"}, "<F3>", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", opts)
-      -- vim.keymap.set("n", "<F4>", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
-      -- vim.keymap.set("n", "gl", "<cmd>lua vim.diagnostic.open_float()<cr>", opts)
-      -- vim.keymap.set("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<cr>", opts)
-      -- vim.keymap.set("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<cr>", opts)
-      wk.register({
-        ["<leader>l"] = {
-          name = "+LSP",
-          K = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Display information" },
-          d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Jump to definition" },
-          D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Jump to declaration" },
-          i = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "View implementations" },
-          o = { "<cmd>lua vim.lsp.buf.type_definition()<cr>", "View type definition" },
-          R = { "<cmd>lua vim.lsp.buf.references()<cr>", "List references" },
-          r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
-          a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code actions" },
-          F = { "<cmd>lua vim.lsp.buf.format()<cr>", "Format buffer" },
-          e = { "<cmd>lua vim.lsp.buf.diagnostic.open_float()<cr>", "Show diagnostics" },
-
-          s = { "<cmd>LspInfo<cr>", "Show attached servers" },
-          f = { "<cmd>NullLsInfo<cr>", "Show attached formatters & linters" },
-        },
-      }, { buffer = bufnr })
+      navic_breadcrumbs.attach(client, bufnr)
+      -- wk.register({
+      --   ["<leader>l"] = {
+      --     name = "+LSP",
+      --     K = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Display information" },
+      --     d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Jump to definition" },
+      --     D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Jump to declaration" },
+      --     i = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "View implementations" },
+      --     o = { "<cmd>lua vim.lsp.buf.type_definition()<cr>", "View type definition" },
+      --     R = { "<cmd>lua vim.lsp.buf.references()<cr>", "List references" },
+      --     r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+      --     a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code actions" },
+      --     F = { "<cmd>lua vim.lsp.buf.format()<cr>", "Format buffer" },
+      --     e = { "<cmd>lua vim.lsp.buf.diagnostic.open_float()<cr>", "Show diagnostics" },
+      --
+      --     s = { "<cmd>LspInfo<cr>", "Show attached servers" },
+      --     f = { "<cmd>NullLsInfo<cr>", "Show attached formatters & linters" },
+      --   },
+      -- }, { buffer = bufnr })
     end
 
     local get_servers = mason_lsp_config.get_installed_servers
