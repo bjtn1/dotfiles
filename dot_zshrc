@@ -96,7 +96,7 @@ rm -rf ~/.local/share/chezmoi/private_Pictures && \
 chezmoi add ~/Pictures/wallpapers/ ; \
 ohai "Running chezmoi add ~/.config/iterm2/themes/" ; \
 rm -rf ~/.local/share/chezmoi/dot_config/iterm2/themes/ && \
-chezmoi add ~/.config/iterm2/themes/ \
+chezmoi add ~/.config/iterm2/themes/ ; \
 ohai "Running rustup update..." ; \
 rustup update \
 '
