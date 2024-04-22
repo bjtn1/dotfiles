@@ -84,8 +84,7 @@ local zl =
         mapping = cmp.mapping.preset.insert({
           ["<Up>"] = cmp.mapping.select_prev_item(),
           ["<Down>"] = cmp.mapping.select_next_item(),
-          ["<tab>"] = cmp_action.luasnip_supertab(),
-          ["<S-Tab>"] = cmp_action.luasnip_shift_supertab(),
+          ["<tab>"] = cmp.mapping.select_next_item(),
           ["<C-b>"] = cmp.mapping.scroll_docs(-4),
           ["<C-f>"] = cmp.mapping.scroll_docs(4),
           ["<C-Space>"] = cmp.mapping.complete(),
@@ -308,14 +307,14 @@ return zl
 --       },
 --
 --       mapping = cmp.mapping.preset.insert({
---         ["<Up>"] = cmp.mapping.select_prev_item(),
---         ["<Down>"] = cmp.mapping.select_next_item(),
---         ["<tab>"] = cmp.mapping.select_next_item(),
---         ["<C-b>"] = cmp.mapping.scroll_docs(-4),
---         ["<C-f>"] = cmp.mapping.scroll_docs(4),
---         ["<C-Space>"] = cmp.mapping.complete(),
---         ["<C-e>"] = cmp.mapping.abort(),
---         ["<CR>"] = cmp.mapping.confirm({ select = false }),
+-- ["<Up>"] = cmp.mapping.select_prev_item(),
+-- ["<Down>"] = cmp.mapping.select_next_item(),
+-- ["<tab>"] = cmp.mapping.select_next_item(),
+-- ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+-- ["<C-f>"] = cmp.mapping.scroll_docs(4),
+-- ["<C-Space>"] = cmp.mapping.complete(),
+-- ["<C-e>"] = cmp.mapping.abort(),
+-- ["<CR>"] = cmp.mapping.confirm({ select = false }),
 --       }),
 --       sources = cmp.config.sources({
 --         { name = "nvim_lsp" },
