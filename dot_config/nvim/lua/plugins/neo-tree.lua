@@ -12,6 +12,11 @@ return
       local neotree = require("neo-tree")
 
       neotree.setup({
+        window = {
+          mappings = {
+            ["<space>"] = false,
+          }
+        },
         filesystem = {
           filtered_items = {
             visible = true,
