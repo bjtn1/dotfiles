@@ -26,7 +26,7 @@ vim.opt.splitbelow = true
 vim.opt.iskeyword:append("-")
 
 vim.opt.timeout = true
-vim.opt.timeoutlen = 100
+vim.opt.timeoutlen = 0
 
 vim.opt.laststatus = 0
 
@@ -36,3 +36,28 @@ vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 
 vim.opt.fillchars:append("eob: ")
+
+---------------------
+-- Diagnostics
+---------------------
+local signs = {
+  -- Error = " ",
+  -- Warn = " ",
+  -- Hint = " ",
+  -- Info = " ",
+  Error = "",
+  Warn = "",
+  Hint = "",
+  Info = "",
+}
+
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
+
+vim.diagnostic.config({
+  virtual_text = {
+    prefix = "",
+  },
+})

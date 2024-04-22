@@ -26,7 +26,7 @@ wk.register({
   ["<leader>;"] = { "<cmd>Alpha<cr>", "Toggle dashboard" },
   ["gR"] = { "<cmd>TroubleToggle lsp_references<cr>", "LSP references" },
   ["<leader>h"] = { "<cmd>noh<cr>", "Clear highlights" },
-  ["<leader>/"] = { '<Plug>(comment_toggle_linewise_current)', "Toggle comment current line" },
+  -- ["<leader>/"] = { '<Plug>(comment_toggle_linewise_current)', "Toggle comment current line" },
 
   ["s"] = {
     name = "+Surround",
@@ -55,16 +55,16 @@ wk.register({
     L = { "<cmd>BufferLineSortByExtension<cr>", "Sort by language" },
   },
 
-  ["<leader>1"] = { '<cmd> lua require("bufferline").go_to(1, true)<cr>', "Go to buffer 1"},
-  ["<leader>2"] = { '<cmd> lua require("bufferline").go_to(2, true)<cr>', "Go to buffer 2"},
-  ["<leader>3"] = { '<cmd> lua require("bufferline").go_to(3, true)<cr>', "Go to buffer 3"},
-  ["<leader>4"] = { '<cmd> lua require("bufferline").go_to(4, true)<cr>', "Go to buffer 4"},
-  ["<leader>5"] = { '<cmd> lua require("bufferline").go_to(5, true)<cr>', "Go to buffer 5"},
-  ["<leader>6"] = { '<cmd> lua require("bufferline").go_to(6, true)<cr>', "Go to buffer 6"},
-  ["<leader>7"] = { '<cmd> lua require("bufferline").go_to(7, true)<cr>', "Go to buffer 7"},
-  ["<leader>8"] = { '<cmd> lua require("bufferline").go_to(8, true)<cr>', "Go to buffer 8"},
-  ["<leader>9"] = { '<cmd> lua require("bufferline").go_to(9, true)<cr>', "Go to buffer 9"},
-  ["<leader>0"] = { '<cmd> lua require("bufferline").go_to(-1, true)<cr>', "Go to last buffer"},
+  ["<leader>1"] = { '<cmd> lua require("bufferline").go_to(1, true)<cr>', "Go to buffer 1" },
+  ["<leader>2"] = { '<cmd> lua require("bufferline").go_to(2, true)<cr>', "Go to buffer 2" },
+  ["<leader>3"] = { '<cmd> lua require("bufferline").go_to(3, true)<cr>', "Go to buffer 3" },
+  ["<leader>4"] = { '<cmd> lua require("bufferline").go_to(4, true)<cr>', "Go to buffer 4" },
+  ["<leader>5"] = { '<cmd> lua require("bufferline").go_to(5, true)<cr>', "Go to buffer 5" },
+  ["<leader>6"] = { '<cmd> lua require("bufferline").go_to(6, true)<cr>', "Go to buffer 6" },
+  ["<leader>7"] = { '<cmd> lua require("bufferline").go_to(7, true)<cr>', "Go to buffer 7" },
+  ["<leader>8"] = { '<cmd> lua require("bufferline").go_to(8, true)<cr>', "Go to buffer 8" },
+  ["<leader>9"] = { '<cmd> lua require("bufferline").go_to(9, true)<cr>', "Go to buffer 9" },
+  ["<leader>0"] = { '<cmd> lua require("bufferline").go_to(-1, true)<cr>', "Go to last buffer" },
 
   ["<leader>d"] = {
     name = "+Diagnostics",
@@ -110,9 +110,9 @@ wk.register({
     a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
     d = { "<cmd>Telescope diagnostics bufnr=0 theme=get_ivy<cr>", "Buffer Diagnostics" },
     w = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
-    f = { "<cmd>lua require('lvim.lsp.utils').format()<cr>", "Format" },
+    f = { "<cmd>lua vim.lsp.buf.format({async = false, timeout_ms = 10000})<cr>", "Format" },
     i = { "<cmd>LspInfo<cr>", "Info" },
-    I = { "<cmd>Mason<cr>", "Mason Info" },
+    m = { "<cmd>Mason<cr>", "Mason Info" },
     j = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "Next Diagnostic" },
     k = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Prev Diagnostic" },
     l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
@@ -129,14 +129,6 @@ wk.register({
     i = { "<cmd>Neorg inject-metadata<cr>", "Inject metadata" },
     t = { "<cmd>Neorg toggle-concealer<cr>", "Toggle concealer" },
     u = { "<cmd>Neorg update-metadata<cr>", "Update metadata" },
-  },
-
-  ["<leader>o"] = {
-    name = "+Open",
-    g = { "<cmd>lua _Lazygit_toggle()<CR>", "LazyGit" },
-    l = { "<cmd>Lazy<cr>", "Lazy (plugin manager)" },
-    m = { "<cmd>Mason<cr>", "Mason" },
-    w = {"<cmd>WhichKey<cr>", "WhichKey"},
   },
 
   ["<leader>p"] = {
@@ -184,18 +176,18 @@ wk.register({
     s = { "<cmd>Telescope live_grep<cr>", "Find string (all files)" },
     c = { "<cmd>Telescope colorscheme<cr>", "Find colorschemes" },
     p = { "<cmd>Telescope projects<cr>", "Find projects" },
-    r = { ":%s/", "Search and replace"},
+    r = { ":%s/", "Search and replace" },
     k = { "<cmd> Telescope keymaps<cr>", "See keymaps" },
   },
 
   ["<leader>v"] = {
     name = "+VimTex",
-    i = {"<cmd>VimtexInfo<cr>", "VimTex Info"},
-    c = {"<cmd>VimtexCompile<cr>", "VimTex Compile and Cleanup"},
-    a = {"<cmd>VimtexView<cr>", "Trigger forward search"},
-    s = {"<cmd>VimtexStop<cr><cmd>VimtexClean<cr>", "Stop compiler and clean up aux files"},
-    C = {"<cmd>VimtexClean<cr>", "Clean aux files"},
-    r = {"<cmd>lua require('luasnip.loaders.from_lua').load({paths = '~/.config/nvim/lua/snippets/'})<cr>", "Reload snippets"},
+    i = { "<cmd>VimtexInfo<cr>", "VimTex Info" },
+    c = { "<cmd>VimtexCompile<cr>", "VimTex Compile and Cleanup" },
+    a = { "<cmd>VimtexView<cr>", "Trigger forward search" },
+    s = { "<cmd>VimtexStop<cr><cmd>VimtexClean<cr>", "Stop compiler and clean up aux files" },
+    C = { "<cmd>VimtexClean<cr>", "Clean aux files" },
+    r = { "<cmd>lua require('luasnip.loaders.from_lua').load({paths = '~/.config/nvim/lua/snippets/'})<cr>", "Reload snippets" },
   },
 
   ["<leader>w"] = {
@@ -232,7 +224,7 @@ wk.register({
   ["Y"] = { '"+y$', "Yank to system clipboard (to end of line)" },
   ["p"] = { '"+p', "Put from system clipboard" },
   ["P"] = { '"+P', "Put from system clipboard (before cursor)" },
-  ["x"] = { '"+x', "Yank and delete to system clipboard"},
+  ["x"] = { '"+x', "Yank and delete to system clipboard" },
   ["<leader>s"] = {
     name = "+Screenshot",
     c = { ":Silicon<cr>", "Code" },
