@@ -20,8 +20,8 @@ wk.register({
   ["<C-Bslash>"] = { "<cmd>ToggleTerm<cr>", "Toggle terminal" },
   ["<C-s>"] = { "<esc><cmd>w<cr>", "Save file" },
   ["<leader>c"] = { "<cmd>lua MiniBufremove.delete()<cr>", "Close buffer" },
-  -- ["<leader>e"] = { "<cmd>NvimTreeToggle<cr>", "Toggle NeoTree" },
-  ["<leader>e"] = { "<cmd>Neotree toggle current reveal_force_cwd<cr><cmd>set nu<cr><cmd>set rnu<cr>", "Toggle NeoTree" },
+  ["<leader>e"] = { "<cmd>Neotree toggle current reveal_force_cwd<cr>", "Toggle NeoTree" },
+  -- ["<leader>e"] = { "<cmd>Neotree toggle<cr>", "Toggle NeoTree" },
   ["<leader>pm"] = { "<cmd>MarkdownPreviewToggle<cr>", "Preview markdown" },
   ["<leader>;"] = { "<cmd>Alpha<cr>", "Toggle dashboard" },
   ["gR"] = { "<cmd>TroubleToggle lsp_references<cr>", "LSP references" },
@@ -187,7 +187,10 @@ wk.register({
     a = { "<cmd>VimtexView<cr>", "Trigger forward search" },
     s = { "<cmd>VimtexStop<cr><cmd>VimtexClean<cr>", "Stop compiler and clean up aux files" },
     C = { "<cmd>VimtexClean<cr>", "Clean aux files" },
-    r = { "<cmd>lua require('luasnip.loaders.from_lua').load({paths = '~/.config/nvim/lua/snippets/'})<cr>", "Reload snippets" },
+    r = {
+      "<cmd>lua require('luasnip.loaders.from_lua').load({paths = '~/.config/nvim/lua/snippets/'})<cr>",
+      "Reload snippets",
+    },
   },
 
   ["<leader>w"] = {
@@ -215,7 +218,6 @@ wk.register({
   -- Use K and J in normal mode to move line at cursor up or down respectively
   ["K"] = { ":m '<-2<cr>gv=gv", "move visual block selection up" },
   ["J"] = { ":m '>+1<cr>gv=gv", "move line at cursor down" },
-  ["<leader>/"] = { '<Plug>(comment_toggle_linewise_visual)', "Toggle comment current line" },
 }, x)
 
 -- Visual mode keymaps
