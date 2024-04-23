@@ -124,6 +124,9 @@ return {
         sidebars = "transparent",
         floats = "transparent",
       },
+      on_colors = function (colors)
+        colors.bg = "#000000"
+      end
     })
 
     synthwave84.setup({})
