@@ -53,6 +53,31 @@ If you are using Vim 8+, you don't need any plugin manager. Simply clone this re
 git clone git@github.com:christoomey/vim-tmux-navigator.git ~/.vim/pack/plugins/start/vim-tmux-navigator
 ```
 
+### lazy.nvim
+
+If you are using [lazy.nvim](https://github.com/folke/lazy.nvim). Add the following plugin to your configuration.
+
+```lua
+{
+  "christoomey/vim-tmux-navigator",
+  cmd = {
+    "TmuxNavigateLeft",
+    "TmuxNavigateDown",
+    "TmuxNavigateUp",
+    "TmuxNavigateRight",
+    "TmuxNavigatePrevious",
+  },
+  keys = {
+    { "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
+    { "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
+    { "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
+    { "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
+    { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+  },
+}
+```
+
+Then, restart Neovim and lazy.nvim will automatically install the plugin and configure the keybindings.
 
 ### tmux
 
@@ -66,7 +91,7 @@ Add the following to your `~/.tmux.conf` file:
 # Smart pane switching with awareness of Vim splits.
 # See: https://github.com/christoomey/vim-tmux-navigator
 is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
-    | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|l?n?vim?x?)(diff)?$'"
+    | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|l?n?vim?x?|fzf)(diff)?$'"
 bind-key -n 'C-h' if-shell "$is_vim" 'send-keys C-h'  'select-pane -L'
 bind-key -n 'C-j' if-shell "$is_vim" 'send-keys C-j'  'select-pane -D'
 bind-key -n 'C-k' if-shell "$is_vim" 'send-keys C-k'  'select-pane -U'
@@ -186,6 +211,15 @@ mapping.
 
 ### Additional Customization
 
+#### Ignoring programs that use Ctrl+hjkl movement
+
+In interactive programs such as FZF, Ctrl+hjkl can be used instead of the arrow keys to move the selection up and down. If vim-tmux-navigator is getting in your way trying to change the active window instead, you can make it be ignored and work as if this plugin were not enabled. Just modify the `is_vim` variable(that you have either on the snipped you pasted on `~/.tmux.conf` or on the `vim-tmux-navigator.tmux` file). For example, to add the program `foobar`:
+
+```diff
+- is_vim="ps -o state= -o comm= -t '#{pane_tty}' | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|l?n?vim?x?|fzf)(diff)?$'"
++ is_vim="ps -o state= -o comm= -t '#{pane_tty}' | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|l?n?vim?x?|fzf|foobar)(diff)?$'"
+```
+
 #### Restoring Clear Screen (C-l)
 
 The default key bindings include `<Ctrl-l>` which is the readline key binding
@@ -217,7 +251,7 @@ unbind -n C-\\
 
 #### Disable Wrapping
 
-By default, if you tru to move past the edge of the screen, tmux/vim will
+By default, if you try to move past the edge of the screen, tmux/vim will
 "wrap" around to the opposite side. To disable this, you'll need to
 configure both tmux and vim:
 
@@ -231,7 +265,7 @@ to conditionally wrap based on position on screen:
 
 ```tmux
 is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
-    | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|l?n?vim?x?)(diff)?$'"
+    | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|l?n?vim?x?|fzf)(diff)?$'"
 bind-key -n 'C-h' if-shell "$is_vim" { send-keys C-h } { if-shell -F '#{pane_at_left}'   {} { select-pane -L } }
 bind-key -n 'C-j' if-shell "$is_vim" { send-keys C-j } { if-shell -F '#{pane_at_bottom}' {} { select-pane -D } }
 bind-key -n 'C-k' if-shell "$is_vim" { send-keys C-k } { if-shell -F '#{pane_at_top}'    {} { select-pane -U } }
@@ -328,10 +362,11 @@ Troubleshooting
 
 ### Vim -> Tmux doesn't work!
 
-This is likely due to conflicting key mappings in your `~/.vimrc`. You can use
-the following search pattern to find conflicting mappings
-`\v(nore)?map\s+\<c-[hjkl]\>`. Any matching lines should be deleted or
-altered to avoid conflicting with the mappings from the plugin.
+This is likely due to conflicting key mappings in your `~/.vimrc`. You can check
+this by running `:verbose nmap <C-h>` (similar for each of the key bindings).
+You should see vim-tmux-runner as the source listed for the key binding, but if
+you see something else, you've got a conflict and will need to remove the other
+key binding or otherwise restructure your vim config.
 
 Another option is that the pattern matching included in the `.tmux.conf` is
 not recognizing that Vim is active. To check that tmux is properly recognizing
