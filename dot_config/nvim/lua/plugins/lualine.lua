@@ -28,11 +28,22 @@ return {
     local theme = {
       normal = {
         a = { fg = colors.black, bg = colors.blue },
-        b = { fg = colors.green, bg = colors.grey },
+        b = { fg = colors.white, bg = colors.grey },
         c = { fg = colors.green, bg = colors.black },
-        x = { fg = colors.black, bg = colors.blue },
-        y = { fg = colors.blue, bg = colors.grey },
-        z = { fg = colors.green, bg = colors.black },
+
+        x = { fg = colors.black, bg = colors.black },
+      },
+
+      insert = {
+        a = { fg = colors.black, bg = colors.green },
+      },
+
+      visual = {
+        a = { fg = colors.black, bg = colors.violet },
+      },
+
+      replace = {
+        a = { fg = colors.black, bg = colors.red },
       },
     }
 
@@ -41,10 +52,6 @@ return {
         theme = theme,
         component_separators = "",
         section_separators = "",
-        -- If you want rounded separators use
-        -- 
-        -- 
-        -- section_separators = "|",
       },
       winbar = {
         lualine_a = {
@@ -94,15 +101,28 @@ return {
         lualine_y = {},
         lualine_z = {},
       },
+
       sections = {
         lualine_a = {
-          "filename",
+          "mode",
         },
         lualine_b = {
-          "branch",
+          "filename",
         },
-        lualine_c = {},
-        lualine_x = {},
+        lualine_c = {
+          "branch",
+          "diff",
+          "diagnostics",
+        },
+        lualine_x = {
+          -- source:
+          -- https://github.com/folke/noice.nvim/wiki/Configuration-Recipes#show-recording-messagess
+          {
+            require("noice").api.statusline.mode.get,
+            cond = require("noice").api.statusline.mode.has,
+            color = { fg = "#ff9e64" },
+          }
+        },
         lualine_y = {},
         lualine_z = {},
       },
