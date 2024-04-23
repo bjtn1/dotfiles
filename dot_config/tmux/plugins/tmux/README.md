@@ -18,25 +18,25 @@
 ## Content
 
 1. [Themes](#themes)
-2. [Installation](#installation)
-3. [Overview](#overview)
-4. [Configuration options](#configuration-options)
+1. [Installation](#installation)
+1. [Overview](#overview)
+1. [Configuration options](#configuration-options)
    1. [Window](#window)
-   2. [Window default](#window-default)
-   3. [Window current](#window-current)
-   4. [Status](#status)
-   4. [Pane](#pane)
-   5. [Customizing modules](#customizing-modules)
-   6. [Battery module](#battery-module)
-   7. [CPU module](#CPU-module)
-   8. [Weather modules](#weather-modules)
-   9. [Load module](#load-module)
-   10. [Uptime module](#uptime-module)
-5. [Create a custom module](#create-a-custom-module)
-6. [Configuration Examples](#configuration-examples)
+   1. [Window default](#window-default)
+   1. [Window current](#window-current)
+   1. [Status](#status)
+   1. [Pane](#pane)
+   1. [Customizing modules](#customizing-modules)
+   1. [Battery module](#battery-module)
+   1. [CPU module](#CPU-module)
+   1. [Weather modules](#weather-modules)
+   1. [Load module](#load-module)
+   1. [Uptime module](#uptime-module)
+1. [Create a custom module](#create-a-custom-module)
+1. [Configuration Examples](#configuration-examples)
    1. [Config 1](#config-1)
-   2. [Config 2](#config-2)
-   3. [Config 3](#config-3)
+   1. [Config 2](#config-2)
+   1. [Config 3](#config-3)
 
 ## Themes
 
@@ -89,6 +89,11 @@ Style Guide][style-guide]. To add these customizations, add any of the following
 options to your Tmux configuration.
 
 ### Window
+
+### Set the window separator
+```sh
+set -g @catppuccin_window_separator ""
+```
 
 #### Set the window left separator:
 ```sh
@@ -221,6 +226,21 @@ set -g @catppuccin_pane_active_border_style "fg=red" # Use a value compatible wi
 #### Set the default status bar visibility
 ```sh
 set -g @catppuccin_status_default "off" # defaults to "on"
+
+```
+
+#### Override the default status background color
+```sh
+set -g @catppuccin_status_background "theme"
+```
+This will overwrite the status bar background:
+- "theme" will use the color from the selected theme
+- "default" will make the status bar transparent
+- use hex color codes for other colors
+
+Note: you need to restart tmux for this to take effect: 
+```sh
+tmux kill-server & tmux
 ```
 
 #### Set the status module left separator:
@@ -232,14 +252,6 @@ set -g @catppuccin_status_left_separator ""
 ```sh
 set -g @catppuccin_status_right_separator "█"
 ```
-
-#### Set the status module right separator inverse:
-```sh
-set -g @catppuccin_status_right_separator_inverse "no"
-```
-Values:
-- yes - the colors will be inverted for the right separator
-- no - the colors will not be inverted for the right separator
 
 #### Set the status connect separator:
 ```sh
@@ -300,6 +312,7 @@ Available modules:
 - user - display the username
 - host - display the hostname
 - date_time - display the date and time
+- uptime - display the uptime
 - [battery](#battery-module) - display the battery
 
 ### Customizing modules
@@ -438,27 +451,25 @@ Add the load module to the status modules list.
 set -g @catppuccin_status_modules_right "... load ..."
 ```
 
-### Uptime module
+### Gitmux module
 
 #### Requirements
-This module depends on [tmux-uptime](https://github.com/robhurring/tmux-uptime).
+This module depends on [gitmux](https://github.com/arl/gitmux).
 
 #### Install
-The preferred way to install tmux-uptime is using [TPM](https://github.com/tmux-plugins/tpm).
+To install gitmux, follow the instructions in the [gitmux documentation](https://github.com/arl/gitmux/blob/main/README.md#installing).
 
 #### Configure
-Load tmux-uptime after you load catppuccin.
-
+Add the gitmux module to the status modules list.
 ```sh
-set -g @plugin 'catppuccin/tmux'
-...
-set -g @plugin 'robhurring/tmux-uptime'
+set -g @catppuccin_status_modules_right "... gitmux ..."
 ```
 
-Add the uptime module to the status modules list.
+To customize the gitmux module, you can follow the instrucctions in the [gitmux documentation](https://github.com/arl/gitmux/blob/main/README.md#customizing) and add this line in your tmux configuration:
 ```sh
-set -g @catppuccin_status_modules_right "... uptime ..."
+set -g @catppuccin_gitmux_text "#(gitmux -cfg $HOME/.gitmux.conf \"#{pane_current_path}\")"
 ```
+
 
 ## Create a custom module
 
@@ -515,9 +526,8 @@ set -g @catppuccin_window_current_text "#{pane_current_path}"
 set -g @catppuccin_status_modules_right "application session date_time"
 set -g @catppuccin_status_left_separator  ""
 set -g @catppuccin_status_right_separator " "
-set -g @catppuccin_status_right_separator_inverse "yes"
 set -g @catppuccin_status_fill "all"
-set -g @catppuccin_status_connect_separator "no"
+set -g @catppuccin_status_connect_separator "yes"
 ```
 
 ### Config 3
@@ -538,7 +548,6 @@ set -g @catppuccin_window_current_text "#W"
 set -g @catppuccin_status_modules_right "directory user host session"
 set -g @catppuccin_status_left_separator  " "
 set -g @catppuccin_status_right_separator ""
-set -g @catppuccin_status_right_separator_inverse "no"
 set -g @catppuccin_status_fill "icon"
 set -g @catppuccin_status_connect_separator "no"
 
