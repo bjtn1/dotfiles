@@ -16,7 +16,8 @@ return {
     local colors = {
       blue = "#82aaff",
       cyan = "#86e1fc",
-      black = "#1a1b26",
+      -- black = "#1a1b26",
+      black = "#000000",
       white = "#c8d3f5",
       red = "#f38ba8",
       violet = "#c099ff",
@@ -46,21 +47,7 @@ return {
         -- section_separators = "|",
       },
       winbar = {
-        lualine_a = {},
-        lualine_b = {},
-        lualine_c = {},
-        lualine_x = {},
-        lualine_y = {},
-        lualine_z = {},
-      },
-      sections = {
         lualine_a = {
-          "filename",
-        },
-        lualine_b = {
-          "branch",
-        },
-        lualine_c = {
           {
             "navic",
             color_correctino = "static",
@@ -101,6 +88,20 @@ return {
             },
           },
         },
+        lualine_b = {},
+        lualine_c = {},
+        lualine_x = {},
+        lualine_y = {},
+        lualine_z = {},
+      },
+      sections = {
+        lualine_a = {
+          "filename",
+        },
+        lualine_b = {
+          "branch",
+        },
+        lualine_c = {},
         lualine_x = {},
         lualine_y = {},
         lualine_z = {},
