@@ -20,8 +20,7 @@ wk.register({
   ["<C-Bslash>"] = { "<cmd>ToggleTerm<cr>", "Toggle terminal" },
   ["<C-s>"] = { "<esc><cmd>w<cr>", "Save file" },
   ["<leader>c"] = { "<cmd>lua MiniBufremove.delete()<cr>", "Close buffer" },
-  ["<leader>e"] = { "<cmd>Neotree toggle current reveal_force_cwd<cr>", "Toggle NeoTree" },
-  -- ["<leader>e"] = { "<cmd>Neotree toggle<cr>", "Toggle NeoTree" },
+  ["<leader>e"] = { "<cmd>Neotree toggle reveal_force_cwd<cr>", "File explorer" },
   ["<leader>pm"] = { "<cmd>MarkdownPreviewToggle<cr>", "Preview markdown" },
   ["<leader>;"] = { "<cmd>Alpha<cr>", "Toggle dashboard" },
   ["gR"] = { "<cmd>TroubleToggle lsp_references<cr>", "LSP references" },
@@ -35,10 +34,7 @@ wk.register({
     A = { "<Plug>Yssurround", "Add in line" },
   },
 
-  ["<leader>ss"] = {
-    name = "+Screenshot",
-    f = { "<cmd>Silicon<cr>", "File" },
-  },
+  ["<leader>ss"] = { "<cmd>Silicon<cr>", "Screenshot file" },
 
   ["<leader>b"] = {
     name = "+Buffers",
@@ -122,16 +118,8 @@ wk.register({
     e = { "<cmd>Telescope quickfix<cr>", "Telescope Quickfix" },
   },
 
-  ["<leader>n"] = {
-    name = "+Neorg",
-    e = { "<cmd>Neorg export to-file<cr>", "Export current .norg to .md" },
-    i = { "<cmd>Neorg inject-metadata<cr>", "Inject metadata" },
-    t = { "<cmd>Neorg toggle-concealer<cr>", "Toggle concealer" },
-    u = { "<cmd>Neorg update-metadata<cr>", "Update metadata" },
-  },
-
   ["<leader>p"] = {
-    name = "+Plugins",
+    name = "+Plugin",
     i = { "<cmd>Lazy install<cr>", "Install" },
     s = { "<cmd>Lazy sync<cr>", "Sync" },
     S = { "<cmd>Lazy clear<cr>", "Status" },
@@ -150,6 +138,7 @@ wk.register({
 
   ["<leader>s"] = {
     name = "+Search",
+    ar = { ":%s/", "Search and replace" },
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
     c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
     f = { "<cmd>Telescope find_files<cr>", "Find File" },
@@ -158,7 +147,8 @@ wk.register({
     M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
     r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
     R = { "<cmd>Telescope registers<cr>", "Registers" },
-    t = { "<cmd>Telescope live_grep<cr>", "Text" },
+    t = { "<cmd>TodoTelescope<cr>", "Find TODOs" },
+    T = { "<cmd>Telescope live_grep<cr>", "Text" },
     k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
     C = { "<cmd>Telescope commands<cr>", "Commands" },
     l = { "<cmd>Telescope resume<cr>", "Resume last search" },
@@ -166,17 +156,6 @@ wk.register({
       "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>",
       "Colorscheme with Preview",
     },
-  },
-
-  ["<leader>t"] = {
-    name = "+Telescope",
-    f = { "<cmd>Telescope find_files<cr>", "Find files" },
-    R = { "<cmd>Telescope oldfiles<cr>", "Find recent Files" },
-    s = { "<cmd>Telescope live_grep<cr>", "Find string (all files)" },
-    c = { "<cmd>Telescope colorscheme<cr>", "Find colorschemes" },
-    p = { "<cmd>Telescope projects<cr>", "Find projects" },
-    r = { ":%s/", "Search and replace" },
-    k = { "<cmd> Telescope keymaps<cr>", "See keymaps" },
   },
 
   ["<leader>v"] = {
