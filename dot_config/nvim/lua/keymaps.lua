@@ -9,6 +9,17 @@ local x = { mode = "x" }
 -- Normal mode keymaps
 -- in WhichKey, noremap and silent options are true by default
 wk.register({
+  ["<leader>1"] = { '<cmd> lua require("bufferline").go_to(1, true)<cr>', "Go to buffer 1" },
+  ["<leader>2"] = { '<cmd> lua require("bufferline").go_to(2, true)<cr>', "Go to buffer 2" },
+  ["<leader>3"] = { '<cmd> lua require("bufferline").go_to(3, true)<cr>', "Go to buffer 3" },
+  ["<leader>4"] = { '<cmd> lua require("bufferline").go_to(4, true)<cr>', "Go to buffer 4" },
+  ["<leader>5"] = { '<cmd> lua require("bufferline").go_to(5, true)<cr>', "Go to buffer 5" },
+  ["<leader>6"] = { '<cmd> lua require("bufferline").go_to(6, true)<cr>', "Go to buffer 6" },
+  ["<leader>7"] = { '<cmd> lua require("bufferline").go_to(7, true)<cr>', "Go to buffer 7" },
+  ["<leader>8"] = { '<cmd> lua require("bufferline").go_to(8, true)<cr>', "Go to buffer 8" },
+  ["<leader>9"] = { '<cmd> lua require("bufferline").go_to(9, true)<cr>', "Go to buffer 9" },
+  ["<leader>0"] = { '<cmd> lua require("bufferline").go_to(-1, true)<cr>', "Go to last buffer" },
+
   ["H"] = { "<cmd>BufferLineCyclePrev<cr>", "Cycle to prev tab" },
   ["J"] = { "<Cmd>m .+1<CR>==", "Move line at cursor down" },
   ["K"] = { "<Cmd>m .-2<CR>==", "Move line at cursor up" },
@@ -49,17 +60,6 @@ wk.register({
     D = { "<cmd>BufferLineSortByDirectory<cr>", "Sort by directory" },
     L = { "<cmd>BufferLineSortByExtension<cr>", "Sort by language" },
   },
-
-  ["<leader>1"] = { '<cmd> lua require("bufferline").go_to(1, true)<cr>', "Go to buffer 1" },
-  ["<leader>2"] = { '<cmd> lua require("bufferline").go_to(2, true)<cr>', "Go to buffer 2" },
-  ["<leader>3"] = { '<cmd> lua require("bufferline").go_to(3, true)<cr>', "Go to buffer 3" },
-  ["<leader>4"] = { '<cmd> lua require("bufferline").go_to(4, true)<cr>', "Go to buffer 4" },
-  ["<leader>5"] = { '<cmd> lua require("bufferline").go_to(5, true)<cr>', "Go to buffer 5" },
-  ["<leader>6"] = { '<cmd> lua require("bufferline").go_to(6, true)<cr>', "Go to buffer 6" },
-  ["<leader>7"] = { '<cmd> lua require("bufferline").go_to(7, true)<cr>', "Go to buffer 7" },
-  ["<leader>8"] = { '<cmd> lua require("bufferline").go_to(8, true)<cr>', "Go to buffer 8" },
-  ["<leader>9"] = { '<cmd> lua require("bufferline").go_to(9, true)<cr>', "Go to buffer 9" },
-  ["<leader>0"] = { '<cmd> lua require("bufferline").go_to(-1, true)<cr>', "Go to last buffer" },
 
   ["<leader>d"] = {
     name = "+Diagnostics",
@@ -116,6 +116,11 @@ wk.register({
     s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
     S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
     e = { "<cmd>Telescope quickfix<cr>", "Telescope Quickfix" },
+  },
+
+  ["<ledaer>o"] = {
+    name = "+Obsidian",
+    o = { "<cmd>ObsidianOpen<cr>", "Open current note" },
   },
 
   ["<leader>p"] = {
