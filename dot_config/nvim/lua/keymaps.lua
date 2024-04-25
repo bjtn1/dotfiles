@@ -133,6 +133,7 @@ wk.register({
     p = { "<cmd>Lazy profile<cr>", "Profile" },
     l = { "<cmd>Lazy log<cr>", "Log" },
     d = { "<cmd>Lazy debug<cr>", "Debug" },
+    h = { "<cmd>Lazy home<cr>", "Home" },
   },
 
   ["<leader>R"] = {
