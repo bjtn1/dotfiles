@@ -4,7 +4,7 @@ return
     config = function()
       require("which-key").setup({
         window = {
-          border = "single"
+          border = MY_BORDER
         },
         layout = {
           spacing = 10,

@@ -2,7 +2,7 @@ return {
   "windwp/nvim-autopairs",
   dependencies = {
     "abecodes/tabout.nvim",
-    "nvim-nvim-treesitter/nvim-treesitter",
+    "nvim-treesitter/nvim-treesitter",
     "hrsh7th/nvim-cmp",
   },
   version = false,

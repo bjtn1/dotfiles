@@ -5,6 +5,8 @@
 -- TEST
 -- HACK
 
+MY_BORDER = "single"
+
 -- This disables netrw
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1

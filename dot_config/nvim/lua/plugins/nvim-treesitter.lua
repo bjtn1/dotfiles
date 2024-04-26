@@ -6,6 +6,7 @@ return {
   config = function ()
     require("nvim-treesitter.configs").setup({
       ensure_installed = {
+        "bash",
         "c",
         "cmake",
         "cpp",
@@ -13,13 +14,14 @@ return {
         "html",
         "java",
         "javascript",
-        -- "latex",
+        "latex",
         "lua",
         "markdown",
         "markdown_inline",
         -- "norg",
         -- "norg_meta",
         "python",
+        "regex",
         "rust",
         "typescript",
         "vim"
