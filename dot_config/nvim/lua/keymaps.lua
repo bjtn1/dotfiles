@@ -118,6 +118,14 @@ wk.register({
     e = { "<cmd>Telescope quickfix<cr>", "Telescope Quickfix" },
   },
 
+  ["<leader>n"] = {
+    name = "+Notifications",
+    e = { "<cmd>Noice errors<cr>", "View error messages" },
+    l = { "<cmd>Noice last<cr>", "View last message" },
+    h = { "<cmd>Noice telescope<cr>", "View message history" },
+    d = { "<cmd>Noice dismiss<cr>", "Dismisss all visible messages" },
+  },
+
   ["<ledaer>o"] = {
     name = "+Obsidian",
     o = { "<cmd>ObsidianOpen<cr>", "Open current note" },
