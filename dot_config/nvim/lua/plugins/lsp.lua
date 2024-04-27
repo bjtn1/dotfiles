@@ -165,10 +165,10 @@ return {
     -- Diagnostics
     ---------------------
     local signs = {
-      Error = " ",
-      Warn = " ",
-      Hint = " ",
-      Info = " ",
+      Error = "✗ ",
+      Warn = "⚠ ",
+      Hint = "? ",
+      Info = "! ",
       -- Error = "",
       -- Warn = "",
       -- Hint = "",
