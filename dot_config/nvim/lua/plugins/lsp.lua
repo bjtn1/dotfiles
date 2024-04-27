@@ -8,22 +8,22 @@ return {
   priority = 1000,
   dependencies = {
     -- LSP support
-    "williamboman/mason.nvim",         -- Optional
+    "williamboman/mason.nvim",           -- Optional
     "williamboman/mason-lspconfig.nvim", -- Optional
 
     -- Autocompletion
-    "hrsh7th/nvim-cmp",       -- Required
-    "hrsh7th/cmp-nvim-lsp",   -- Required
-    "hrsh7th/cmp-buffer",     -- Optional
-    "hrsh7th/cmp-path",       -- Optional
-    "hrsh7th/cmp-cmdline",    -- Optional
-    "hrsh7th/cmp-calc",       -- Optional
+    "hrsh7th/nvim-cmp",         -- Required
+    "hrsh7th/cmp-nvim-lsp",     -- Required
+    "hrsh7th/cmp-buffer",       -- Optional
+    "hrsh7th/cmp-path",         -- Optional
+    "hrsh7th/cmp-cmdline",      -- Optional
+    "hrsh7th/cmp-calc",         -- Optional
     "saadparwaiz1/cmp_luasnip", -- Optional
-    "hrsh7th/cmp-nvim-lua",   -- Optional
-    "onsails/lspkind.nvim",   -- Optional
+    "hrsh7th/cmp-nvim-lua",     -- Optional
+    "onsails/lspkind.nvim",     -- Optional
 
     -- Snippets
-    "L3MON4D3/LuaSnip",           -- Required
+    "L3MON4D3/LuaSnip",             -- Required
     "rafamadriz/friendly-snippets", -- Optional
 
     -- Formatter/linter
@@ -58,6 +58,7 @@ return {
     -- local wk = require("which-key")
     local ls = require("luasnip")
     -- local navic_breadcrumbs = require("nvim-navic")
+    local lsp_zero = require("lsp-zero")
 
     ---------------------
     -- Neodev
@@ -107,6 +108,7 @@ return {
 
       mapping = cmp.mapping.preset.insert({
         ["<Up>"] = cmp.mapping.select_prev_item(),
+        ["<S-Tab>"] = cmp.mapping.select_prev_item(),
         ["<Down>"] = cmp.mapping.select_next_item(),
         ["<Tab>"] = cmp.mapping.select_next_item(),
         ["<C-b>"] = cmp.mapping.scroll_docs(-4),
@@ -163,7 +165,7 @@ return {
     -- Diagnostics
     ---------------------
     local signs = {
-      Error = " ",
+      Error = " ",
       Warn = " ",
       Hint = " ",
       Info = " ",
@@ -248,7 +250,8 @@ return {
         -- "markdownlint",
       },
       automatic_installation = true,
-      handlers = {},
+      handlers = {
+      },
     })
 
     ---------------------
@@ -283,31 +286,5 @@ return {
         capabilities = lsp_capabilities,
       })
     end
-
-    -- This is for luasnip, these are the globals they use
-    -- This is so lua_ls doesnt yell at me when it doesnt recognize the globals
-    -- that luasnip declares
-    lsp_config.lua_ls.setup({
-      settings = {
-        Lua = {
-          diagnostics = {
-            globals = {
-              "MY_BORDER",
-              "vim",
-              "s",
-              "t",
-              "i",
-              "sn",
-              "f",
-              "c",
-              "d",
-              "fmt",
-              "fmta",
-              "rep",
-            },
-          },
-        },
-      },
-    })
   end,
 }
