@@ -60,6 +60,7 @@ return {
     -- local navic_breadcrumbs = require("nvim-navic")
     local lsp_zero = require("lsp-zero")
 
+    -- testing chezmoi...
     ---------------------
     -- Neodev
     ---------------------
