@@ -105,6 +105,25 @@ ohai "Running rustup update..." ; \
 rustup update \
 '
 alias u="update"
+alias nu=' \
+ohai "Updating LunarVim..." ; \
+lvim +LvimUpdate +q ; \
+ohai "Running brew update..." ; \
+brew update --verbose ; \
+ohai "Running brew upgrade..." ; \
+brew upgrade --greedy --verbose ; \
+ohai "Running brew cleanup..." ; \
+brew cleanup --prune=all -s --verbose ; \
+ohai "Running brew autoremove..." ; \
+brew autoremove --verbose ; \
+echo "" > ~/.config/brewfile ; \
+ohai "Running brew bundle dump..." ; \
+brew bundle dump -f --file=~/.config/brewfile ; \
+ohai "Running chezmoi re-add --verbose..." ; \
+chezmoi re-add --verbose ; \
+ohai "Running rustup update..." ; \
+rustup update \
+'
 
 # Chezmoi
 alias cm="chezmoi"
