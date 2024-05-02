@@ -80,6 +80,8 @@ brew autoremove --verbose ; \
 echo "" > ~/.config/brewfile ; \
 ohai "Running brew bundle dump..." ; \
 brew bundle dump -f --file=~/.config/brewfile ; \
+ohai "Running brew reinstall --cask librewolf --no-quarantine..." ; \
+brew reinstall --cask librewolf --no-quarantine ; \
 ohai "Running chezmoi add ~/.config/lvim/*" ; \
 rm -rf ~/.local/share/chezmoi/dot_config/lvim && \
 chezmoi add ~/.config/lvim/* ; \
