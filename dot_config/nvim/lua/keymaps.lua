@@ -9,6 +9,9 @@ local x = { mode = "x" }
 -- Normal mode keymaps
 -- in WhichKey, noremap and silent options are true by default
 wk.register({
+  -- Use Ctrl + Forward slash to comment the current line
+  ["<C-_>"] = { "<Plug>(comment_toggle_linewise_current)", "Comment toggle current line" },
+
   ["<leader>1"] = { '<cmd> lua require("bufferline").go_to(1, true)<cr>', "Go to buffer 1" },
   ["<leader>2"] = { '<cmd> lua require("bufferline").go_to(2, true)<cr>', "Go to buffer 2" },
   ["<leader>3"] = { '<cmd> lua require("bufferline").go_to(3, true)<cr>', "Go to buffer 3" },
@@ -28,13 +31,17 @@ wk.register({
   ["Y"] = { '"+y$', "Yank to system clipboard (to end of line)" },
   ["p"] = { '"+p', "Put from system clipboard" },
   ["P"] = { '"+P', "Put from system clipboard (before cursor)" },
+
   ["<C-Bslash>"] = { "<cmd>ToggleTerm<cr>", "Toggle terminal" },
   ["<C-s>"] = { "<esc><cmd>w<cr>", "Save file" },
+
   ["<leader>c"] = { "<cmd>lua MiniBufremove.delete()<cr>", "Close buffer" },
   ["<leader>e"] = { "<cmd>Neotree toggle reveal_force_cwd<cr>", "File explorer" },
   ["<leader>pm"] = { "<cmd>MarkdownPreviewToggle<cr>", "Preview markdown" },
   ["<leader>;"] = { "<cmd>Alpha<cr>", "Toggle dashboard" },
+
   ["gR"] = { "<cmd>TroubleToggle lsp_references<cr>", "LSP references" },
+
   ["<leader>h"] = { "<cmd>noh<cr>", "Clear highlights" },
 
   ["s"] = {
@@ -224,4 +231,6 @@ wk.register({
     c = { ":Silicon<cr>", "Code" },
     f = { "<cmd>Silicon<cr>", "File" },
   },
+  -- Use Ctrl + Forward slash to comment the visual selection
+  ["<C-_>"] = { "<Plug>(comment_toggle_linewise_visual)", "Comment toggle linewise (visual)" },
 }, v)
