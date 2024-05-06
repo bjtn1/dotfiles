@@ -14,16 +14,24 @@ return {
     -- Required.
     "nvim-lua/plenary.nvim",
 
-    -- see below for full list of optional dependencies 👇
+    -- see below for full list of optional dependencies 
   },
   opts = {
-    workspaces = {
-      {
-        name = "personal",
-        path = "/Users/bjtn/Library/Mobile Documents/iCloud~md~obsidian/Documents/bjtn01/01-personal",
-      },
-    },
+    -- workspaces = {
+    --   {
+    --     name = "personal",
+    --     path = "/Users/bjtn/Library/Mobile Documents/iCloud~md~obsidian/Documents/bjtn01/01-personal",
+    --   },
+    -- },
 
-    -- see below for full list of options 👇
+    -- see below for full list of options 
+    dir = "/Users/bjtn/Library/Mobile Documents/iCloud~md~obsidian/Documents/bjtn01/",
+    daily_notes = {
+      folder = "05-dailies",
+    },
+    -- notes_subdir = "04-disposable",
+    -- new_notes_location = "notes_subdir",
+    preferred_link_style = "markdown",
+    open_app_foreground = true,
   },
 }

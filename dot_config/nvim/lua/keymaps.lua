@@ -11,6 +11,7 @@ local x = { mode = "x" }
 wk.register({
   -- Use Ctrl + Forward slash to comment the current line
   ["<C-_>"] = { "<Plug>(comment_toggle_linewise_current)", "Comment toggle current line" },
+  ["<leader>/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment toggle current line" },
 
   ["<leader>1"] = { '<cmd> lua require("bufferline").go_to(1, true)<cr>', "Go to buffer 1" },
   ["<leader>2"] = { '<cmd> lua require("bufferline").go_to(2, true)<cr>', "Go to buffer 2" },
@@ -133,9 +134,25 @@ wk.register({
     d = { "<cmd>Noice dismiss<cr>", "Dismisss all visible messages" },
   },
 
-  ["<ledaer>o"] = {
+  ["<leader>o"] = {
     name = "+Obsidian",
     o = { "<cmd>ObsidianOpen<cr>", "Open current note" },
+    n = {
+      name = "+New note",
+      s = { "<cmd>ObsidianNew<cr>00-school/", "New school note" },
+      p = { "<cmd>ObsidianNew<cr>01-personal/", "New personal note" },
+      c = { "<cmd>ObsidianNew<cr>02-scripts/", "New script note" },
+      t = { "<cmd>ObsidianNew<cr>03-todo/", "New todo note" },
+      i = { "<cmd>ObsidianNew<cr>04-disposable/", "New disposable note" },
+      d = { "<cmd>ObsidianNew<cr>05-dailies/", "New daily note" },
+    },
+    b = { "<cmd>ObsidianQuickSwitch<cr>", "Browse notes in telescope" },
+    d = { "<cmd>ObsidianToday<cr>", "Create daily note" },
+    s = { "<cmd>ObsidianSearch<cr>", "Search all notes in vault" },
+    p = { "<cmd>ObsidianPasteImg<cr>", "Paste image in clipboard at cursor" },
+    r = { ":ObsidianRename ", "Rename current note" },
+    c = { "<cmd>ObsidianToggleCheckbox<cr>", "Toggle checkbox" },
+    v = { "<cmd>cd /Users/bjtn/Library/Mobile Documents/iCloud~md~obsidian/Documents/bjtn01/<cr>", "cd to vault" },
   },
 
   ["<leader>p"] = {
@@ -233,4 +250,5 @@ wk.register({
   },
   -- Use Ctrl + Forward slash to comment the visual selection
   ["<C-_>"] = { "<Plug>(comment_toggle_linewise_visual)", "Comment toggle linewise (visual)" },
+  ["<leader>/"] = { "<Plug>(comment_toggle_linewise_visual)", "Comment toggle linewise (visual)" },
 }, v)
