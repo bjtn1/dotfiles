@@ -130,6 +130,7 @@ wk.register({
   ["<leader>o"] = {
     name = "+Obsidian",
     o = { "<cmd>ObsidianOpen<cr>", "Open current note" },
+    t = { "/#<cr>ggnO<esc>O<esc><cmd>TOCList<cr><cmd>noh<cr>", "Generate table of contents" },
     n = {
       name = "+New note",
       s = { "<cmd>ObsidianNew<cr>00-school/", "New school note" },
