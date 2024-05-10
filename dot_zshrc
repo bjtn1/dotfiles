@@ -59,11 +59,19 @@ alias cat="bat"
 
 alias z="zoxide"
 
+alias rmdsstore="find . -type f -name ".DS_Store" -exec rm -rf {} \;"
+
 # Taken from here:
 # https://github.com/Homebrew/actions/blob/7657c9512f50e1c35b640971116425935bab3eea/setup-homebrew/main.sh#L17
 ohai() {
   echo -e "\\033[34m==>\\033[0m \\033[1m$*\\033[0m"
 }
+
+# Use ncdu instead of du -sh
+alias du-sh="ncdu"
+
+# Backup epubs
+
 
 # Most important alias
 alias update=' \
