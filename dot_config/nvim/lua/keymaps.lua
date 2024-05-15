@@ -146,7 +146,7 @@ wk.register({
     p = { "<cmd>ObsidianPasteImg<cr>", "Paste image in clipboard at cursor" },
     r = { ":ObsidianRename ", "Rename current note" },
     c = { "<cmd>ObsidianToggleCheckbox<cr>", "Toggle checkbox" },
-    v = { "<cmd>cd /Users/bjtn/Library/Mobile Documents/iCloud~md~obsidian/Documents/bjtn01/<cr>", "cd to vault" },
+    v = { "<cmd>cd /Users/bjtn/Library/Mobile Documents/iCloud~md~obsidian/Documents/bjtn01/<cr><cmd>pwd<cr>", "cd to vault" },
   },
 
   ["<leader>p"] = {
