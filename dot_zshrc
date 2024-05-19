@@ -61,7 +61,7 @@ alias z="zoxide"
 
 alias rmdsstore="find . -type f -name ".DS_Store" -exec rm -rf {} \;"
 
-alias bakobs="rsync ~/Movies/obs/ /Volumes/B/final-cut-pro/obs --dry-run -Pavz && mv ~/Movies/obs/* ~/.Trash/"
+alias bakobs="rsync ~/Movies/obs/ /Volumes/B/final-cut-pro/obs -Pavz && mv ~/Movies/obs/* ~/.Trash/"
 
 # Taken from here:
 # https://github.com/Homebrew/actions/blob/7657c9512f50e1c35b640971116425935bab3eea/setup-homebrew/main.sh#L17
