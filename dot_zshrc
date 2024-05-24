@@ -59,6 +59,8 @@ alias cat="bat"
 
 alias z="zoxide"
 
+alias unzipall='find . -name "*.zip" -exec unzip -v {} \;'
+
 alias rmdsstore="find . -type f -name ".DS_Store" -exec rm -rf {} \;"
 
 # alias bakobs="rsync ~/Movies/obs/ /Volumes/B/final-cut-pro/obs -Pavz && mv ~/Movies/obs/* ~/.Trash/"
