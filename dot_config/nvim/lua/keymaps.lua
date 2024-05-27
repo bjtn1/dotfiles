@@ -127,6 +127,14 @@ wk.register({
     d = { "<cmd>Noice dismiss<cr>", "Dismisss all visible messages" },
   },
 
+  ["<leader>N"] = {
+    name = "+Neorg",
+    e = { "<cmd>Neorg export to-file<cr>", "Export current .norg to .md" },
+    i = { "<cmd>Neorg inject-metadata<cr>", "Inject metadata" },
+    t = { "<cmd>Neorg toggle-concealer<cr>", "Toggle concealer" },
+    u = { "<cmd>Neorg update-metadata<cr>", "Update metadata" },
+  },
+
   ["<leader>o"] = {
     name = "+Obsidian",
     o = { "<cmd>ObsidianOpen<cr>", "Open current note" },
