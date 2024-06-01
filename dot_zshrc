@@ -97,8 +97,6 @@ ohai "Running brew reinstall --cask librewolf --no-quarantine..." ; \
 brew reinstall --cask librewolf --no-quarantine ; \
 ohai "Running brew reinstall --cask malwarebytes ..." ; \
 brew reinstall --cask malwarebytes; \
-ohai "Running brew reinstall --cask proton-mail ..." ; \
-brew reinstall --cask proton-mail; \
 ohai "Running chezmoi add ~/.config/lvim/*" ; \
 rm -rf ~/.local/share/chezmoi/dot_config/lvim && \
 chezmoi add ~/.config/lvim/* ; \
