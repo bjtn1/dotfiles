@@ -12,7 +12,15 @@ export PATH="/opt/homebrew/opt/gawk/libexec/gnubin:$PATH"
 export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
 
 # C compiler
-export CC="/opt/homebrew/Cellar/gcc/14.1.0/bin/aarch64-apple-darwin23-gcc-14"
+get_latest_gcc() {
+  local gcc_path
+  gcc_path=$(echo "$(brew --prefix)/Cellar/gcc/"* | xargs -n 1 | tail -n 1)
+  gcc_path=$(echo "$gcc_path/bin/"* | xargs -n 1 | rg 'aarch64-apple-darwin23-gcc-[0-9][0-9]')
+  echo "$gcc_path"
+}
+export CC=$(get_latest_gcc)
+alias cdgcc="cd /opt/homebrew/Cellar/gcc"
+
 export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/ruby/lib/pkgconfig"
@@ -120,28 +128,6 @@ ohai "Running rustup update..." ; \
 rustup update \
 '
 alias u="update"
-alias ucm='\
-ohai "Running chezmoi add ~/.config/lvim/*" ; \
-rm -rf ~/.local/share/chezmoi/dot_config/lvim && \
-chezmoi add ~/.config/lvim/* ; \
-ohai "Running chezmoi add ~/.config/nvim/*" ; \
-rm -rf ~/.local/share/chezmoi/dot_config/nvim && \
-chezmoi add ~/.config/nvim/* ; \
-ohai "Running chezmoi add ~/.config/tmux/*" ; \
-rm -rf ~/.local/share/chezmoi/dot_config/tmux/ && \
-chezmoi add ~/.config/tmux/* ; \
-ohai "Running chezmoi add ~/.config/brewfile" ; \
-rm ~/.local/share/chezmoi/dot_config/brewfile && \
-chezmoi add ~/.config/brewfile ; \
-ohai "Running chezmoi add ~/.zshrc" ; \
-rm ~/.local/share/chezmoi/dot_zshrc && \
-chezmoi add ~/.zshrc ; \
-ohai "Running chezmoi add ~/Pictures/wallpapers/" ; \
-rm -rf ~/.local/share/chezmoi/private_Pictures && \
-chezmoi add ~/Pictures/wallpapers/ ; \
-ohai "Running chezmoi add ~/.config/iterm2/themes/" ; \
-rm -rf ~/.local/share/chezmoi/dot_config/iterm2/themes/ && \
-chezmoi add ~/.config/iterm2/themes/ ; \'
 
 # Chezmoi
 alias cm="chezmoi"
