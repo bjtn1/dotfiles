@@ -101,6 +101,14 @@ brew autoremove --verbose && \
 echo "" > ~/.config/brewfile && \
 ohai "Running brew bundle dump..." && \
 brew bundle dump -f --file=~/.config/brewfile && \
+ohai "Running brew reinstall python..." && \
+brew reinstall python && \
+ohai "Running brew reinstall python-tk..." && \
+brew reinstall python-tk && \
+ohai "Running brew reinstall python-certifi..." && \
+brew reinstall python-certifi && \
+ohai "Running brew reinstall python-gdbm..." && \
+brew reinstall python-gdbm && \
 ohai "Running brew reinstall --cask librewolf --no-quarantine..." && \
 brew reinstall --cask librewolf --no-quarantine && \
 ohai "Running chezmoi add ~/.config/lvim/*" && \
