@@ -133,7 +133,11 @@ ohai "Running chezmoi add ~/.config/iterm2/themes/" && \
 rm -rf ~/.local/share/chezmoi/dot_config/iterm2/themes/ && \
 chezmoi add ~/.config/iterm2/themes/ && \
 ohai "Running rustup update..." && \
-rustup update \
+rustup update && \
+ohai "Running brew cleanup..." && \
+brew cleanup --prune=all -s --verbose && \
+ohai "Running brew autoremove..." && \
+brew autoremove --verbose && \
 '
 alias u="update"
 
