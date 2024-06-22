@@ -137,7 +137,7 @@ rustup update && \
 ohai "Running brew cleanup..." && \
 brew cleanup --prune=all -s --verbose && \
 ohai "Running brew autoremove..." && \
-brew autoremove --verbose && \
+brew autoremove --verbose \
 '
 alias u="update"
 
