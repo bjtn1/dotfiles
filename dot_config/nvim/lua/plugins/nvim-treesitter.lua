@@ -25,6 +25,7 @@ return {
         "regex",
         "rust",
         "typescript",
+        "toml",
         "vim"
       },
       highlight = {
