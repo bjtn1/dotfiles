@@ -66,7 +66,7 @@
   "ripgrep": { "branch": "master", "commit": "c9ebcbd8abe48c8336fb4826df7e9b6fb179de03" },
   "synthwave84.nvim": { "branch": "master", "commit": "eac1f349713e2f470d8ee857913a42135bcc1a7f" },
   "tabout.nvim": { "branch": "master", "commit": "3d7fbc7f5e91ef0f96b4d787c78ad9f8820de3ec" },
-  "telescope-fzf-native.nvim": { "branch": "main", "commit": "9ef21b2e6bb6ebeaf349a0781745549bbb870d27" },
+  "telescope-fzf-native.nvim": { "branch": "main", "commit": "935bedf39c440de2f97ce58dbbb44a40402057c1" },
   "telescope.nvim": { "branch": "0.1.x", "commit": "a0bbec21143c7bc5f8bb02e0005fa0b982edc026" },
   "todo-comments.nvim": { "branch": "main", "commit": "51e10f838e84b4756c16311d0b1ef0972c6482d2" },
   "toggleterm.nvim": { "branch": "main", "commit": "066cccf48a43553a80a210eb3be89a15d789d6e6" },
