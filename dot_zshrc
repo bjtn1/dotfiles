@@ -19,6 +19,7 @@ get_latest_gcc() {
   echo "$gcc_path"
 }
 export CC=$(get_latest_gcc)
+export CC="/opt/homebrew/Cellar/gcc/14.1.0_1/bin/aarch64-apple-darwin23-gcc-14"
 alias cdgcc="cd /opt/homebrew/Cellar/gcc"
 
 export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
