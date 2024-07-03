@@ -214,6 +214,7 @@ return {
         "pyright",
         "rust_analyzer",
         "tsserver",
+        "tailwindcss"
       },
     })
 
