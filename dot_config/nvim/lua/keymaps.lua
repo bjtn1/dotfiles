@@ -6,6 +6,8 @@ local v = { mode = "v" }
 local t = { mode = "t" }
 local x = { mode = "x" }
 
+
+
 -- Normal mode keymaps
 -- in WhichKey, noremap and silent options are true by default
 wk.register({
