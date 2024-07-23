@@ -70,7 +70,7 @@ brew "python-tk@3.12"
 brew "ripgrep"
 brew "rsync"
 brew "ruby"
-brew "rustup-init", link: true
+brew "rustup"
 brew "sevenzip"
 brew "silicon"
 brew "ta-lib"
