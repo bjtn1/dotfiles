@@ -220,6 +220,8 @@ wk.add({
     mode = { "v" },
     { "<C-_>", "<Plug>(comment_toggle_linewise_visual)", desc = "Comment toggle linewise (visual)" },
 
+    { "<C-s>", "<esc><cmd>w<cr>", desc = "Save file" },
+
     -- { "<leader>/", "<Plug>(comment_toggle_linewise_visual)", desc = "Comment toggle linewise (visual)" },
 
     { "<leader>s", group = "Screenshot" },
@@ -242,6 +244,8 @@ wk.add({
     mode = { "x" },
     { "J", ":m '>+1<cr>gv=gv", desc = "move line at cursor down", mode = "x" },
     { "K", ":m '<-2<cr>gv=gv", desc = "move visual block selection up", mode = "x" },
+
+    { "<C-s>", "<esc><cmd>w<cr>", desc = "Save file" },
   },
 
   -- Terminal mode keymaps
