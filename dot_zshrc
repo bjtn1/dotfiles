@@ -112,6 +112,8 @@ ohai "Running brew reinstall python-certifi..." && \
 brew reinstall certifi && \
 ohai "Running brew reinstall python-gdbm..." && \
 brew reinstall python-gdbm && \
+ohai "Running  brew reinstall librewolf --no-quarantine ..." && \
+brew reinstall librewolf --no-quarantine  && \
 ohai "Running chezmoi add ~/.config/lvim/*" && \
 rm -rf ~/.local/share/chezmoi/dot_config/lvim && \
 chezmoi add ~/.config/lvim/* && \
