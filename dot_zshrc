@@ -49,6 +49,8 @@ alias path='echo $PATH | tr ":" "\n"'
 
 alias activate="source bin/activate"
 
+alias login-items="sfltool dumpbtm"
+
 # This is the alias used to run the pogocal thingie I made
 alias pogocal="cd ~/Workspace/pogocal/ && py src/pogocal.py"
 
@@ -86,8 +88,13 @@ ohai() {
 # Use ncdu instead of du -sh
 alias du-sh="ncdu"
 
-# Backup epubs
-
+# Homebrew aliases
+alias bi="brew install"
+alias bic="brew install --cask"
+alias bu="brew uninstall"
+alias buc="brew uninstall --cask"
+alias bri="brew reinstall"
+alias bric="brew reinstall --cask"
 
 # Most important alias
 alias update=' \
