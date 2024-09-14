@@ -213,7 +213,7 @@ return {
         "marksman",
         "pyright",
         "rust_analyzer",
-        "tsserver",
+        "ts_ls",
         "tailwindcss"
       },
     })
