@@ -121,8 +121,6 @@ ohai "Running brew reinstall python-gdbm..." && \
 brew reinstall python-gdbm && \
 ohai "Running  brew reinstall librewolf --no-quarantine ..." && \
 brew reinstall librewolf --no-quarantine  && \
-ohai "Running  brew reinstall --cask malwarebytes..." && \
-brew reinstall --cask malwarebytes && \
 ohai "Running chezmoi add ~/.config/lvim/*" && \
 rm -rf ~/.local/share/chezmoi/dot_config/lvim && \
 chezmoi add ~/.config/lvim/* && \
