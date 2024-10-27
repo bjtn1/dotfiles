@@ -171,6 +171,7 @@ alias zshenv="nvim ~/.zshenv"
 # Python
 alias py="python3"
 alias pip="pip3"
+alias venv="py -m venv"
 
 # This is the file organizer I created
 alias al="py /Users/bnog/Workspace/al/src/main.py"
