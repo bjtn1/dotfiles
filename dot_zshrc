@@ -93,7 +93,7 @@ RESET="\033[0m"
 
 # Define the function
 ohai() {
-  echo -e "${GREEN}${BOLD}==> $*${RESET}"
+  echo -e "${BLUE}${BOLD}==> ${RESET}${GREEN}$*${RESET}"
 }
 
 # Use ncdu instead of du -sh
