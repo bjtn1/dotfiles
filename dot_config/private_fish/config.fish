@@ -5,62 +5,25 @@ end
 # this removes the greeting when fish shell is first launched
 set -U fish_greeting
 
-# path
-# fish_add_path /opt/homebrew/bin
-
 alias configfish="nv ~/.config/fish/config.fish"
-
-# ALIAS
 alias l="eza --oneline --long --all --header --git --git-repos --classify=always --icons=always --group-directories-first --no-quotes --hyperlink --group"
-
 alias cl="clear"
 alias nv="nvim"
-
 alias kittyconf="nv ~/.config/kitty/kitty.conf"
-
 alias ip='ipconfig getifaddr en0'
-
 alias activate="source bin/activate"
-
 alias login-items="sfltool dumpbtm"
-
 alias lg="lazygit"
-
 alias e="exit"
-
 alias nv="nvim"
-
 alias lv="lvim"
-
 alias cl="clear"
-
 alias cat="bat"
-
 alias z="zoxide"
-
 alias unzipall='find . -name "*.zip" -exec unzip -v {} \;'
-
-# alias rmdsstore="find . -type f -name ".DS_Store" -exec rm -rf {} \;"
 alias rmdsstore="defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true && defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true && find . -type f -name '.DS_Store' -exec rm -rf {} \;"
-
 alias bft="blowfish-tools"
-
-# alias bakobs="rsync ~/Movies/obs/ /Volumes/B/final-cut-pro/obs -Pavz && mv ~/Movies/obs/* ~/.Trash/"
 alias bakobs="mv -v ~/Movies/obs/*.mp4 /Volumes/B/obs && rm -rfv ~/Movies/obs/*.mkv"
-
-# All taken from here:
-# https://github.com/Homebrew/actions/blob/7657c9512f50e1c35b640971116425935bab3eea/setup-homebrew/main.sh#L17
-# Define ANSI color codes
-# set BLUE "\033[34m"
-# set GREEN "\033[32m"
-# set CYAN "\033[36m"
-# set BOLD "\033[1m"
-# set RESET "\033[0m"
-
-# Define the function
-# function ohai
-#   echo -e "${BLUE}${BOLD}==> ${RESET}${GREEN}$*${RESET}"
-# end
 
 # Most important alias
 alias update=' \
@@ -119,13 +82,7 @@ echo "Running brew autoremove..." && \
 brew autoremove --verbose \
 '
 alias u="update"
-
-# Use ncdu instead of du -sh
 alias du-sh="ncdu"
-
-# Chezmoi
-alias cm="chezmoi"
-alias cmcd="chezmoi cd"
 
 # Tmux
 alias tm="tmux"
@@ -175,4 +132,3 @@ alias cmd="chezmoi doctor"
 alias cma="chezmoi add"
 alias cme="chezmoi edit --apply"
 alias cmap="chezmoi apply"
-
