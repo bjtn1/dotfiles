@@ -4,6 +4,7 @@ end
 
 # this removes the greeting when fish shell is first launched
 set -U fish_greeting
+set -gx EDITOR nvim
 
 alias config="~/.config/"
 alias fishconfig="cmew ~/.config/fish/config.fish"
