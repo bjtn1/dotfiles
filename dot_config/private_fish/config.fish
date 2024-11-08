@@ -5,6 +5,7 @@ end
 # this removes the greeting when fish shell is first launched
 set -U fish_greeting
 
+alias config="~/.config/"
 alias fishconfig="cmew ~/.config/fish/config.fish"
 alias l="eza --oneline --long --all --header --git --git-repos --classify=always --icons=always --group-directories-first --no-quotes --hyperlink --group"
 alias cl="clear"
