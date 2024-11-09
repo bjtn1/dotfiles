@@ -29,8 +29,8 @@ alias bakobs="mv -v ~/Movies/obs/*.mp4 /Volumes/B/obs && rm -rfv ~/Movies/obs/*.
 
 # Most important alias
 alias update=' \
-echo "Updating LunarVim..." && \
-lvim +LvimUpdate +q && \
+# echo "Updating LunarVim..." && \
+# lvim +LvimUpdate +q && \
 echo "Running brew update..." && \
 brew update --verbose && \
 echo "Running brew upgrade..." && \
