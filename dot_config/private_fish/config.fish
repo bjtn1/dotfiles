@@ -28,6 +28,9 @@ alias bft="blowfish-tools"
 alias bakobs="mv -v ~/Movies/obs/*.mp4 /Volumes/B/obs && rm -rfv ~/Movies/obs/*.mkv"
 
 # Most important alias
+function update_func
+  echo $OSTYPE
+end
 alias update=' \
 # echo "Updating LunarVim..." && \
 # lvim +LvimUpdate +q && \
