@@ -7,6 +7,8 @@
 pacman -Qqe > pacman-Qqefile
 yay -Qqe > yay-Qqefile
 
+pacman -Qqe > pacman-Qqefile && yay -Qqe > yay-Qqefile
+
 # To install from file
 pacman -S --needed - < pacman-Qqefile
 yay -S --needed - < yay-Qqefile
