@@ -80,14 +80,9 @@ alias cmew="chezmoi edit --watch"
 alias cmap="chezmoi apply"
 alias cmu="chezmoi update"
 
-set blue "\033[34m"
-set bold "\033[1m"
-set bb "\033[34m\033[1m"
-set r "\033[0m"
-
 function cmbak
   if command -v chezmoi > /dev/null
-    echo "$bb==>$r $boldBacking up all files managed by chezmoi...$r"
+    echo "==> Backing up all files managed by chezmoi..."
     echo "Running chezmoi add ~/.config/nvim/*"
     rm -rf ~/.local/share/chezmoi/dot_config/nvim
     chezmoi add ~/.config/nvim/*
