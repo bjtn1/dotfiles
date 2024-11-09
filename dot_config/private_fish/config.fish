@@ -26,67 +26,6 @@ alias unzipall='find . -name "*.zip" -exec unzip -v {} \;'
 alias rmdsstore="defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true && defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true && find . -type f -name '.DS_Store' -exec rm -rf {} \;"
 alias bft="blowfish-tools"
 alias bakobs="mv -v ~/Movies/obs/*.mp4 /Volumes/B/obs && rm -rfv ~/Movies/obs/*.mkv"
-
-# Most important alias
-function update_func
-  echo $OSTYPE
-end
-alias update=' \
-# echo "Updating LunarVim..." && \
-# lvim +LvimUpdate +q && \
-echo "Running brew update..." && \
-brew update --verbose && \
-echo "Running brew upgrade..." && \
-brew upgrade --greedy --verbose && \
-echo "Running brew cleanup..." && \
-brew cleanup --prune=all -s --verbose && \
-echo "Running brew autoremove..." && \
-brew autoremove --verbose && \
-echo "" > ~/.config/brewfile && \
-echo "Running brew bundle dump..." && \
-brew bundle dump -f --file=~/.config/brewfile && \
-echo "Running brew reinstall python..." && \
-brew reinstall python && \
-echo "Running brew reinstall python-tk..." && \
-brew reinstall python-tk && \
-echo "Running brew reinstall python-certifi..." && \
-brew reinstall certifi && \
-echo "Running brew reinstall python-gdbm..." && \
-brew reinstall python-gdbm && \
-echo "Running  brew reinstall librewolf --no-quarantine ..." && \
-brew reinstall librewolf --no-quarantine  && \
-echo "Running chezmoi add ~/.config/lvim/*" && \
-rm -rf ~/.local/share/chezmoi/dot_config/lvim && \
-chezmoi add ~/.config/lvim/* && \
-echo "Running chezmoi add ~/.config/kitty/*" && \
-rm -rf ~/.local/share/chezmoi/dot_config/kitty && \
-chezmoi add ~/.config/kitty/* && \
-echo "Running chezmoi add ~/.config/nvim/*" && \
-rm -rf ~/.local/share/chezmoi/dot_config/nvim && \
-chezmoi add ~/.config/nvim/* && \
-echo "Running chezmoi add ~/.config/tmux/*" && \
-rm -rf ~/.local/share/chezmoi/dot_config/tmux/ && \
-chezmoi add ~/.config/tmux/* && \
-echo "Running chezmoi add ~/.config/brewfile" && \
-rm ~/.local/share/chezmoi/dot_config/brewfile && \
-chezmoi add ~/.config/brewfile && \
-echo "Running chezmoi add ~/.zshrc" && \
-rm ~/.local/share/chezmoi/dot_zshrc && \
-chezmoi add ~/.zshrc && \
-echo "Running chezmoi add ~/Pictures/wallpapers/" && \
-rm -rf ~/.local/share/chezmoi/private_Pictures && \
-chezmoi add ~/Pictures/wallpapers/ && \
-echo "Running chezmoi add ~/.config/iterm2/themes/" && \
-rm -rf ~/.local/share/chezmoi/dot_config/iterm2/themes/ && \
-chezmoi add ~/.config/iterm2/themes/ && \
-echo "Running rustup update..." && \
-rustup update && \
-echo "Running brew cleanup..." && \
-brew cleanup --prune=all -s --verbose && \
-echo "Running brew autoremove..." && \
-brew autoremove --verbose \
-'
-alias u="update"
 alias du-sh="ncdu"
 
 # Tmux
@@ -140,3 +79,75 @@ alias cmea="chezmoi edit --apply"
 alias cmew="chezmoi edit --watch"
 alias cmap="chezmoi apply"
 alias cmu="chezmoi update"
+
+function update
+  switch (uname)
+    case Linux
+      echo "Linux"
+    case Darwin
+        echo "MacOS operating system detected"
+        if command -v brew > /dev/null
+          echo "Running brew update..." && \
+          brew update --verbose && \
+          echo "Running brew upgrade..." && \
+          brew upgrade --greedy --verbose && \
+          echo "Running brew cleanup..." && \
+          brew cleanup --prune=all -s --verbose && \
+          echo "Running brew autoremove..." && \
+          brew autoremove --verbose && \
+          echo "" > ~/.config/brewfile && \
+          echo "Running brew bundle dump..." && \
+          brew bundle dump -f --file=~/.config/brewfile && \
+          echo "Running brew reinstall python..." && \
+          brew reinstall python && \
+          echo "Running brew reinstall python-tk..." && \
+          brew reinstall python-tk && \
+          echo "Running brew reinstall python-certifi..." && \
+          brew reinstall certifi && \
+          echo "Running brew reinstall python-gdbm..." && \
+          brew reinstall python-gdbm && \
+          echo "Running brew reinstall librewolf --no-quarantine..." && \
+          brew reinstall librewolf --no-quarantine && \
+          echo "Running chezmoi add ~/.config/lvim/*" && \
+          rm -rf ~/.local/share/chezmoi/dot_config/lvim && \
+          chezmoi add ~/.config/lvim/* && \
+          echo "Running chezmoi add ~/.config/kitty/*" && \
+          rm -rf ~/.local/share/chezmoi/dot_config/kitty && \
+          chezmoi add ~/.config/kitty/* && \
+          echo "Running chezmoi add ~/.config/nvim/*" && \
+          rm -rf ~/.local/share/chezmoi/dot_config/nvim && \
+          chezmoi add ~/.config/nvim/* && \
+          echo "Running chezmoi add ~/.config/tmux/*" && \
+          rm -rf ~/.local/share/chezmoi/dot_config/tmux/ && \
+          chezmoi add ~/.config/tmux/* && \
+          echo "Running chezmoi add ~/.config/brewfile" && \
+          rm -rf ~/.local/share/chezmoi/dot_config/brewfile && \
+          chezmoi add ~/.config/brewfile && \
+          echo "Running chezmoi add ~/.zshrc" && \
+          rm -rf ~/.local/share/chezmoi/dot_zshrc && \
+          chezmoi add ~/.zshrc && \
+          echo "Running chezmoi add ~/Pictures/wallpapers/" && \
+          rm -rf ~/.local/share/chezmoi/private_Pictures && \
+          chezmoi add ~/Pictures/wallpapers/ && \
+          echo "Running chezmoi add ~/.config/iterm2/themes/" && \
+          rm -rf ~/.local/share/chezmoi/dot_config/iterm2/themes/ && \
+          chezmoi add ~/.config/iterm2/themes/ && \
+          echo "Running chezmoi add ~/.config/fish/" && \
+          rm -rf ~/.local/share/chezmoi/dot_config/private_fish/ && \
+          chezmoi add ~/.config/fish/ && \
+          echo "Running chezmoi add ~/.config/kitty/" && \
+          rm -rf ~/.local/share/chezmoi/dot_config/kitty && \
+          chezmoi add ~/.config/kitty/ && \
+          echo "Running rustup update..." && \
+          rustup update && \
+          echo "Running brew cleanup..." && \
+          brew cleanup --prune=all -s --verbose && \
+          echo "Running brew autoremove..." && \
+          brew autoremove --verbose
+        end
+    case DragonFly '*BSD'
+      echo "BSD"
+    case '*'
+      echo "WTF is this OS"
+  end
+end
