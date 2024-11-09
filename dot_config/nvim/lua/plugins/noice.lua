@@ -1,4 +1,4 @@
-return {
+local noice = {
   "folke/noice.nvim",
   dependencies = {
     -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
@@ -145,3 +145,5 @@ return {
     })
   end,
 }
+
+return noice

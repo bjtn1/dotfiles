@@ -2,7 +2,6 @@ return {
   "karb94/neoscroll.nvim",
   config = function ()
     local neoscroll = require("neoscroll")
-    neoscroll.setup {}
     local t = {}
     -- source:
     -- https://github.com/karb94/neoscroll.nvim
@@ -16,6 +15,10 @@ return {
     t['zt']    = {'zt', {'250'}}
     t['zz']    = {'zz', {'250'}}
     t['zb']    = {'zb', {'250'}}
-    require('neoscroll.config').set_mappings(t)
+    -- neoscroll.setup {}
+    -- require('neoscroll.config').set_mappings(t)
+    neoscroll.setup({
+      mappings = t,
+    })
   end
 }
