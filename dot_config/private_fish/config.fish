@@ -80,74 +80,132 @@ alias cmew="chezmoi edit --watch"
 alias cmap="chezmoi apply"
 alias cmu="chezmoi update"
 
+function cmbak
+  if command -v chezmoi > /dev/null
+    echo "Backing up all files managed by chezmoi..."
+    echo "Running chezmoi add ~/.config/nvim/*"
+    rm -rf ~/.local/share/chezmoi/dot_config/nvim
+    chezmoi add ~/.config/nvim/*
+    echo "Running chezmoi add ~/.config/tmux/*"
+    rm -rf ~/.local/share/chezmoi/dot_config/tmux/
+    chezmoi add ~/.config/tmux/*
+    echo "Running chezmoi add ~/.zshrc"
+    rm -rf ~/.local/share/chezmoi/dot_zshrc
+    chezmoi add ~/.zshrc
+    echo "Running chezmoi add ~/Pictures/wallpapers/"
+    rm -rf ~/.local/share/chezmoi/private_Pictures
+    chezmoi add ~/Pictures/wallpapers/
+    echo "Running chezmoi add ~/.config/fish/"
+    rm -rf ~/.local/share/chezmoi/dot_config/private_fish/
+    chezmoi add ~/.config/fish/
+    echo "Running chezmoi add ~/.config/kitty/"
+    rm -rf ~/.local/share/chezmoi/dot_config/kitty
+    chezmoi add ~/.config/kitty/
+  else
+    echo "chezmoi is not installed"
+    return 1
+  end
+
+  switch (uname)
+    case Darwin
+      echo "MacOS detected"
+      if command -v brew > /dev/null
+        echo "Running chezmoi add ~/.config/brewfile"
+        rm -rf ~/.local/share/chezmoi/dot_config/brewfile
+        chezmoi add ~/.config/brewfile
+        echo "Running chezmoi add ~/.config/iterm2/themes/"
+        rm -rf ~/.local/share/chezmoi/dot_config/iterm2/themes/
+        chezmoi add ~/.config/iterm2/themes/
+        echo "" > ~/.config/brewfile
+        echo "Running brew bundle dump..."
+        brew bundle dump -f --file=~/.config/brewfile
+      else
+        echo "brew is not installed"
+        return 1
+      end
+
+    case Linux
+      echo "Linux OS detected"
+      if command -v yay > /dev/null
+        echo "Running chezmoi add ~/.config/yay-Qqefile..."
+        yay -Qqe > ~/.config/yay-Qqefile
+        rm -rf ~/.local/share/chezmoi/dot_config/yay-Qqefile
+        chezmoi add ~/.config/yay-Qqefile
+      else
+        echo "yay not installed"
+        return 1
+      end
+
+      if command -v pacman > /dev/null
+        echo "Running chezmoi add ~/.config/pacman-Qqefile"
+        pacman -Qqe > ~/.config/pacman-Qqefile
+        rm -rf ~/.local/share/chezmoi/dot_config/pacman-Qqefile
+        chezmoi add ~/.config/pacman-Qqefile
+      else
+        echo "pacman not installed"
+        return 1
+      end
+
+      echo "Running chezmoi add ~/.config/hypr/"
+      rm -rf ~/.local/share/chezmoi/dot_config/hypr/
+      chezmoi add ~/.config/hypr/
+
+    case "*"
+      echo "This is neither MacOS nor Linux"
+      return 1
+  end
+
+end  # <-- This is the missing `end` to close the function
+
+
 function update
   switch (uname)
     case Linux
-      echo "Linux"
+      echo "Linux OS detected"
+      if command -v yay > /dev/null
+        echo "running yay..."
+        yay
+      else
+        echo "yay not installed"
+        return 1
+      end
+
     case Darwin
-        echo "MacOS operating system detected"
-        if command -v brew > /dev/null
-          echo "Running brew update..." && \
-          brew update --verbose && \
-          echo "Running brew upgrade..." && \
-          brew upgrade --greedy --verbose && \
-          echo "Running brew cleanup..." && \
-          brew cleanup --prune=all -s --verbose && \
-          echo "Running brew autoremove..." && \
-          brew autoremove --verbose && \
-          echo "" > ~/.config/brewfile && \
-          echo "Running brew bundle dump..." && \
-          brew bundle dump -f --file=~/.config/brewfile && \
-          echo "Running brew reinstall python..." && \
-          brew reinstall python && \
-          echo "Running brew reinstall python-tk..." && \
-          brew reinstall python-tk && \
-          echo "Running brew reinstall python-certifi..." && \
-          brew reinstall certifi && \
-          echo "Running brew reinstall python-gdbm..." && \
-          brew reinstall python-gdbm && \
-          echo "Running brew reinstall librewolf --no-quarantine..." && \
-          brew reinstall librewolf --no-quarantine && \
-          echo "Running chezmoi add ~/.config/lvim/*" && \
-          rm -rf ~/.local/share/chezmoi/dot_config/lvim && \
-          chezmoi add ~/.config/lvim/* && \
-          echo "Running chezmoi add ~/.config/kitty/*" && \
-          rm -rf ~/.local/share/chezmoi/dot_config/kitty && \
-          chezmoi add ~/.config/kitty/* && \
-          echo "Running chezmoi add ~/.config/nvim/*" && \
-          rm -rf ~/.local/share/chezmoi/dot_config/nvim && \
-          chezmoi add ~/.config/nvim/* && \
-          echo "Running chezmoi add ~/.config/tmux/*" && \
-          rm -rf ~/.local/share/chezmoi/dot_config/tmux/ && \
-          chezmoi add ~/.config/tmux/* && \
-          echo "Running chezmoi add ~/.config/brewfile" && \
-          rm -rf ~/.local/share/chezmoi/dot_config/brewfile && \
-          chezmoi add ~/.config/brewfile && \
-          echo "Running chezmoi add ~/.zshrc" && \
-          rm -rf ~/.local/share/chezmoi/dot_zshrc && \
-          chezmoi add ~/.zshrc && \
-          echo "Running chezmoi add ~/Pictures/wallpapers/" && \
-          rm -rf ~/.local/share/chezmoi/private_Pictures && \
-          chezmoi add ~/Pictures/wallpapers/ && \
-          echo "Running chezmoi add ~/.config/iterm2/themes/" && \
-          rm -rf ~/.local/share/chezmoi/dot_config/iterm2/themes/ && \
-          chezmoi add ~/.config/iterm2/themes/ && \
-          echo "Running chezmoi add ~/.config/fish/" && \
-          rm -rf ~/.local/share/chezmoi/dot_config/private_fish/ && \
-          chezmoi add ~/.config/fish/ && \
-          echo "Running chezmoi add ~/.config/kitty/" && \
-          rm -rf ~/.local/share/chezmoi/dot_config/kitty && \
-          chezmoi add ~/.config/kitty/ && \
-          echo "Running rustup update..." && \
-          rustup update && \
-          echo "Running brew cleanup..." && \
-          brew cleanup --prune=all -s --verbose && \
-          echo "Running brew autoremove..." && \
-          brew autoremove --verbose
-        end
+      echo "MacOS detected"
+      if command -v brew > /dev/null
+        echo "Running brew update..."
+        brew update --verbose
+        echo "Running brew upgrade..."
+        brew upgrade --greedy --verbose
+        echo "Running brew cleanup..."
+        brew cleanup --prune=all -s --verbose
+        echo "Running brew autoremove..."
+        brew autoremove --verbose
+        echo "Running brew reinstall python..."
+        brew reinstall python
+        echo "Running brew reinstall python-tk..."
+        brew reinstall python-tk
+        echo "Running brew reinstall python-certifi..."
+        brew reinstall certifi
+        echo "Running brew reinstall python-gdbm..."
+        brew reinstall python-gdbm
+        echo "Running brew reinstall librewolf --no-quarantine..."
+        brew reinstall librewolf --no-quarantine
+        echo "Running rustup update..."
+        rustup update
+        echo "Running brew cleanup..."
+        brew cleanup --prune=all -s --verbose
+        echo "Running brew autoremove..."
+        brew autoremove --verbose
+      else
+        echo "brew not installed"
+        return 1
+      end
     case DragonFly '*BSD'
       echo "BSD"
     case '*'
       echo "WTF is this OS"
   end
+
+  cmbak
 end
