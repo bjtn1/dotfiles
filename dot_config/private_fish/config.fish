@@ -7,7 +7,7 @@ set -U fish_greeting
 set -gx EDITOR nvim
 
 alias config="cd ~/.config/"
-alias fishconfig="cmew ~/.config/fish/config.fish"
+alias fishconfig="cmea ~/.config/fish/config.fish"
 alias l="eza --oneline --long --all --header --git --git-repos --classify=always --icons=always --group-directories-first --no-quotes --hyperlink --group"
 alias cl="clear"
 alias nv="nvim"
