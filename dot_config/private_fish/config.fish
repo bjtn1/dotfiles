@@ -7,7 +7,7 @@ set -U fish_greeting
 set -gx EDITOR nvim
 
 alias config="cd ~/.config/"
-alias fishconfig="cmea ~/.config/fish/config.fish"
+alias fishconfig="nv ~/.config/fish/config.fish"
 alias l="eza --oneline --long --all --header --git --git-repos --classify=always --icons=always --group-directories-first --no-quotes --hyperlink --group"
 alias cl="clear"
 alias nv="nvim"
@@ -113,9 +113,6 @@ function cmbak
         echo "Running chezmoi add ~/.config/brewfile"
         rm -rf ~/.local/share/chezmoi/dot_config/brewfile
         chezmoi add ~/.config/brewfile
-        echo "Running chezmoi add ~/.config/iterm2/themes/"
-        rm -rf ~/.local/share/chezmoi/dot_config/iterm2/themes/
-        chezmoi add ~/.config/iterm2/themes/
         echo "" > ~/.config/brewfile
         echo "Running brew bundle dump..."
         brew bundle dump -f --file=~/.config/brewfile
