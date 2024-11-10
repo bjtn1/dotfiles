@@ -209,3 +209,5 @@ function update
 
   cmbak
 end
+
+alias u="update"
