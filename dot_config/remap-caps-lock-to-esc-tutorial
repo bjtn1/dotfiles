@@ -1,5 +1,8 @@
+# required package
+sudo pacman -S xorg-setxkbmap
+
 # this is the command to run
 setxkbmap -option "caps:escape"
 
-# required package
-sudo pacman -S xorg-setxkbmap
+# to establish persistence...
+echo 'setxkbmap -option "caps:escape" &' > ~/.xinitrc
