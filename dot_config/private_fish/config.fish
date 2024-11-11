@@ -79,6 +79,7 @@ alias cmea="chezmoi edit --apply"
 alias cmew="chezmoi edit --watch"
 alias cmap="chezmoi apply"
 alias cmu="chezmoi update"
+alias cmr="chezmoi re-add"
 
 function cmbak
   if command -v chezmoi > /dev/null
