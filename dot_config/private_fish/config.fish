@@ -179,15 +179,15 @@ function update
         echo "Running brew autoremove..."
         brew autoremove --verbose
         echo "Running brew reinstall python..."
-        brew reinstall python
+        brew reinstall python --verbose
         echo "Running brew reinstall python-tk..."
-        brew reinstall python-tk
+        brew reinstall python-tk --verbose
         echo "Running brew reinstall python-certifi..."
-        brew reinstall certifi
+        brew reinstall certifi --verbose
         echo "Running brew reinstall python-gdbm..."
-        brew reinstall python-gdbm
+        brew reinstall python-gdbm --verbose
         echo "Running brew reinstall librewolf --no-quarantine..."
-        brew reinstall librewolf --no-quarantine
+        brew reinstall librewolf --no-quarantine --verbose
         echo "Running rustup update..."
         rustup update
         echo "Running brew cleanup..."
