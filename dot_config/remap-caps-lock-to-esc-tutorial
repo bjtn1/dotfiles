@@ -1,0 +1,5 @@
+# this is the command to run
+setxkbmap -option "caps:escape"
+
+# required package
+sudo pacman -S xorg-setxkbmap
