@@ -21,7 +21,7 @@ alias nv="nvim"
 # alias lv="lvim"
 alias cl="clear"
 alias cat="bat"
-# alias z="zoxide"
+alias z="zoxide"
 alias unzipall='find . -name "*.zip" -exec unzip -v {} \;'
 alias rmdsstore="defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true && defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true && find . -type f -name '.DS_Store' -exec rm -rf {} \;"
 alias bft="blowfish-tools"
@@ -209,6 +209,4 @@ function update
 end
 
 alias u="update"
-
-alias cd="z"
 zoxide init fish | source
