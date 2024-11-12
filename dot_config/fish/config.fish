@@ -6,8 +6,6 @@ end
 set -U fish_greeting
 set -gx EDITOR nvim
 
-# setxkbmap -option "caps:escape" &
-
 alias config="cd ~/.config/"
 alias fishconfig="nv ~/.config/fish/config.fish"
 alias l="eza --oneline --long --all --header --git --git-repos --classify=always --icons=always --group-directories-first --no-quotes --hyperlink --group"
@@ -211,3 +209,4 @@ function update
 end
 
 alias u="update"
+zoxide init fish | source
