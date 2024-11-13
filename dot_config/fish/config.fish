@@ -6,6 +6,10 @@ end
 set -U fish_greeting
 set -gx EDITOR nvim
 
+# remap caps lock to escape
+# does not work on Xwayland
+setxkbmap -option "caps:escape"
+
 alias config="cd ~/.config/"
 alias fishconfig="nv ~/.config/fish/config.fish"
 alias l="eza --oneline --long --all --header --git --git-repos --classify=always --icons=always --group-directories-first --no-quotes --hyperlink --group"
