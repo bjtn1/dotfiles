@@ -11,7 +11,9 @@ set -gx EDITOR nvim
 
 # remap caps lock to escape
 # does not work on Xwayland
-setxkbmap -option "caps:escape"
+if uname == "Linux"
+  setxkbmap -option "caps:escape"
+end
 
 # yay
 alias yaybak="yay -Qqe > ~/.config/yay-Qqefile"
