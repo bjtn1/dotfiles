@@ -1,5 +1,5 @@
 # start a tmux in every session
-tmux new
+# tmux new -- gonna have to look this up...
 
 if status is-interactive
   # Commands to run in interactive sessions can go here
