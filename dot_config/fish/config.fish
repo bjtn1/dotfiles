@@ -1,4 +1,5 @@
-tmn
+# start a tmux in every session
+tmux new
 
 if status is-interactive
   # Commands to run in interactive sessions can go here
