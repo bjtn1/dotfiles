@@ -216,5 +216,5 @@ function y
 	rm -f -- "$tmp"
 end
 
-
+alias cd="z"
 zoxide init fish | source
