@@ -10,6 +10,9 @@ set -gx EDITOR nvim
 # does not work on Xwayland
 setxkbmap -option "caps:escape"
 
+# yay
+alias yaybak="yay -Qqe > ~/.config/yay-Qqefile"
+
 alias config="cd ~/.config/"
 alias fishconfig="nv ~/.config/fish/config.fish"
 alias l="eza --oneline --long --all --header --git --git-repos --classify=always --icons=always --group-directories-first --no-quotes --hyperlink --group"
