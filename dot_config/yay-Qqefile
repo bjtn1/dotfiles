@@ -218,6 +218,7 @@ python-packaging
 python-pillow
 python-pyqt5
 python-reportlab
+qbittorrent
 rebuild-detector
 reflector
 reflector-simple
