@@ -17,6 +17,7 @@ bluedevil
 bluez
 bluez-utils
 breeze-gtk
+btop
 btrfs-progs
 cantarell-fonts
 chezmoi
@@ -257,6 +258,7 @@ usb_modeswitch
 usbutils
 vi
 vim
+virtualbox
 welcome
 wget
 which
