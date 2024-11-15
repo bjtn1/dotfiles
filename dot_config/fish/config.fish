@@ -61,6 +61,7 @@ alias bu="brew uninstall"
 alias buc="brew uninstall --cask"
 alias bri="brew reinstall"
 alias bric="brew reinstall --cask"
+alias brewbak="brew bundle dump -f --file=~/.config/brewfile"
 
 # Git
 alias gs='git status'
