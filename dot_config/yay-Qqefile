@@ -148,6 +148,7 @@ libappindicator-gtk3
 libdvdcss
 libgsf
 libopenraw
+librewolf-bin
 libwnck3
 linux
 linux-firmware
