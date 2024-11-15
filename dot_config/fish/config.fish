@@ -232,10 +232,11 @@ end
 
 
 function firefoxbak
-  switch(uname)
-    case Darwin:
-      rsync -av ~/Library/Application Support/librewolf/Profiles/m6knrx9d.default-default/ ~/Downloads/
-    end
+  switch (uname)
+  case Darwin
+    rsync -av ~/Library/Application\ Support/librewolf/Profiles/m6knrx9d.default-default/ ~/Downloads/
+  case '*'
+    echo "This function only works on macOS."
   end
 end
 
