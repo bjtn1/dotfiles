@@ -235,6 +235,7 @@ function firefoxbak
   switch(uname)
     case Darwin:
       rsync -av ~/Library/Application Support/librewolf/Profiles/m6knrx9d.default-default/ ~/Downloads/
+    end
   end
 end
 
