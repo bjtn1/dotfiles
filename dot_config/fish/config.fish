@@ -1,5 +1,6 @@
 # start a tmux in every session
 # tmux new -- gonna have to look this up...
+fastfetch
 
 if status is-interactive
   # Commands to run in interactive sessions can go here
