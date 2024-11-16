@@ -18,7 +18,7 @@ switch (uname)
 end
 
 # yay
-alias yaybak="yay -Qqe > ~/.config/yay-Qqefile"
+alias yaybak="yay && yay -Qqe > ~/.config/yay-Qqefile"
 
 alias config="cd ~/.config/"
 alias fishconfig="nv ~/.config/fish/config.fish"
