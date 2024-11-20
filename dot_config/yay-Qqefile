@@ -159,6 +159,7 @@ linux-lts-headers
 logrotate
 loupe
 lsb-release
+lshw
 lsscsi
 lvm2
 maliit-keyboard
