@@ -99,7 +99,7 @@ alias cmap="chezmoi apply"
 alias cmu="chezmoi update"
 alias cmr="chezmoi re-add"
 
-function cmbak
+function pacbak
   if command -v chezmoi > /dev/null
     echo "==> Backing up all files managed by chezmoi..."
     echo "Running chezmoi add ~/.config/nvim/*"
