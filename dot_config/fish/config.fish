@@ -171,7 +171,7 @@ function pacbak
       return 1
   end
 
-end  # <-- This is the missing `end` to close the function
+end
 
 
 function update
@@ -222,6 +222,9 @@ function update
     case '*'
       echo "WTF is this OS"
   end
+
+  pacbak
+
 end
 
 
