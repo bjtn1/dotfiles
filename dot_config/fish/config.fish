@@ -23,6 +23,9 @@ alias yaybak="yay && yay -Qqe > ~/.config/yay-Qqefile"
 # fastfetch
 alias ff="fastfetch"
 
+# gcc
+alias gcc ="/opt/homebrew/Cellar/gcc/14.2.0_1/bin/aarch64-apple-darwin24-gcc-14"
+
 alias config="cd ~/.config/"
 alias fishconfig="nv ~/.config/fish/config.fish"
 alias l="eza --oneline --long --all --header --git --git-repos --classify=always --icons=always --group-directories-first --no-quotes --hyperlink --group"
