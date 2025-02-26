@@ -60,6 +60,7 @@ alias tmk="tmux kill-session"
 alias py="python3"
 alias pip="pip3"
 alias venv="py -m venv"
+alias pdb="python3 -m pdb"
 
 # homebrew
 alias bi="brew install"
