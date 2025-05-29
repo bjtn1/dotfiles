@@ -210,7 +210,7 @@ function update
         echo "Running brew reinstall python-gdbm..."
         brew reinstall python-gdbm --verbose
         echo "Running brew reinstall librewolf --no-quarantine..."
-        brew reinstall librewolf --no-quarantine --verbose -f
+        brew reinstall librewolf --no-quarantine --verbose --force
         echo "Running rustup update..."
         rustup update
         echo "Running brew cleanup..."
