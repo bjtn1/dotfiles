@@ -18,7 +18,7 @@ switch (uname)
 end
 
 # yay
-alias yaybak="yay && yay -Qqe > ~/.config/yay-Qqefile"
+alias yaybak="yay && yay -Qqe > ~/.config/yay-Qqefile.txt"
 
 # fastfetch
 alias ff="fastfetch"
@@ -27,19 +27,17 @@ alias ff="fastfetch"
 alias gcc="/opt/homebrew/Cellar/gcc/14.2.0_1/bin/aarch64-apple-darwin24-c++-14"
 
 alias config="cd ~/.config/"
-alias fishconfig="nv ~/.config/fish/config.fish"
+alias fishconfig="chezmoi edit -a ~/.config/fish/config.fish"
 alias l="eza --oneline --long --all --header --git --git-repos --classify=always --icons=always --group-directories-first --no-quotes --hyperlink --group"
 alias cl="clear"
 alias nv="nvim"
 alias kittyconf="nv ~/.config/kitty/kitty.conf"
 alias ip='ipconfig getifaddr en0'
-alias activate="source bin/activate"
+alias activate="source ./bin/activate"
 alias login-items="sfltool dumpbtm"
 alias lg="lazygit"
 alias e="exit"
-alias nv="nvim"
 # alias lv="lvim"
-alias cl="clear"
 alias cat="bat"
 alias z="zoxide"
 alias unzipall='find . -name "*.zip" -exec unzip -v {} \;'
@@ -103,42 +101,67 @@ alias cmap="chezmoi apply"
 alias cmu="chezmoi update"
 alias cmr="chezmoi re-add"
 
+# this function backsup everything managed by chezmoi
 function pacbak
   if command -v chezmoi > /dev/null
     echo "==> Backing up all files managed by chezmoi..."
+
+    # nvim config
     echo "Running chezmoi add ~/.config/nvim/*"
     rm -rf ~/.local/share/chezmoi/dot_config/nvim
     chezmoi add ~/.config/nvim/*
+
+    # tmux config
     echo "Running chezmoi add ~/.config/tmux/*"
     rm -rf ~/.local/share/chezmoi/dot_config/tmux/
     chezmoi add ~/.config/tmux/*
-    echo "Running chezmoi add ~/.zshrc"
-    rm -rf ~/.local/share/chezmoi/dot_zshrc
-    chezmoi add ~/.zshrc
+
+    # zshrc
+    # echo "Running chezmoi add ~/.zshrc"
+    # rm -rf ~/.local/share/chezmoi/dot_zshrc
+    # chezmoi add ~/.zshrc
+
+    # cool wallpapers
     echo "Running chezmoi add ~/Pictures/wallpapers/"
     rm -rf ~/.local/share/chezmoi/private_Pictures
     chezmoi add ~/Pictures/wallpapers/
+
+    # fish shell config
     echo "Running chezmoi add ~/.config/fish/"
     rm -rf ~/.local/share/chezmoi/dot_config/private_fish/
     chezmoi add ~/.config/fish/
+
+    # kitty config
     echo "Running chezmoi add ~/.config/kitty/"
     rm -rf ~/.local/share/chezmoi/dot_config/kitty
     chezmoi add ~/.config/kitty/
+
+    # hypr config
+    echo "Running chezmoi add ~/.config/hypr/"
+    rm -rf ~/.local/share/chezmoi/dot_config/hypr/
+    chezmoi add ~/.config/hypr/
+
   else
     echo "chezmoi is not installed"
     return 1
   end
 
+  # in here we backup anything installed with a package manager (homebrew, pacman, yay, etc...)
   switch (uname)
     case Darwin
       echo "MacOS detected"
       if command -v brew > /dev/null
-        echo "Running chezmoi add ~/.config/brewfile"
-        rm -rf ~/.local/share/chezmoi/dot_config/brewfile
-        chezmoi add ~/.config/brewfile
-        echo "" > ~/.config/brewfile
+        # remove remote's brewfile and add local's brewfile
+        echo "Running chezmoi add ~/.config/brewfile.txt"
+        rm -rf ~/.local/share/chezmoi/dot_config/brewfile.txt
+        chezmoi add ~/.config/brewfile.txt
+
+        # clear local's brewfile
+        echo "" > ~/.config/brewfile.txt
+
+        # repopulate local's brewfile with currently installed packages
         echo "Running brew bundle dump..."
-        brew bundle dump -f --file=~/.config/brewfile
+        brew bundle dump -f --file=~/.config/brewfile.txt
       else
         echo "brew is not installed"
         return 1
@@ -147,28 +170,30 @@ function pacbak
     case Linux
       echo "Linux OS detected"
       if command -v yay > /dev/null
-        echo "Running chezmoi add ~/.config/yay-Qqefile..."
-        yay -Qqe > ~/.config/yay-Qqefile
-        rm -rf ~/.local/share/chezmoi/dot_config/yay-Qqefile
-        chezmoi add ~/.config/yay-Qqefile
+        # overwrite local's package-file list
+        # delete remote's package-file list
+        # update remote's package-file list with local's package-file list 
+        echo "Running chezmoi add ~/.config/yay-Qqefile.txt..."
+        yay -Qqe > ~/.config/yay-Qqefile.txt
+        rm -rf ~/.local/share/chezmoi/dot_config/yay-Qqefile.txt
+        chezmoi add ~/.config/yay-Qqefile.txt
       else
         echo "yay not installed"
         return 1
       end
 
       if command -v pacman > /dev/null
-        echo "Running chezmoi add ~/.config/pacman-Qqefile"
-        pacman -Qqe > ~/.config/pacman-Qqefile
-        rm -rf ~/.local/share/chezmoi/dot_config/pacman-Qqefile
-        chezmoi add ~/.config/pacman-Qqefile
+        # overwrite local's package-file list
+        # delete remote's package-file list
+        # update remote's package-file list with local's package-file list 
+        echo "Running chezmoi add ~/.config/pacman-Qqefile.txt"
+        pacman -Qqe > ~/.config/pacman-Qqefile.txt
+        rm -rf ~/.local/share/chezmoi/dot_config/pacman-Qqefile.txt
+        chezmoi add ~/.config/pacman-Qqefile.txt
       else
         echo "pacman not installed"
         return 1
       end
-
-      echo "Running chezmoi add ~/.config/hypr/"
-      rm -rf ~/.local/share/chezmoi/dot_config/hypr/
-      chezmoi add ~/.config/hypr/
 
     case "*"
       echo "This is neither MacOS nor Linux"
@@ -178,13 +203,16 @@ function pacbak
 end
 
 
+# this just updates all currenlty installed pakcages managed by a package manager (homebrew, yay, pacman, etc...)
 function update
   switch (uname)
     case Linux
       echo "Linux OS detected"
       if command -v yay > /dev/null
+        # update all currently installed packages managed by yay
         echo "running yay..."
         yay
+
       else
         echo "yay not installed"
         return 1
@@ -192,6 +220,7 @@ function update
 
     case Darwin
       echo "MacOS detected"
+      # update all currently installed packages managed by homebrew
       if command -v brew > /dev/null
         echo "Running brew update..."
         brew update --verbose
@@ -227,6 +256,7 @@ function update
       echo "WTF is this OS"
   end
 
+  # run pacback to backsup everything managed by chezmoi
   pacbak
 
 end
