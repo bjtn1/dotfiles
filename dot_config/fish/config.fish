@@ -241,17 +241,5 @@ function y
 	rm -f -- "$tmp"
 end
 
-
-function firefoxbak
-  switch (uname)
-  case Darwin
-    rsync -av ~/Library/Application\ Support/librewolf/Profiles/m6knrx9d.default-default/ ~/Downloads/firefox-backup/
-  case Linux
-    rsync -av ~/.mozilla/librewolf/ ~/Downloads/firefox-backup
-  case '*'
-    echo "This function only works on macOS."
-  end
-end
-
 alias cd="z"
 zoxide init fish | source
