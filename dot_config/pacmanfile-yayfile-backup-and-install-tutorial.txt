@@ -1,0 +1,14 @@
+# source:
+# https://wiki.archlinux.org/title/Pacman/Tips_and_tricks#List_of_installed_packages
+# This backs up currently installed packages
+# -Q = query all installed programs
+# -q = remove version numbers
+# -e = list explicitly installed programs
+pacman -Qqe > pacman-Qqefile
+yay -Qqe > yay-Qqefile
+
+pacman -Qqe > pacman-Qqefile && yay -Qqe > yay-Qqefile
+
+# To install from file
+pacman -S --needed - < pacman-Qqefile
+yay -S --needed - < yay-Qqefile
