@@ -4,11 +4,11 @@
 # -Q = query all installed programs
 # -q = remove version numbers
 # -e = list explicitly installed programs
-pacman -Qqe > pacman-Qqefile
-yay -Qqe > yay-Qqefile
+pacman -Qqe > ~/.config/pacman-Qqefile.txt
+yay -Qqe > ~/.config/yay-Qqefile.txt
 
 pacman -Qqe > pacman-Qqefile && yay -Qqe > yay-Qqefile
 
 # To install from file
-pacman -S --needed - < pacman-Qqefile.txt
-yay -S --needed - < yay-Qqefile.txt
+pacman -S --needed - < ~/.config/pacman-Qqefile.txt
+yay -S --needed - < ~/.config/yay-Qqefile.txt
