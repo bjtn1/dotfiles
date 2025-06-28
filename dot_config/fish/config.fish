@@ -1,3 +1,4 @@
+#hey (testing fishconfig command)
 # start a tmux in every session
 # tmux new -- gonna have to look this up...
 # fastfetch
