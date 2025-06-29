@@ -47,7 +47,7 @@ or
 <!-- TOC --><a name="installing-packages"></a>
 # Installing packages
 
-In `$HOME/.config/` there is a file called `backup-and-install-packages.txt` where it'll tell you what command to run to backup or install packages to and from a file
+In `$HOME/.config/` there is a file called `backup-and-install-packages.md` where it'll tell you what command to run to backup or install packages to and from a file
 
 <!-- TOC --><a name="miscellaneous-stuff"></a>
 # Miscellaneous stuff
