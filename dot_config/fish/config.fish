@@ -212,6 +212,8 @@ function update
         # update all currently installed packages managed by yay
         echo "running yay..."
         yay
+        eos-update
+        eos-update --aur
 
       else
         echo "yay not installed"
