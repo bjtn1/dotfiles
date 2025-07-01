@@ -116,12 +116,7 @@ function pacbak
     rm -rf ~/.local/share/chezmoi/dot_config/tmux/
     chezmoi add ~/.config/tmux/*
 
-    # zshrc
-    # echo "Running chezmoi add ~/.zshrc"
-    # rm -rf ~/.local/share/chezmoi/dot_zshrc
-    # chezmoi add ~/.zshrc
-
-    # cool wallpapers
+    # wallpapers
     echo "Running chezmoi add ~/Pictures/wallpapers/"
     rm -rf ~/.local/share/chezmoi/private_Pictures
     chezmoi add ~/Pictures/wallpapers/
@@ -145,66 +140,53 @@ function pacbak
     echo "Running chezmoi add ~/.config/waybar/"
     rm -rf ~/.local/share/chezmoi/dot_config/waybar/
     chezmoi add ~/.config/waybar/
-
   else
     echo "chezmoi is not installed"
     return 1
   end
 
-  # in here we backup anything installed with a package manager (homebrew, pacman, yay, etc...)
   switch (uname)
-    case Darwin
-      echo "MacOS detected"
-      if command -v brew > /dev/null
-        # remove remote's brewfile and add local's brewfile
-        echo "Running chezmoi add ~/.config/brewfile.txt"
-        rm -rf ~/.local/share/chezmoi/dot_config/brewfile.txt
-        chezmoi add ~/.config/brewfile.txt
-
-        # clear local's brewfile
-        echo "" > ~/.config/brewfile.txt
-
-        # repopulate local's brewfile with currently installed packages
-        echo "Running brew bundle dump..."
-        brew bundle dump -f --file=~/.config/brewfile.txt
-      else
-        echo "brew is not installed"
-        return 1
-      end
-
-    case Linux
-      echo "Linux OS detected"
-      if command -v yay > /dev/null
-        # overwrite local's package-file list
-        # delete remote's package-file list
-        # update remote's package-file list with local's package-file list 
-        echo "Running chezmoi add ~/.config/yay-Qqefile.txt..."
-        yay -Qqe > ~/.config/yay-Qqefile.txt
-        rm -rf ~/.local/share/chezmoi/dot_config/yay-Qqefile.txt
-        chezmoi add ~/.config/yay-Qqefile.txt
-      else
-        echo "yay not installed"
-        return 1
-      end
-
-      if command -v pacman > /dev/null
-        # overwrite local's package-file list
-        # delete remote's package-file list
-        # update remote's package-file list with local's package-file list 
-        echo "Running chezmoi add ~/.config/pacman-Qqefile.txt"
-        pacman -Qqe > ~/.config/pacman-Qqefile.txt
-        rm -rf ~/.local/share/chezmoi/dot_config/pacman-Qqefile.txt
-        chezmoi add ~/.config/pacman-Qqefile.txt
-      else
-        echo "pacman not installed"
-        return 1
-      end
-
-    case "*"
-      echo "This is neither MacOS nor Linux"
+  case Darwin
+    echo "MacOS detected"
+    if command -v brew > /dev/null
+      set filename ~/.config/macos_brew_packages.txt
+      echo "Running brew bundle dump..."
+      brew bundle dump -f --file=$filename
+      rm -rf ~/.local/share/chezmoi/dot_config/(basename $filename)
+      chezmoi add $filename
+    else
+      echo "brew is not installed"
       return 1
-  end
+    end
 
+  case Linux
+    echo "Linux OS detected"
+
+    # Get distro name (e.g., arch, ubuntu, debian)
+    set distro (string lower (awk -F= '$1=="ID" { print $2 }' /etc/os-release | tr -d '"'))
+
+    if command -v yay > /dev/null
+      set filename ~/.config/{$distro}_yay_packages.txt
+      yay -Qqe > $filename
+      rm -rf ~/.local/share/chezmoi/dot_config/(basename $filename)
+      chezmoi add $filename
+    else
+      echo "yay not installed"
+    end
+
+    if command -v pacman > /dev/null
+      set filename ~/.config/{$distro}_pacman_packages.txt
+      pacman -Qqe > $filename
+      rm -rf ~/.local/share/chezmoi/dot_config/(basename $filename)
+      chezmoi add $filename
+    else
+      echo "pacman not installed"
+    end
+
+  case "*"
+    echo "This is neither MacOS nor Linux"
+    return 1
+  end
 end
 
 
