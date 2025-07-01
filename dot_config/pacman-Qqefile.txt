@@ -199,6 +199,8 @@ tmux
 tree-sitter-cli
 ttf-bitstream-vera
 ttf-dejavu
+ttf-font-awesome
+ttf-jetbrains-mono-nerd
 ttf-liberation
 ttf-opensans
 unrar
@@ -207,6 +209,7 @@ usb_modeswitch
 usbutils
 vi
 vpnc
+waybar
 welcome
 wget
 which
