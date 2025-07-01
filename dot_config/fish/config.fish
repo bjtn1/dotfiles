@@ -141,6 +141,11 @@ function pacbak
     rm -rf ~/.local/share/chezmoi/dot_config/hypr/
     chezmoi add ~/.config/hypr/
 
+    # waybar config
+    echo "Running chezmoi add ~/.config/waybar/"
+    rm -rf ~/.local/share/chezmoi/dot_config/waybar/
+    chezmoi add ~/.config/waybar/
+
   else
     echo "chezmoi is not installed"
     return 1
