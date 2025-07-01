@@ -18,6 +18,7 @@ breeze-gtk
 btrfs-progs
 cantarell-fonts
 chezmoi
+cliphist
 cmake
 cryptsetup
 device-mapper
