@@ -117,9 +117,9 @@ function pacbak
     chezmoi add ~/.config/tmux/*
 
     # wallpapers
-    echo "Running chezmoi add ~/.config/wallpapers/"
-    rm -rf ~/.local/share/chezmoi/private_Pictures
-    chezmoi add ~/.config/wallpapers/
+    # echo "Running chezmoi add ~/.config/wallpapers/"
+    # rm -rf ~/.local/share/chezmoi/private_Pictures
+    # chezmoi add ~/.config/wallpapers/
 
     # fish shell config
     echo "Running chezmoi add ~/.config/fish/"
