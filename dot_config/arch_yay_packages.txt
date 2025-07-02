@@ -42,6 +42,7 @@ sddm
 slurp
 smartmontools
 tmux
+ttf-jetbrains-mono-nerd
 unzip
 uwsm
 vim
