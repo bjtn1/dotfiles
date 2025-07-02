@@ -37,10 +37,12 @@ pipewire-pulse
 polkit-kde-agent
 qt5-wayland
 qt6-wayland
+ruby
 sddm
 slurp
 smartmontools
 tmux
+unzip
 uwsm
 vim
 vulkan-radeon
