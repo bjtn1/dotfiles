@@ -4,6 +4,7 @@ base-devel
 bat
 btop
 chezmoi
+cliphist
 cmake
 dolphin
 dunst
