@@ -49,6 +49,7 @@ unzip
 uwsm
 vim
 vulkan-radeon
+waybar
 wget
 wireless_tools
 wireplumber
