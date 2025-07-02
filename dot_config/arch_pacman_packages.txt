@@ -11,6 +11,7 @@ eza
 fastfetch
 fish
 git
+github-cli
 grub
 gst-plugin-pipewire
 iwd
