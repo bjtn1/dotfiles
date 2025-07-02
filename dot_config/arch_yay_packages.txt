@@ -42,6 +42,7 @@ sddm
 slurp
 smartmontools
 tmux
+tree-sitter-cli
 ttf-jetbrains-mono-nerd
 unzip
 uwsm
