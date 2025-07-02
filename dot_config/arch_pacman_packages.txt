@@ -26,6 +26,7 @@ pipewire-alsa
 pipewire-jack
 pipewire-pulse
 tree-sitter-cli
+ttf-jetbrains-mono-nerd
 wireplumber
 yarn
 yay
