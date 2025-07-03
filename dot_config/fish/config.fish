@@ -1,5 +1,10 @@
 # start a tmux in every session
-# tmux new -- gonna have to look this up...
+# src = https://www.baeldung.com/linux/tmux-startup-default-shell
+if type -q tmux
+    if not test -n "$TMUX"
+        tmux attach-session -t default; or tmux new-session -s default
+    end
+end
 # fastfetch
 
 if status is-interactive
