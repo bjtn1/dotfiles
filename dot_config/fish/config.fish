@@ -37,7 +37,7 @@ alias l="eza --oneline --long --all --header --git --git-repos --classify=always
 alias cl="clear"
 alias nv="nvim"
 alias kittyconf="nv ~/.config/kitty/kitty.conf"
-alias ip='ipconfig getifaddr en0'
+# alias ip='ipconfig getifaddr en0'
 alias activate="source ./bin/activate"
 alias login-items="sfltool dumpbtm"
 alias lg="lazygit"
