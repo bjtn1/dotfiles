@@ -21,6 +21,7 @@ gst-plugin-pipewire
 htop
 hypridle
 hyprland
+hyprlock
 iwd
 kitty
 libpulse
