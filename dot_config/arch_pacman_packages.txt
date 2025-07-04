@@ -19,6 +19,7 @@ grim
 grub
 gst-plugin-pipewire
 htop
+hypridle
 hyprland
 iwd
 kitty
@@ -43,6 +44,7 @@ qt5-wayland
 qt6-wayland
 ruby
 sddm
+sddm-astronaut-theme
 slurp
 smartmontools
 tmux
