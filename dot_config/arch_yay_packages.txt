@@ -22,6 +22,7 @@ htop
 hypridle
 hyprland
 hyprlock
+hyprshot
 iwd
 kitty
 libpulse
