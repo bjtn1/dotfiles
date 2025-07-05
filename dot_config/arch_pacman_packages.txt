@@ -26,6 +26,7 @@ hyprshot
 iwd
 kitty
 libpulse
+librewolf
 linux
 linux-firmware
 mullvad-browser-bin
