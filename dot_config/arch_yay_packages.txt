@@ -51,6 +51,7 @@ sddm
 sddm-astronaut-theme
 slurp
 smartmontools
+tldr
 tmux
 tree-sitter-cli
 ttf-jetbrains-mono-nerd
