@@ -3,6 +3,7 @@ base
 base-devel
 bat
 btop
+catppuccin-mocha-grub-theme-git
 chezmoi
 cliphist
 cmake
@@ -27,15 +28,15 @@ hyprshot
 iwd
 kitty
 libpulse
-librewolf
+librewolf-bin
 linux
 linux-firmware
-mullvad-browser-bin
 mullvad-vpn
 nano
 neovim
 nodejs
 npm
+nwg-look
 openssh
 os-prober
 pipewire
