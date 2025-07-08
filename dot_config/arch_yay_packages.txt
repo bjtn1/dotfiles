@@ -29,6 +29,7 @@ hyprland
 hyprlock
 hyprpaper
 hyprshot
+imagemagick
 iwd
 kitty
 libpulse
