@@ -21,6 +21,7 @@ git
 github-cli
 grim
 grub
+grub-theme-hollow-knight
 gst-plugin-pipewire
 htop
 hypridle
