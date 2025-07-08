@@ -34,6 +34,7 @@ libpulse
 librewolf-bin
 linux
 linux-firmware
+mullvad-browser-bin
 mullvad-vpn
 nano
 neovim
