@@ -2,6 +2,7 @@ amd-ucode
 base
 base-devel
 bat
+bitwarden
 btop
 catppuccin-mocha-grub-theme-git
 chezmoi
@@ -24,6 +25,7 @@ htop
 hypridle
 hyprland
 hyprlock
+hyprpaper
 hyprshot
 iwd
 kitty
