@@ -23,6 +23,7 @@ grim
 grub
 grub-theme-hollow-knight
 gst-plugin-pipewire
+hpaper
 htop
 hypridle
 hyprland
