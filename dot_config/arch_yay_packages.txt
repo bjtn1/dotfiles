@@ -8,6 +8,7 @@ catppuccin-mocha-grub-theme-git
 chezmoi
 cliphist
 cmake
+discord
 dolphin
 dunst
 dysk
@@ -41,6 +42,7 @@ npm
 nwg-look
 openssh
 os-prober
+pipes.sh
 pipewire
 pipewire-alsa
 pipewire-jack
