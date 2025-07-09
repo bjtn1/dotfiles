@@ -55,6 +55,7 @@ polkit-kde-agent
 qt5-quickcontrols2
 qt5-wayland
 qt6-wayland
+rofi
 ruby
 sddm
 sddm-astronaut-theme
