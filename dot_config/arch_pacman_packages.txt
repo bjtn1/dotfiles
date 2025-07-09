@@ -61,6 +61,7 @@ sddm
 sddm-astronaut-theme
 slurp
 smartmontools
+swaync
 tldr
 tmux
 tree-sitter-cli
