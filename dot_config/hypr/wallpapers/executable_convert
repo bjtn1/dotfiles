@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+if [ $# -ne 3 ] || [ "$2" != "to" ]; then
+    echo "Usage: $0 <source_extension> to <target_extension>"
+    echo "Example: $0 jpg to png"
+    exit 1
+fi
+
+source_ext="$1"
+target_ext="$3"
+magick mogrify -format "$target_ext" ./*."$source_ext"
+rm -rf ./*."$source_ext"
