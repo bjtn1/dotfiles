@@ -16,6 +16,7 @@ efibootmgr
 eza
 fastfetch
 fd
+feh
 fish
 git
 github-cli
