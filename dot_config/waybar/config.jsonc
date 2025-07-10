@@ -27,8 +27,9 @@
   },
   "clock": {
     // "format": "{:%I:%M:%S %p} ",
-    "format": "{} ",
-    "interval": 60,   
+    // this is //YYYY-MM-DD HH:MM:SS format (iso)
+    "format": "{:%F %H:%M:%S}",
+    "interval": 1,   
     // "tooltip-format": "<tt>{calendar}</tt>",
     // "calendar": {
     //   "format": {
