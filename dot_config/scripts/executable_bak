@@ -6,10 +6,13 @@ CONFIG_DIR="$HOME/.config"
 
 backup_packages() {
   echo "📦 Backing up packages..."
-  
+
   case "$(uname)" in
     Darwin)
       brew bundle dump -f --file="$CONFIG_DIR/brewfile.txt"
+      if command -v chezmoi >/dev/null; then
+        chezmoi re-add
+      fi
       echo "✅ Homebrew packages saved to $CONFIG_DIR/brewfile.txt"
       ;;
     Linux)
@@ -21,13 +24,19 @@ backup_packages() {
       fi
 
       if command -v pacman >/dev/null; then
-          pacman -Qqe > "$CONFIG_DIR/${DISTRO}_pacman_packages.txt"
-          echo "✅ Pacman packages saved to $CONFIG_DIR/${DISTRO}_pacman_packages.txt"
+        pacman -Qqe > "$CONFIG_DIR/${DISTRO}_pacman_packages.txt"
+        if command -v chezmoi >/dev/null; then
+          chezmoi re-add
+        fi
+        echo "✅ Pacman packages saved to $CONFIG_DIR/${DISTRO}_pacman_packages.txt"
       fi
 
       if command -v yay >/dev/null; then
-          yay -Qqe > "$CONFIG_DIR/${DISTRO}_yay_packages.txt"
-          echo "✅ Yay packages saved to $CONFIG_DIR/${DISTRO}_yay_packages.txt"
+        yay -Qqe > "$CONFIG_DIR/${DISTRO}_yay_packages.txt"
+        if command -v chezmoi >/dev/null; then
+          chezmoi re-add
+        fi
+        echo "✅ Yay packages saved to $CONFIG_DIR/${DISTRO}_yay_packages.txt"
       fi
       ;;
     *)
@@ -65,17 +74,17 @@ backup_configs() {
 
 show_help() {
   cat <<EOF
-Usage: $0 [OPTION]
+  Usage: $0 [OPTION]
 
-Backup system packages and configuration files.
+  Backup system packages and configuration files.
 
-Options:
+  Options:
   -p, --packages    Backup installed packages only
   -c, --configs     Backup configuration files only
   -a, --all         Backup both packages and configs (default)
   -h, --help        Show this help message
 
-Examples:
+  Examples:
   $0 -p             Backup only packages
   $0 --configs      Backup only config files
   $0                Backup everything (default action)
