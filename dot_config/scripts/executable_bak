@@ -12,7 +12,7 @@ backup_packages() {
       brew bundle dump -f --file="$CONFIG_DIR/brewfile.txt"
       echo "✅ Homebrew packages saved to $CONFIG_DIR/brewfile.txt"
       if command -v chezmoi >/dev/null; then
-        chezmoi re-add
+        chezmoi add "$CONFIG_DIR/brewfile.txt"
       fi
       ;;
     Linux)
@@ -27,7 +27,7 @@ backup_packages() {
         pacman -Qqe > "$CONFIG_DIR/${DISTRO}_pacman_packages.txt"
         echo "✅ Pacman packages saved to $CONFIG_DIR/${DISTRO}_pacman_packages.txt"
         if command -v chezmoi >/dev/null; then
-          chezmoi re-add
+          chezmoi add "$CONFIG_DIR/${DISTRO}_pacman_packages.txt"
         fi
       fi
 
@@ -35,7 +35,7 @@ backup_packages() {
         yay -Qqe > "$CONFIG_DIR/${DISTRO}_yay_packages.txt"
         echo "✅ Yay packages saved to $CONFIG_DIR/${DISTRO}_yay_packages.txt"
         if command -v chezmoi >/dev/null; then
-          chezmoi re-add
+          chezmoi add "$CONFIG_DIR/${DISTRO}_yay_packages.txt"
         fi
       fi
       ;;
@@ -71,8 +71,8 @@ backup_configs() {
   )
 
   for dir in "${config_dirs[@]}"; do
+    echo "Backing up $dir.."
     chezmoi add "$dir"
-    echo "✅ Backed up $dir"
   done
 }
 
@@ -122,6 +122,11 @@ main() {
         exit 1
         ;;
     esac
+
+    # run chezmoi re-add at the end
+    if command -v chezmoi >/dev/null; then
+      chezmoi re-add
+    fi
   done
 
   # Default to all if no specific options provided
