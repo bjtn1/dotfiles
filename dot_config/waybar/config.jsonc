@@ -28,7 +28,7 @@
   "clock": {
     // "format": "{:%I:%M:%S %p} ",
     // this is //YYYY-MM-DD HH:MM:SS format (iso)
-    "format": "{:%F %H:%M:%S}",
+    "format": "{:%A, %d %B (%F) %T}",
     "interval": 1,   
     // "tooltip-format": "<tt>{calendar}</tt>",
     // "calendar": {
