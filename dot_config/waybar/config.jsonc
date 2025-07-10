@@ -5,7 +5,7 @@
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["clock"],
   // "modules-right": ["group/expand","bluetooth","network","battery"],
-  "modules-right": ["custom/notification", "tray"],
+  "modules-right": ["custom/notification", "network", "tray"],
 
 
   "hyprland/workspaces": {
@@ -26,20 +26,9 @@
     "escape": true
   },
   "clock": {
-    // "format": "{:%I:%M:%S %p} ",
     // this is //YYYY-MM-DD HH:MM:SS format (iso)
     "format": "{:%A, %d %B (%F) %T}",
     "interval": 1,   
-    // "tooltip-format": "<tt>{calendar}</tt>",
-    // "calendar": {
-    //   "format": {
-    //     "today": "<span color='#fAfBfC'><b>{}</b></span>"
-    //   }
-    // },
-    // "actions": {
-    //   "on-click-right": "shift_down",
-    //   "on-click": "shift_up"
-    // }
   },
   "network": {
     "format-wifi": "",
