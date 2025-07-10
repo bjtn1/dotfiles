@@ -10,10 +10,10 @@ backup_packages() {
   case "$(uname)" in
     Darwin)
       brew bundle dump -f --file="$CONFIG_DIR/brewfile.txt"
+      echo "✅ Homebrew packages saved to $CONFIG_DIR/brewfile.txt"
       if command -v chezmoi >/dev/null; then
         chezmoi re-add
       fi
-      echo "✅ Homebrew packages saved to $CONFIG_DIR/brewfile.txt"
       ;;
     Linux)
       if [ -f /etc/os-release ]; then
@@ -47,6 +47,8 @@ backup_packages() {
 }
 
 backup_configs() {
+  echo "📦 Backing up configs..."
+
   # List of directories to back up
   declare -a config_dirs=(
     "$CONFIG_DIR/bat"
@@ -69,6 +71,7 @@ backup_configs() {
 
   for dir in "${config_dirs[@]}"; do
     chezmoi add "$dir"
+    echo "✅ Backed up $dir"
   done
 }
 
