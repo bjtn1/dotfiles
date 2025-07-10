@@ -104,7 +104,7 @@ backup_configs() {
         echo "🔧 Processing $dir..."
         
         # Remove existing chezmoi management
-        rm -rf "$target_dir"
+        # rm -rf "$target_dir"
         
         # Add all files recursively
         find "$source_dir" -type f | while read -r file; do
