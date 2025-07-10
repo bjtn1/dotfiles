@@ -5,7 +5,7 @@ set -euo pipefail
 CONFIG_DIR="$HOME/.config"
 
 backup_packages() {
-  echo "📦 Backing up packages (chezmoi re-add)..."
+  echo "📦 Backing up packages..."
 
   case "$(uname)" in
     Darwin)
