@@ -106,14 +106,6 @@ alias cmap="chezmoi apply"
 alias cmu="chezmoi update"
 alias cmr="chezmoi re-add"
 
-function get_swaybg_wallpaper
-    ps aux | grep swaybg | awk '{for(i=1;i<=NF;i++) if($i=="-i") print $(i+1)}'
-end
-
-function change_colorscheme
-  wal -i "$(get_swaybg_wallpaper)" -n
-end
-
 function y
 	set tmp (mktemp -t "yazi-cwd.XXXXXX")
 	yazi $argv --cwd-file="$tmp"
