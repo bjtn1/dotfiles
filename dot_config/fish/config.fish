@@ -106,6 +106,8 @@ alias cmap="chezmoi apply"
 alias cmu="chezmoi update"
 alias cmr="chezmoi re-add"
 
+alias wallpaper_path="ps aux | grep swaybg | awk '{for(i=1;i<=NF;i++) if($i=="-i") print $(i+1)}'"
+
 # this function backsup everything managed by chezmoi
 function pacbak
   if command -v chezmoi > /dev/null
