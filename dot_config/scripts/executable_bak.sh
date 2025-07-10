@@ -1,0 +1,131 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+CONFIG_DIR="$HOME/.config"
+
+backup_packages() {
+  echo "📦 Backing up packages..."
+  
+  case "$(uname)" in
+    Darwin)
+      brew bundle dump -f --file="$CONFIG_DIR/brewfile.txt"
+      echo "✅ Homebrew packages saved to $CONFIG_DIR/brewfile.txt"
+      ;;
+    Linux)
+      if [ -f /etc/os-release ]; then
+        source /etc/os-release
+        DISTRO="${ID,,}"  # lowercase distro name
+      else
+        DISTRO="linux"
+      fi
+
+      if command -v pacman >/dev/null; then
+          pacman -Qqe > "$CONFIG_DIR/${DISTRO}_pacman_packages.txt"
+          echo "✅ Pacman packages saved to $CONFIG_DIR/${DISTRO}_pacman_packages.txt"
+      fi
+
+      if command -v yay >/dev/null; then
+          yay -Qqe > "$CONFIG_DIR/${DISTRO}_yay_packages.txt"
+          echo "✅ Yay packages saved to $CONFIG_DIR/${DISTRO}_yay_packages.txt"
+      fi
+      ;;
+    *)
+      echo "❌ Unsupported OS"
+      exit 1
+      ;;
+  esac
+}
+
+backup_configs() {
+  # List of directories to back up
+  declare -a config_dirs=(
+    "$CONFIG_DIR/bat"
+    "$CONFIG_DIR/btop"
+    "$CONFIG_DIR/dunst"
+    "$CONFIG_DIR/fish"
+    "$CONFIG_DIR/grub-themes"
+    "$CONFIG_DIR/hypr"
+    "$CONFIG_DIR/kitty"
+    "$CONFIG_DIR/nvim"
+    "$CONFIG_DIR/nwg-look"
+    "$CONFIG_DIR/rofi"
+    "$CONFIG_DIR/scripts"
+    "$CONFIG_DIR/swaync"
+    "$CONFIG_DIR/tmux"
+    "$CONFIG_DIR/waybar"
+    "$CONFIG_DIR/wofi"
+    "$CONFIG_DIR/yazi"
+  )
+
+  for dir in "${config_dirs[@]}"; do
+    chezmoi add "$dir"
+  done
+}
+
+show_help() {
+  cat <<EOF
+Usage: $0 [OPTION]
+
+Backup system packages and configuration files.
+
+Options:
+  -p, --packages    Backup installed packages only
+  -c, --configs     Backup configuration files only
+  -a, --all         Backup both packages and configs (default)
+  -h, --help        Show this help message
+
+Examples:
+  $0 -p             Backup only packages
+  $0 --configs      Backup only config files
+  $0 -n             Dry run of everything (default action)
+  $0                Backup everything (default action)
+EOF
+}
+
+main() {
+  # Parse options
+  while [ $# -gt 0 ]; do
+    case "$1" in
+      -p|--packages)
+        local do_packages=true
+        shift
+        ;;
+      -c|--configs)
+        local do_configs=true
+        shift
+        ;;
+      -a|--all)
+        local do_packages=true
+        local do_configs=true
+        shift
+        ;;
+      -h|--help)
+        show_help
+        exit 0
+        ;;
+      *)
+        echo "❌ Invalid option: $1"
+        show_help
+        exit 1
+        ;;
+    esac
+  done
+
+  # Default to all if no specific options provided
+  if [[ -z ${do_packages:-} && -z ${do_configs:-} ]]; then
+    local do_packages=true
+    local do_configs=true
+  fi
+
+  # Execute requested actions
+  if [[ ${do_packages:-} == true ]]; then
+    backup_packages
+  fi
+
+  if [[ ${do_configs:-} == true ]]; then
+    backup_configs
+  fi
+}
+
+main "$@"
