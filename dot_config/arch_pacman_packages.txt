@@ -42,6 +42,7 @@ mullvad-vpn
 nano
 neovim
 nodejs
+noto-fonts-emoji
 npm
 nwg-look
 openssh
