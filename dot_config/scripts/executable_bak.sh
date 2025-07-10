@@ -78,7 +78,6 @@ Options:
 Examples:
   $0 -p             Backup only packages
   $0 --configs      Backup only config files
-  $0 -n             Dry run of everything (default action)
   $0                Backup everything (default action)
 EOF
 }
