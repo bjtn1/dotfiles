@@ -3,5 +3,5 @@
 set -euo pipefail
 
 if command -v wal >/dev/null; then
-  wal -i "$(/bin/bash get_swaybg_wallpaper)" -n -b 000000
+  wal -i "$(ps aux | grep '[s]waybg' | awk '{for(i=1;i<=NF;i++) if($i=="-i") print $(i+1)}')" -n -b 000000
 fi
