@@ -38,6 +38,8 @@ libpulse
 librewolf-bin
 linux
 linux-firmware
+man-db
+man-pages
 mullvad-browser-bin
 mullvad-vpn
 nano
