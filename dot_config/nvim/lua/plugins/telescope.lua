@@ -7,18 +7,19 @@ return {
     "sharkdp/fd",
     "nvim-treesitter/nvim-treesitter",
     "nvim-tree/nvim-web-devicons",
-    "ahmedkhalf/project.nvim",
+    -- not maintained at all
+    -- "ahmedkhalf/project.nvim",
   },
   config = function ()
     local actions = require("telescope.actions")
     local telescope = require("telescope")
-    local telescope_project = require("project_nvim")
+    -- local telescope_project = require("project_nvim")
 
-    telescope_project.setup {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    }
+    -- telescope_project.setup {
+    --   -- your configuration comes here
+    --   -- or leave it empty to use the default settings
+    --   -- refer to the configuration section below
+    -- }
     telescope.setup({
       defaults = {
         mappings = {
@@ -35,6 +36,6 @@ return {
         },
       },
     })
-    require('telescope').load_extension('projects')
+    -- require('telescope').load_extension('projects')
   end
 }
