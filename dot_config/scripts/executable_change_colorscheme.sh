@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+if command -v wal >/dev/null; then
+  wal -i "$(/bin/bash get_swaybg_wallpaper.sh)" -n -b 000000
+fi
