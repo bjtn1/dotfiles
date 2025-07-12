@@ -31,11 +31,6 @@
     },
     "break",
     {
-      "type": "font",
-      "key": " ",
-      "keyColor": "33",
-    },
-    {
       "type": "os",
       "key": " ",
       "keyColor": "33",  // = color3
@@ -89,6 +84,11 @@
     {
       "type": "swap",
       "key": "󰓡 ",
+      "keyColor": "33",
+    },
+    {
+      "type": "font",
+      "key": " ",
       "keyColor": "33",
     },
     "break",
