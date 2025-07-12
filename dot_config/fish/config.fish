@@ -8,7 +8,9 @@
 # fastfetch
 
 # apply new theme to terminals with pywal16
-cat ~/.cache/wal/sequences
+if test -e ~/.cache/wal/sequences
+  cat ~/.cache/wal/sequences
+end
 
 if status is-interactive
   # Commands to run in interactive sessions can go here
