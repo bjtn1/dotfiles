@@ -1,11 +1,14 @@
 # start a tmux in every session
 # src = https://www.baeldung.com/linux/tmux-startup-default-shell
-# if type -q tmux
-#     if not test -n "$TMUX"
-#         tmux attach-session -t default; or tmux new-session -s default
-#     end
-# end
-# fastfetch
+if type -q tmux
+  if not test -n "$TMUX"
+    # tmux attach-session -t default; or tmux new-session -s default
+    tmux new-session
+  end
+end
+
+# run fastfetch at the start of a new terminal
+fastfetch
 
 # apply new theme to terminals with pywal16
 if test -e ~/.cache/wal/sequences
@@ -23,8 +26,8 @@ set -gx EDITOR nvim
 # remap caps lock to escape
 # does not work on Xwayland
 switch (uname)
-  case Linux:
-    setxkbmap -option "caps:escape"
+case Linux:
+  setxkbmap -option "caps:escape"
 end
 
 # fastfetch
@@ -112,12 +115,12 @@ alias cmu="chezmoi update"
 alias cmr="chezmoi re-add"
 
 function y
-	set tmp (mktemp -t "yazi-cwd.XXXXXX")
-	yazi $argv --cwd-file="$tmp"
-	if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
-		builtin cd -- "$cwd"
-	end
-	rm -f -- "$tmp"
+  set tmp (mktemp -t "yazi-cwd.XXXXXX")
+  yazi $argv --cwd-file="$tmp"
+  if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+    builtin cd -- "$cwd"
+  end
+  rm -f -- "$tmp"
 end
 
 alias cd="z"
