@@ -5,3 +5,6 @@ linemode = "size"
 
 [flavor]
 use = "tokyo-night"
+
+[tasks]
+image_bound= [0, 0]
