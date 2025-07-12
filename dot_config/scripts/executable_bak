@@ -73,8 +73,8 @@ backup_configs() {
 
   for dir in "${config_dirs[@]}"; do
     echo "Backing up $dir.."
-    echo ""
     chezmoi add "$dir"
+    echo ""
   done
 }
 
