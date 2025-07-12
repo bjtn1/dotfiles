@@ -27,6 +27,7 @@ htop
 hypridle
 hyprland
 hyprlock
+hyprpaper
 hyprshot
 imagemagick
 iwd
@@ -47,7 +48,6 @@ npm
 nwg-look
 openssh
 os-prober
-pfetch
 pipes.sh
 pipewire
 pipewire-alsa
