@@ -74,6 +74,12 @@ backup_configs() {
     "$CONFIG_DIR/fastfetch"
   )
 
+  # Prompt for wallpapers directory
+  read -p "Re-add ~/.config/wallpapers? [y/N] " answer
+  if [[ "$answer" =~ ^[Yy]$ ]]; then
+    config_dirs+=("$CONFIG_DIR/wallpapers")
+  fi
+
   for dir in "${config_dirs[@]}"; do
     echo "💾 Backing up $dir.."
     chezmoi add "$dir"
@@ -127,12 +133,12 @@ main() {
         exit 1
         ;;
     esac
-
-    # run chezmoi re-add at the end
-    if command -v chezmoi >/dev/null; then
-      chezmoi re-add
-    fi
   done
+
+  # run chezmoi re-add at the end
+  if command -v chezmoi >/dev/null; then
+    chezmoi re-add
+  fi
 
   # Default to all if no specific options provided
   if [[ -z ${do_packages:-} && -z ${do_configs:-} ]]; then
