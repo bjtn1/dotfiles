@@ -50,6 +50,7 @@ npm
 nwg-look
 openssh
 os-prober
+pfetch
 pipes.sh
 pipewire
 pipewire-alsa
