@@ -27,6 +27,7 @@ htop
 hypridle
 hyprland
 hyprlock
+hyprpaper
 hyprshot
 imagemagick
 iwd
@@ -64,7 +65,6 @@ sddm
 sddm-astronaut-theme
 slurp
 smartmontools
-swaybg
 swaync
 tldr
 tmux
@@ -75,10 +75,10 @@ uwsm
 vim
 vulkan-radeon
 waybar
+waypaper
 wget
 wireless_tools
 wireplumber
-wofi
 wpa_supplicant
 xdg-desktop-portal-hyprland
 xdg-utils
