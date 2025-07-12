@@ -17,6 +17,7 @@ eza
 fastfetch
 fd
 fish
+fzf
 git
 github-cli
 grim
