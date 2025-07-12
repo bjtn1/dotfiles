@@ -85,6 +85,13 @@ backup_configs() {
     chezmoi add "$dir"
     echo ""
   done
+
+  echo ""
+  # run chezmoi re-add at the end
+  if command -v chezmoi >/dev/null; then
+    chezmoi re-add
+  fi
+
 }
 
 show_help() {
@@ -134,11 +141,6 @@ main() {
         ;;
     esac
   done
-
-  # run chezmoi re-add at the end
-  if command -v chezmoi >/dev/null; then
-    chezmoi re-add
-  fi
 
   # Default to all if no specific options provided
   if [[ -z ${do_packages:-} && -z ${do_configs:-} ]]; then
