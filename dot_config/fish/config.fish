@@ -25,11 +25,11 @@ switch (uname)
     setxkbmap -option "caps:escape"
 end
 
-# yay
-alias yaybak="yay && yay -Qqe > ~/.config/yay-Qqefile.txt"
-
 # fastfetch
 alias ff="fastfetch"
+
+# pfetch
+alias pf="pfetch"
 
 # gcc
 alias gcc="/opt/homebrew/Cellar/gcc/14.2.0_1/bin/aarch64-apple-darwin24-c++-14"
