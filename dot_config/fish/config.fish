@@ -31,7 +31,7 @@ end
 alias ff="fastfetch"
 
 # pfetch
-alias pf="pfetch"
+alias pf="pfetch && wal --preview"
 
 # gcc
 alias gcc="/opt/homebrew/Cellar/gcc/14.2.0_1/bin/aarch64-apple-darwin24-c++-14"
