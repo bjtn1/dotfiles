@@ -29,6 +29,7 @@ backup_packages() {
         if command -v chezmoi >/dev/null; then
           chezmoi add "$CONFIG_DIR/${DISTRO}_pacman_packages.txt"
         fi
+        echo ""
       fi
 
       if command -v yay >/dev/null; then
@@ -37,6 +38,7 @@ backup_packages() {
         if command -v chezmoi >/dev/null; then
           chezmoi add "$CONFIG_DIR/${DISTRO}_yay_packages.txt"
         fi
+        echo ""
       fi
       ;;
     *)
@@ -66,7 +68,7 @@ backup_configs() {
     "$CONFIG_DIR/swaync"
     "$CONFIG_DIR/tmux"
     "$CONFIG_DIR/waybar"
-    "$CONFIG_DIR/wofi"
+    # "$CONFIG_DIR/wofi"
     "$CONFIG_DIR/yazi"
     "$CONFIG_DIR/waypaper"
     "$CONFIG_DIR/fastfetch"
