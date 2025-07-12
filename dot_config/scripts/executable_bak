@@ -68,6 +68,7 @@ backup_configs() {
     "$CONFIG_DIR/waybar"
     "$CONFIG_DIR/wofi"
     "$CONFIG_DIR/yazi"
+    "$CONFIG_DIR/waypaper"
   )
 
   for dir in "${config_dirs[@]}"; do
