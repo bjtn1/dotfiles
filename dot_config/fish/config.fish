@@ -1,11 +1,11 @@
 # start a tmux in every session
 # src = https://www.baeldung.com/linux/tmux-startup-default-shell
-if type -q tmux
-  if not test -n "$TMUX"
-    # tmux attach-session -t default; or tmux new-session -s default
-    tmux new-session
-  end
-end
+# if type -q tmux
+#   if not test -n "$TMUX"
+#     # tmux attach-session -t default; or tmux new-session -s default
+#     tmux new-session
+#   end
+# end
 
 # run fastfetch at the start of a new terminal
 fastfetch
