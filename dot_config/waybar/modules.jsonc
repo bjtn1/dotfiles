@@ -143,11 +143,11 @@
     // "format-ethernet": "󰌘",
     "format-disconnected": "󰌙", 
     // "tooltip-format": "{ipaddr}  {bandwidthUpBytes}  {bandwidthDownBytes}",
-    "format-linked": "󰈁 {ifname} (No IP)",
+    // "format-linked": "󰈁 {ifname} (No IP)",
     // "tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
     // "tooltip-format-ethernet": "{ifname} 󰌘",
     // "tooltip-format-disconnected": "󰌙 Disconnected",
-    "max-length": 50,
+    // "max-length": 50,
     "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"]
   },
 
