@@ -19,11 +19,13 @@
   "modules-right": [
     "network",
     "custom/separator#blank",
-    "pulseaudio"
+    "cpu",
     // "custom/separator#blank",
     // "power-profiles-daemon",
-    // "custom/separator#blank",
-    // "cpu",
+    "custom/separator#blank",
+    "disk",
+    "custom/separator#blank",
+    "pulseaudio"
     // "custom/separator#blank",
     // "memory",
     // "custom/separator#blank",
