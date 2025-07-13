@@ -138,11 +138,11 @@
 
   "network": {
     "format": "{icon} {essid} ({signalStrength}%)",
-    "format-alt": "{icon} {ipaddr} ({signalStrength}%  {bandwidthUpBytes}  {bandwidthDownBytes})",
+    "format-alt": "{icon} {ipaddr} ({signalStrength}%)",
     // "format-wifi": "{icon} {essid} ({signalStrength}%)",
     // "format-ethernet": "󰌘",
     "format-disconnected": "󰌙", 
-    // "tooltip-format": "{ipaddr}  {bandwidthUpBytes}  {bandwidthDownBytes}",
+    "tooltip-format": "{ipaddr}  {bandwidthUpBytes}  {bandwidthDownBytes}",
     // "format-linked": "󰈁 {ifname} (No IP)",
     // "tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
     // "tooltip-format-ethernet": "{ifname} 󰌘",
@@ -159,7 +159,7 @@
     "format": "󰋊 ({percentage_used}%)",
     "unit": "GiB",
     //"tooltip": true,
-    "tooltip-format": "{specific_free:0.2f}GiB / {specific_total:0.2f}GiB ",
+    "format-alt": "󰋊 {used} / {specific_total:0.2f}GiB ({percentage_used}%)",
   },
 
   "hyprland/language": {
