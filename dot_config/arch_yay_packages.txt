@@ -66,6 +66,7 @@ sddm-astronaut-theme
 slurp
 smartmontools
 swaync
+timeshift
 tldr
 tmux
 tree-sitter-cli
