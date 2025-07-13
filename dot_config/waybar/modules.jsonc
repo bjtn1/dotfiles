@@ -128,7 +128,7 @@
   },
 
   "cpu": {
-    "format": "{usage}% 󰍛",  
+    "format": "󰍛 {usage}%",  
     "interval": 1,
     "format-alt-click": "click",
     "format-alt": "{icon0}{icon1}{icon2}{icon3} {usage:>2}% 󰍛",
@@ -136,14 +136,30 @@
     "on-click": "gnome-system-monitor",
   },
 
+  "network": {
+    "format": "{icon} {essid} ({signalStrength}%)",
+    "format-alt": "{icon} {ipaddr} ({signalStrength}%  {bandwidthUpBytes}  {bandwidthDownBytes})",
+    // "format-wifi": "{icon} {essid} ({signalStrength}%)",
+    // "format-ethernet": "󰌘",
+    "format-disconnected": "󰌙", 
+    // "tooltip-format": "{ipaddr}  {bandwidthUpBytes}  {bandwidthDownBytes}",
+    "format-linked": "󰈁 {ifname} (No IP)",
+    // "tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
+    // "tooltip-format-ethernet": "{ifname} 󰌘",
+    // "tooltip-format-disconnected": "󰌙 Disconnected",
+    "max-length": 50,
+    "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"]
+  },
+
   "disk": {
     "interval": 30,
     //"format": "󰋊",
     "path": "/",
     //"format-alt-click": "click",
-    "format": "{percentage_used}% 󰋊",
+    "format": "󰋊 ({percentage_used}%)",
+    "unit": "GiB",
     //"tooltip": true,
-    "tooltip-format": "{used} used out of {total} on {path} ({percentage_used}%)",
+    "tooltip-format": "{specific_free:0.2f}GiB / {specific_total:0.2f}GiB ",
   },
 
   "hyprland/language": {
@@ -232,21 +248,6 @@
     },
     // "ignored-players": ["firefox"]
     "max-length": 30,
-  },
-
-  "network": {
-    "format": "{icon} {essid} ({signalStrength}%  {bandwidthUpBytes}  {bandwidthDownBytes})",
-    "format-alt": "{icon} {ipaddr} ({signalStrength}%  {bandwidthUpBytes}  {bandwidthDownBytes})",
-    // "format-wifi": "{icon} {essid} ({signalStrength}%)",
-    // "format-ethernet": "󰌘",
-    "format-disconnected": "󰌙", 
-    // "tooltip-format": "{ipaddr}  {bandwidthUpBytes}  {bandwidthDownBytes}",
-    "format-linked": "󰈁 {ifname} (No IP)",
-    // "tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
-    // "tooltip-format-ethernet": "{ifname} 󰌘",
-    // "tooltip-format-disconnected": "󰌙 Disconnected",
-    "max-length": 50,
-    "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"]
   },
 
   "network#speed": {
