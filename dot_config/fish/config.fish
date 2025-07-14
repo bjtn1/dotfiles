@@ -15,6 +15,8 @@ if test -e ~/.cache/wal/sequences
   cat ~/.cache/wal/sequences
 end
 
+alias v="fzf"
+
 if status is-interactive
   # Commands to run in interactive sessions can go here
 end
