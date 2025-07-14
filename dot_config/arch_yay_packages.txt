@@ -66,6 +66,7 @@ sddm-astronaut-theme
 slurp
 smartmontools
 swaync
+swww
 timeshift
 tldr
 tmux
