@@ -30,7 +30,7 @@ backup_packages() {
         if command -v chezmoi >/dev/null; then
           chezmoi add "$CONFIG_DIR/${DISTRO}_pacman_packages.txt"
         fi
-        echo ""
+        echo "=============================================================================================================================================================================="
       fi
 
       if command -v yay >/dev/null; then
@@ -39,7 +39,7 @@ backup_packages() {
         if command -v chezmoi >/dev/null; then
           chezmoi add "$CONFIG_DIR/${DISTRO}_yay_packages.txt"
         fi
-        echo ""
+        echo "=============================================================================================================================================================================="
       fi
       ;;
     *)
