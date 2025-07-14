@@ -46,6 +46,7 @@ alias fishconfig="chezmoi edit -a ~/.config/fish/config.fish"
 alias l="eza --oneline --long --all --header --git --git-repos --classify=always --icons=always --group-directories-first --no-quotes --hyperlink --group"
 alias cl="clear"
 alias nv="nvim"
+alias n="nvim"
 alias kittyconf="nv ~/.config/kitty/kitty.conf"
 # alias ip='ipconfig getifaddr en0'
 alias activate="source ./bin/activate"
