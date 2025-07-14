@@ -50,10 +50,10 @@ backup_packages() {
 }
 
 backup_configs() {
-  echo ""
+  echo
   echo "📦 Backing up configs..."
 
-  # List of directories to back up
+  # List of directories to back up (relative to $CONFIG_DIR)
   declare -a config_dirs=(
     "$CONFIG_DIR/bat"
     "$CONFIG_DIR/btop"
@@ -69,58 +69,35 @@ backup_configs() {
     "$CONFIG_DIR/swaync"
     "$CONFIG_DIR/tmux"
     "$CONFIG_DIR/waybar"
-    # "$CONFIG_DIR/wofi"
     "$CONFIG_DIR/yazi"
     "$CONFIG_DIR/waypaper"
     "$CONFIG_DIR/fastfetch"
-  )
-
-  # List of directories to back up
-  declare -a chezmoi_dirs=(
-    "$CHEZMOI_DIR/bat"
-    "$CHEZMOI_DIR/btop"
-    "$CHEZMOI_DIR/dunst"
-    "$CHEZMOI_DIR/fish"
-    "$CHEZMOI_DIR/grub-themes"
-    "$CHEZMOI_DIR/hypr"
-    "$CHEZMOI_DIR/kitty"
-    "$CHEZMOI_DIR/nvim"
-    "$CHEZMOI_DIR/nwg-look"
-    "$CHEZMOI_DIR/rofi"
-    "$CHEZMOI_DIR/scripts"
-    "$CHEZMOI_DIR/swaync"
-    "$CHEZMOI_DIR/tmux"
-    "$CHEZMOI_DIR/waybar"
-    # "$CONFIG_DIR/wofi"
-    "$CHEZMOI_DIR/yazi"
-    "$CHEZMOI_DIR/waypaper"
-    "$CHEZMOI_DIR/fastfetch"
   )
 
   # Prompt for wallpapers directory
   read -p "Re-add ~/.config/wallpapers? [y/N] " answer
   if [[ "$answer" =~ ^[Yy]$ ]]; then
     config_dirs+=("$CONFIG_DIR/wallpapers")
-    chezmoi_dirs+=("$CONFIG_DIR/wallpapers")
   fi
 
-  for dir in "${chezmoi_dirs[@]}"; do
-    echo "🗑️ Removing $dir..."
-    rm -rf "$dir"
-  done
-
+  # Remove and back up directories in a single loop
   for dir in "${config_dirs[@]}"; do
+    # Replace config_dir with chezmoi_dir string
+    chezmoi_dir="${dir/$CONFIG_DIR/$CHEZMOI_DIR}"
+    echo "🗑️ Removing $chezmoi_dir..."
+    rm -rf "$chezmoi_dir" || echo "⚠️ Failed to remove $chezmoi_dir"
     echo "💾 Backing up $dir..."
-    chezmoi add "$dir"
-    echo ""
+    chezmoi add "$dir" || echo "⚠️ Failed to back up $dir"
+    echo
   done
 
-  echo ""
-  # run chezmoi re-add at the end
+  echo
+  # Run chezmoi re-add if chezmoi is available
   if command -v chezmoi >/dev/null; then
-    chezmoi re-add
+    chezmoi re-add || echo "⚠️ Failed to run chezmoi re-add"
+  else
+    echo "⚠️ chezmoi not found, skipping re-add"
   fi
-
 }
 
 show_help() {
