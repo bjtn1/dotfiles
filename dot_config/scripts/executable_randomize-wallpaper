@@ -2,4 +2,7 @@
 
 set -euo pipefail
 
-while true; do sleep 600; waypaper --folder ~/.config/wallpapers/ --random; done
+# Default sleep time = 60 seconds
+SLEEP_TIME=${1:-60}
+
+while true; do sleep "$SLEEP_TIME"; waypaper --folder ~/.config/wallpapers/ --random; done
