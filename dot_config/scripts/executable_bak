@@ -88,10 +88,9 @@ backup_configs() {
     rm -rf "$chezmoi_dir" || echo "⚠️ Failed to remove $chezmoi_dir"
     echo "💾 Backing up $dir..."
     chezmoi add "$dir" || echo "⚠️ Failed to back up $dir"
-    echo "=================================================================="
+    echo "======================================================================================================================================================================================================"
   done
 
-  echo
   # Run chezmoi re-add if chezmoi is available
   if command -v chezmoi >/dev/null; then
     echo "⏰ Chezmoi re-adding files..."
