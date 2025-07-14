@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+while true; do sleep 600; waypaper --folder ~/.config/wallpapers/ --random; done
