@@ -9,7 +9,7 @@
 
   // Choose the order of the modules
   "modules-left": [
-    "hyprland/workspaces",
+    "hyprland/workspaces"
   ],
 
   "modules-center": [
@@ -19,7 +19,7 @@
     // "custom/separator#blank",
     // "power-profiles-daemon",
     "disk",
-    "pulseaudio"
+    "tray"
     // "custom/separator#blank",
     // "memory",
     // "custom/separator#blank",
