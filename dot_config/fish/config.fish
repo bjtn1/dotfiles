@@ -8,7 +8,7 @@
 # end
 
 # run fastfetch at the start of a new terminal
-fastfetch
+fastfetch -c 13
 
 # apply new theme to terminals with pywal16
 if test -e ~/.cache/wal/sequences
