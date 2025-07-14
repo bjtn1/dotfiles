@@ -1,4 +1,5 @@
 //* ---- 💫 https://github.com/JaKooLit 💫 ---- *//
+// You can find free icons of font-awesome on [fontawesome.com](https://fontawesome.com/search?o=r&m=free)
 
 {
   // HYPRLAND WORKSPACES. CHOOSE as desired and place on waybar configs
@@ -17,30 +18,33 @@
     },  
   },
 
-  "group/motherboard": {
-    "orientation": "horizontal",
-    "modules": [
-      "cpu",
-      "memory",
-      "temperature",
-      "disk",
-    ]	
+  "network": {
+    "format": "{icon} {essid} ({signalStrength}%)",
+    "format-alt": "{icon} {ipaddr} ({signalStrength}%)",
+    "tooltip-format": " {bandwidthUpBytes}  {bandwidthDownBytes}",
+    "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"]
   },
 
-  "group/laptop": {
-    "orientation": "horizontal",
-    "modules": [
-      "backlight",
-      "battery",
-    ]	
+  "cpu": {
+    "format": "C {usage}% /",  
+    "interval": 1,
+    "tooltip-format": "{icon0}{icon1}{icon2}{icon3}",
   },
 
-  "group/audio": {
-    "orientation": "horizontal",
-    "modules": [
-      "pulseaudio",
-      "pulseaudio#microphone",
-    ]	
+  "memory": {
+    "interval": 10,
+    "format": "M {percentage}% /",
+    "format-alt": "M ({used:0.1f} GiB / {total:0.1f} GiB) /",
+    "tooltip": false
+  },
+
+  "disk": {
+    "interval": 1,
+    "path": "/",
+    "format": "D {percentage_used}%",
+    "unit": "GiB",
+    "format-alt": "D ({used} / {specific_total:0.2f} GiB)",
+    "tooltip": false
   },
 
   "backlight": {
@@ -127,40 +131,7 @@
     "on-scroll-down": "shift_down"
   },
 
-  "cpu": {
-    "format": "󰍛 {usage}%",  
-    "interval": 1,
-    "format-alt-click": "click",
-    "format-alt": "{icon0}{icon1}{icon2}{icon3} {usage:>2}% 󰍛",
-    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
-    "on-click": "gnome-system-monitor",
-  },
 
-  "network": {
-    "format": "{icon} {essid} ({signalStrength}%)",
-    "format-alt": "{icon} {ipaddr} ({signalStrength}%)",
-    // "format-wifi": "{icon} {essid} ({signalStrength}%)",
-    // "format-ethernet": "󰌘",
-    "format-disconnected": "󰌙", 
-    "tooltip-format": "{ipaddr}  {bandwidthUpBytes}  {bandwidthDownBytes}",
-    // "format-linked": "󰈁 {ifname} (No IP)",
-    // "tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
-    // "tooltip-format-ethernet": "{ifname} 󰌘",
-    // "tooltip-format-disconnected": "󰌙 Disconnected",
-    // "max-length": 50,
-    "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"]
-  },
-
-  "disk": {
-    "interval": 30,
-    //"format": "󰋊",
-    "path": "/",
-    //"format-alt-click": "click",
-    "format": "󰋊 ({percentage_used}%)",
-    "unit": "GiB",
-    //"tooltip": true,
-    "format-alt": "󰋊 {used} / {specific_total:0.2f}GiB ({percentage_used}%)",
-  },
 
   "hyprland/language": {
     "format": "Lang: {}",
@@ -210,15 +181,6 @@
     },
   },
 
-  "memory": {
-    "interval": 10,
-    "format": "󰾆 {used:0.1f}G",
-    "format-alt": "󰾆 {percentage}%",
-    // "format-alt-click": "click",
-    "tooltip": true,
-    "tooltip-format": "{used:0.1f}GB/{total:0.1f}G",
-    "on-click": "kitty --title btop sh -c 'btop'"
-  },
 
   "mpris": {
     "interval": 10,
@@ -248,21 +210,6 @@
     },
     // "ignored-players": ["firefox"]
     "max-length": 30,
-  },
-
-  "network#speed": {
-    "interval": 1,
-    "format": "{ifname}",
-    "format-wifi": "{icon}  {bandwidthUpBytes}  {bandwidthDownBytes}",
-    "format-ethernet": "󰌘   {bandwidthUpBytes}  {bandwidthDownBytes}",
-    "format-disconnected": "󰌙", 
-    "tooltip-format": "{ipaddr}",
-    "format-linked": "󰈁 {ifname} (No IP)",
-    "tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
-    "tooltip-format-ethernet": "{ifname} 󰌘",
-    "tooltip-format-disconnected": "󰌙 Disconnected",
-    "max-length": 50,
-    "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"]
   },
 
   "pulseaudio": {
@@ -498,22 +445,6 @@
         "today": "<span color='#0dbc79'>{}</span>",
       }
     }
-  },
-
-  "cpu#vertical": {
-    "format": "󰍛\n{usage}%",  
-    "interval": 1,
-    "on-click": "gnome-system-monitor",
-  },
-
-  "memory#vertical": {
-    "interval": 10,
-    "format": "󰾆\n{percentage}%",
-    "format-alt": "󰾆\n{used:0.1f}G",
-    "format-alt-click": "click",
-    "tooltip": true,
-    "tooltip-format": "{used:0.1f}GB/{total:0.1f}G",
-    "on-click": "kitty --title btop sh -c 'btop'",
   },
 
   "pulseaudio#vertical": {

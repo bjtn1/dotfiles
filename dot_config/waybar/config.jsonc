@@ -13,18 +13,12 @@
   ],
 
   "modules-center": [
-    "clock"
-  ],
-
-  "modules-right": [
     "network",
-    "custom/separator#blank",
     "cpu",
+    "memory",
     // "custom/separator#blank",
     // "power-profiles-daemon",
-    "custom/separator#blank",
     "disk",
-    "custom/separator#blank",
     "pulseaudio"
     // "custom/separator#blank",
     // "memory",
@@ -44,5 +38,9 @@
     // "tray",
     // "custom/separator#blank",
     // "custom/power"
+  ],
+
+  "modules-right": [
+    "clock"
   ]
 }
