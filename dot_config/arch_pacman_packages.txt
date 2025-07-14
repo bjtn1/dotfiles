@@ -28,7 +28,6 @@ htop
 hypridle
 hyprland
 hyprlock
-hyprpaper
 hyprshot
 imagemagick
 iwd
