@@ -62,6 +62,7 @@ rofi
 ruby
 sddm
 sddm-astronaut-theme
+sddm-theme-sugar-candy-git
 slurp
 smartmontools
 swaync
