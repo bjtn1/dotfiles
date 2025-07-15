@@ -3,9 +3,9 @@
 set -euo pipefail
 
 SRC="$HOME/.config/hypr/current_wallpaper"
-DEST="/usr/share/sddm/themes/Sugar-Candy/current_wallpaper"
+DEST="/usr/share/sddm/themes/Sugar-Candy/Backgrounds/current_wallpaper"
 
-if [[ -f "$SRC" && -f "$DEST" ]]; then
+if [[ -f "$SRC" ]]; then
   echo "Changing SDDM wallpaper..."
   sudo cp "$SRC" "$DEST"
   sudo chmod 644 "$DEST"
