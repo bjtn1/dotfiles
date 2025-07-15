@@ -39,9 +39,9 @@ linux-firmware
 man-db
 man-pages
 mullvad-browser-bin
-mullvad-vpn
 nano
 neovim
+network-manager-applet
 nodejs
 noto-fonts-emoji
 npm
@@ -54,6 +54,7 @@ pipewire-alsa
 pipewire-jack
 pipewire-pulse
 polkit-kde-agent
+proton-pass-bin
 proton-vpn-gtk-app
 python-pywal16
 qt5-quickcontrols2
