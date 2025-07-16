@@ -8,14 +8,19 @@
 # end
 
 # run fastfetch at the start of a new terminal
-fastfetch
+# fastfetch
 
 # apply new theme to terminals with pywal16
 if test -e ~/.cache/wal/sequences
   cat ~/.cache/wal/sequences
 end
 
-alias v="fzf"
+function v --description 'Open nvim with files selected by fzf'
+  set files (fzf --preview 'bat --color=always --style=header,grid --line-range :400 {}')
+  if test -n "$files"
+    nvim $files
+  end
+end
 
 if status is-interactive
   # Commands to run in interactive sessions can go here
