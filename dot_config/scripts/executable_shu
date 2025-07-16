@@ -11,4 +11,4 @@ if [[ -f "$SRC" ]]; then
   sudo chmod 644 "$DEST"
 fi
 
-systemctl shutdown
+systemctl poweroff
