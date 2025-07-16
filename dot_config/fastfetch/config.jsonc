@@ -65,8 +65,8 @@
         },
         {
             "key": "│ {#36}󰩟 network {#keys}│",
-            "type": "localip",
-            "format": "{ipv4} ({ifname})"
+            "type": "publicip",
+            // "format": "{ipv4} ({ifname})"
         },
         {
             "key": "├───────────┤",
