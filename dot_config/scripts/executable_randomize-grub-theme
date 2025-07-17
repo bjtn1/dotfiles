@@ -31,11 +31,11 @@ fi
 # Extract theme name from the second-level folder
 THEME_NAME=$(basename "$SECOND_LEVEL")
 
-# Remove existing themes in target directory
-sudo rm -rf "$TARGET_DIR"/*
+# Create the target theme directory
+sudo mkdir -p "$TARGET_DIR/$THEME_NAME"
 
 # Copy the selected theme to the target directory
-sudo cp -ruv "$SECOND_LEVEL"/* "$TARGET_DIR/"
+sudo cp -ruv "$SECOND_LEVEL"/* "$TARGET_DIR/$THEME_NAME/"
 
 # Update GRUB_THEME in /etc/default/grub
 THEME_PATH="$TARGET_DIR/$THEME_NAME/theme.txt"
