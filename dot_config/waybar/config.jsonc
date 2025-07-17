@@ -19,6 +19,7 @@
     // "custom/separator#blank",
     // "power-profiles-daemon",
     "disk",
+    "temperature",
     "tray"
     // "custom/separator#blank",
     // "memory",

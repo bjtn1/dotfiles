@@ -68,13 +68,11 @@
   "tray": {
     "icon-size": 21,
     "spacing": 10,
-  }
+  },
 
-  // FIX
-  // cant get it to work
-  // "temperature": {
-  //   "interval": 1,
-  //   "tooltip": true,
-  //   "format": "T {temperatureC}°C /",
-  // },
+  "temperature": {
+    "interval": 1,
+    "tooltip": true,
+    "format": "T {temperatureC}°C",
+  },
 }
