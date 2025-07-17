@@ -25,7 +25,7 @@ tooltip,
   border-radius: 6px;
   font-weight: bold;
   color: @color11;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(20,20,20,0.7);
 }
 
 window#waybar {
