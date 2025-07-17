@@ -8,26 +8,27 @@
   text-shadow: none;
 }
 
+#workspaces.
+#network,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#tray,
 #clock,
 #battery,
-#cpu,
-#disk,
-#memory,
-#temperature,
-#network,
 #pulseaudio,
 #backlight,
-#tray,
-#custom-weather,
-#custom-updates,
-tooltip,
-#workspaces,
-#workspaces button.focused {
+tooltip {
   padding: 0px 10px;
   margin: 0 4px;
   border-radius: 6px;
   font-weight: bold;
-  background-color: @color2;
+  background-color: @color11;
+  color: @color0;
+}
+
+#workspaces button.active {
   color: @background;
 }
 
