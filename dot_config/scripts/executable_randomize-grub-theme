@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# Define paths
+CONFIG_DIR="$HOME/.config/grub-themes"
+TARGET_DIR="/usr/share/grub/themes"
+GRUB_CONFIG="/etc/default/grub"
+GRUB_OUTPUT="/boot/grub/grub.cfg"
+
+# Check if config directory exists
+if [[ ! -d "$CONFIG_DIR" ]]; then
+    echo "Error: $CONFIG_DIR does not exist."
+    exit 1
+fi
+
+# Get a random first-level folder
+FIRST_LEVEL=$(find "$CONFIG_DIR" -maxdepth 1 -type d | tail -n +2 | shuf -n 1)
+if [[ -z "$FIRST_LEVEL" ]]; then
+    echo "Error: No first-level folders found in $CONFIG_DIR."
+    exit 1
+fi
+
+# Get a random second-level folder (theme)
+SECOND_LEVEL=$(find "$FIRST_LEVEL" -maxdepth 1 -type d | tail -n +2 | shuf -n 1)
+if [[ -z "$SECOND_LEVEL" ]]; then
+    echo "Error: No second-level folders found in $FIRST_LEVEL."
+    exit 1
+fi
+
+# Extract theme name from the second-level folder
+THEME_NAME=$(basename "$SECOND_LEVEL")
+
+# Remove existing themes in target directory
+sudo rm -rf "$TARGET_DIR"/*
+
+# Copy the selected theme to the target directory
+sudo cp -ruv "$SECOND_LEVEL"/* "$TARGET_DIR/"
+
+# Update GRUB_THEME in /etc/default/grub
+THEME_PATH="$TARGET_DIR/$THEME_NAME/theme.txt"
+if [[ ! -f "$THEME_PATH" ]]; then
+    echo "Error: theme.txt not found in $THEME_PATH."
+    exit 1
+fi
+
+# Update the GRUB config file
+sudo sed -i "s|^GRUB_THEME=.*|GRUB_THEME=\"$THEME_PATH\"|" "$GRUB_CONFIG"
+
+# Update GRUB configuration
+sudo grub-mkconfig -o "$GRUB_OUTPUT"
+
+echo "Successfully applied GRUB theme: $THEME_NAME"
+
+set -euo pipefail
+
