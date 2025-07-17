@@ -81,7 +81,6 @@ glances
 go
 grim
 grub
-grub-theme-hollow-knight
 gsfonts
 gst-libav
 gst-plugin-pipewire
