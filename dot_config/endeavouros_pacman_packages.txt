@@ -194,6 +194,7 @@ power-profiles-daemon
 powerdevil
 print-manager
 proton-pass-bin
+proton-vpn-gtk-app
 pv
 python
 python-defusedxml
