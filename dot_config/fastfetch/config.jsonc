@@ -3,7 +3,8 @@
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
     // "type": "small",
-    "source": "~/.config/hypr/current_wallpaper",
+    // "source": "~/.config/hypr/current_wallpaper",
+    "source": "~/.config/fastfetch/ascii/arch.txt",
     "width": 50,
   },
   "display": {
