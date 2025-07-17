@@ -40,21 +40,21 @@
   },   
 
   "network": {
-    "format": "{icon} {essid} ({signalStrength}%) /",
-    "format-alt": "{icon} {ipaddr} ({signalStrength}%) /",
+    "format": "{icon} {essid} ({signalStrength}%)",
+    "format-alt": "{icon} {ipaddr} ({signalStrength}%)",
     "tooltip-format": " {bandwidthUpBytes}  {bandwidthDownBytes}",
     "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"]
   },
 
   "cpu": {
     "interval": 1,
-    "format": "C {usage}% /",
+    "format": "C {usage}%",
     "tooltip-format": "{icon0}{icon1}{icon2}{icon3}",
   },
 
   "memory": {
     "interval": 1,
-    "format": "M {percentage}% /",
+    "format": "M {percentage}%",
     "format-alt": "M ({used:0.1f} GiB / {total:0.1f} GiB) /",
     "tooltip": false
   },
@@ -62,7 +62,7 @@
   "disk": {
     "interval": 1,
     "path": "/",
-    "format": "D {percentage_used}% ",
+    "format": "D {percentage_used}%",
     "unit": "GiB",
     "format-alt": "D ({used} / {specific_total:0.2f} GiB)",
     "tooltip": false
