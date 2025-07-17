@@ -6,7 +6,6 @@
   border: none;
   box-shadow: none;
   text-shadow: none;
-  /* transition: all 0.3s ease; */
 }
 
 #clock,
@@ -27,82 +26,11 @@ tooltip,
   padding: 0px 10px;
   margin: 0 4px;
   border-radius: 6px;
-  background-color: @color0;
-  color: @color7;
-}
-
-#clock,
-#battery,
-#cpu,
-#disk,
-#memory,
-#temperature,
-#network,
-#pulseaudio,
-#backlight,
-#tray,
-#custom-weather,
-#custom-updates,
-tooltip,
-#workspaces,
-#workspaces button.focused {
   font-weight: bold;
   background-color: @color2;
   color: @background;
-  border: 2px solid @background;
 }
-
-
 
 window#waybar {
   background-color: transparent;
-  /* color: @foreground; */
-  /* border-bottom: 2px solid @color3; */
 }
-
-/* #workspaces button { */
-/*   padding: 5px 10px; */
-/*   margin: 0 4px; */
-/*   border-radius: 6px; */
-/*   background: transparent; */
-/*   color: @color7; */
-/* } */
-
-/* #workspaces button.focused { */
-/*   background-color: @color3; */
-/*   color: @background; */
-/* } */
-/**/
-/* #workspaces button:hover { */
-/*   background-color: @color4; */
-/*   color: @background; */
-/* } */
-
-
-/* #battery.charging, */
-/* #battery.full { */
-/*   color: @color2; */
-/* } */
-/**/
-/* #battery.warning { */
-/*   color: @color3; */
-/* } */
-/**/
-/* #battery.critical { */
-/*   background-color: @color1; */
-/*   color: @background; */
-/* } */
-/**/
-/**/
-/* #custom-updates { */
-/*   background-color: @color1; */
-/*   color: @background; */
-/* } */
-
-/* tooltip { */
-/*   background: @background; */
-/*   color: @foreground; */
-/*   border-radius: 8px; */
-/*   padding: 8px; */
-/*   border: 1px solid @color4; */
-/* } */
