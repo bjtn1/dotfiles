@@ -79,25 +79,25 @@ window#waybar {
 /* } */
 
 
-#battery.charging,
-#battery.full {
-  color: @color2;
-}
-
-#battery.warning {
-  color: @color3;
-}
-
-#battery.critical {
-  background-color: @color1;
-  color: @background;
-}
-
-
-#custom-updates {
-  background-color: @color1;
-  color: @background;
-}
+/* #battery.charging, */
+/* #battery.full { */
+/*   color: @color2; */
+/* } */
+/**/
+/* #battery.warning { */
+/*   color: @color3; */
+/* } */
+/**/
+/* #battery.critical { */
+/*   background-color: @color1; */
+/*   color: @background; */
+/* } */
+/**/
+/**/
+/* #custom-updates { */
+/*   background-color: @color1; */
+/*   color: @background; */
+/* } */
 
 /* tooltip { */
 /*   background: @background; */
