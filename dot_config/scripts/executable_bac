@@ -3,6 +3,7 @@
 set -euo pipefail
 
 CONFIG_DIR="$HOME/.config"
+CACHE_DIR="$HOME/.cache"
 CHEZMOI_DIR="$HOME/.local/share/chezmoi/dot_config"
 
 backup_packages() {
@@ -72,6 +73,7 @@ backup_configs() {
     "$CONFIG_DIR/yazi"
     "$CONFIG_DIR/waypaper"
     "$CONFIG_DIR/fastfetch"
+    "$CACHE_DIR/wal"
   )
 
   # Prompt for wallpapers directory
