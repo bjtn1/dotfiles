@@ -4,7 +4,7 @@
   "logo": {
     // "type": "small",
     "type": "file",
-    "source": "~/.config/fastfetch/ascii/arch.txt",
+    "source": "~/.config/hypr/current_wallpaper",
     "padding": {
       "top": 1
     }
