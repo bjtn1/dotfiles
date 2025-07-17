@@ -73,7 +73,6 @@ backup_configs() {
     "$CONFIG_DIR/yazi"
     "$CONFIG_DIR/waypaper"
     "$CONFIG_DIR/fastfetch"
-    "$CACHE_DIR/wal"
   )
 
   # Prompt for wallpapers directory
