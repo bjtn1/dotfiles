@@ -8,7 +8,6 @@
   text-shadow: none;
 }
 
-#workspaces,
 #network,
 #cpu,
 #memory,
@@ -19,13 +18,12 @@
 #battery,
 #pulseaudio,
 #backlight,
-tooltip,
-#workspaces button.active {
+tooltip {
   padding: 0px 10px;
   border-radius: 6px;
   font-weight: bold;
   color: @color11;
-  background-color: rgba(20,20,20,0.7);
+  background-color: rgba(20,20,20,0.9);
 }
 
 window#waybar {

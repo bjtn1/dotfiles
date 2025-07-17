@@ -71,6 +71,7 @@
   },
 
   "temperature": {
+    "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
     "interval": 1,
     "tooltip": true,
     "format": "T {temperatureC}°C",
