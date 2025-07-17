@@ -8,7 +8,7 @@
   text-shadow: none;
 }
 
-#workspaces.
+#workspaces,
 #network,
 #cpu,
 #memory,
@@ -19,17 +19,13 @@
 #battery,
 #pulseaudio,
 #backlight,
-tooltip {
+tooltip,
+#workspaces button.active {
   padding: 0px 10px;
-  margin: 0 4px;
   border-radius: 6px;
   font-weight: bold;
-  background-color: @color11;
-  color: @color0;
-}
-
-#workspaces button.active {
-  color: @background;
+  color: @color11;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 window#waybar {
