@@ -1,26 +1,26 @@
 Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\SimonTatham\PuTTY\Sessions\wal]
-"Colour0"="196,194,199"  ; Default Foreground
-"Colour1"="196,194,199"  ; Default Bold Foreground
+"Colour0"="221,209,216"  ; Default Foreground
+"Colour1"="221,209,216"  ; Default Bold Foreground
 "Colour2"="0,0,0"  ; Default Background
 "Colour3"="0,0,0"  ; Default Bold Background
 "Colour4"="0,0,0"  ; Cursor Text
-"Colour5"="196,194,199"  ; Cursor Color
+"Colour5"="221,209,216"  ; Cursor Color
 "Colour6"="0,0,0"  ; ANSI Black
-"Colour7"="101,92,113"  ; ANSI Black Bold
-"Colour8"="156,76,109"  ; ANSI Red
-"Colour9"="156,76,109"  ; ANSI Red Bold
-"Colour10"="184,128,122"  ; ANSI Green
-"Colour11"="184,128,122"  ; ANSI Green Bold
-"Colour12"="89,112,143"  ; ANSI Yellow
-"Colour13"="89,112,143"  ; ANSI Yellow Bold
-"Colour14"="170,103,138"  ; ANSI Blue
-"Colour15"="170,103,138"  ; ANSI Blue Bold
-"Colour16"="225,108,144"  ; ANSI Magenta
-"Colour17"="225,108,144"  ; ANSI Magenta Bold
-"Colour18"="112,146,172"  ; ANSI Cyan
-"Colour19"="112,146,172"  ; ANSI Cyan Bold
-"Colour20"="196,194,199"  ; ANSI White
-"Colour21"="196,194,199"  ; ANSI White Bold
+"Colour7"="161,141,153"  ; ANSI Black Bold
+"Colour8"="177,156,197"  ; ANSI Red
+"Colour9"="177,156,197"  ; ANSI Red Bold
+"Colour10"="146,171,216"  ; ANSI Green
+"Colour11"="146,171,216"  ; ANSI Green Bold
+"Colour12"="174,176,212"  ; ANSI Yellow
+"Colour13"="174,176,212"  ; ANSI Yellow Bold
+"Colour14"="203,157,194"  ; ANSI Blue
+"Colour15"="203,157,194"  ; ANSI Blue Bold
+"Colour16"="208,173,200"  ; ANSI Magenta
+"Colour17"="208,173,200"  ; ANSI Magenta Bold
+"Colour18"="239,179,197"  ; ANSI Cyan
+"Colour19"="239,179,197"  ; ANSI Cyan Bold
+"Colour20"="221,209,216"  ; ANSI White
+"Colour21"="221,209,216"  ; ANSI White Bold
 

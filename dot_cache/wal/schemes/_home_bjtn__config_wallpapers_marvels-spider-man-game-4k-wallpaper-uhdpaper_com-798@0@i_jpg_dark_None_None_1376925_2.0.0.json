@@ -1,0 +1,28 @@
+{
+    "checksum": "ab3f8165a7d3b5473e1423b66ef76769",
+    "wallpaper": "/home/bjtn/.config/wallpapers/marvels-spider-man-game-4k-wallpaper-uhdpaper.com-798@0@i.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#091717",
+        "foreground": "#c1c5c5",
+        "cursor": "#c1c5c5"
+    },
+    "colors": {
+        "color0": "#091717",
+        "color1": "#31454F",
+        "color2": "#2B5366",
+        "color3": "#4D4F4E",
+        "color4": "#656766",
+        "color5": "#A73B36",
+        "color6": "#80817F",
+        "color7": "#c1c5c5",
+        "color8": "#596d6d",
+        "color9": "#31454F",
+        "color10": "#2B5366",
+        "color11": "#4D4F4E",
+        "color12": "#656766",
+        "color13": "#A73B36",
+        "color14": "#80817F",
+        "color15": "#c1c5c5"
+    }
+}
