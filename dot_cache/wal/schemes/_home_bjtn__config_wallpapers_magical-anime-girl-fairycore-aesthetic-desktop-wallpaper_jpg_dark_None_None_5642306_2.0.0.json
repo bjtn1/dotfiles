@@ -1,0 +1,28 @@
+{
+    "checksum": "609674af84b5a8478c0a1fc15a724c78",
+    "wallpaper": "/home/bjtn/.config/wallpapers/magical-anime-girl-fairycore-aesthetic-desktop-wallpaper.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#1c1933",
+        "foreground": "#c6c5cc",
+        "cursor": "#c6c5cc"
+    },
+    "colors": {
+        "color0": "#1c1933",
+        "color1": "#3E438B",
+        "color2": "#655695",
+        "color3": "#946A99",
+        "color4": "#BB7C91",
+        "color5": "#7E81B8",
+        "color6": "#DDA39D",
+        "color7": "#c6c5cc",
+        "color8": "#68667c",
+        "color9": "#3E438B",
+        "color10": "#655695",
+        "color11": "#946A99",
+        "color12": "#BB7C91",
+        "color13": "#7E81B8",
+        "color14": "#DDA39D",
+        "color15": "#c6c5cc"
+    }
+}

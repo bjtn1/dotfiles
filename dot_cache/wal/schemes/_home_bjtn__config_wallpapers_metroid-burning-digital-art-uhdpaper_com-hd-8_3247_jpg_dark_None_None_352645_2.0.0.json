@@ -1,0 +1,28 @@
+{
+    "checksum": "507ba5157de17ac7330a7fe83475ccfe",
+    "wallpaper": "/home/bjtn/.config/wallpapers/metroid-burning-digital-art-uhdpaper.com-hd-8.3247.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#1b0c1b",
+        "foreground": "#c6c2c6",
+        "cursor": "#c6c2c6"
+    },
+    "colors": {
+        "color0": "#1b0c1b",
+        "color1": "#8E2A18",
+        "color2": "#9C2819",
+        "color3": "#AF4D21",
+        "color4": "#D66120",
+        "color5": "#ED9D2B",
+        "color6": "#F5C857",
+        "color7": "#c6c2c6",
+        "color8": "#6f5b6f",
+        "color9": "#8E2A18",
+        "color10": "#9C2819",
+        "color11": "#AF4D21",
+        "color12": "#D66120",
+        "color13": "#ED9D2B",
+        "color14": "#F5C857",
+        "color15": "#c6c2c6"
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "checksum": "1577c85cc4b793e3aa581600f75450d6",
+    "wallpaper": "/home/bjtn/.config/wallpapers/beautiful-flower-field-desktop-wallpaper.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#213133",
+        "foreground": "#c7cbcc",
+        "cursor": "#c7cbcc"
+    },
+    "colors": {
+        "color0": "#213133",
+        "color1": "#68CAFC",
+        "color2": "#B3ADA8",
+        "color3": "#F3A0A5",
+        "color4": "#E7D2A6",
+        "color5": "#A1DBF9",
+        "color6": "#EFDCD6",
+        "color7": "#c7cbcc",
+        "color8": "#687d7f",
+        "color9": "#68CAFC",
+        "color10": "#B3ADA8",
+        "color11": "#F3A0A5",
+        "color12": "#E7D2A6",
+        "color13": "#A1DBF9",
+        "color14": "#EFDCD6",
+        "color15": "#c7cbcc"
+    }
+}
