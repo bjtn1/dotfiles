@@ -57,6 +57,7 @@ fish
 git
 github-cli
 glances
+go
 grim
 grub
 gst-libav
