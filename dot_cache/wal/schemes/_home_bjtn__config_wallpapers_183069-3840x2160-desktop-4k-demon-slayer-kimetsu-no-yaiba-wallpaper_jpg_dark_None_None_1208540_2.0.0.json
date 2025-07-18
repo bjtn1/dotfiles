@@ -1,0 +1,28 @@
+{
+    "checksum": "d59f15f7dbee50fa7dba73f74a3768b5",
+    "wallpaper": "/home/bjtn/.config/wallpapers/183069-3840x2160-desktop-4k-demon-slayer-kimetsu-no-yaiba-wallpaper.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#150909",
+        "foreground": "#c4c1c1",
+        "cursor": "#c4c1c1"
+    },
+    "colors": {
+        "color0": "#150909",
+        "color1": "#AE6016",
+        "color2": "#CF7007",
+        "color3": "#DE641D",
+        "color4": "#C65B3A",
+        "color5": "#F3941A",
+        "color6": "#EE9B66",
+        "color7": "#c4c1c1",
+        "color8": "#6c5858",
+        "color9": "#AE6016",
+        "color10": "#CF7007",
+        "color11": "#DE641D",
+        "color12": "#C65B3A",
+        "color13": "#F3941A",
+        "color14": "#EE9B66",
+        "color15": "#c4c1c1"
+    }
+}

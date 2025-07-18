@@ -1,0 +1,28 @@
+{
+    "checksum": "720aa5977c0339ea2ca58dc99d5721ed",
+    "wallpaper": "/home/bjtn/.config/wallpapers/tanjiro-anime-christmas-gifts-demon-slayer-hd-wallpaper-uhdpaper.com-62@5@a.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#250f0f",
+        "foreground": "#c8c3c3",
+        "cursor": "#c8c3c3"
+    },
+    "colors": {
+        "color0": "#250f0f",
+        "color1": "#CE4637",
+        "color2": "#A8694F",
+        "color3": "#DA7054",
+        "color4": "#798544",
+        "color5": "#A5A659",
+        "color6": "#DB956B",
+        "color7": "#c8c3c3",
+        "color8": "#745f5f",
+        "color9": "#CE4637",
+        "color10": "#A8694F",
+        "color11": "#DA7054",
+        "color12": "#798544",
+        "color13": "#A5A659",
+        "color14": "#DB956B",
+        "color15": "#c8c3c3"
+    }
+}

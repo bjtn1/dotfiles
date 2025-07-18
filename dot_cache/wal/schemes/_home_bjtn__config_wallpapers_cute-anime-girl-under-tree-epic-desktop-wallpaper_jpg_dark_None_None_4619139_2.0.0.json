@@ -1,0 +1,28 @@
+{
+    "checksum": "411d9b2d0933b25400476cce30c88899",
+    "wallpaper": "/home/bjtn/.config/wallpapers/cute-anime-girl-under-tree-epic-desktop-wallpaper.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#846149",
+        "foreground": "#e0d7d1",
+        "cursor": "#e0d7d1"
+    },
+    "colors": {
+        "color0": "#846149",
+        "color1": "#509DDE",
+        "color2": "#EDA2AE",
+        "color3": "#EEC9AB",
+        "color4": "#AF8ED7",
+        "color5": "#A29FDD",
+        "color6": "#D8A4D3",
+        "color7": "#e0d7d1",
+        "color8": "#a59991",
+        "color9": "#509DDE",
+        "color10": "#EDA2AE",
+        "color11": "#EEC9AB",
+        "color12": "#AF8ED7",
+        "color13": "#A29FDD",
+        "color14": "#D8A4D3",
+        "color15": "#e0d7d1"
+    }
+}

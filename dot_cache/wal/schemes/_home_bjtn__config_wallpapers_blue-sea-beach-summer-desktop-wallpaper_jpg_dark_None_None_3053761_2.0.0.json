@@ -1,0 +1,28 @@
+{
+    "checksum": "13d0de9b2459422d4acc29f7b86f469d",
+    "wallpaper": "/home/bjtn/.config/wallpapers/blue-sea-beach-summer-desktop-wallpaper.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#4b4758",
+        "foreground": "#d2d1d5",
+        "cursor": "#d2d1d5"
+    },
+    "colors": {
+        "color0": "#4b4758",
+        "color1": "#B29FAA",
+        "color2": "#A1BBD3",
+        "color3": "#B3C9D7",
+        "color4": "#90D2EB",
+        "color5": "#A0D8EC",
+        "color6": "#AFD6F2",
+        "color7": "#d2d1d5",
+        "color8": "#878197",
+        "color9": "#B29FAA",
+        "color10": "#A1BBD3",
+        "color11": "#B3C9D7",
+        "color12": "#90D2EB",
+        "color13": "#A0D8EC",
+        "color14": "#AFD6F2",
+        "color15": "#d2d1d5"
+    }
+}

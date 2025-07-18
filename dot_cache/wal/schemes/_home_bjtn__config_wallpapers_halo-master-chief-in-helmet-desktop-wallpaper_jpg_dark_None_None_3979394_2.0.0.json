@@ -1,0 +1,28 @@
+{
+    "checksum": "b5c011afa5e3f2e75573a48abcff1000",
+    "wallpaper": "/home/bjtn/.config/wallpapers/halo-master-chief-in-helmet-desktop-wallpaper.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#0c121c",
+        "foreground": "#c2c3c6",
+        "cursor": "#c2c3c6"
+    },
+    "colors": {
+        "color0": "#0c121c",
+        "color1": "#98CE4E",
+        "color2": "#22549B",
+        "color3": "#4C5CB7",
+        "color4": "#A359BE",
+        "color5": "#50A0DB",
+        "color6": "#BAB0E6",
+        "color7": "#c2c3c6",
+        "color8": "#5b6170",
+        "color9": "#98CE4E",
+        "color10": "#22549B",
+        "color11": "#4C5CB7",
+        "color12": "#A359BE",
+        "color13": "#50A0DB",
+        "color14": "#BAB0E6",
+        "color15": "#c2c3c6"
+    }
+}

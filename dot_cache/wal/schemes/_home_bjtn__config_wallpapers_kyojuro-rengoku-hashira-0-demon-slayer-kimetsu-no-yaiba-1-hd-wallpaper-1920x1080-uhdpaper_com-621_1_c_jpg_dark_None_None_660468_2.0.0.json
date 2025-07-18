@@ -1,0 +1,28 @@
+{
+    "checksum": "6b304c49e15e9080d557cce0148aa702",
+    "wallpaper": "/home/bjtn/.config/wallpapers/kyojuro-rengoku-hashira-0-demon-slayer-kimetsu-no-yaiba-1-hd-wallpaper-1920x1080-uhdpaper.com-621.1_c.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#1c110c",
+        "foreground": "#c6c3c2",
+        "cursor": "#c6c3c2"
+    },
+    "colors": {
+        "color0": "#1c110c",
+        "color1": "#D96829",
+        "color2": "#AB7251",
+        "color3": "#DB9B58",
+        "color4": "#EBB65B",
+        "color5": "#987F80",
+        "color6": "#C7A99F",
+        "color7": "#c6c3c2",
+        "color8": "#70615b",
+        "color9": "#D96829",
+        "color10": "#AB7251",
+        "color11": "#DB9B58",
+        "color12": "#EBB65B",
+        "color13": "#987F80",
+        "color14": "#C7A99F",
+        "color15": "#c6c3c2"
+    }
+}

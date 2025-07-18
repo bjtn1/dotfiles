@@ -1,0 +1,28 @@
+{
+    "checksum": "827d5bd453a249da02760485b10335db",
+    "wallpaper": "/home/bjtn/.config/wallpapers/s_i_d_e___s_c_r_o_l_l_e_r_by_dmitryalexander_dg6hgn6.png",
+    "alpha": "100",
+    "special": {
+        "background": "#091316",
+        "foreground": "#c1c4c4",
+        "cursor": "#c1c4c4"
+    },
+    "colors": {
+        "color0": "#091316",
+        "color1": "#6E4839",
+        "color2": "#243849",
+        "color3": "#3F404A",
+        "color4": "#6B534A",
+        "color5": "#94563E",
+        "color6": "#986751",
+        "color7": "#c1c4c4",
+        "color8": "#59676c",
+        "color9": "#6E4839",
+        "color10": "#243849",
+        "color11": "#3F404A",
+        "color12": "#6B534A",
+        "color13": "#94563E",
+        "color14": "#986751",
+        "color15": "#c1c4c4"
+    }
+}

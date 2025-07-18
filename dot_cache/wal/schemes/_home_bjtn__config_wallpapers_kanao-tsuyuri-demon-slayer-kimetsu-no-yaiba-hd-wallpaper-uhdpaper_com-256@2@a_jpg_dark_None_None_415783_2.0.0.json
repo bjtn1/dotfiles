@@ -1,0 +1,28 @@
+{
+    "checksum": "085b1ec51a8ed69af2d749020feac8a6",
+    "wallpaper": "/home/bjtn/.config/wallpapers/kanao-tsuyuri-demon-slayer-kimetsu-no-yaiba-hd-wallpaper-uhdpaper.com-256@2@a.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#122137",
+        "foreground": "#c3c7cd",
+        "cursor": "#c3c7cd"
+    },
+    "colors": {
+        "color0": "#122137",
+        "color1": "#6F5888",
+        "color2": "#9F5889",
+        "color3": "#CD6388",
+        "color4": "#6D8CC1",
+        "color5": "#E2A1A7",
+        "color6": "#ABA1C0",
+        "color7": "#c3c7cd",
+        "color8": "#656e7b",
+        "color9": "#6F5888",
+        "color10": "#9F5889",
+        "color11": "#CD6388",
+        "color12": "#6D8CC1",
+        "color13": "#E2A1A7",
+        "color14": "#ABA1C0",
+        "color15": "#c3c7cd"
+    }
+}

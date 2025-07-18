@@ -1,0 +1,28 @@
+{
+    "checksum": "613ce81c303658796fa68d8b76931835",
+    "wallpaper": "/home/bjtn/.config/wallpapers/wallhaven-gpxo17_3840x2160.png",
+    "alpha": "100",
+    "special": {
+        "background": "#1e272b",
+        "foreground": "#c6c9ca",
+        "cursor": "#c6c9ca"
+    },
+    "colors": {
+        "color0": "#1e272b",
+        "color1": "#CBB48C",
+        "color2": "#DAB8A1",
+        "color3": "#BEC0B2",
+        "color4": "#EAD09F",
+        "color5": "#D1C8B6",
+        "color6": "#EDD4B9",
+        "color7": "#c6c9ca",
+        "color8": "#65747b",
+        "color9": "#CBB48C",
+        "color10": "#DAB8A1",
+        "color11": "#BEC0B2",
+        "color12": "#EAD09F",
+        "color13": "#D1C8B6",
+        "color14": "#EDD4B9",
+        "color15": "#c6c9ca"
+    }
+}

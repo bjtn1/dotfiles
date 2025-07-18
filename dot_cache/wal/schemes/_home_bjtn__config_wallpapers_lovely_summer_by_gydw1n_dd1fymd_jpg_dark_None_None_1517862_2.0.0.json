@@ -1,0 +1,28 @@
+{
+    "checksum": "0357dc66caeb62a12544124444ca5c76",
+    "wallpaper": "/home/bjtn/.config/wallpapers/lovely_summer_by_gydw1n_dd1fymd.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#112627",
+        "foreground": "#c3c8c9",
+        "cursor": "#c3c8c9"
+    },
+    "colors": {
+        "color0": "#112627",
+        "color1": "#948E75",
+        "color2": "#3D6595",
+        "color3": "#209794",
+        "color4": "#3DB1C6",
+        "color5": "#2ACBFA",
+        "color6": "#5CDDFA",
+        "color7": "#c3c8c9",
+        "color8": "#607475",
+        "color9": "#948E75",
+        "color10": "#3D6595",
+        "color11": "#209794",
+        "color12": "#3DB1C6",
+        "color13": "#2ACBFA",
+        "color14": "#5CDDFA",
+        "color15": "#c3c8c9"
+    }
+}

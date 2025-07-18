@@ -1,0 +1,28 @@
+{
+    "checksum": "54de4f7e241a3ac90681cc338b97158a",
+    "wallpaper": "/home/bjtn/.config/wallpapers/wallhaven-d6qj2l.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#23284b",
+        "foreground": "#c8c9d2",
+        "cursor": "#c8c9d2"
+    },
+    "colors": {
+        "color0": "#23284b",
+        "color1": "#3C82CE",
+        "color2": "#6693CE",
+        "color3": "#9D93B7",
+        "color4": "#DFAFB7",
+        "color5": "#9EADD1",
+        "color6": "#D3B4CA",
+        "color7": "#c8c9d2",
+        "color8": "#707389",
+        "color9": "#3C82CE",
+        "color10": "#6693CE",
+        "color11": "#9D93B7",
+        "color12": "#DFAFB7",
+        "color13": "#9EADD1",
+        "color14": "#D3B4CA",
+        "color15": "#c8c9d2"
+    }
+}

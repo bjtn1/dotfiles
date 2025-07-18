@@ -1,0 +1,28 @@
+{
+    "checksum": "96bebb16120180d806fe44a2631a90b7",
+    "wallpaper": "/home/bjtn/.config/wallpapers/Hatsune.Miku.full.3848968.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#2b4660",
+        "foreground": "#cad0d7",
+        "cursor": "#cad0d7"
+    },
+    "colors": {
+        "color0": "#2b4660",
+        "color1": "#A9B6CF",
+        "color2": "#B3C4DB",
+        "color3": "#9CC3E7",
+        "color4": "#B4CBE6",
+        "color5": "#DDD1D8",
+        "color6": "#CBD7EA",
+        "color7": "#cad0d7",
+        "color8": "#798692",
+        "color9": "#A9B6CF",
+        "color10": "#B3C4DB",
+        "color11": "#9CC3E7",
+        "color12": "#B4CBE6",
+        "color13": "#DDD1D8",
+        "color14": "#CBD7EA",
+        "color15": "#cad0d7"
+    }
+}

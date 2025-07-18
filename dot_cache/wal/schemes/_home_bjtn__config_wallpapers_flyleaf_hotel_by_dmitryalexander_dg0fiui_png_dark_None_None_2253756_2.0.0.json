@@ -1,0 +1,28 @@
+{
+    "checksum": "ef13c7f7956e04992c172997922d3858",
+    "wallpaper": "/home/bjtn/.config/wallpapers/flyleaf_hotel_by_dmitryalexander_dg0fiui.png",
+    "alpha": "100",
+    "special": {
+        "background": "#151921",
+        "foreground": "#c4c5c7",
+        "cursor": "#c4c5c7"
+    },
+    "colors": {
+        "color0": "#151921",
+        "color1": "#6FA9D5",
+        "color2": "#96A0AF",
+        "color3": "#C0C9B4",
+        "color4": "#92B7D9",
+        "color5": "#9CC5E4",
+        "color6": "#B0CEEB",
+        "color7": "#c4c5c7",
+        "color8": "#5f6774",
+        "color9": "#6FA9D5",
+        "color10": "#96A0AF",
+        "color11": "#C0C9B4",
+        "color12": "#92B7D9",
+        "color13": "#9CC5E4",
+        "color14": "#B0CEEB",
+        "color15": "#c4c5c7"
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "checksum": "19078d9af19410cd1ecb6618ea485038",
+    "wallpaper": "/home/bjtn/.config/wallpapers/replicate-prediction-3mbemajfrsrgm0cenag9j452cr.png",
+    "alpha": "100",
+    "special": {
+        "background": "#10141f",
+        "foreground": "#c3c4c7",
+        "cursor": "#c3c4c7"
+    },
+    "colors": {
+        "color0": "#10141f",
+        "color1": "#2F6F91",
+        "color2": "#51778F",
+        "color3": "#5B92AA",
+        "color4": "#4EAAC9",
+        "color5": "#5DB0CE",
+        "color6": "#BFC9AE",
+        "color7": "#c3c4c7",
+        "color8": "#5d6372",
+        "color9": "#2F6F91",
+        "color10": "#51778F",
+        "color11": "#5B92AA",
+        "color12": "#4EAAC9",
+        "color13": "#5DB0CE",
+        "color14": "#BFC9AE",
+        "color15": "#c3c4c7"
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "checksum": "52b4ae01fe843a702d270aed4edcfaa4",
+    "wallpaper": "/home/bjtn/.config/wallpapers/hunter-x-hunter-killua-white-desktop-wallpaper.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#070810",
+        "foreground": "#c1c1c3",
+        "cursor": "#c1c1c3"
+    },
+    "colors": {
+        "color0": "#070810",
+        "color1": "#9F94B7",
+        "color2": "#969BC4",
+        "color3": "#B1A6C7",
+        "color4": "#A1ABDC",
+        "color5": "#D2ACD2",
+        "color6": "#B4CAF0",
+        "color7": "#c1c1c3",
+        "color8": "#565969",
+        "color9": "#9F94B7",
+        "color10": "#969BC4",
+        "color11": "#B1A6C7",
+        "color12": "#A1ABDC",
+        "color13": "#D2ACD2",
+        "color14": "#B4CAF0",
+        "color15": "#c1c1c3"
+    }
+}

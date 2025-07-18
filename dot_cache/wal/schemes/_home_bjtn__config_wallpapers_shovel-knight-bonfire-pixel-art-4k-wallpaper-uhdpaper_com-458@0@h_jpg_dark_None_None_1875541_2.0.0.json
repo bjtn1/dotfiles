@@ -1,0 +1,28 @@
+{
+    "checksum": "9c745e26a6c394f1f315e28b17f880ff",
+    "wallpaper": "/home/bjtn/.config/wallpapers/shovel-knight-bonfire-pixel-art-4k-wallpaper-uhdpaper.com-458@0@h.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#130c1d",
+        "foreground": "#c4c2c6",
+        "cursor": "#c4c2c6"
+    },
+    "colors": {
+        "color0": "#130c1d",
+        "color1": "#4043B3",
+        "color2": "#182CCE",
+        "color3": "#1630DF",
+        "color4": "#0C67C5",
+        "color5": "#524ED0",
+        "color6": "#9145E5",
+        "color7": "#c4c2c6",
+        "color8": "#635c70",
+        "color9": "#4043B3",
+        "color10": "#182CCE",
+        "color11": "#1630DF",
+        "color12": "#0C67C5",
+        "color13": "#524ED0",
+        "color14": "#9145E5",
+        "color15": "#c4c2c6"
+    }
+}
