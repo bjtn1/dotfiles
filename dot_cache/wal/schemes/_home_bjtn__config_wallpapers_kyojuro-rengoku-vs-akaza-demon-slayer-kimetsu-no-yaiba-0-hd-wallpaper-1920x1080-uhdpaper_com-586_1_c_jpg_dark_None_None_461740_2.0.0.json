@@ -1,0 +1,28 @@
+{
+    "checksum": "955bbf417210760cfeb49a53b7140691",
+    "wallpaper": "/home/bjtn/.config/wallpapers/kyojuro-rengoku-vs-akaza-demon-slayer-kimetsu-no-yaiba-0-hd-wallpaper-1920x1080-uhdpaper.com-586.1_c.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#151e33",
+        "foreground": "#c4c6cc",
+        "cursor": "#c4c6cc"
+    },
+    "colors": {
+        "color0": "#151e33",
+        "color1": "#AC9472",
+        "color2": "#225BA1",
+        "color3": "#2857B2",
+        "color4": "#5F66A0",
+        "color5": "#946D9D",
+        "color6": "#4B94C8",
+        "color7": "#c4c6cc",
+        "color8": "#646b7b",
+        "color9": "#AC9472",
+        "color10": "#225BA1",
+        "color11": "#2857B2",
+        "color12": "#5F66A0",
+        "color13": "#946D9D",
+        "color14": "#4B94C8",
+        "color15": "#c4c6cc"
+    }
+}

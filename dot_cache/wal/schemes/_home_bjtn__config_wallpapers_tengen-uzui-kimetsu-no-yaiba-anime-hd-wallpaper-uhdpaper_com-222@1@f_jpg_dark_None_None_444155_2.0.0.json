@@ -1,0 +1,28 @@
+{
+    "checksum": "703d71c6954541f5b0c12aa275228f74",
+    "wallpaper": "/home/bjtn/.config/wallpapers/tengen-uzui-kimetsu-no-yaiba-anime-hd-wallpaper-uhdpaper.com-222@1@f.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#1a0b0b",
+        "foreground": "#c5c2c2",
+        "cursor": "#c5c2c2"
+    },
+    "colors": {
+        "color0": "#1a0b0b",
+        "color1": "#D17257",
+        "color2": "#D4A55A",
+        "color3": "#E99D68",
+        "color4": "#F47A86",
+        "color5": "#D7AB91",
+        "color6": "#FED595",
+        "color7": "#c5c2c2",
+        "color8": "#6f5a5a",
+        "color9": "#D17257",
+        "color10": "#D4A55A",
+        "color11": "#E99D68",
+        "color12": "#F47A86",
+        "color13": "#D7AB91",
+        "color14": "#FED595",
+        "color15": "#c5c2c2"
+    }
+}

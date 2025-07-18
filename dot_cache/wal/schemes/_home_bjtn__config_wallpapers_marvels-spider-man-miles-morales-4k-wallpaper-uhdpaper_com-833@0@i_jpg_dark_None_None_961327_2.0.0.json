@@ -1,0 +1,28 @@
+{
+    "checksum": "e5812c944065678aa755167be37ab128",
+    "wallpaper": "/home/bjtn/.config/wallpapers/marvels-spider-man-miles-morales-4k-wallpaper-uhdpaper.com-833@0@i.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#05050d",
+        "foreground": "#c0c0c2",
+        "cursor": "#c0c0c2"
+    },
+    "colors": {
+        "color0": "#05050d",
+        "color1": "#335B9B",
+        "color2": "#B53EA7",
+        "color3": "#EC1F96",
+        "color4": "#F31890",
+        "color5": "#49AFCD",
+        "color6": "#A8A8D5",
+        "color7": "#c0c0c2",
+        "color8": "#555567",
+        "color9": "#335B9B",
+        "color10": "#B53EA7",
+        "color11": "#EC1F96",
+        "color12": "#F31890",
+        "color13": "#49AFCD",
+        "color14": "#A8A8D5",
+        "color15": "#c0c0c2"
+    }
+}
