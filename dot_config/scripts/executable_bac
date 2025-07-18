@@ -74,6 +74,7 @@ backup_configs() {
     "$CONFIG_DIR/yazi"
     "$CONFIG_DIR/waypaper"
     "$CONFIG_DIR/fastfetch"
+    "$CONFIG_DIR/wlogout"
   )
 
   declare -a cache_dirs=(
@@ -91,7 +92,7 @@ backup_configs() {
     # Replace config_dir with chezmoi_dir string
     chezmoi_config_dir="${config_dir/$CONFIG_DIR/$CHEZMOI_CONFIG_DIR}"
     echo "🗑️ Removing $chezmoi_config_dir..."
-    rm -rf "$chezmoi_config_dir" || echo "⚠️ Failed to remove $chezmoi_config_dir"
+    rm -rf "$chezmoi_config_dir" || chezmoi add "$config_dir"
     echo "💾 Backing up $config_dir..."
     chezmoi add "$config_dir" || echo "⚠️ Failed to back up $config_dir"
     echo "=============================================================================================================================================================================="
@@ -102,7 +103,7 @@ backup_configs() {
     # Replace config_dir with chezmoi_dir string
     chezmoi_cache_dir="${cache_dir/$CACHE_DIR/$CHEZMOI_CACHE_DIR}"
     echo "🗑️ Removing $chezmoi_cache_dir..."
-    rm -rf "$chezmoi_cache_dir" || echo "⚠️ Failed to remove $chezmoi_cache_dir"
+    rm -rf "$chezmoi_cache_dir" || chezmoi add "$cache_dir"
     echo "💾 Backing up $config_dir..."
     chezmoi add "$cache_dir" || echo "⚠️ Failed to back up $cache_dir"
     echo "=============================================================================================================================================================================="
