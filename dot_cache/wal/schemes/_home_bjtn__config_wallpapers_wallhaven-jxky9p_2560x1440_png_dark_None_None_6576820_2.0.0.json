@@ -2,14 +2,13 @@
     "checksum": "16a8c83c9a431b1e11695616dd2d3c68",
     "wallpaper": "/home/bjtn/.config/wallpapers/wallhaven-jxky9p_2560x1440.png",
     "alpha": "100",
-
     "special": {
-        "background": "#000000",
+        "background": "#24303f",
         "foreground": "#c8cbcf",
         "cursor": "#c8cbcf"
     },
     "colors": {
-        "color0": "#000000",
+        "color0": "#24303f",
         "color1": "#71CAE4",
         "color2": "#A0A2A7",
         "color3": "#E0B0A5",
