@@ -108,6 +108,7 @@
     "smooth-scrolling-threshold": 1,
   },
 
+  // TODO
   "pulseaudio#microphone": {
     "format": "{format_source}",
     "format-source": " {volume}%",
