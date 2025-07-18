@@ -187,6 +187,7 @@ waypaper
 welcome
 wget
 which
+wireguard-tools
 wireless_tools
 wireplumber
 wpa_supplicant
