@@ -8,6 +8,8 @@
   text-shadow: none;
 }
 
+#workspaces,
+#workspaces button.active,
 #network,
 #cpu,
 #memory,
