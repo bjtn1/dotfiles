@@ -2,14 +2,13 @@
     "checksum": "389a56c37e66e5c6a1ea5a986fd2b9c5",
     "wallpaper": "/home/bjtn/.config/wallpapers/tengen-uzui-sound-hashira-demon-slayer-kimetsu-no-yaiba-hd-wallpaper-uhdpaper.com-234@2@a.jpg",
     "alpha": "100",
-
     "special": {
-        "background": "#000000",
+        "background": "#13121c",
         "foreground": "#c4c3c6",
         "cursor": "#c4c3c6"
     },
     "colors": {
-        "color0": "#000000",
+        "color0": "#13121c",
         "color1": "#F05B9A",
         "color2": "#F730F5",
         "color3": "#F461ED",
