@@ -10,6 +10,7 @@ base-devel
 bash-completion
 bat
 bind
+bitwarden
 bluez
 bluez-utils
 btop
@@ -136,7 +137,6 @@ plocate
 polkit-kde-agent
 poppler-glib
 power-profiles-daemon
-proton-pass-bin
 pv
 python
 python-defusedxml
