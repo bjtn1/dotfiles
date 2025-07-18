@@ -1,0 +1,28 @@
+{
+    "checksum": "dafd10d0150323c2bdb7666068c8d072",
+    "wallpaper": "/home/bjtn/.config/wallpapers/aesthetic-mountain-lake-desktop-wallpaper.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#192124",
+        "foreground": "#c5c7c8",
+        "cursor": "#c5c7c8"
+    },
+    "colors": {
+        "color0": "#192124",
+        "color1": "#53728C",
+        "color2": "#68959E",
+        "color3": "#57B1EC",
+        "color4": "#96A59E",
+        "color5": "#C3CCA8",
+        "color6": "#A6D4EF",
+        "color7": "#c5c7c8",
+        "color8": "#617177",
+        "color9": "#53728C",
+        "color10": "#68959E",
+        "color11": "#57B1EC",
+        "color12": "#96A59E",
+        "color13": "#C3CCA8",
+        "color14": "#A6D4EF",
+        "color15": "#c5c7c8"
+    }
+}
