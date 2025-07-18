@@ -1,0 +1,28 @@
+{
+    "checksum": "d584386e495cd2c71867b17a33e62a29",
+    "wallpaper": "/home/bjtn/.config/wallpapers/metroid-samus-aran-vs-alien-hd-wallpaper-uhdpaper.com-572@2@a.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#131219",
+        "foreground": "#c4c3c5",
+        "cursor": "#c4c3c5"
+    },
+    "colors": {
+        "color0": "#131219",
+        "color1": "#225662",
+        "color2": "#5A5E5A",
+        "color3": "#9C5A51",
+        "color4": "#B24B4A",
+        "color5": "#6F8774",
+        "color6": "#B59171",
+        "color7": "#c4c3c5",
+        "color8": "#605c70",
+        "color9": "#225662",
+        "color10": "#5A5E5A",
+        "color11": "#9C5A51",
+        "color12": "#B24B4A",
+        "color13": "#6F8774",
+        "color14": "#B59171",
+        "color15": "#c4c3c5"
+    }
+}

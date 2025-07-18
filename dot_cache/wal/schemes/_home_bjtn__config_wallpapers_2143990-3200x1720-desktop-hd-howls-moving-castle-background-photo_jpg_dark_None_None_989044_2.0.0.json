@@ -1,0 +1,28 @@
+{
+    "checksum": "ef4dd76de5f2f3c06e665df65f09ecab",
+    "wallpaper": "/home/bjtn/.config/wallpapers/2143990-3200x1720-desktop-hd-howls-moving-castle-background-photo.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#1b2c2c",
+        "foreground": "#c6caca",
+        "cursor": "#c6caca"
+    },
+    "colors": {
+        "color0": "#1b2c2c",
+        "color1": "#4B95AE",
+        "color2": "#57A4A8",
+        "color3": "#9CACA2",
+        "color4": "#E5ACA1",
+        "color5": "#A8C8AA",
+        "color6": "#DDCDB2",
+        "color7": "#c6caca",
+        "color8": "#647a7a",
+        "color9": "#4B95AE",
+        "color10": "#57A4A8",
+        "color11": "#9CACA2",
+        "color12": "#E5ACA1",
+        "color13": "#A8C8AA",
+        "color14": "#DDCDB2",
+        "color15": "#c6caca"
+    }
+}
