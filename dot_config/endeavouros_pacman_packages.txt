@@ -192,6 +192,7 @@ which
 wireguard-tools
 wireless_tools
 wireplumber
+wlogout
 wpa_supplicant
 xdg-desktop-portal-hyprland
 xdg-user-dirs
