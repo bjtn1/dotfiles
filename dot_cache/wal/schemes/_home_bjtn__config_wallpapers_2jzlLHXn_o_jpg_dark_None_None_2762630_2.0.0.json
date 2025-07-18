@@ -2,14 +2,13 @@
     "checksum": "306f78eec0292789dff86f04ae1f8679",
     "wallpaper": "/home/bjtn/.config/wallpapers/2jzlLHXn_o.jpg",
     "alpha": "100",
-
     "special": {
-        "background": "#000000",
+        "background": "#150d1f",
         "foreground": "#c4c2c7",
         "cursor": "#c4c2c7"
     },
     "colors": {
-        "color0": "#000000",
+        "color0": "#150d1f",
         "color1": "#9C4C6D",
         "color2": "#B8807A",
         "color3": "#59708F",
