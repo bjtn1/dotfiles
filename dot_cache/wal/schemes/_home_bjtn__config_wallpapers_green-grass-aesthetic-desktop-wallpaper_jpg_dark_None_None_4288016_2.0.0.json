@@ -1,0 +1,28 @@
+{
+    "checksum": "6c8fe3a757687b0f549ddf6e21e993c3",
+    "wallpaper": "/home/bjtn/.config/wallpapers/green-grass-aesthetic-desktop-wallpaper.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#16331e",
+        "foreground": "#c4ccc6",
+        "cursor": "#c4ccc6"
+    },
+    "colors": {
+        "color0": "#16331e",
+        "color1": "#8CB23C",
+        "color2": "#90B548",
+        "color3": "#9EB25E",
+        "color4": "#80866E",
+        "color5": "#A8CA55",
+        "color6": "#ACCD66",
+        "color7": "#c4ccc6",
+        "color8": "#657b6b",
+        "color9": "#8CB23C",
+        "color10": "#90B548",
+        "color11": "#9EB25E",
+        "color12": "#80866E",
+        "color13": "#A8CA55",
+        "color14": "#ACCD66",
+        "color15": "#c4ccc6"
+    }
+}
