@@ -1,0 +1,28 @@
+{
+    "checksum": "bfd344df12d404c38ed78fa32853c8f1",
+    "wallpaper": "/home/bjtn/.config/wallpapers/night-city-abstract-art-minimalist-digital-art-uhdpaper.com-4K-8.3174.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#0d111f",
+        "foreground": "#c2c3c7",
+        "cursor": "#c2c3c7"
+    },
+    "colors": {
+        "color0": "#0d111f",
+        "color1": "#6C426B",
+        "color2": "#9F465E",
+        "color3": "#985572",
+        "color4": "#C7986A",
+        "color5": "#241798",
+        "color6": "#512695",
+        "color7": "#c2c3c7",
+        "color8": "#5c6171",
+        "color9": "#6C426B",
+        "color10": "#9F465E",
+        "color11": "#985572",
+        "color12": "#C7986A",
+        "color13": "#241798",
+        "color14": "#512695",
+        "color15": "#c2c3c7"
+    }
+}

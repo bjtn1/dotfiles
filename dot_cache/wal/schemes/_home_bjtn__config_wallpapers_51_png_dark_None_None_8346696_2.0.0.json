@@ -1,0 +1,28 @@
+{
+    "checksum": "52a216ce0d8531c37a1921a3a169007d",
+    "wallpaper": "/home/bjtn/.config/wallpapers/51.png",
+    "alpha": "100",
+    "special": {
+        "background": "#100a17",
+        "foreground": "#c3c1c5",
+        "cursor": "#c3c1c5"
+    },
+    "colors": {
+        "color0": "#100a17",
+        "color1": "#6B4752",
+        "color2": "#9A5653",
+        "color3": "#B6514A",
+        "color4": "#EA906E",
+        "color5": "#5E68B5",
+        "color6": "#A566A1",
+        "color7": "#c3c1c5",
+        "color8": "#62596d",
+        "color9": "#6B4752",
+        "color10": "#9A5653",
+        "color11": "#B6514A",
+        "color12": "#EA906E",
+        "color13": "#5E68B5",
+        "color14": "#A566A1",
+        "color15": "#c3c1c5"
+    }
+}

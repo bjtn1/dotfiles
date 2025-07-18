@@ -1,0 +1,28 @@
+{
+    "checksum": "0c3057bf9f5a2f527c932831aeeff692",
+    "wallpaper": "/home/bjtn/.config/wallpapers/2161725-1920x1080-desktop-full-hd-inazuma-eleven-background-photo.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#202a28",
+        "foreground": "#c7c9c9",
+        "cursor": "#c7c9c9"
+    },
+    "colors": {
+        "color0": "#202a28",
+        "color1": "#2D8BD5",
+        "color2": "#3494DE",
+        "color3": "#50A5E1",
+        "color4": "#B4B4A8",
+        "color5": "#DECDAB",
+        "color6": "#EDDAA1",
+        "color7": "#c7c9c9",
+        "color8": "#657c78",
+        "color9": "#2D8BD5",
+        "color10": "#3494DE",
+        "color11": "#50A5E1",
+        "color12": "#B4B4A8",
+        "color13": "#DECDAB",
+        "color14": "#EDDAA1",
+        "color15": "#c7c9c9"
+    }
+}
