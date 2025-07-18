@@ -37,9 +37,10 @@
   },   
 
   "network": {
-    "format": "{icon} {essid} ({signalStrength}%)",
+    // "format": "{icon} {essid} ({signalStrength}%)",
     "format-alt": "{icon} {ipaddr} ({signalStrength}%)",
     "tooltip-format": " {bandwidthUpBytes}  {bandwidthDownBytes}",
+    "format": " {bandwidthUpBytes}  {bandwidthDownBytes} ({signalStrength}%)",
     "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"]
   },
 
