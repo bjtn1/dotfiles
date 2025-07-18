@@ -1,50 +1,53 @@
 // src = https://github.com/zDyant/HyprNova/blob/master/.config/rofi/themes/clipboard.rasi
 @import "~/.cache/wal/colors-rofi-dark.rasi"
 
+configuration {
+  yoffset: 32;
+}
+
 * {
-    background-alt:              @selected-active-background; // Buttons background
-    selected:                    @selected-normal-background; // Button selected
-    active:                      @selected-urgent-background; // Window activated
-    urgent:                      @selected-normal-background; // When hovering the activated window (maybe more?)
+  background-alt:              @selected-active-background; // Buttons background
+  selected:                    @selected-normal-background; // Button selected
+  active:                      @selected-urgent-background; // Window activated
+  urgent:                      @selected-normal-background; // When hovering the activated window (maybe more?)
 
-    text-selected:               @background;
-    text:                        @foreground;
+  text-selected:               @background;
+  text:                        @foreground;
 
-    shade-shadow:                white / 6%;
-    shade-bg:                    white / 12%;
-    shade-border:                white / 24%;
+  shade-shadow:                white / 6%;
+  shade-bg:                    white / 12%;
+  shade-border:                white / 24%;
 }
 
 window {
-    fullscreen:                  false;
-    transparency:                "real";
-    cursor:                      "default";
-    background-color:            rgba(0,0,0,0.9);
-    border:                      0px;
-    border-color:                @selected;
+  fullscreen:                  false;
+  transparency:                "real";
+  cursor:                      "default";
+  background-color:            rgba(0,0,0,0.9);
+  border:                      0px;
+  border-color:                @selected;
 }
 
 /* Elements ----------------------------------------------------- */
-element normal.normal,
-element alternate.normal {
-    background-color:            transparent;
-    text-color:                  @text;
+element normal.normal, element alternate.normal {
+  background-color:            transparent;
+  text-color:                  @text;
 }
 
 element selected.normal {
-    background-color:            @shade-bg;
-    text-color:                  white;
-    border:                      1px solid;
-    border-color:                @selected;
+  background-color:            @shade-bg;
+  text-color:                  white;
+  border:                      1px solid;
+  border-color:                @selected;
 }
 
 element-text {
-    background-color:            transparent;
-    text-color:                  inherit;
-    highlight:                   inherit;
-    cursor:                      inherit;
-    vertical-align:              0.5;
-    horizontal-align:            0.5;
+  background-color:            transparent;
+  text-color:                  inherit;
+  highlight:                   inherit;
+  cursor:                      inherit;
+  vertical-align:              0.5;
+  horizontal-align:            0.5;
 }
 
 /* Listview ---------------------------------------------------- */
@@ -64,24 +67,24 @@ listview {
 
 /* Message ------------------------------------------------------ */
 message {
-    background-color:            @shade-bg;
-    border:                      1px solid;
-    border-color:                transparent;
-    border-radius:               12px;
-    padding:                     24px;
+  background-color:            @shade-bg;
+  border:                      1px solid;
+  border-color:                transparent;
+  border-radius:               12px;
+  padding:                     24px;
 }
 error-message {
-    padding:                     100px;
-    border:                      0px solid;
-    border-radius:               0px;
-    background-color:            black / 10%;
-    text-color:                  @text;
+  padding:                     100px;
+  border:                      0px solid;
+  border-radius:               0px;
+  background-color:            black / 10%;
+  text-color:                  @text;
 }
 textbox {
-    background-color:            transparent;
-    text-color:                  @text;
-    vertical-align:              0.5;
-    horizontal-align:            0.5;
-    highlight:                   none;
+  background-color:            transparent;
+  text-color:                  @text;
+  vertical-align:              0.5;
+  horizontal-align:            0.5;
+  highlight:                   none;
 }
 
