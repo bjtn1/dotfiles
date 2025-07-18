@@ -1,0 +1,28 @@
+{
+    "checksum": "809208d06a8deb6a0e45e281e6e7b637",
+    "wallpaper": "/home/bjtn/.config/wallpapers/giyu-tomioka-water-hashira-demon-slayer-kimetsu-no-yaiba-hd-wallpaper-uhdpaper.com-245@2@a.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#121322",
+        "foreground": "#c3c4c7",
+        "cursor": "#c3c4c7"
+    },
+    "colors": {
+        "color0": "#121322",
+        "color1": "#396BBB",
+        "color2": "#53679C",
+        "color3": "#A1709C",
+        "color4": "#558FB0",
+        "color5": "#3995C6",
+        "color6": "#52A9D7",
+        "color7": "#c3c4c7",
+        "color8": "#5e6074",
+        "color9": "#396BBB",
+        "color10": "#53679C",
+        "color11": "#A1709C",
+        "color12": "#558FB0",
+        "color13": "#3995C6",
+        "color14": "#52A9D7",
+        "color15": "#c3c4c7"
+    }
+}
