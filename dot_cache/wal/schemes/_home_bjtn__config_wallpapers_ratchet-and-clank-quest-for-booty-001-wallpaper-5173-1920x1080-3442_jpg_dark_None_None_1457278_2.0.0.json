@@ -1,0 +1,28 @@
+{
+    "checksum": "9ef6423e14e60a36d315e917474586e4",
+    "wallpaper": "/home/bjtn/.config/wallpapers/ratchet-and-clank-quest-for-booty-001-wallpaper-5173-1920x1080-3442.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#140d08",
+        "foreground": "#c4c2c1",
+        "cursor": "#c4c2c1"
+    },
+    "colors": {
+        "color0": "#140d08",
+        "color1": "#8D7153",
+        "color2": "#997757",
+        "color3": "#7D832C",
+        "color4": "#AA8F6A",
+        "color5": "#C6A259",
+        "color6": "#BDA98A",
+        "color7": "#c4c2c1",
+        "color8": "#6b5f58",
+        "color9": "#8D7153",
+        "color10": "#997757",
+        "color11": "#7D832C",
+        "color12": "#AA8F6A",
+        "color13": "#C6A259",
+        "color14": "#BDA98A",
+        "color15": "#c4c2c1"
+    }
+}

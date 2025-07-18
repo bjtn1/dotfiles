@@ -1,0 +1,28 @@
+{
+    "checksum": "a00801d86e740f3049c99446988f9aa7",
+    "wallpaper": "/home/bjtn/.config/wallpapers/ratceht-and-clank-quest-for-booty003-wallpaper-5175-1920x1080-3444.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#0c1709",
+        "foreground": "#c2c5c1",
+        "cursor": "#c2c5c1"
+    },
+    "colors": {
+        "color0": "#0c1709",
+        "color1": "#579671",
+        "color2": "#AC8641",
+        "color3": "#60AC91",
+        "color4": "#6FCAAC",
+        "color5": "#66CBBD",
+        "color6": "#A1C4A8",
+        "color7": "#c2c5c1",
+        "color8": "#5d6d59",
+        "color9": "#579671",
+        "color10": "#AC8641",
+        "color11": "#60AC91",
+        "color12": "#6FCAAC",
+        "color13": "#66CBBD",
+        "color14": "#A1C4A8",
+        "color15": "#c2c5c1"
+    }
+}
