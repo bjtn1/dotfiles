@@ -77,4 +77,46 @@
     "tooltip": true,
     "format": "T {temperatureC}°C",
   },
+
+  "custom/power": {
+    "format": "⏻ ",
+    "exec": "echo ; echo 󰟡 power // blur",
+    "on-click": "~/.config/hypr/scripts/wlogout.sh",
+    "interval" : 86400, // once every day
+    "tooltip": true,
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{icon} 󰂰 {volume}%",
+    "format-muted": "󰖁",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", "󰕾", ""], 
+      "ignored-sinks": ["Easy Effects Sink"],
+    },
+    "scroll-step": 5.0,
+    "on-click": "pavucontrol -t 3",
+    // TODO
+    "on-scroll-up": "~/.config/hypr/scripts/volume_control.sh --inc",
+    "on-scroll-down": "~/.config/hypr/scripts/volume_control.sh --dec",
+    "tooltip-format": "{icon} {desc} | {volume}%",
+    "smooth-scrolling-threshold": 1,
+  },
+
+  "pulseaudio#microphone": {
+    "format": "{format_source}",
+    "format-source": " {volume}%",
+    "format-source-muted": "",
+    "on-click-right": "~/.config/hypr/scripts/volume_control.sh --toggle-mic",
+    "on-click": "pavucontrol -t 4",
+    "on-scroll-up": "~/.config/hypr/scripts/volume_control.sh --mic-inc",
+    "on-scroll-down": "~/.config/hypr/scripts/volume_control.sh --mic-dec",
+    "tooltip-format": "{source_desc} | {source_volume}%",
+    "scroll-step": 5,
+  },
 }
