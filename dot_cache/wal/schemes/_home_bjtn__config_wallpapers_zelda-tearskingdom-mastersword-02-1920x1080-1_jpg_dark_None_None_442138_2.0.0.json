@@ -1,0 +1,28 @@
+{
+    "checksum": "87e8704134452cf737403824667b0c43",
+    "wallpaper": "/home/bjtn/.config/wallpapers/zelda-tearskingdom-mastersword-02-1920x1080-1.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#0f1822",
+        "foreground": "#c3c5c7",
+        "cursor": "#c3c5c7"
+    },
+    "colors": {
+        "color0": "#0f1822",
+        "color1": "#BAA36A",
+        "color2": "#C5A770",
+        "color3": "#7E7D8C",
+        "color4": "#A9999A",
+        "color5": "#D1AFA6",
+        "color6": "#E6C9B6",
+        "color7": "#c3c5c7",
+        "color8": "#5e6773",
+        "color9": "#BAA36A",
+        "color10": "#C5A770",
+        "color11": "#7E7D8C",
+        "color12": "#A9999A",
+        "color13": "#D1AFA6",
+        "color14": "#E6C9B6",
+        "color15": "#c3c5c7"
+    }
+}

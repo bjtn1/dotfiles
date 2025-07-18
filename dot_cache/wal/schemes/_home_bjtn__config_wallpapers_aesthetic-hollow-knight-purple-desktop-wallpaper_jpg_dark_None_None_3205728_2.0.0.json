@@ -1,0 +1,28 @@
+{
+    "checksum": "8b984eb95dab9a526001219c87bd48be",
+    "wallpaper": "/home/bjtn/.config/wallpapers/aesthetic-hollow-knight-purple-desktop-wallpaper.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#161934",
+        "foreground": "#c4c5cc",
+        "cursor": "#c4c5cc"
+    },
+    "colors": {
+        "color0": "#161934",
+        "color1": "#4A5BAB",
+        "color2": "#5677C7",
+        "color3": "#8579C4",
+        "color4": "#6894DE",
+        "color5": "#77C2F9",
+        "color6": "#98ABEE",
+        "color7": "#c4c5cc",
+        "color8": "#65677c",
+        "color9": "#4A5BAB",
+        "color10": "#5677C7",
+        "color11": "#8579C4",
+        "color12": "#6894DE",
+        "color13": "#77C2F9",
+        "color14": "#98ABEE",
+        "color15": "#c4c5cc"
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "checksum": "ab59a019d59735d2d4b763f43eada414",
+    "wallpaper": "/home/bjtn/.config/wallpapers/whisper_of_the_heart_by_gydw1n_ddn6c37.png",
+    "alpha": "100",
+    "special": {
+        "background": "#152433",
+        "foreground": "#c4c8cc",
+        "cursor": "#c4c8cc"
+    },
+    "colors": {
+        "color0": "#152433",
+        "color1": "#BC7E78",
+        "color2": "#144D87",
+        "color3": "#1D4690",
+        "color4": "#2A5992",
+        "color5": "#5C6299",
+        "color6": "#9C7199",
+        "color7": "#c4c8cc",
+        "color8": "#646f7b",
+        "color9": "#BC7E78",
+        "color10": "#144D87",
+        "color11": "#1D4690",
+        "color12": "#2A5992",
+        "color13": "#5C6299",
+        "color14": "#9C7199",
+        "color15": "#c4c8cc"
+    }
+}

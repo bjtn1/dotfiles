@@ -1,0 +1,28 @@
+{
+    "checksum": "0ff70610e900a51a818ba26169bf9209",
+    "wallpaper": "/home/bjtn/.config/wallpapers/japanese-pagodas-clouds-desktop-wallpaper.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#342735",
+        "foreground": "#ccc9cc",
+        "cursor": "#ccc9cc"
+    },
+    "colors": {
+        "color0": "#342735",
+        "color1": "#E0ABA9",
+        "color2": "#E8C1BD",
+        "color3": "#9BB6D5",
+        "color4": "#B3C7E1",
+        "color5": "#D0CBD7",
+        "color6": "#EFD4D4",
+        "color7": "#ccc9cc",
+        "color8": "#826a82",
+        "color9": "#E0ABA9",
+        "color10": "#E8C1BD",
+        "color11": "#9BB6D5",
+        "color12": "#B3C7E1",
+        "color13": "#D0CBD7",
+        "color14": "#EFD4D4",
+        "color15": "#ccc9cc"
+    }
+}

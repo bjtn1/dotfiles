@@ -1,0 +1,28 @@
+{
+    "checksum": "f9b9ae43ff0b37ffc6c89dce993831b5",
+    "wallpaper": "/home/bjtn/.config/wallpapers/hfw-5.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#170b09",
+        "foreground": "#c5c2c1",
+        "cursor": "#c5c2c1"
+    },
+    "colors": {
+        "color0": "#170b09",
+        "color1": "#6B3F46",
+        "color2": "#96371F",
+        "color3": "#8A3A2A",
+        "color4": "#A24631",
+        "color5": "#E55E2F",
+        "color6": "#AC534B",
+        "color7": "#c5c2c1",
+        "color8": "#6d5b59",
+        "color9": "#6B3F46",
+        "color10": "#96371F",
+        "color11": "#8A3A2A",
+        "color12": "#A24631",
+        "color13": "#E55E2F",
+        "color14": "#AC534B",
+        "color15": "#c5c2c1"
+    }
+}

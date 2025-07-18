@@ -1,0 +1,28 @@
+{
+    "checksum": "b4e296a1888b09a752d71cef5f76b1fc",
+    "wallpaper": "/home/bjtn/.config/wallpapers/inosuke-demon-slayer-kimetsu-no-yaiba-hd-wallpaper-uhdpaper.com-235@2@a.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#100c1b",
+        "foreground": "#c3c2c6",
+        "cursor": "#c3c2c6"
+    },
+    "colors": {
+        "color0": "#100c1b",
+        "color1": "#6552A2",
+        "color2": "#635EE2",
+        "color3": "#9E60C5",
+        "color4": "#9669E0",
+        "color5": "#6894F7",
+        "color6": "#B8A4E8",
+        "color7": "#c3c2c6",
+        "color8": "#5f5b6f",
+        "color9": "#6552A2",
+        "color10": "#635EE2",
+        "color11": "#9E60C5",
+        "color12": "#9669E0",
+        "color13": "#6894F7",
+        "color14": "#B8A4E8",
+        "color15": "#c3c2c6"
+    }
+}

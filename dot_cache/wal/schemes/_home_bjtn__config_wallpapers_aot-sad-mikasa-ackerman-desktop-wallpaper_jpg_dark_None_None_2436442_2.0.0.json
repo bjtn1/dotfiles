@@ -1,0 +1,28 @@
+{
+    "checksum": "6b10126ca7a2fbb7e70669c117b8c978",
+    "wallpaper": "/home/bjtn/.config/wallpapers/aot-sad-mikasa-ackerman-desktop-wallpaper.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#0a0e19",
+        "foreground": "#c1c2c5",
+        "cursor": "#c1c2c5"
+    },
+    "colors": {
+        "color0": "#0a0e19",
+        "color1": "#9A867A",
+        "color2": "#DB9372",
+        "color3": "#6D7D8D",
+        "color4": "#AB988C",
+        "color5": "#CDB2A2",
+        "color6": "#DEC7B7",
+        "color7": "#c1c2c5",
+        "color8": "#59606e",
+        "color9": "#9A867A",
+        "color10": "#DB9372",
+        "color11": "#6D7D8D",
+        "color12": "#AB988C",
+        "color13": "#CDB2A2",
+        "color14": "#DEC7B7",
+        "color15": "#c1c2c5"
+    }
+}

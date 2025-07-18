@@ -1,0 +1,23 @@
+" Special
+let wallpaper  = "/home/bjtn/.config/wallpapers/giyu-tomioka-hashira-demon-slayer-kimetsu-no-yaiba-0-hd-wallpaper-1920x1080-uhdpaper.com-582.1_c.jpg"
+let background = "#000000"
+let foreground = "#c2c3c7"
+let cursor     = "#c2c3c7"
+
+" Colors
+let color0  = "#000000"
+let color1  = "#326698"
+let color2  = "#5D748C"
+let color3  = "#6E899A"
+let color4  = "#4694A9"
+let color5  = "#96A0AA"
+let color6  = "#C8BEBA"
+let color7  = "#c2c3c7"
+let color8  = "#5c6171"
+let color9  = "#326698"
+let color10 = "#5D748C"
+let color11 = "#6E899A"
+let color12 = "#4694A9"
+let color13 = "#96A0AA"
+let color14 = "#C8BEBA"
+let color15 = "#c2c3c7"

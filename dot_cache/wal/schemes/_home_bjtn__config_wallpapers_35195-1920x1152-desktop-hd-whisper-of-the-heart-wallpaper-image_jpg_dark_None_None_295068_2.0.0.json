@@ -1,0 +1,28 @@
+{
+    "checksum": "bda69b9f223fda892b5204b16b0b666c",
+    "wallpaper": "/home/bjtn/.config/wallpapers/35195-1920x1152-desktop-hd-whisper-of-the-heart-wallpaper-image.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#0b101b",
+        "foreground": "#c2c3c6",
+        "cursor": "#c2c3c6"
+    },
+    "colors": {
+        "color0": "#0b101b",
+        "color1": "#646487",
+        "color2": "#8F768B",
+        "color3": "#837796",
+        "color4": "#C2A5A6",
+        "color5": "#DCACA9",
+        "color6": "#ECD7CF",
+        "color7": "#c2c3c6",
+        "color8": "#5a606f",
+        "color9": "#646487",
+        "color10": "#8F768B",
+        "color11": "#837796",
+        "color12": "#C2A5A6",
+        "color13": "#DCACA9",
+        "color14": "#ECD7CF",
+        "color15": "#c2c3c6"
+    }
+}

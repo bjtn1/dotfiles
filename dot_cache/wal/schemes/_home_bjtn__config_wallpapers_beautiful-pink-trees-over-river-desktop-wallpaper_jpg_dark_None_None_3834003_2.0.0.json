@@ -1,0 +1,28 @@
+{
+    "checksum": "f99c0879af43a1812c716860e7dab0ea",
+    "wallpaper": "/home/bjtn/.config/wallpapers/beautiful-pink-trees-over-river-desktop-wallpaper.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#3e3846",
+        "foreground": "#cecdd0",
+        "cursor": "#cecdd0"
+    },
+    "colors": {
+        "color0": "#3e3846",
+        "color1": "#D2ABD0",
+        "color2": "#F1B4CE",
+        "color3": "#A3D8F5",
+        "color4": "#FACCD4",
+        "color5": "#DED7E2",
+        "color6": "#F4D4E8",
+        "color7": "#cecdd0",
+        "color8": "#80748e",
+        "color9": "#D2ABD0",
+        "color10": "#F1B4CE",
+        "color11": "#A3D8F5",
+        "color12": "#FACCD4",
+        "color13": "#DED7E2",
+        "color14": "#F4D4E8",
+        "color15": "#cecdd0"
+    }
+}

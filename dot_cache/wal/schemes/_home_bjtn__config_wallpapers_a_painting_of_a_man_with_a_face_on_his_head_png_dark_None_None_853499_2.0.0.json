@@ -1,0 +1,28 @@
+{
+    "checksum": "48177cecd2d98150215adb62356c4e6a",
+    "wallpaper": "/home/bjtn/.config/wallpapers/a_painting_of_a_man_with_a_face_on_his_head.png",
+    "alpha": "100",
+    "special": {
+        "background": "#121212",
+        "foreground": "#c3c3c3",
+        "cursor": "#c3c3c3"
+    },
+    "colors": {
+        "color0": "#121212",
+        "color1": "#534E45",
+        "color2": "#6D6252",
+        "color3": "#756755",
+        "color4": "#85725A",
+        "color5": "#897B67",
+        "color6": "#958774",
+        "color7": "#c3c3c3",
+        "color8": "#6e5959",
+        "color9": "#534E45",
+        "color10": "#6D6252",
+        "color11": "#756755",
+        "color12": "#85725A",
+        "color13": "#897B67",
+        "color14": "#958774",
+        "color15": "#c3c3c3"
+    }
+}

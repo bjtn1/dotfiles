@@ -1,0 +1,28 @@
+{
+    "checksum": "283c8f0c63478282e44e39d5189304d9",
+    "wallpaper": "/home/bjtn/.config/wallpapers/space-portal-galaxy-desktop-wallpaper.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#0a0d19",
+        "foreground": "#c1c2c5",
+        "cursor": "#c1c2c5"
+    },
+    "colors": {
+        "color0": "#0a0d19",
+        "color1": "#2B64B3",
+        "color2": "#5866A4",
+        "color3": "#9073AE",
+        "color4": "#5398D2",
+        "color5": "#61A1DE",
+        "color6": "#B8A3C3",
+        "color7": "#c1c2c5",
+        "color8": "#595d6e",
+        "color9": "#2B64B3",
+        "color10": "#5866A4",
+        "color11": "#9073AE",
+        "color12": "#5398D2",
+        "color13": "#61A1DE",
+        "color14": "#B8A3C3",
+        "color15": "#c1c2c5"
+    }
+}

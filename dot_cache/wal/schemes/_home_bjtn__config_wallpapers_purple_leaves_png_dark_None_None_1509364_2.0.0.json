@@ -1,0 +1,28 @@
+{
+    "checksum": "00307144afab657f37e5582e767abc42",
+    "wallpaper": "/home/bjtn/.config/wallpapers/purple_leaves.png",
+    "alpha": "100",
+    "special": {
+        "background": "#12121c",
+        "foreground": "#c3c3c6",
+        "cursor": "#c3c3c6"
+    },
+    "colors": {
+        "color0": "#12121c",
+        "color1": "#39445C",
+        "color2": "#3E4A63",
+        "color3": "#43425E",
+        "color4": "#4E4A77",
+        "color5": "#4A637D",
+        "color6": "#555384",
+        "color7": "#c3c3c6",
+        "color8": "#5d5d71",
+        "color9": "#39445C",
+        "color10": "#3E4A63",
+        "color11": "#43425E",
+        "color12": "#4E4A77",
+        "color13": "#4A637D",
+        "color14": "#555384",
+        "color15": "#c3c3c6"
+    }
+}

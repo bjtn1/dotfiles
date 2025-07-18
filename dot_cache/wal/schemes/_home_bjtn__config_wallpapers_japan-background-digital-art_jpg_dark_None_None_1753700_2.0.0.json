@@ -1,0 +1,28 @@
+{
+    "checksum": "0306045e339b369bb5da7e185634d625",
+    "wallpaper": "/home/bjtn/.config/wallpapers/japan-background-digital-art.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#0f1425",
+        "foreground": "#c3c4c8",
+        "cursor": "#c3c4c8"
+    },
+    "colors": {
+        "color0": "#0f1425",
+        "color1": "#296993",
+        "color2": "#2273BF",
+        "color3": "#596EA2",
+        "color4": "#A277A1",
+        "color5": "#358AB4",
+        "color6": "#37A2CB",
+        "color7": "#c3c4c8",
+        "color8": "#5f6374",
+        "color9": "#296993",
+        "color10": "#2273BF",
+        "color11": "#596EA2",
+        "color12": "#A277A1",
+        "color13": "#358AB4",
+        "color14": "#37A2CB",
+        "color15": "#c3c4c8"
+    }
+}

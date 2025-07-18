@@ -1,0 +1,28 @@
+{
+    "checksum": "2bd8b4683ff561cc8925d7ab9b3123d5",
+    "wallpaper": "/home/bjtn/.config/wallpapers/lost-in-space_1.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#0d0c1b",
+        "foreground": "#c2c2c6",
+        "cursor": "#c2c2c6"
+    },
+    "colors": {
+        "color0": "#0d0c1b",
+        "color1": "#686776",
+        "color2": "#787787",
+        "color3": "#807F8E",
+        "color4": "#9695A6",
+        "color5": "#B5B6CA",
+        "color6": "#BFC0D5",
+        "color7": "#c2c2c6",
+        "color8": "#5b5b6f",
+        "color9": "#686776",
+        "color10": "#787787",
+        "color11": "#807F8E",
+        "color12": "#9695A6",
+        "color13": "#B5B6CA",
+        "color14": "#BFC0D5",
+        "color15": "#c2c2c6"
+    }
+}

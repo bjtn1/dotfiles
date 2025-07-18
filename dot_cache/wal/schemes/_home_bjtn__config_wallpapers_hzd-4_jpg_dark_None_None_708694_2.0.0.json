@@ -1,0 +1,28 @@
+{
+    "checksum": "8f50544b2be085d58aa81b1e7f8e73b5",
+    "wallpaper": "/home/bjtn/.config/wallpapers/hzd-4.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#0d2013",
+        "foreground": "#c2c7c4",
+        "cursor": "#c2c7c4"
+    },
+    "colors": {
+        "color0": "#0d2013",
+        "color1": "#9CBA5A",
+        "color2": "#56758E",
+        "color3": "#6E8E9E",
+        "color4": "#34B8FB",
+        "color5": "#5BB6F5",
+        "color6": "#6DC0F6",
+        "color7": "#c2c7c4",
+        "color8": "#5d7163",
+        "color9": "#9CBA5A",
+        "color10": "#56758E",
+        "color11": "#6E8E9E",
+        "color12": "#34B8FB",
+        "color13": "#5BB6F5",
+        "color14": "#6DC0F6",
+        "color15": "#c2c7c4"
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "checksum": "2fbb4deb8373e9c2cd44f42d5cb0ee57",
+    "wallpaper": "/home/bjtn/.config/wallpapers/gotei-13-shinigami-bleach-thousand-year-blood-war-hd-wallpaper-uhdpaper.com-780@1@i.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#0b0e1a",
+        "foreground": "#c2c2c5",
+        "cursor": "#c2c2c5"
+    },
+    "colors": {
+        "color0": "#0b0e1a",
+        "color1": "#B14151",
+        "color2": "#A57E7B",
+        "color3": "#355C85",
+        "color4": "#596E89",
+        "color5": "#66778F",
+        "color6": "#6F859E",
+        "color7": "#c2c2c5",
+        "color8": "#5a5e6f",
+        "color9": "#B14151",
+        "color10": "#A57E7B",
+        "color11": "#355C85",
+        "color12": "#596E89",
+        "color13": "#66778F",
+        "color14": "#6F859E",
+        "color15": "#c2c2c5"
+    }
+}

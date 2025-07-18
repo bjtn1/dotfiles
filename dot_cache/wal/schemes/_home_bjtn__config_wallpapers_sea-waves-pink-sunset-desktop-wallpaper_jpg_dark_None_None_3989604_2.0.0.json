@@ -1,0 +1,28 @@
+{
+    "checksum": "39e801e2748b7f6a8ecec599d1d199be",
+    "wallpaper": "/home/bjtn/.config/wallpapers/sea-waves-pink-sunset-desktop-wallpaper.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#13172c",
+        "foreground": "#c4c5ca",
+        "cursor": "#c4c5ca"
+    },
+    "colors": {
+        "color0": "#13172c",
+        "color1": "#0C398D",
+        "color2": "#2E3B89",
+        "color3": "#32489C",
+        "color4": "#5651A0",
+        "color5": "#5459AD",
+        "color6": "#816CB6",
+        "color7": "#c4c5ca",
+        "color8": "#626677",
+        "color9": "#0C398D",
+        "color10": "#2E3B89",
+        "color11": "#32489C",
+        "color12": "#5651A0",
+        "color13": "#5459AD",
+        "color14": "#816CB6",
+        "color15": "#c4c5ca"
+    }
+}

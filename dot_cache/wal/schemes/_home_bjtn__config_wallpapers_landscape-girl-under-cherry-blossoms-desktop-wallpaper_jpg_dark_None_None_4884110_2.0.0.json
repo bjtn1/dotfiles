@@ -1,0 +1,28 @@
+{
+    "checksum": "8a01197801adf3184c96e1502251ffbf",
+    "wallpaper": "/home/bjtn/.config/wallpapers/landscape-girl-under-cherry-blossoms-desktop-wallpaper.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#213338",
+        "foreground": "#c7cccd",
+        "cursor": "#c7cccd"
+    },
+    "colors": {
+        "color0": "#213338",
+        "color1": "#A891B5",
+        "color2": "#D5B6AB",
+        "color3": "#A1AED3",
+        "color4": "#DAAFCC",
+        "color5": "#B1CEE4",
+        "color6": "#A0D3E6",
+        "color7": "#c7cccd",
+        "color8": "#697c81",
+        "color9": "#A891B5",
+        "color10": "#D5B6AB",
+        "color11": "#A1AED3",
+        "color12": "#DAAFCC",
+        "color13": "#B1CEE4",
+        "color14": "#A0D3E6",
+        "color15": "#c7cccd"
+    }
+}
