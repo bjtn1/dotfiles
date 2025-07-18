@@ -10,7 +10,6 @@ base-devel
 bash-completion
 bat
 bind
-bitwarden
 bluez
 bluez-utils
 btop
