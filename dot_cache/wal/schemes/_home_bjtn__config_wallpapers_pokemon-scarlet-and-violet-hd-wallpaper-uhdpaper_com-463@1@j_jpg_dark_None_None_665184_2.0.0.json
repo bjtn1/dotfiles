@@ -1,0 +1,28 @@
+{
+    "checksum": "dd3d8926233d394c442193f31bfb0b9b",
+    "wallpaper": "/home/bjtn/.config/wallpapers/pokemon-scarlet-and-violet-hd-wallpaper-uhdpaper.com-463@1@j.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#151026",
+        "foreground": "#c4c3c8",
+        "cursor": "#c4c3c8"
+    },
+    "colors": {
+        "color0": "#151026",
+        "color1": "#5F539F",
+        "color2": "#4A45AA",
+        "color3": "#B059B3",
+        "color4": "#966CE1",
+        "color5": "#63BCE5",
+        "color6": "#A1A1E5",
+        "color7": "#c4c3c8",
+        "color8": "#635f74",
+        "color9": "#5F539F",
+        "color10": "#4A45AA",
+        "color11": "#B059B3",
+        "color12": "#966CE1",
+        "color13": "#63BCE5",
+        "color14": "#A1A1E5",
+        "color15": "#c4c3c8"
+    }
+}
