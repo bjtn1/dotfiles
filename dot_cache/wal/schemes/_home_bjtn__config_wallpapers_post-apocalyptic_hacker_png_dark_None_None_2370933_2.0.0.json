@@ -1,0 +1,28 @@
+{
+    "checksum": "b451be9dd57b3a0617a5b62620f85f1a",
+    "wallpaper": "/home/bjtn/.config/wallpapers/post-apocalyptic_hacker.png",
+    "alpha": "100",
+    "special": {
+        "background": "#150911",
+        "foreground": "#c4c1c3",
+        "cursor": "#c4c1c3"
+    },
+    "colors": {
+        "color0": "#150911",
+        "color1": "#574838",
+        "color2": "#66553F",
+        "color3": "#713942",
+        "color4": "#695841",
+        "color5": "#6D5D4F",
+        "color6": "#9C384A",
+        "color7": "#c4c1c3",
+        "color8": "#6c5866",
+        "color9": "#574838",
+        "color10": "#66553F",
+        "color11": "#713942",
+        "color12": "#695841",
+        "color13": "#6D5D4F",
+        "color14": "#9C384A",
+        "color15": "#c4c1c3"
+    }
+}

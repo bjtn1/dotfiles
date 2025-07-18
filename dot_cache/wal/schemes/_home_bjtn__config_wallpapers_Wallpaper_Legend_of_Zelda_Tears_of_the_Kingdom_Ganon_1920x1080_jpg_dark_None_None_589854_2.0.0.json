@@ -1,0 +1,28 @@
+{
+    "checksum": "a813e1a0dfc7ef536b9dcb402c817d93",
+    "wallpaper": "/home/bjtn/.config/wallpapers/Wallpaper_Legend_of_Zelda_Tears_of_the_Kingdom_Ganon_1920x1080.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#171709",
+        "foreground": "#c5c5c1",
+        "cursor": "#c5c5c1"
+    },
+    "colors": {
+        "color0": "#171709",
+        "color1": "#3E384C",
+        "color2": "#2A5D53",
+        "color3": "#5E6051",
+        "color4": "#A15846",
+        "color5": "#A39765",
+        "color6": "#56A985",
+        "color7": "#c5c5c1",
+        "color8": "#6d6d59",
+        "color9": "#3E384C",
+        "color10": "#2A5D53",
+        "color11": "#5E6051",
+        "color12": "#A15846",
+        "color13": "#A39765",
+        "color14": "#56A985",
+        "color15": "#c5c5c1"
+    }
+}

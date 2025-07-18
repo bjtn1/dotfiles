@@ -1,0 +1,28 @@
+{
+    "checksum": "39a3448cc75bc4eb4f34d66be1306a7d",
+    "wallpaper": "/home/bjtn/.config/wallpapers/bright-pop-landscape-design.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#190b0b",
+        "foreground": "#c5c2c2",
+        "cursor": "#c5c2c2"
+    },
+    "colors": {
+        "color0": "#190b0b",
+        "color1": "#521B5C",
+        "color2": "#A42F36",
+        "color3": "#37218A",
+        "color4": "#5E2692",
+        "color5": "#584DB6",
+        "color6": "#9B58AC",
+        "color7": "#c5c2c2",
+        "color8": "#6e5a5a",
+        "color9": "#521B5C",
+        "color10": "#A42F36",
+        "color11": "#37218A",
+        "color12": "#5E2692",
+        "color13": "#584DB6",
+        "color14": "#9B58AC",
+        "color15": "#c5c2c2"
+    }
+}

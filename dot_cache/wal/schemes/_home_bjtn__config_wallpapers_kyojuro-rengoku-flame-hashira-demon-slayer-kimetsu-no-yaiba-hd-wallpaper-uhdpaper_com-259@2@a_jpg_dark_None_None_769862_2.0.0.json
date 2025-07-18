@@ -1,0 +1,28 @@
+{
+    "checksum": "b60099f115bd055478cdde9c7ef9b7e0",
+    "wallpaper": "/home/bjtn/.config/wallpapers/kyojuro-rengoku-flame-hashira-demon-slayer-kimetsu-no-yaiba-hd-wallpaper-uhdpaper.com-259@2@a.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#210e0f",
+        "foreground": "#c7c2c3",
+        "cursor": "#c7c2c3"
+    },
+    "colors": {
+        "color0": "#210e0f",
+        "color1": "#E27051",
+        "color2": "#F09863",
+        "color3": "#F6CA40",
+        "color4": "#AC6F87",
+        "color5": "#B29C9F",
+        "color6": "#EDAB92",
+        "color7": "#c7c2c3",
+        "color8": "#725d5f",
+        "color9": "#E27051",
+        "color10": "#F09863",
+        "color11": "#F6CA40",
+        "color12": "#AC6F87",
+        "color13": "#B29C9F",
+        "color14": "#EDAB92",
+        "color15": "#c7c2c3"
+    }
+}
