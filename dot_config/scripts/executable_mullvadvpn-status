@@ -18,7 +18,7 @@ status=$(mullvad status)
 
 # Extract IP address and location
 ip=$(echo "$status" | grep "Visible location" | awk -F 'IPv4: ' '{print $2}')
-location=$(echo "$status" | grep "Visible location" | awk -F 'IPv4:' '{print $1}' | awk -F ': ' '{print $2}' | xargs)
+location=$(echo "$status" | grep "Visible location" | awk -F 'IPv4:' '{print $1}' | awk -F ': ' '{print $2}' | xargs | sed 's/\.$//')
 
 # Set text based on toggle state
 if [ "$TOGGLE_STATE" = "ip" ]; then
