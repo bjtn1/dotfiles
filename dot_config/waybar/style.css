@@ -35,7 +35,7 @@ window#waybar {
 .modules-right {
   background-color: rgba(20,20,20,0.8);
   border-radius: 10px;
-  border: 0.5px solid @color11;
+  border: 0.5px solid @color12;
 }
 
 /*-----modules indv----*/
@@ -47,18 +47,18 @@ window#waybar {
   border-radius: 9px;
   padding-left: 2px;
   padding-right: 2px;
-  color: @color11;
+  color: @color12;
 }
 
 #workspaces button.active {
   /* padding-left: 8px; */
   /* padding-right: 8px; */
   color: @background;
-  background-color: @color11;
+  background-color: @color12;
 }
 
 #workspaces button.focused {
-  color: @color11;
+  color: @color12;
 }
 
 #backlight,
@@ -111,5 +111,5 @@ window#waybar {
   padding-bottom: 3px;
   padding-right: 4px;
   padding-left: 4px;
-  color: @color11;
+  color: @color12;
 }
