@@ -16,16 +16,17 @@ TOGGLE_STATE=$(cat "$TOGGLE_FILE")
 # Run mullvad status and capture output
 status=$(mullvad status)
 
-# Extract IP address and location
+# Extract IP address, location, and relay
 ip=$(echo "$status" | grep "Visible location" | awk -F 'IPv4: ' '{print $2}')
 location=$(echo "$status" | grep "Visible location" | awk -F 'IPv4:' '{print $1}' | awk -F ': ' '{print $2}' | xargs | sed 's/\.$//')
+relay=$(echo "$status" | grep "Relay" | awk -F ': ' '{print $2}' | xargs)
 
-# Set text based on toggle state
+# Set text based on toggle state with relay in parentheses
 if [ "$TOGGLE_STATE" = "ip" ]; then
-    text="$ip"
+    text="$ip ($relay)"
 else
-    text="$location"
+    text="$location ($relay)"
 fi
 
 # Output JSON for Waybar
-echo "{\"text\": \"$text\", \"tooltip\": \"IP: $ip\nLocation: $location\", \"class\": \"vpn\"}"
+echo "{\"text\": \"$text\", \"tooltip\": \"IP: $ip ($relay)\nLocation: $location ($relay)\", \"class\": \"vpn\"}"
