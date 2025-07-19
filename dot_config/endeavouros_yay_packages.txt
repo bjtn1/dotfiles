@@ -188,6 +188,7 @@ vulkan-radeon
 waybar
 waypaper
 welcome
+wev
 wget
 which
 wireguard-tools
