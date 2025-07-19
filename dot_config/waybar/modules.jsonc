@@ -20,49 +20,56 @@
     "interval": 1,
     // iso8601
     "format": "{:%A, %d %B (%F) %T}",
-    "tooltip-format": "<tt><small>{calendar}</small></tt>",
-    "calendar": {
-      "mode"          : "year",
-      "mode-mon-col"  : 3,
-      "weeks-pos"     : "right",
-      "on-scroll"     : 1,
-      "format": {
-        "months":     "<span color='#ffead3'><b>{}</b></span>",
-        "days":       "<span color='#ecc6d9'><b>{}</b></span>",
-        "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
-        "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
-        "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
-      }
-    }
+    // "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    // "calendar": {
+    //   "mode"          : "year",
+    //   "mode-mon-col"  : 3,
+    //   "weeks-pos"     : "right",
+    //   "on-scroll"     : 1,
+    //   "format": {
+    //     "months":     "<span color='#ffead3'><b>{}</b></span>",
+    //     "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+    //     "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+    //     "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+    //     "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+    //   }
+    // }
   },   
 
   "network": {
-    // "format": "{icon} {essid} ({signalStrength}%)",
+    "format": "{icon} {essid} ({signalStrength}%)",
     "format-alt": "{icon} {ipaddr} ({signalStrength}%)",
-    "tooltip-format": " {bandwidthUpBytes}  {bandwidthDownBytes}",
-    "format": " {bandwidthUpBytes}  {bandwidthDownBytes} ({signalStrength}%)",
+    // "tooltip-format": " {bandwidthUpBytes}  {bandwidthDownBytes}",
+    // "format": "{icon}  {bandwidthUpBytes}  {bandwidthDownBytes} ({signalStrength}%)",
     "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"]
+  },
+
+  // src = https://bbs.archlinux.org/viewtopic.php?id=271775
+  "custom/vpn": {
+    "format": "󰩟 {}",
+    "exec": "curl -s www.icanhazip.com",
+    "interval": 30
   },
 
   "cpu": {
     "interval": 1,
-    "format": "C {usage}%",
+    "format": "󰍛 {usage}%",
     "tooltip-format": "{icon0}{icon1}{icon2}{icon3}",
   },
 
   "memory": {
     "interval": 1,
-    "format": "M {percentage}%",
-    "format-alt": "M ({used:0.1f} GiB / {total:0.1f} GiB)",
+    "format": " {percentage}%",
+    "format-alt": " ({used:0.1f} GiB / {total:0.1f} GiB)",
     "tooltip": false
   },
 
   "disk": {
     "interval": 1,
     "path": "/",
-    "format": "D {percentage_used}%",
+    "format": "󰉉 {percentage_used}%",
     "unit": "GiB",
-    "format-alt": "D ({used} / {specific_total:0.2f} GiB)",
+    "format-alt": "󰉉 ({used} / {specific_total:0.2f} GiB)",
     "tooltip": false
   },
 
