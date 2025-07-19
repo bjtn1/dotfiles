@@ -18,13 +18,13 @@
 }
 {
     "label" : "shutdown",
-    "action" : "systemctl poweroff",
+    "action" : "~/.config/scripts/shu",
     "text" : "Shutdown",
     "keybind" : "s"
 }
 {
     "label" : "reboot",
-    "action" : "systemctl reboot",
+    "action" : "~/.config/scripts/reb",
     "text" : "Reboot",
     "keybind" : "r"
 }
