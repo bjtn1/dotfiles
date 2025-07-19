@@ -1,0 +1,28 @@
+{
+    "checksum": "1dd533ba944d5d79c26f7a74f47dc117",
+    "wallpaper": "/home/bjtn/.config/wallpapers/ratchet-and-clank-a-crack-in-time-006-wallpaper-6180-1920x1080-4473.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#1a100b",
+        "foreground": "#c5c3c2",
+        "cursor": "#c5c3c2"
+    },
+    "colors": {
+        "color0": "#1a100b",
+        "color1": "#C3983B",
+        "color2": "#E49B2C",
+        "color3": "#A59552",
+        "color4": "#D4A84D",
+        "color5": "#F9E159",
+        "color6": "#25758B",
+        "color7": "#c5c3c2",
+        "color8": "#6f605a",
+        "color9": "#C3983B",
+        "color10": "#E49B2C",
+        "color11": "#A59552",
+        "color12": "#D4A84D",
+        "color13": "#F9E159",
+        "color14": "#25758B",
+        "color15": "#c5c3c2"
+    }
+}
