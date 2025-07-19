@@ -1,12 +1,12 @@
 {
     "editor.tokenColorCustomizations": {
-       "functions":    "#506F93", 
-        "keywords":     "#A66886",
-        "numbers":      "#619BA0", 
-        "strings":      "#49ACB7", 
-        "types":        "#5FAADA", 
-        "variables":    "#97A69F", 
-        "comments":     "#6b826f"
+       "functions":    "#675D62", 
+        "keywords":     "#916A62",
+        "numbers":      "#C17347", 
+        "strings":      "#D6A960", 
+        "types":        "#5C7086", 
+        "variables":    "#7D8189", 
+        "comments":     "#5a626f"
     },
     "workbench.colorCustomizations": {
         "editor.background": "#000000"
