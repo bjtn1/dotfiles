@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+TOGGLE_FILE="$HOME/.cache/waybar_vpn_toggle"
+
+# Toggle between ip and location
+if [ -f "$TOGGLE_FILE" ]; then
+    CURRENT_STATE=$(cat "$TOGGLE_FILE")
+    if [ "$CURRENT_STATE" = "ip" ]; then
+        echo "location" > "$TOGGLE_FILE"
+    else
+        echo "ip" > "$TOGGLE_FILE"
+    fi
+else
+    echo "ip" > "$TOGGLE_FILE"
+fi
+
+# Signal Waybar to refresh the module
+pkill -RTMIN+1 waybar
+

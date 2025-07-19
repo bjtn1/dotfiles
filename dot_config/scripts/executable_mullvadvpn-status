@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# File to store toggle state
+TOGGLE_FILE="$HOME/.cache/waybar_vpn_toggle"
+
+# Initialize toggle file if it doesn't exist
+if [ ! -f "$TOGGLE_FILE" ]; then
+    echo "ip" > "$TOGGLE_FILE"
+fi
+
+# Read current toggle state
+TOGGLE_STATE=$(cat "$TOGGLE_FILE")
+
+# Run mullvad status and capture output
+status=$(mullvad status)
+
+# Extract IP address and location
+ip=$(echo "$status" | grep "Visible location" | awk -F 'IPv4: ' '{print $2}')
+location=$(echo "$status" | grep "Visible location" | awk -F 'IPv4:' '{print $1}' | awk -F ': ' '{print $2}' | xargs)
+
+# Set text based on toggle state
+if [ "$TOGGLE_STATE" = "ip" ]; then
+    text="$ip"
+else
+    text="$location"
+fi
+
+# Output JSON for Waybar
+echo "{\"text\": \"$text\", \"tooltip\": \"IP: $ip\nLocation: $location\", \"class\": \"vpn\"}"
