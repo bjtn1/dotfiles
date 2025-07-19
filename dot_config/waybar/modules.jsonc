@@ -47,8 +47,11 @@
   // src = https://bbs.archlinux.org/viewtopic.php?id=271775
   "custom/vpn": {
     "format": "󰩟 {}",
-    "exec": "curl -s www.icanhazip.com",
-    "interval": 30
+    "exec": "~/.config/scripts/mullvadvpn-status",
+    "return-type": "json",
+    "interval": 30,
+    "on-click": "~/.config/scripts/mullvadvpn-toggle",
+    "tooltip": true
   },
 
   "cpu": {
