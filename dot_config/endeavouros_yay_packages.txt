@@ -214,5 +214,6 @@ xterm
 yarn
 yay
 yazi
+zathura
 zoxide
 zram-generator
