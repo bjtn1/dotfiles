@@ -1,0 +1,28 @@
+{
+    "checksum": "cb1c4fd9955a60a02643732055fce66e",
+    "wallpaper": "/home/bjtn/.config/wallpapers/ratchet-and-clank-into-the-nexus-wp2498886-ratchet-clank-wallpapers.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#0b0814",
+        "foreground": "#c2c1c4",
+        "cursor": "#c2c1c4"
+    },
+    "colors": {
+        "color0": "#0b0814",
+        "color1": "#5B3F95",
+        "color2": "#694F97",
+        "color3": "#9B619C",
+        "color4": "#B06BC8",
+        "color5": "#BE9AB8",
+        "color6": "#E2A0E4",
+        "color7": "#c2c1c4",
+        "color8": "#5d586b",
+        "color9": "#5B3F95",
+        "color10": "#694F97",
+        "color11": "#9B619C",
+        "color12": "#B06BC8",
+        "color13": "#BE9AB8",
+        "color14": "#E2A0E4",
+        "color15": "#c2c1c4"
+    }
+}
