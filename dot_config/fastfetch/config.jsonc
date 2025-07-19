@@ -4,8 +4,8 @@
   "logo": {
     // "type": "small",
     // "source": "~/.config/hypr/current_wallpaper",
-    "source": "~/.config/fastfetch/ascii/arch.txt",
-    "width": 50,
+    // "source": "~/.config/fastfetch/ascii/arch.txt",
+    // "width": 50,
   },
   "display": {
     "separator": " "
