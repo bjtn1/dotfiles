@@ -157,6 +157,7 @@ s-nail
 sddm
 sddm-theme-sugar-candy-git
 sg3_utils
+signal-desktop
 slurp
 smartmontools
 sof-firmware
