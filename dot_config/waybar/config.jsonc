@@ -9,14 +9,6 @@
 
   // Choose the order of the modules
   "modules-left": [
-    "clock"
-  ],
-
-  "modules-center": [
-    "hyprland/workspaces"
-  ],
-
-  "modules-right": [
     "network",
     "cpu",
     "memory",
@@ -27,5 +19,13 @@
     "backlight",
     "battery",
     "custom/power",
+  ],
+
+  "modules-center": [
+    "hyprland/workspaces"
+  ],
+
+  "modules-right": [
+    "clock"
   ]
 }
