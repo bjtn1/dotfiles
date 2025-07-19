@@ -9,16 +9,15 @@
 
   // Choose the order of the modules
   "modules-left": [
-    // "network",
+    "network",
+    "custom/vpn",
     "cpu",
     "memory",
     "disk",
-    "temperature",
+    // "temperature",
     "pulseaudio",
-    "tray",
     "backlight",
     "battery",
-    "custom/power",
   ],
 
   "modules-center": [
@@ -26,6 +25,8 @@
   ],
 
   "modules-right": [
-    "clock"
+    "clock",
+    "tray",
+    "custom/power",
   ]
 }
