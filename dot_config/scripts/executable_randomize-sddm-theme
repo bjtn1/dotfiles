@@ -3,7 +3,7 @@
 set -euo pipefail
 
 SRC="$HOME/.config/hypr/current_wallpaper"
-DEST="/usr/share/sddm/themes/Sugar-Candy/Backgrounds/current_wallpaper"
+DEST="/usr/share/sddm/themes/Sugar-Candy/Backgrounds/Mountain.jpg"
 
 if [[ -f "$SRC" ]]; then
   echo "Changing SDDM wallpaper..."
