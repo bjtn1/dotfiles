@@ -10,7 +10,7 @@
   // Choose the order of the modules
   "modules-left": [
     "network",
-    "custom/vpn",
+    // "custom/vpn",
     "cpu",
     "memory",
     "disk",
