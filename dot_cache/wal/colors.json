@@ -1,29 +1,29 @@
 {
-    "checksum": "03680eab707e046182076ae69edf5a2e",
-    "wallpaper": "/home/bjtn/.config/wallpapers/sunset-scenery-digital-art-4k-wallpaper-uhdpaper.com-12@0@h.jpg",
+    "checksum": "54de4f7e241a3ac90681cc338b97158a",
+    "wallpaper": "/home/bjtn/.config/wallpapers/wallhaven-d6qj2l.jpg",
     "alpha": "100",
 
     "special": {
         "background": "#000000",
-        "foreground": "#c2c1c4",
-        "cursor": "#c2c1c4"
+        "foreground": "#c8c9d2",
+        "cursor": "#c8c9d2"
     },
     "colors": {
         "color0": "#000000",
-        "color1": "#D23B3A",
-        "color2": "#EA5731",
-        "color3": "#A0354D",
-        "color4": "#C35A55",
-        "color5": "#F99833",
-        "color6": "#FDC839",
-        "color7": "#c2c1c4",
-        "color8": "#5b596c",
-        "color9": "#D23B3A",
-        "color10": "#EA5731",
-        "color11": "#A0354D",
-        "color12": "#C35A55",
-        "color13": "#F99833",
-        "color14": "#FDC839",
-        "color15": "#c2c1c4"
+        "color1": "#3C82CE",
+        "color2": "#6693CE",
+        "color3": "#9D93B7",
+        "color4": "#DFAFB7",
+        "color5": "#9EADD1",
+        "color6": "#D3B4CA",
+        "color7": "#c8c9d2",
+        "color8": "#707389",
+        "color9": "#3C82CE",
+        "color10": "#6693CE",
+        "color11": "#9D93B7",
+        "color12": "#DFAFB7",
+        "color13": "#9EADD1",
+        "color14": "#D3B4CA",
+        "color15": "#c8c9d2"
     }
 }
