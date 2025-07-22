@@ -1,29 +1,29 @@
 {
-    "checksum": "8b1c809e74df084ed72eca7c3de61d09",
-    "wallpaper": "/home/bjtn/.config/wallpapers/wallhaven-p9x26m.png",
+    "checksum": "3e1dd2db7f3f3ca433489cf3f3e75498",
+    "wallpaper": "/home/bjtn/.config/wallpapers/8.png",
     "alpha": "100",
 
     "special": {
         "background": "#000000",
-        "foreground": "#c1c0c0",
-        "cursor": "#c1c0c0"
+        "foreground": "#c4c3c4",
+        "cursor": "#c4c3c4"
     },
     "colors": {
         "color0": "#000000",
-        "color1": "#937290",
-        "color2": "#AF78AC",
-        "color3": "#90879A",
-        "color4": "#A290A3",
-        "color5": "#AF96A6",
-        "color6": "#D4A7AF",
-        "color7": "#c1c0c0",
-        "color8": "#665353",
-        "color9": "#937290",
-        "color10": "#AF78AC",
-        "color11": "#90879A",
-        "color12": "#A290A3",
-        "color13": "#AF96A6",
-        "color14": "#D4A7AF",
-        "color15": "#c1c0c0"
+        "color1": "#B38478",
+        "color2": "#DE9574",
+        "color3": "#FDC578",
+        "color4": "#997F81",
+        "color5": "#B79489",
+        "color6": "#DFAB90",
+        "color7": "#c4c3c4",
+        "color8": "#6e5a6e",
+        "color9": "#B38478",
+        "color10": "#DE9574",
+        "color11": "#FDC578",
+        "color12": "#997F81",
+        "color13": "#B79489",
+        "color14": "#DFAB90",
+        "color15": "#c4c3c4"
     }
 }
