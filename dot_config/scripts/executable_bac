@@ -26,14 +26,15 @@ backup_packages() {
         DISTRO="linux"
       fi
 
-      if command -v pacman >/dev/null; then
-        pacman -Qqe > "$CONFIG_DIR/${DISTRO}_pacman_packages.txt"
-        echo "✅ Pacman packages saved to $CONFIG_DIR/${DISTRO}_pacman_packages.txt"
-        if command -v chezmoi >/dev/null; then
-          chezmoi add "$CONFIG_DIR/${DISTRO}_pacman_packages.txt"
-        fi
-        echo "=============================================================================================================================================================================="
-      fi
+      # I don't use pacman bruh
+      # if command -v pacman >/dev/null; then
+      #   pacman -Qqe > "$CONFIG_DIR/${DISTRO}_pacman_packages.txt"
+      #   echo "✅ Pacman packages saved to $CONFIG_DIR/${DISTRO}_pacman_packages.txt"
+      #   if command -v chezmoi >/dev/null; then
+      #     chezmoi add "$CONFIG_DIR/${DISTRO}_pacman_packages.txt"
+      #   fi
+      #   echo "=============================================================================================================================================================================="
+      # fi
 
       if command -v yay >/dev/null; then
         yay -Qqe > "$CONFIG_DIR/${DISTRO}_yay_packages.txt"
