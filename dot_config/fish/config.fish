@@ -4,10 +4,10 @@ set keychron_string (lsusb | grep Keychron)
 # if string above is non-zero that means keychron is connected
 # so "turn off" the hyprland setting
 if test -n keychron_string
-  sed -i "s/kb_options = caps:swapescape/#kb_options = caps:swapescape" ~/.config/hypr/conf/caps_lock_to_escape.conf
+  sed -i "s/kb_options = caps:swapescape/#kb_options = caps:swapescape/" ~/.config/hypr/conf/caps_lock_to_escape.conf
   # otherwise "turn on" the kb_options hyprland setting
 else
-  sed -i "s/#kb_options = caps:swapescape/kb_options = caps:swapescape" ~/.config/hypr/conf/caps_lock_to_escape.conf
+  sed -i "s/#kb_options = caps:swapescape/kb_options = caps:swapescape/" ~/.config/hypr/conf/caps_lock_to_escape.conf
 end
 
 
