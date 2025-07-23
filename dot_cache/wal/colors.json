@@ -1,29 +1,29 @@
 {
-    "checksum": "306f78eec0292789dff86f04ae1f8679",
-    "wallpaper": "/home/bjtn/.config/wallpapers/2jzlLHXn_o.jpg",
+    "checksum": "8c73ee9b51a0b3ef58dbdbed547a6a52",
+    "wallpaper": "/home/bjtn/.config/wallpapers/night-fairycore-forest-desktop-wallpaper.jpg",
     "alpha": "100",
 
     "special": {
         "background": "#000000",
-        "foreground": "#c4c2c7",
-        "cursor": "#c4c2c7"
+        "foreground": "#c3c4c8",
+        "cursor": "#c3c4c8"
     },
     "colors": {
         "color0": "#000000",
-        "color1": "#9C4C6D",
-        "color2": "#B8807A",
-        "color3": "#59708F",
-        "color4": "#AA678A",
-        "color5": "#E16C90",
-        "color6": "#7092AC",
-        "color7": "#c4c2c7",
-        "color8": "#655c71",
-        "color9": "#9C4C6D",
-        "color10": "#B8807A",
-        "color11": "#59708F",
-        "color12": "#AA678A",
-        "color13": "#E16C90",
-        "color14": "#7092AC",
-        "color15": "#c4c2c7"
+        "color1": "#274D90",
+        "color2": "#255197",
+        "color3": "#3469B3",
+        "color4": "#3A6AB6",
+        "color5": "#4868B3",
+        "color6": "#3AA0DC",
+        "color7": "#c3c4c8",
+        "color8": "#5f6374",
+        "color9": "#274D90",
+        "color10": "#255197",
+        "color11": "#3469B3",
+        "color12": "#3A6AB6",
+        "color13": "#4868B3",
+        "color14": "#3AA0DC",
+        "color15": "#c3c4c8"
     }
 }
