@@ -1,14 +1,15 @@
-# start a tmux in every session
-# src = https://www.baeldung.com/linux/tmux-startup-default-shell
-# if type -q tmux
-#   if not test -n "$TMUX"
-#     # tmux attach-session -t default; or tmux new-session -s default
-#     tmux new-session
-#   end
-# end
+# set caps lock to esc when my keychron V1 Max is not connected
+set keychron_string (lsusb | grep Keychron)
 
-# run fastfetch at the start of a new terminal
-# fastfetch
+# if string above is non-zero that means keychron is connected
+# so "turn off" the hyprland setting
+if test -n keychron_string
+  echo "#input {kb_options = caps:swapescape}" > ~/.config/hypr/conf/caps_lock_to_escape.conf
+# otherwise "turn on" the kb_options hyprland setting
+else
+end
+  echo "input {kb_options = caps:swapescape}" > ~/.config/hypr/conf/caps_lock_to_escape.conf
+
 
 # apply new theme to terminals with pywal16
 if test -e ~/.cache/wal/sequences
