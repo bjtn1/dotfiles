@@ -63,8 +63,9 @@
 
   "clock": {
     "interval": 1,
-    // iso8601
-    "format": "{:%A, %d %B (%F) %T}",
+    // iso8601 = %F
+    // "format": "{:%A, %d %B (%F) %T}",
+    "format": "{:%A, %d %B %Y %T}",
     // "tooltip-format": "<tt><small>{calendar}</small></tt>",
     // "calendar": {
     //   "mode"          : "year",
