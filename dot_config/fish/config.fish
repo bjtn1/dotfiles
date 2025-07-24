@@ -1,13 +1,12 @@
-# set caps lock to esc when my keychron V1 Max is not connected
-set keychron_string (lsusb | grep Keychron)
+# Check if Keychron V1 Max is connected via lsusb
+set keychron_string (lsusb | grep -i "Keychron" || true)
 
-# if string above is non-zero that means keychron is connected
-# so "turn off" the hyprland setting
-if test -n keychron_string
-  sed -i "s/kb_options = caps:swapescape/#kb_options = caps:swapescape/" ~/.config/hypr/conf/caps_lock_to_escape.conf
-  # otherwise "turn on" the kb_options hyprland setting
+# If keychron_string is non-empty, Keychron is connected, so comment out the Hyprland setting
+if test -n "$keychron_string"
+  sed -i 's/^kb_options = caps:swapescape/#kb_options = caps:swapescape/' ~/.config/hypr/conf/caps_lock_to_escape.conf
 else
-  sed -i "s/#kb_options = caps:swapescape/kb_options = caps:swapescape/" ~/.config/hypr/conf/caps_lock_to_escape.conf
+  # If keychron_string is empty, Keychron is not connected, so uncomment the Hyprland setting
+  sed -i 's/^#kb_options = caps:swapescape/kb_options = caps:swapescape/' ~/.config/hypr/conf/caps_lock_to_escape.conf
 end
 
 
