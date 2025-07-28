@@ -1,29 +1,29 @@
 {
-    "checksum": "bda69b9f223fda892b5204b16b0b666c",
-    "wallpaper": "/home/bjtn/.config/wallpapers/35195-1920x1152-desktop-hd-whisper-of-the-heart-wallpaper-image.jpg",
+    "checksum": "719d8439ee0f360f6afcc0fee92d522d",
+    "wallpaper": "/home/bjtn/.config/wallpapers/wallhaven-qz86k5.png",
     "alpha": "100",
 
     "special": {
         "background": "#000000",
-        "foreground": "#c2c3c6",
-        "cursor": "#c2c3c6"
+        "foreground": "#cbcdd0",
+        "cursor": "#cbcdd0"
     },
     "colors": {
         "color0": "#000000",
-        "color1": "#646487",
-        "color2": "#8F768B",
-        "color3": "#837796",
-        "color4": "#C2A5A6",
-        "color5": "#DCACA9",
-        "color6": "#ECD7CF",
-        "color7": "#c2c3c6",
-        "color8": "#5a606f",
-        "color9": "#646487",
-        "color10": "#8F768B",
-        "color11": "#837796",
-        "color12": "#C2A5A6",
-        "color13": "#DCACA9",
-        "color14": "#ECD7CF",
-        "color15": "#c2c3c6"
+        "color1": "#C1AAAF",
+        "color2": "#96B4CE",
+        "color3": "#AAD3EA",
+        "color4": "#F7DACC",
+        "color5": "#FEE7D4",
+        "color6": "#CED6E2",
+        "color7": "#cbcdd0",
+        "color8": "#707e8a",
+        "color9": "#C1AAAF",
+        "color10": "#96B4CE",
+        "color11": "#AAD3EA",
+        "color12": "#F7DACC",
+        "color13": "#FEE7D4",
+        "color14": "#CED6E2",
+        "color15": "#cbcdd0"
     }
 }
