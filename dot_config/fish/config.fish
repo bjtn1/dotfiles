@@ -1,15 +1,15 @@
-# Check if Keychron V1 Max is connected via lsusb
-set keychron_string (lsusb | grep -i "Keychron" || true)
-
-# If keychron_string is non-empty, Keychron is connected, so comment out the Hyprland setting
-if test -n "$keychron_string"
-  sed -i 's/^kb_options = caps:swapescape/#kb_options = caps:swapescape/' ~/.config/hypr/conf/caps_lock_to_escape.conf
-else
-  # If keychron_string is empty, Keychron is not connected, so uncomment the Hyprland setting
-  sed -i 's/^#kb_options = caps:swapescape/kb_options = caps:swapescape/' ~/.config/hypr/conf/caps_lock_to_escape.conf
-end
-
-
+# # Check if Keychron V1 Max is connected via lsusb
+# set keychron_string (lsusb | grep -i "Keychron" || true)
+#
+# # If keychron_string is non-empty, Keychron is connected, so comment out the Hyprland setting
+# if test -n "$keychron_string"
+#   sed -i 's/^kb_options = caps:swapescape/#kb_options = caps:swapescape/' ~/.config/hypr/conf/caps_lock_to_escape.conf
+# else
+#   # If keychron_string is empty, Keychron is not connected, so uncomment the Hyprland setting
+#   sed -i 's/^#kb_options = caps:swapescape/kb_options = caps:swapescape/' ~/.config/hypr/conf/caps_lock_to_escape.conf
+# end
+#
+#
 # apply new theme to terminals with pywal16
 if test -e ~/.cache/wal/sequences
   cat ~/.cache/wal/sequences
