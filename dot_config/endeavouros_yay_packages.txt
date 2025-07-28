@@ -125,6 +125,7 @@ nss-mdns
 ntfs-3g
 ntp
 nwg-look
+obs-studio
 openssh
 os-prober
 pacman-contrib
@@ -170,6 +171,7 @@ swww
 sysfsutils
 systemd-sysvcompat
 texinfo
+ticktick
 timeshift
 tldr
 tmux
