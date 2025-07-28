@@ -1,29 +1,29 @@
 {
-    "checksum": "d611467250a557119ee3f70f35749628",
-    "wallpaper": "/home/bjtn/.config/wallpapers/demon-slayer1.jpg",
+    "checksum": "8a01197801adf3184c96e1502251ffbf",
+    "wallpaper": "/home/bjtn/.config/wallpapers/landscape-girl-under-cherry-blossoms-desktop-wallpaper.jpg",
     "alpha": "100",
 
     "special": {
         "background": "#000000",
-        "foreground": "#c4c6cc",
-        "cursor": "#c4c6cc"
+        "foreground": "#c7cccd",
+        "cursor": "#c7cccd"
     },
     "colors": {
         "color0": "#000000",
-        "color1": "#8D6A83",
-        "color2": "#768BA4",
-        "color3": "#9D9CB2",
-        "color4": "#B1B5C7",
-        "color5": "#C2B8C7",
-        "color6": "#BCC7D0",
-        "color7": "#c4c6cc",
-        "color8": "#65687b",
-        "color9": "#8D6A83",
-        "color10": "#768BA4",
-        "color11": "#9D9CB2",
-        "color12": "#B1B5C7",
-        "color13": "#C2B8C7",
-        "color14": "#BCC7D0",
-        "color15": "#c4c6cc"
+        "color1": "#A891B5",
+        "color2": "#D5B6AB",
+        "color3": "#A1AED3",
+        "color4": "#DAAFCC",
+        "color5": "#B1CEE4",
+        "color6": "#A0D3E6",
+        "color7": "#c7cccd",
+        "color8": "#697c81",
+        "color9": "#A891B5",
+        "color10": "#D5B6AB",
+        "color11": "#A1AED3",
+        "color12": "#DAAFCC",
+        "color13": "#B1CEE4",
+        "color14": "#A0D3E6",
+        "color15": "#c7cccd"
     }
 }
