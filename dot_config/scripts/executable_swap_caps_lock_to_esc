@@ -1,18 +1,12 @@
 #!/usr/bin/env bash
 
-while true; do
-  # Check if Keychron V1 Max is connected via lsusb
-  keychron_string=$(lsusb | grep -i "Keychron" || true)
+# Check if Keychron V1 Max is connected via lsusb
+keychron_string=$(lsusb | grep -i "Keychron" || true)
 
-  # If keychron_string is non-empty, Keychron is connected, so comment out the Hyprland setting
-  if [ -n "$keychron_string" ]; then
-    sed -i 's/^kb_options = caps:swapescape/#kb_options = caps:swapescape/' ~/.config/hypr/conf/caps_lock_to_escape.conf
-  else
-    # If keychron_string is empty, Keychron is not connected, so uncomment the Hyprland setting
-    sed -i 's/^#kb_options = caps:swapescape/kb_options = caps:swapescape/' ~/.config/hypr/conf/caps_lock_to_escape.conf
-  fi
-
-  # Wait for 60 seconds before the next iteration
-  sleep 60
-done
-
+# If keychron_string is non-empty, Keychron is connected, so comment out the Hyprland setting
+if [ -n "$keychron_string" ]; then
+  sed -i 's/^  kb_options = caps:swapescape/  #kb_options = caps:swapescape/' ~/.config/hypr/conf/caps_lock_to_escape.conf
+else
+  # If keychron_string is empty, Keychron is not connected, so uncomment the Hyprland setting
+  sed -i 's/^  #kb_options = caps:swapescape/  kb_options = caps:swapescape/' ~/.config/hypr/conf/caps_lock_to_escape.conf
+fi
