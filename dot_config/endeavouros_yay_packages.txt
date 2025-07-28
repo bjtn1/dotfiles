@@ -20,6 +20,7 @@ cantarell-fonts
 chezmoi
 cliphist
 cmake
+cryptomator
 cryptsetup
 device-mapper
 diffutils
@@ -218,5 +219,6 @@ yarn
 yay
 yazi
 zathura
+zip
 zoxide
 zram-generator
