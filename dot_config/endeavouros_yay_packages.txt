@@ -191,6 +191,7 @@ sysfsutils
 system-config-printer
 systemd-sysvcompat
 texinfo
+ticktick
 timeshift
 tldr
 tmux
