@@ -9,8 +9,8 @@
 configuration {
   modi:                         "drun,calc";
   show-icons:                 true;
-  display-calc:               " ";
-  display-drun:               " ";
+  // display-calc:               " ";
+  display-drun:               "";
   drun-display-format:        "{name}";
   font:                        "JetBrains Mono Nerd Font 12";
 }
@@ -30,7 +30,7 @@ window {
 /* Main Box --------------------------------------------------- */
 mainbox {
 
-  children:                    [ "inputbar", "message", "listview", "mode-switcher" ];
+  // children:                    [ "inputbar", "message", "listview", "mode-switcher" ];
   background-color:            transparent;
 
   spacing:                     24px;
@@ -39,16 +39,29 @@ mainbox {
 }
 
 /* Inputbar --------------------------------------------------- */
-inputbar {
-  children:                    [ "prompt", "entry" ];
+// inputbar {
+//   children:                    [ "prompt", "entry" ];
+//
+//   border-radius:               12px;
+//   background-color:            @shade-bg;
+//   text-color:                  @text;
+//
+//   spacing:                     12px;
+//   margin:                      0% 28%;
+//   padding:                     14px;
+// }
 
+inputbar {
+  children:                    ["prompt", "entry"];
+  border-radius:               24px;
   border-radius:               12px;
   background-color:            @shade-bg;
   text-color:                  @text;
 
   spacing:                     12px;
-  margin:                      0% 28%;
-  padding:                     14px;
+  padding:                     56px;
+  orientation:                 horizontal;
+  background-image:            url("~/.config/hypr/current_wallpaper", width);
 }
 
 prompt {
@@ -64,12 +77,25 @@ textbox-prompt-colon {
 }
 
 /* Entry input ------------------------------------------------ */
+// entry {
+//   background-color:            transparent;
+//   text-color:                  inherit;
+//   cursor:                      inherit;
+//   placeholder:                 " ";
+//   placeholder-color:           inherit;
+// }
+
 entry {
-  background-color:            transparent;
-  text-color:                  inherit;
   cursor:                      inherit;
-  placeholder:                 " ";
+  placeholder:                 " Search";
   placeholder-color:           inherit;
+
+  border-radius:               12px;
+  background-color:            black / 48%;
+  text-color:                  @text;
+
+  padding:                     16px;
+  margin:                      0px;
 }
 
 /* Listview --------------------------------------------------- */
