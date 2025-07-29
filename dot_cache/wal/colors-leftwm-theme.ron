@@ -3,7 +3,7 @@
     border_width: 2,
     margin: [4, 4],
     default_border_color: "#000000",
-    floating_border_color: "#E8A69F",
-    focused_border_color: "#cacbcf",
+    floating_border_color: "#668EAB",
+    focused_border_color: "#c3c3c3",
     background_color: "#000000",
 )
