@@ -1,29 +1,29 @@
 {
-    "checksum": "f569fc2ffc3a11da1e053360c186fe99",
-    "wallpaper": "/home/bjtn/.config/wallpapers/938937-2560x1440-desktop-hd-makoto-shinkai-background-image.jpg",
+    "checksum": "0ef9003e58e7709474b46334e334d697",
+    "wallpaper": "/home/bjtn/.config/wallpapers/938809-3840x2160-desktop-4k-makoto-shinkai-wallpaper-photo.jpg",
     "alpha": "100",
 
     "special": {
         "background": "#000000",
-        "foreground": "#c2c3c6",
-        "cursor": "#c2c3c6"
+        "foreground": "#c3c6c6",
+        "cursor": "#c3c6c6"
     },
     "colors": {
         "color0": "#000000",
-        "color1": "#5B525C",
-        "color2": "#9F6553",
-        "color3": "#D19D6B",
-        "color4": "#2F53A5",
-        "color5": "#9B5FAC",
-        "color6": "#52A4E4",
-        "color7": "#c2c3c6",
-        "color8": "#5c5f70",
-        "color9": "#5B525C",
-        "color10": "#9F6553",
-        "color11": "#D19D6B",
-        "color12": "#2F53A5",
-        "color13": "#9B5FAC",
-        "color14": "#52A4E4",
-        "color15": "#c2c3c6"
+        "color1": "#AB674E",
+        "color2": "#548654",
+        "color3": "#6B8D66",
+        "color4": "#A0996D",
+        "color5": "#547588",
+        "color6": "#609BA5",
+        "color7": "#c3c6c6",
+        "color8": "#5d716d",
+        "color9": "#AB674E",
+        "color10": "#548654",
+        "color11": "#6B8D66",
+        "color12": "#A0996D",
+        "color13": "#547588",
+        "color14": "#609BA5",
+        "color15": "#c3c6c6"
     }
 }
