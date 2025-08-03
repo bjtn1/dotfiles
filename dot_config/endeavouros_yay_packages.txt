@@ -4,6 +4,7 @@ alsa-firmware
 alsa-plugins
 alsa-utils
 amd-ucode
+anki
 aspell
 b43-fwcutter
 base
