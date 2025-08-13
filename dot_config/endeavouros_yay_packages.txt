@@ -130,7 +130,6 @@ networkmanager-openconnect
 networkmanager-openvpn
 nfs-utils
 nilfs-utils
-nodejs
 noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
