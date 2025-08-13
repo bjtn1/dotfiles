@@ -1,29 +1,29 @@
 {
-    "checksum": "58002a6e3090aeea211f65844584b1b7",
-    "wallpaper": "/home/bjtn/.config/wallpapers/cosmonaut-in-open-space-art-desktop-wallpaper.jpg",
+    "checksum": "0005f0aab220ff78eb57f87b196a5e2f",
+    "wallpaper": "/home/bjtn/.config/wallpapers/13.png",
     "alpha": "100",
 
     "special": {
         "background": "#000000",
-        "foreground": "#c4c5ca",
-        "cursor": "#c4c5ca"
+        "foreground": "#c3c5c6",
+        "cursor": "#c3c5c6"
     },
     "colors": {
         "color0": "#000000",
-        "color1": "#556E9C",
-        "color2": "#937989",
-        "color3": "#F5628D",
-        "color4": "#459FD0",
-        "color5": "#9D8896",
-        "color6": "#DCABA9",
-        "color7": "#c4c5ca",
-        "color8": "#636679",
-        "color9": "#556E9C",
-        "color10": "#937989",
-        "color11": "#F5628D",
-        "color12": "#459FD0",
-        "color13": "#9D8896",
-        "color14": "#DCABA9",
-        "color15": "#c4c5ca"
+        "color1": "#AD916F",
+        "color2": "#517987",
+        "color3": "#8B7E81",
+        "color4": "#5A8C91",
+        "color5": "#A49E97",
+        "color6": "#DDAD93",
+        "color7": "#c3c5c6",
+        "color8": "#5d6a71",
+        "color9": "#AD916F",
+        "color10": "#517987",
+        "color11": "#8B7E81",
+        "color12": "#5A8C91",
+        "color13": "#A49E97",
+        "color14": "#DDAD93",
+        "color15": "#c3c5c6"
     }
 }
