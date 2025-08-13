@@ -7,7 +7,7 @@
 static const float rootcolor[]             = COLOR(0x000000ff);
 static uint32_t colors[][3]                = {
 	/*               fg          bg          border    */
-	[SchemeNorm] = { 0xc3c5c6ff, 0x000000ff, 0x5d6a71ff },
-	[SchemeSel]  = { 0xc3c5c6ff, 0x517987ff, 0xAD916Fff },
-	[SchemeUrg]  = { 0xc3c5c6ff, 0xAD916Fff, 0x517987ff },
+	[SchemeNorm] = { 0xc5c6c7ff, 0x000000ff, 0x606676ff },
+	[SchemeSel]  = { 0xc5c6c7ff, 0x5D7498ff, 0x507298ff },
+	[SchemeUrg]  = { 0xc5c6c7ff, 0x507298ff, 0x5D7498ff },
 };
