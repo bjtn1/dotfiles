@@ -107,6 +107,7 @@ modemmanager
 mtools
 mullvad-browser-bin
 mullvad-vpn-bin
+musescore
 nano
 nano-syntax-highlighting
 neovim
@@ -128,6 +129,7 @@ ntfs-3g
 ntp
 nwg-look
 obs-studio
+onlyoffice-bin
 openssh
 os-prober
 pacman-contrib
