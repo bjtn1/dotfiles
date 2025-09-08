@@ -1,29 +1,29 @@
 {
-    "checksum": "aa92e62c0812a1c2efd2d1d02e1a48f3",
-    "wallpaper": "/home/bjtn/.config/wallpapers/demon-slayer.jpg",
+    "checksum": "1fe63db203f018b139378a8304de2cc1",
+    "wallpaper": "/home/bjtn/.config/wallpapers/sunset-sky-night-scenery-digital-art-4k-wallpaper-3840x2160-uhdpaper.com-525.0_a.jpg",
     "alpha": "100",
 
     "special": {
         "background": "#000000",
-        "foreground": "#c2c4c6",
-        "cursor": "#c2c4c6"
+        "foreground": "#c4c4ca",
+        "cursor": "#c4c4ca"
     },
     "colors": {
         "color0": "#000000",
-        "color1": "#615453",
-        "color2": "#A25836",
-        "color3": "#9E6B4F",
-        "color4": "#D9A058",
-        "color5": "#D6B760",
-        "color6": "#7A7581",
-        "color7": "#c2c4c6",
-        "color8": "#5c6370",
-        "color9": "#615453",
-        "color10": "#A25836",
-        "color11": "#9E6B4F",
-        "color12": "#D9A058",
-        "color13": "#D6B760",
-        "color14": "#7A7581",
-        "color15": "#c2c4c6"
+        "color1": "#863D6F",
+        "color2": "#9B4878",
+        "color3": "#AF5887",
+        "color4": "#A17E82",
+        "color5": "#D26491",
+        "color6": "#F29DB0",
+        "color7": "#c4c4ca",
+        "color8": "#646379",
+        "color9": "#863D6F",
+        "color10": "#9B4878",
+        "color11": "#AF5887",
+        "color12": "#A17E82",
+        "color13": "#D26491",
+        "color14": "#F29DB0",
+        "color15": "#c4c4ca"
     }
 }
