@@ -25,7 +25,6 @@ cryptomator
 cryptsetup
 device-mapper
 diffutils
-discord
 dmidecode
 dmraid
 dnsmasq
