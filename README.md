@@ -9,6 +9,7 @@ Install [chezmoi](https://www.chezmoi.io/install/) before doing anything
 - [Installing packages](#installing-packages)
 - [macOS setup](#macos-setup)
    * [Key remapping (hidutil)](#key-remapping-hidutil)
+   * [Screenshot shortcut](#screenshot-shortcut)
    * [Wallpaper + pywal16](#wallpaper--pywal16)
    * [launchd agents](#launchd-agents)
    * [skhd](#skhd)
@@ -71,6 +72,19 @@ Run the setup script to write and load the plist:
 ```
 
 This writes `~/Library/LaunchAgents/com.local.KeyRemapping.plist` and loads it via `launchctl`. It runs automatically at login via launchd.
+
+<!-- TOC --><a name="screenshot-shortcut"></a>
+## Screenshot shortcut
+
+Selected area screenshot is remapped to **Option+Shift+S** (macOS default is Cmd+Shift+4).
+
+Run the setup script to apply it:
+
+```
+~/.config/scripts/setup-screenshot-shortcut.sh
+```
+
+This modifies `~/Library/Preferences/com.apple.symbolichotkeys.plist` directly and activates the change immediately — no logout required. The full plist is not tracked by chezmoi (it's too volatile); this script applies only the one relevant entry.
 
 <!-- TOC --><a name="wallpaper--pywal16"></a>
 ## Wallpaper + pywal16
