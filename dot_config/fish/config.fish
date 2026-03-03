@@ -133,3 +133,5 @@ end
 
 alias cd="z"
 zoxide init fish | source
+
+set -g fish_key_bindings fish_default_key_bindings

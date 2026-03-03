@@ -4,49 +4,17 @@ return {
   version = false,
   build = ":TSUpdate",
   config = function ()
-    require("nvim-treesitter.configs").setup({
-      ensure_installed = {
-        "astro",
-        "bash",
-        "c",
-        "cmake",
-        "cpp",
-        "css",
-        "html",
-        "java",
-        "javascript",
-        "json",
-        "latex",
-        "lua",
-        "markdown",
-        "markdown_inline",
-        -- "norg",
-        -- "norg_meta",
-        "python",
-        "regex",
-        "rust",
-        "typescript",
-        "toml",
-        "vim"
-      },
-      highlight = {
-        enable = true,
-        -- These two lines com from:
-        -- https://github.com/lervag/vimtex/issues/2469
-        disable = {
-          "latex",
-        },
-        additional_vim_regex_highlighting = { "latex", "markdown" },
-      },
-      indent = {
-        enable = true,
-        disable = "python",
-      },
-      context_commentstring = {
-        enable = true,
-        enable_autocmd = true,
-      },
-    auto_install = true,
+    -- nvim-treesitter v1.0 removed the `configs` module. highlight and indent
+    -- are now handled automatically by nvim's filetype system once parsers are
+    -- installed. Use :TSInstall <lang> or :TSUpdate to manage parsers.
+    require("nvim-treesitter").setup()
+
+    -- vimtex owns latex highlighting; stop treesitter from taking over
+    vim.api.nvim_create_autocmd("FileType", {
+      pattern = { "tex", "latex" },
+      callback = function()
+        vim.treesitter.stop()
+      end,
     })
   end
 }

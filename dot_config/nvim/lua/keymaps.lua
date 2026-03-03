@@ -202,7 +202,13 @@ wk.add({
 
     { "Y", '"+y$', desc = "Yank to system clipboard (to end of line)" },
 
-    { "gR", "<cmd>TroubleToggle lsp_references<cr>", desc = "LSP references" },
+    { "gR", "<cmd>Trouble lsp_references toggle<cr>", desc = "LSP references" },
+    { "gdd", "<cmd>lua vim.lsp.buf.definition()<cr>", desc = "Go to definition" },
+    { "grr", "<cmd>lua vim.lsp.buf.references()<cr>", desc = "Go to references" },
+    { "grn", "<cmd>lua vim.lsp.buf.rename()<cr>", desc = "Rename symbol" },
+    { "gpd", "<cmd>lua require('telescope.builtin').lsp_definitions()<cr>", desc = "Peek definition" },
+
+    { "<leader>ya", "<cmd>%y+<cr>", desc = "Yank all to system clipboard" },
 
     { "p", '"+p', desc = "Put from system clipboard" },
 

@@ -26,16 +26,8 @@ return {
     "L3MON4D3/LuaSnip",             -- Required
     "rafamadriz/friendly-snippets", -- Optional
 
-    -- Formatter/linter
-    -- "jose-elias-alvarez/null-ls.nvim",     -- repo got archived, no longer maintained
-    "nvimtools/none-ls.nvim", -- same as null-ls, but it is maintained
-    "jay-babu/mason-null-ls.nvim",
-
-    -- Useful plugin needed for null-ls
-    "nvim-lua/plenary.nvim",
-
-    -- For lua_ls
-    "folke/neodev.nvim",
+    -- For lua_ls (neodev.nvim is EOL; lazydev.nvim is its replacement for nvim >= 0.10)
+    "folke/lazydev.nvim",
 
     -- For breadcrumbs
     -- "SmiteshP/nvim-navic",
@@ -52,29 +44,19 @@ return {
     local luasnip = require("luasnip")
     local mason = require("mason")
     local mason_lsp_config = require("mason-lspconfig")
-    local mason_null_ls = require("mason-null-ls")
-    local neodev = require("neodev")
-    local null_ls = require("null-ls")
+    local lazydev = require("lazydev")
     -- local wk = require("which-key")
-    local ls = require("luasnip")
     -- local navic_breadcrumbs = require("nvim-navic")
-    local lsp_zero = require("lsp-zero")
 
     ---------------------
-    -- Neodev
+    -- Lazydev
     ---------------------
-    neodev.setup({
-      library = {
-        plugins = {
-          "luasnip.nvim",
-        },
-      },
-    })
+    lazydev.setup({})
 
     --------------------
     -- LuaSnip
     --------------------
-    ls.config.set_config({
+    luasnip.config.set_config({
       enable_autosnippets = true,
       update_events = "TextChanged,TextChangedI",
       history = true,
@@ -84,7 +66,7 @@ return {
     ---------------------
     -- autocompletion
     ---------------------
-    require("luasnip/loaders/from_vscode").lazy_load()
+    require("luasnip.loaders.from_vscode").lazy_load()
     vim.opt.completeopt = "menu,menuone,noselect"
 
     vim.api.nvim_set_hl(0, "CmpNormal", { bg = "#000000" })
@@ -119,39 +101,12 @@ return {
       }),
       sources = cmp.config.sources({
         { name = "nvim_lsp" },
+        { name = "nvim_lua" },
         { name = "luasnip" },
         { name = "buffer" },
         { name = "path" },
         { name = "neorg" },
         { name = "calc" },
-      }),
-      -- Set configuration for specific filetype.
-      cmp.setup.filetype("gitcommit", {
-        sources = cmp.config.sources({
-          { name = "cmp_git" }, -- You can specify the `cmp_git` source if you were installed it.
-        }, {
-          { name = "buffer" },
-        }),
-      }),
-      -- comment these (cmdline) out to allow for a cooler cmdline with noice
-      -- see this for more info
-      -- https://github.com/folke/noice.nvim/discussions/241
-
-      -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won"t work anymore).
-      cmp.setup.cmdline({ "/", "?" }, {
-        mapping = cmp.mapping.preset.cmdline(),
-        sources = {
-          { name = "buffer" },
-        },
-      }),
-      -- Use cmdline & path source for ":" (if you enabled `native_menu`, this won"t work anymore).
-      cmp.setup.cmdline(":", {
-        mapping = cmp.mapping.preset.cmdline(),
-        sources = cmp.config.sources({
-          { name = "path" },
-        }, {
-          { name = "cmdline" },
-        }),
       }),
       formatting = {
         format = lsp_kind.cmp_format({
@@ -161,28 +116,51 @@ return {
       },
     })
 
+    -- Set configuration for specific filetype.
+    cmp.setup.filetype("gitcommit", {
+      sources = cmp.config.sources({
+        { name = "cmp_git" }, -- You can specify the `cmp_git` source if you were installed it.
+      }, {
+        { name = "buffer" },
+      }),
+    })
+
+    -- comment these (cmdline) out to allow for a cooler cmdline with noice
+    -- see this for more info
+    -- https://github.com/folke/noice.nvim/discussions/241
+
+    -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won"t work anymore).
+    cmp.setup.cmdline({ "/", "?" }, {
+      mapping = cmp.mapping.preset.cmdline(),
+      sources = {
+        { name = "buffer" },
+      },
+    })
+
+    -- Use cmdline & path source for ":" (if you enabled `native_menu`, this won"t work anymore).
+    cmp.setup.cmdline(":", {
+      mapping = cmp.mapping.preset.cmdline(),
+      sources = cmp.config.sources({
+        { name = "path" },
+      }, {
+        { name = "cmdline" },
+      }),
+    })
+
     ---------------------
     -- Diagnostics
     ---------------------
-    local signs = {
-      Error = "e ",
-      Warn = "w ",
-      Hint = "h ",
-      Info = "i ",
-      -- Error = "",
-      -- Warn = "",
-      -- Hint = "",
-      -- Info = "",
-    }
-
-    for type, icon in pairs(signs) do
-      local hl = "DiagnosticSign" .. type
-      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-    end
-
     vim.diagnostic.config({
       virtual_text = {
         prefix = "",
+      },
+      signs = {
+        text = {
+          [vim.diagnostic.severity.ERROR] = "e ",
+          [vim.diagnostic.severity.WARN]  = "w ",
+          [vim.diagnostic.severity.HINT]  = "h ",
+          [vim.diagnostic.severity.INFO]  = "i ",
+        },
       },
     })
 
@@ -219,54 +197,6 @@ return {
     })
 
     ---------------------
-    -- Mason-null-ls
-    ---------------------
-    mason_null_ls.setup({
-      ensure_installed = {
-        -- I looked on `:Mason` formatters tab and linters to get these names
-        ---------------------
-        -- Formatters
-        ---------------------
-        "beautysh",
-        -- "black",
-        "clang-format",
-        "isort",
-        "prettierd",
-        -- "rustfmt", deprecated: rusfmt should now be installed via rustup
-        "stylua",
-        ---------------------
-        -- Linters
-        ---------------------
-        "misspell",
-        "cmakelint",
-        "cpplint",
-        "eslint_d",
-        "erb-lint",
-        -- "flake8", this mf too annoying ngl
-        "shellcheck",
-        ----------------------------
-        -- Formatters & Linters
-        ----------------------------
-        "cmakelang",
-        -- "markdownlint",
-      },
-      automatic_installation = true,
-      handlers = {
-      },
-    })
-
-    ---------------------
-    -- Null-ls
-    ---------------------
-
-    null_ls.setup({
-      border = MY_BORDER,
-      sources = {
-        -- Add anything not supported by mason here
-      },
-    })
-
-    ---------------------
     -- nvim-lspconfig
     ---------------------
     require("lspconfig.ui.windows").default_options.border = MY_BORDER
@@ -281,11 +211,15 @@ return {
 
     local get_servers = mason_lsp_config.get_installed_servers
 
+    local lsp_configs = require("lspconfig.configs")
     for _, server_name in ipairs(get_servers()) do
-      lsp_config[server_name].setup({
-        on_attach = lsp_attach,
-        capabilities = lsp_capabilities,
-      })
+      -- guard: skip anything lspconfig doesn't know about
+      if lsp_configs[server_name] then
+        lsp_config[server_name].setup({
+          on_attach = lsp_attach,
+          capabilities = lsp_capabilities,
+        })
+      end
     end
   end,
 }

@@ -14,7 +14,7 @@ vim.g.loaded_netrwPlugin = 1
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
-if not vim.loop.fs_stat(lazypath) then
+if not vim.uv.fs_stat(lazypath) then
   vim.fn.system({
     "git",
     "clone",
@@ -29,11 +29,9 @@ vim.opt.rtp:prepend(lazypath)
 
 vim.g.mapleader = " "
 
-local color = "tokyonight-night"
-
 local opts = {
   install = {
-    colorscheme = { color },
+    colorscheme = { "default" },
   },
   ui = {
     border = "single",
@@ -46,7 +44,7 @@ local opts = {
 require("options")
 require("lazy").setup("plugins", opts)
 
-vim.cmd.colorscheme(color)
+vim.cmd.colorscheme("catppuccin-mocha")
 
 require("keymaps")
 require("autocommands")
