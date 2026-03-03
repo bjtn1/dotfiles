@@ -76,7 +76,7 @@ This writes `~/Library/LaunchAgents/com.local.KeyRemapping.plist` and loads it v
 <!-- TOC --><a name="screenshot-shortcut"></a>
 ## Screenshot shortcut
 
-Selected area screenshot is remapped to **Option+Shift+S** (macOS default is Cmd+Shift+4).
+Selected area screenshot is remapped to **Cmd+Shift+S** (macOS default is Cmd+Shift+4).
 
 Run the setup script to apply it:
 
