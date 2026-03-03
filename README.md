@@ -3,6 +3,7 @@ Install [chezmoi](https://www.chezmoi.io/install/) before doing anything
 <!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
 
 - [New Mac quickstart](#new-mac-quickstart)
+- [OS-conditional apply](#os-conditional-apply)
 - [Downloading dotfiles manager (chezmoi)](#downloading-dotfiles-manager-chezmoi)
    * [For macOS](#for-macos)
    * [For Arch](#for-arch)
@@ -44,6 +45,25 @@ skhd --restart-service
 ```
 
 That's it.
+
+---
+
+<!-- TOC --><a name="os-conditional-apply"></a>
+# OS-conditional apply
+
+`.chezmoiignore` ensures `chezmoi apply` only touches files relevant to the current OS.
+
+| File / directory | macOS | Linux (EndeavourOS) |
+|---|---|---|
+| `Library/` (LaunchAgents) | ✅ | ❌ |
+| `.skhdrc` | ✅ | ❌ |
+| `.config/brewfile.txt` | ✅ | ❌ |
+| `.config/{hypr,dunst,waybar,waypaper,rofi,swaync,wlogout,grub-themes,nwg-look}/` | ❌ | ✅ |
+| `.xinitrc` | ❌ | ✅ |
+| `.config/{arch,endeavouros}_*_packages.txt` | ❌ | ✅ |
+| Everything else (nvim, fish, kitty, scripts, tmux, …) | ✅ | ✅ |
+
+The `.chezmoiscripts/` setup scripts also guard against running on the wrong OS via `[[ "$(uname -s)" == "Darwin" ]] || exit 0`.
 
 ---
 
