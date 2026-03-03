@@ -2,6 +2,7 @@ Install [chezmoi](https://www.chezmoi.io/install/) before doing anything
 
 <!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
 
+- [New Mac quickstart](#new-mac-quickstart)
 - [Downloading dotfiles manager (chezmoi)](#downloading-dotfiles-manager-chezmoi)
    * [For macOS](#for-macos)
    * [For Arch](#for-arch)
@@ -15,6 +16,55 @@ Install [chezmoi](https://www.chezmoi.io/install/) before doing anything
    * [skhd](#skhd)
 
 <!-- TOC end -->
+
+<!-- TOC --><a name="new-mac-quickstart"></a>
+# New Mac quickstart
+
+Complete setup in order. Each step depends on the previous one.
+
+**1. Install Homebrew**
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+**2. Install chezmoi and apply dotfiles**
+```
+brew install chezmoi
+chezmoi init --apply bjtn1
+```
+
+**3. Install pywal16**
+```
+pip install pywal16
+```
+> The `wal` binary lands at `~/.local/bin/wal`. Make sure `~/.local/bin` is on your `PATH`.
+
+**4. Install skhd**
+```
+brew tap koekeishiya/formulae
+brew install skhd
+skhd --start-service
+```
+> Go to System Settings > Privacy & Security > Accessibility and grant skhd permission, then restart it:
+> ```
+> skhd --restart-service
+> ```
+
+**5. Run setup scripts**
+```
+~/.config/scripts/setup-key-remapping.sh
+~/.config/scripts/setup-screenshot-shortcut.sh
+```
+
+**6. Load launchd agents**
+```
+launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.user.wallpaper-shuffle.plist
+launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.user.wal-watch.plist
+```
+> `com.local.KeyRemapping.plist` is already loaded by `setup-key-remapping.sh` in step 5.
+> `com.koekeishiya.skhd.plist` is managed by skhd from step 4.
+
+---
 
 <!-- TOC --><a name="downloading-dotfiles-manager-chezmoi"></a>
 # Downloading dotfiles manager ([chezmoi](https://www.chezmoi.io/))
