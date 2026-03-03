@@ -1,4 +1,7 @@
-function dots --description "Sync chezmoi dotfiles: re-add all tracked files and push"
+function dots --description "Sync chezmoi dotfiles: dump Brewfile, re-add all tracked files, and push"
+    echo "Dumping Brewfile..."
+    brew bundle dump --file ~/.config/Brewfile --force
+
     echo "Syncing dotfiles..."
     if chezmoi re-add
         echo "Done."
