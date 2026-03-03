@@ -140,7 +140,7 @@ This modifies `~/Library/Preferences/com.apple.symbolichotkeys.plist` directly a
 <!-- TOC --><a name="wallpaper--pywal16"></a>
 ## Wallpaper + pywal16
 
-Wallpapers live in `~/.config/wallpapers/`.
+Wallpapers live in `~/.config/wallpapers/`, pulled automatically from [github.com/bjtn1/wallpapers](https://github.com/bjtn1/wallpapers) via `.chezmoiexternal.toml` (refreshes every 7 days on `chezmoi apply`). The wallpapers repo is managed separately due to its size (~750MB).
 
 Three scripts in `~/.config/scripts/` handle wallpaper rotation and color theming:
 
