@@ -1,6 +1,10 @@
 #!/bin/bash
-# Installs pywal16 and skhd. Runs once per machine.
+# Installs Homebrew packages, pywal16, and skhd. Runs once per machine.
 [[ "$(uname -s)" == "Darwin" ]] || exit 0
+
+# Homebrew packages
+echo ">>> Installing Homebrew packages from Brewfile..."
+brew bundle install --file "$HOME/.config/Brewfile"
 
 # pywal16
 if ! command -v wal &>/dev/null; then
