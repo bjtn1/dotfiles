@@ -4,8 +4,8 @@ function TexFocusNeovim()
   -- Replace 'TERMINAL' with the name of your terminal application
   -- Example: vim.fn.system('open -a iTerm')
   -- Example: vim.fn.system('open -a Alacritty')
-  vim.fn.system('open -a TERMINAL')
-  vim.api.nvim_command('redraw!')
+  vim.fn.system('open -a kitty')
+  vim.cmd('redraw!')
 end
 
 -- Define the autocmd group
