@@ -20,8 +20,6 @@ Install [chezmoi](https://www.chezmoi.io/install/) before doing anything
 <!-- TOC --><a name="new-mac-quickstart"></a>
 # New Mac quickstart
 
-Complete setup in order. Each step depends on the previous one.
-
 **1. Install Homebrew**
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -33,36 +31,19 @@ brew install chezmoi
 chezmoi init --apply bjtn1
 ```
 
-**3. Install pywal16**
-```
-pip install pywal16
-```
-> The `wal` binary lands at `~/.local/bin/wal`. Make sure `~/.local/bin` is on your `PATH`.
+This automatically runs setup scripts (in `.chezmoiscripts/`) that:
+- Install pywal16 and skhd
+- Apply key remapping and screenshot shortcut
+- Load the wallpaper and wal-watch launchd agents
 
-**4. Install skhd**
-```
-brew tap koekeishiya/formulae
-brew install skhd
-skhd --start-service
-```
-> Go to System Settings > Privacy & Security > Accessibility and grant skhd permission, then restart it:
-> ```
-> skhd --restart-service
-> ```
+**3. Grant skhd Accessibility permission** *(manual — requires GUI)*
 
-**5. Run setup scripts**
+Go to **System Settings > Privacy & Security > Accessibility**, enable skhd, then:
 ```
-~/.config/scripts/setup-key-remapping.sh
-~/.config/scripts/setup-screenshot-shortcut.sh
+skhd --restart-service
 ```
 
-**6. Load launchd agents**
-```
-launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.user.wallpaper-shuffle.plist
-launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.user.wal-watch.plist
-```
-> `com.local.KeyRemapping.plist` is already loaded by `setup-key-remapping.sh` in step 5.
-> `com.koekeishiya.skhd.plist` is managed by skhd from step 4.
+That's it.
 
 ---
 
