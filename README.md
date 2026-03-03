@@ -1,13 +1,8 @@
-Install [chezmoi](https://www.chezmoi.io/install/) before doing anything
-
 <!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
 
 - [New Mac quickstart](#new-mac-quickstart)
+- [New Linux quickstart](#new-linux-quickstart)
 - [OS-conditional apply](#os-conditional-apply)
-- [Downloading dotfiles manager (chezmoi)](#downloading-dotfiles-manager-chezmoi)
-   * [For macOS](#for-macos)
-   * [For Arch](#for-arch)
-- [Installing my dotfiles](#installing-my-dotfiles)
 - [Installing packages](#installing-packages)
 - [macOS setup](#macos-setup)
    * [Key remapping (hidutil)](#key-remapping-hidutil)
@@ -48,6 +43,27 @@ That's it.
 
 ---
 
+<!-- TOC --><a name="new-linux-quickstart"></a>
+# New Linux quickstart
+
+**1. Install chezmoi**
+```
+yay -S chezmoi
+```
+or
+```
+pacman -S chezmoi
+```
+
+**2. Apply dotfiles**
+```
+chezmoi init --apply bjtn1
+```
+
+macOS-specific setup scripts are skipped automatically on Linux.
+
+---
+
 <!-- TOC --><a name="os-conditional-apply"></a>
 # OS-conditional apply
 
@@ -66,38 +82,6 @@ That's it.
 The `.chezmoiscripts/` setup scripts also guard against running on the wrong OS via `[[ "$(uname -s)" == "Darwin" ]] || exit 0`.
 
 ---
-
-<!-- TOC --><a name="downloading-dotfiles-manager-chezmoi"></a>
-# Downloading dotfiles manager ([chezmoi](https://www.chezmoi.io/))
-
-<!-- TOC --><a name="for-macos"></a>
-## For macOS
-
-1) You need a package manager. I use [Homebrew](https://brew.sh/)
-
-`/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
-
-2) Install chezmoi
-
-`brew install chezmoi`
-
-<!-- TOC --><a name="for-arch"></a>
-## For Arch
-
-1) Install chezmoi
-
-`yay -S chezmoi`
-
-or
-
-`pacman -S chezmoi`
-
-<!-- TOC --><a name="installing-my-dotfiles"></a>
-# Installing my dotfiles
-
-`chezmoi init --apply bjtn1`
-
-> ⚠️ This will download all my dotfiles to `$HOME/.local/share/chezmoi/` AND to their respective locations in `$HOME/.config/` [Click here for more info](https://www.chezmoi.io/quick-start/#set-up-a-new-machine-with-a-single-command)
 
 <!-- TOC --><a name="installing-packages"></a>
 # Installing packages
