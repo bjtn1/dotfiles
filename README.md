@@ -10,6 +10,7 @@
    * [Wallpaper + pywal16](#wallpaper--pywal16)
    * [launchd agents](#launchd-agents)
    * [skhd](#skhd)
+   * [Kitty opacity shortcuts](#kitty-opacity-shortcuts)
 
 <!-- TOC end -->
 
@@ -87,6 +88,20 @@ The `.chezmoiscripts/` setup scripts also guard against running on the wrong OS 
 # Installing packages
 
 In `$HOME/.config/` there is a file called `backup-and-install-packages.md` where it'll tell you what command to run to backup or install packages to and from a file
+
+## dots
+
+The `dots` fish function (defined in `~/.config/fish/functions/dots.fish`) syncs your dotfiles in one command:
+
+```
+dots
+```
+
+It runs:
+1. `brew update` — fetch latest Homebrew index
+2. `brew upgrade` — upgrade all installed packages
+3. `brew bundle dump` — snapshot installed packages to `~/.config/Brewfile`
+4. `chezmoi re-add` — re-add all chezmoi-tracked files and push
 
 <!-- TOC --><a name="macos-setup"></a>
 # macOS setup
@@ -185,3 +200,18 @@ Hotkeys defined in `~/.skhdrc`:
 | Hotkey | Action |
 |---|---|
 | `ctrl + shift + w` | Change wallpaper (runs `wallpaper-next.sh`) |
+
+<!-- TOC --><a name="kitty-opacity-shortcuts"></a>
+## Kitty opacity shortcuts
+
+Kitty supports runtime background opacity via three shortcuts:
+
+| Shortcut | Action |
+|---|---|
+| `ctrl+shift+equal` | Increase opacity (less transparent) |
+| `ctrl+shift+minus` | Decrease opacity (more transparent) |
+| `ctrl+shift+0` | Toggle between fully opaque and fully transparent |
+
+The toggle is implemented as a Python kitten at `~/.config/kitty/toggle_opacity.py`. It tracks state per-window via a temp file in `/tmp/` and uses `boss.call_remote_control()` internally — no socket or `allow_remote_control` required.
+
+Requires `dynamic_background_opacity yes` in `kitty.conf`.
