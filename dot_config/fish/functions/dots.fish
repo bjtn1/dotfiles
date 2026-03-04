@@ -1,4 +1,10 @@
-function dots --description "Sync chezmoi dotfiles: dump Brewfile, re-add all tracked files, and push"
+function dots --description "Sync chezmoi dotfiles: update/upgrade brew, dump Brewfile, re-add all tracked files, and push"
+    echo "Updating Homebrew..."
+    brew update
+
+    echo "Upgrading packages..."
+    brew upgrade
+
     echo "Dumping Brewfile..."
     brew bundle dump --file ~/.config/Brewfile --force
 
