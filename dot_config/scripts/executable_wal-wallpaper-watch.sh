@@ -8,7 +8,7 @@ while true; do
     # Force background and terminal black (color0) to stay pure black
     sed -i '' 's/^background[[:space:]].*/background         #000000/' ~/.config/kitty/current-theme.conf
     sed -i '' 's/^color0[[:space:]].*/color0       #000000/' ~/.config/kitty/current-theme.conf
-    kill -SIGUSR1 $(pgrep -x kitty) 2>/dev/null
+    kitty @ --to unix:/tmp/kitty.sock set-colors --all --configured ~/.config/kitty/current-theme.conf 2>/dev/null || kill -SIGUSR1 $(pgrep -x kitty) 2>/dev/null
     LAST="$CURRENT"
   fi
   sleep 5
