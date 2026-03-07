@@ -73,6 +73,8 @@ wk.add({
 
     { "<leader>e", "<cmd>Neotree toggle reveal_force_cwd<cr>", desc = "File explorer" },
 
+    { "<leader>f", "<cmd>lua vim.lsp.buf.format({async = false, timeout_ms = 10000})<cr>", desc = "Format file" },
+
     { "<leader>g", group = "Git" },
     { "<leader>gC", "<cmd>Telescope git_bcommits<cr>", desc = "Checkout commit(for current file)" },
     { "<leader>gR", "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", desc = "Reset Buffer" },
