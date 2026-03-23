@@ -22,6 +22,13 @@ return {
     -- }
     telescope.setup({
       defaults = {
+        preview = {
+          treesitter = false,
+        },
+        layout_strategy = "horizontal",
+        layout_config = {
+          horizontal = { width = 0.99, height = 0.99 },
+        },
         mappings = {
           i = {
             ["<esc>"] = actions.close,

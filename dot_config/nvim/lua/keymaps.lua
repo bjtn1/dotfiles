@@ -174,7 +174,7 @@ wk.add({
     { "<leader>sl", "<cmd>Telescope resume<cr>", desc = "Resume last search" },
     { "<leader>sp", "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>", desc = "Colorscheme with Preview" },
     { "<leader>sr", "<cmd>Telescope oldfiles<cr>", desc = "Open Recent File" },
-    { "<leader>ss", "<cmd>Silicon<cr>", desc = "Screenshot file" },
+    { "<leader>ss", "<cmd>Telescope live_grep<cr>", desc = "Search string" },
     { "<leader>st", "<cmd>TodoTelescope<cr>", desc = "Find TODOs" },
 
     { "<leader>v", group = "VimTex" },
