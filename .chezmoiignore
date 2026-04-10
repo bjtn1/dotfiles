@@ -21,4 +21,28 @@ Library
 .config/arch_yay_packages.txt
 .config/endeavouros_pacman_packages.txt
 .config/endeavouros_yay_packages.txt
+.config/pi_apt_packages.txt
+{{ end }}
+
+# Pi-only — ignore on non-Pi (x86) Linux and macOS
+{{ if or (ne .chezmoi.os "linux") (eq .chezmoi.arch "amd64") }}
+.config/pi_apt_packages.txt
+{{ end }}
+
+# Arch-only — ignore on Pi
+{{ if and (eq .chezmoi.os "linux") (eq .chezmoi.arch "arm64") }}
+.xinitrc
+.config/dunst
+.config/grub-themes
+.config/hypr
+.config/nwg-look
+.config/rofi
+.config/swaync
+.config/waybar
+.config/waypaper
+.config/wlogout
+.config/arch_pacman_packages.txt
+.config/arch_yay_packages.txt
+.config/endeavouros_pacman_packages.txt
+.config/endeavouros_yay_packages.txt
 {{ end }}
