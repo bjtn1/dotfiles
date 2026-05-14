@@ -93,9 +93,6 @@ return {
           ["core.keybinds"] = {
             config = {},
           },
-          ["core.mode"] = {
-            config = {},
-          },
           ["core.neorgcmd"] = {
             config = {},
           },

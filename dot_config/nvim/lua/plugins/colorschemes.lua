@@ -69,9 +69,9 @@ return {
         surface1 = "#3e4255",
         surface0 = "#2c2f40",
 
-        base = "#000000",
-        mantle = "#000000",
-        crust = "#000000",
+        base = "#1e1e2e",
+        mantle = "#181825",
+        crust = "#11111b",
       },
     }
 
@@ -104,9 +104,7 @@ return {
 
     horizon.setup({})
 
-    kanagawa.setup({
-      transparent = true,
-    })
+    kanagawa.setup({})
 
     material.setup({})
 
@@ -114,20 +112,9 @@ return {
 
     nightfox.setup({})
 
-    rose_pine.setup({
-      disable_background = true,
-    })
+    rose_pine.setup({})
 
-    tokyonight.setup({
-      transparent = true,
-      styles = {
-        sidebars = "transparent",
-        floats = "transparent",
-      },
-      on_colors = function (colors)
-        colors.bg = "#000000"
-      end
-    })
+    tokyonight.setup({})
 
     synthwave84.setup({})
   end,

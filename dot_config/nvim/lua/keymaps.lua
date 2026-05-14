@@ -211,6 +211,8 @@ wk.add({
     { "gpd", "<cmd>lua require('telescope.builtin').lsp_definitions()<cr>", desc = "Peek definition" },
 
     { "<leader>ya", "<cmd>%y+<cr>", desc = "Yank all to system clipboard" },
+    { "<leader>yp", function() vim.fn.setreg('+', vim.fn.expand('%:p:h')) end, desc = "Yank parent folder path to clipboard" },
+    { "<leader>yf", function() vim.fn.setreg('+', vim.fn.expand('%:t')) end, desc = "Yank filename to clipboard" },
 
     { "p", '"+p', desc = "Put from system clipboard" },
 

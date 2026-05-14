@@ -24,3 +24,23 @@ vim.cmd([[
 --     end
 --   end,
 -- })
+
+-- Enforce 50/72 rule for git commit messages
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "gitcommit",
+  callback = function()
+    vim.opt_local.spell = true
+    vim.opt_local.textwidth = 72
+    vim.opt_local.colorcolumn = "51,73"
+  end,
+})
+
+-- Hide line numbers on dashboard
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "alpha",
+  callback = function()
+    vim.opt_local.number = false
+    vim.opt_local.relativenumber = false
+    vim.opt_local.statuscolumn = ""
+  end,
+})

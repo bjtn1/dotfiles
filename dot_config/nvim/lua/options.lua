@@ -3,6 +3,7 @@
 
 vim.opt.relativenumber = true
 vim.opt.number = true
+vim.o.statuscolumn = "%s %=%{v:lnum} %{v:relnum} "
 
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2

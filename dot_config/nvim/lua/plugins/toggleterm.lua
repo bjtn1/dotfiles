@@ -7,7 +7,9 @@ return {
     toggleterm.setup({
       direction = "float",
       float_opts = {
-        border = "rounded",
+        border = MY_BORDER,
+        width = function() return math.floor(vim.o.columns * 0.95) end,
+        height = function() return math.floor(vim.o.lines * 0.95) end,
       },
     })
 
