@@ -10,8 +10,8 @@
 # end
 #
 #
-# apply new theme to terminals with pywal16
-if test -e ~/.cache/wal/sequences
+# apply new theme to terminals with pywal16 (skip iTerm2 so its color profile is preserved)
+if test -e ~/.cache/wal/sequences && test "$TERM_PROGRAM" != iTerm.app
   cat ~/.cache/wal/sequences
 end
 
