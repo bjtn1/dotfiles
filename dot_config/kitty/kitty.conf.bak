@@ -20,7 +20,7 @@ font_family      JetBrainsMono Nerd Font Mono
 #: <https://sw.kovidgoyal.net/kitty/kittens/choose-fonts/#font-spec-
 #: syntax>.
 
-font_size 12.0
+font_size 15.0
 
 #: Font size (in pts).
 
@@ -2598,3 +2598,17 @@ font_size 12.0
 #: }}}
 
 #: }}}
+
+include ~/.config/kitty/current-theme.conf
+
+allow_remote_control yes
+dynamic_background_opacity yes
+background_opacity 1.0
+
+# Opacity controls
+# ctrl+shift+equal  → more opaque (less transparent)
+# ctrl+shift+minus  → more transparent
+# ctrl+shift+0      → toggle between fully transparent and fully opaque
+map ctrl+shift+equal  set_background_opacity +0.1
+map ctrl+shift+minus  set_background_opacity -0.1
+map ctrl+shift+0      kitten toggle_opacity.py
