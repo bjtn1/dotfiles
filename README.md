@@ -17,17 +17,26 @@
 <!-- TOC --><a name="new-mac-quickstart"></a>
 # New Mac quickstart
 
-**1. Install Homebrew**
+1. Install Homebrew
+> This is the package manager I use for MacOS
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-**2. Install chezmoi and apply dotfiles**
+2. Install chezmoi
 ```
 brew install chezmoi
-chezmoi init --apply bjtn1
 ```
+> Alternative installation `sh -c "$(curl -fsLS https://get.chezmoi.io)"`
+
+3. Initialize and/or apply dotfiles
+```
+chezmoi init bjtn1
+```
+> To initialize and apply the dotfiles `chezmoi init --apply bjtn1`
+
 As soon as the `chezmoi apply` command is ran, the following scripts are executed:
+
 ## `run_once_01_install-deps.sh`
 This script does the following
 - Installs all the packages specified in `Brewfile`
