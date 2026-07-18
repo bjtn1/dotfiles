@@ -47,8 +47,6 @@ This script does the following
 - sets up a `launchd` agent that shuffles the wallpaper every 60 seconds (calls `wallpaper-shuffle.sh`)
 - sets up a `launchd` agent that uses `pywal16` to change the terminal colors based on the current theme (calls `wal-wallpaper-watch.sh`)
 
-## ``
-
 ---
 
 <!-- TOC --><a name="new-linux-quickstart"></a>
