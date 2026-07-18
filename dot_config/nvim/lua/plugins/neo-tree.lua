@@ -21,6 +21,7 @@ return {
         },
       },
       window = {
+        width = "full",
         mappings = {
           ["<space>"] = false,
           -- source

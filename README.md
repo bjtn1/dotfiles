@@ -27,27 +27,20 @@
 brew install chezmoi
 chezmoi init --apply bjtn1
 ```
-As soon as the `chezmoi apply` command is ran, the following scripts are executed:
-## `run_once_01_install-deps.sh`
-This script does the following
-- Installs all the packages specified in `Brewfile`
-- This installs `pywal16` and `skhd`
-    - `pywal16` is in charge of changing the colors of my terminal based on the current wallpaper
-    - `skhd` all we use this for is to map `ctrl + shift + w` to the `~/.config/scripts/wallpaper-next.sh` script
-- Starts the `skhd` service so I can use the keybind to change the wallpaper
 
-## `run_once_02_setup-macos.sh`
-This script does the following
-- Maps the `caps_lock` key to `esc`
-- Maps the `right_cmd` key to `ctrl`
-- Maps `cmd + shift + s` as the dedicated screenshot keymap
+This automatically runs setup scripts (in `.chezmoiscripts/`) that:
+- Install pywal16 and skhd
+- Apply key remapping and screenshot shortcut
+- Load the wallpaper and wal-watch launchd agents
 
-## `run_once_03_load-agents.sh`
-This script does the following
-- sets up a `launchd` agent that shuffles the wallpaper every 60 seconds (calls `wallpaper-shuffle.sh`)
-- sets up a `launchd` agent that uses `pywal16` to change the terminal colors based on the current theme (calls `wal-wallpaper-watch.sh`)
+**3. Grant skhd Accessibility permission** *(manual — requires GUI)*
 
-## ``
+Go to **System Settings > Privacy & Security > Accessibility**, enable skhd, then:
+```
+skhd --restart-service
+```
+
+That's it.
 
 ---
 
