@@ -2,6 +2,9 @@
 -- Or execute your favorite apps at launch like this:
 
 hl.on("hyprland.start", function()
+  -- polkit agent (Plasma's own agent is tied to the Plasma session, not this one)
+  hl.exec_cmd("hyprpolkitagent")
+
   -- enable hypridle
   hl.exec_cmd("systemctl --user enable --now hypridle.service")
 
