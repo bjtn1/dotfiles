@@ -10,7 +10,6 @@ Library
 .xinitrc
 .config/dunst
 .config/grub-themes
-.config/hypr
 .config/nwg-look
 .config/rofi
 .config/swaync
