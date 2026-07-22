@@ -11,6 +11,9 @@ hl.on("hyprland.start", function()
   -- enable waybar (no systemd unit ships with the Arch package, so launch it directly)
   hl.exec_cmd("waybar")
 
+  -- hyprpaper must be running in the background for waypaper's hyprpaper backend to work
+  hl.exec_cmd("hyprpaper")
+
   -- set a random wallpaper on boot
   hl.exec_cmd("waypaper --folder ~/.config/wallpapers/ --random")
 
