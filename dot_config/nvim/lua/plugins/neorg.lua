@@ -31,6 +31,12 @@ end
 
 return {
   {
+    -- NOTE: hi Brandon from the future, Brandon from the past here. 
+    -- you might be getting an error about dkjson.so not existing... WHAT A BUMMER!
+    -- this is how you solve it
+    -- ln -s $HOME/.local/share/nvim/lazy/luarocks.nvim/.rocks/share/lua/5.1/luarocks/vendor/dkjson.lua $HOME/.local/share/nvim/lazy/luarocks.nvim/.rocks/share/lua/5.1/dkjson.lua
+    -- I got this from https://github.com/vhyrro/luarocks.nvim/issues/35
+    -- good luck brobro
     "vhyrro/luarocks.nvim",
     priority = 1000, -- We'd like this plugin to load first out of the rest
     config = true, -- This automatically runs `require("luarocks-nvim").setup()`
