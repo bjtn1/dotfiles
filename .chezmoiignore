@@ -1,3 +1,7 @@
+# Ignore these shits
+.config/fish/fish_variables
+.config/hypr/current_wallpaper
+
 # macOS-only — ignore on Linux
 {{ if ne .chezmoi.os "darwin" }}
 Library
