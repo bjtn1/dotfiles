@@ -87,6 +87,7 @@ fsarchiver
 fwupd
 ghostscript
 git
+github-cli
 glances
 grim
 grub
@@ -108,6 +109,7 @@ hwinfo
 hypridle
 hyprland
 hyprlock
+hyprpaper
 hyprpolkitagent
 hyprshot
 inetutils
@@ -221,7 +223,6 @@ sof-firmware
 spectacle
 sudo
 swaync
-swww
 sysfsutils
 system-config-printer
 tesseract-data-eng
@@ -261,4 +262,3 @@ yarn
 yay-bin
 yazi
 zoxide
-
