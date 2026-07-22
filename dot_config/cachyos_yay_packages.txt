@@ -113,7 +113,6 @@ hyprshot
 inetutils
 iwd
 jfsutils
-jq
 kate
 kcalc
 kde-gtk-config
