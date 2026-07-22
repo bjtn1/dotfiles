@@ -8,8 +8,8 @@ hl.on("hyprland.start", function()
   -- enable hypridle
   hl.exec_cmd("systemctl --user enable --now hypridle.service")
 
-  -- enable waybar
-  hl.exec_cmd("systemctl --user enable --now waybar.service")
+  -- enable waybar (no systemd unit ships with the Arch package, so launch it directly)
+  hl.exec_cmd("waybar")
 
   -- set a random wallpaper on boot
   hl.exec_cmd("waypaper --folder ~/.config/wallpapers/ --random")

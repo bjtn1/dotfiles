@@ -221,6 +221,7 @@ sof-firmware
 spectacle
 sudo
 swaync
+swww
 sysfsutils
 system-config-printer
 tesseract-data-eng
