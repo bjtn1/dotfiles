@@ -105,13 +105,13 @@ hplip
 hwdetect
 hwinfo
 inetutils
-inotify-tools
 iwd
 jfsutils
 kate
 kcalc
 kde-cli-tools
 kde-gtk-config
+kde-material-you-colors
 kdeconnect
 kdegraphics-thumbnailers
 kdeplasma-addons
@@ -197,7 +197,6 @@ python-packaging
 python-pyqt5
 python-pywal16
 python-reportlab
-qt6-tools
 realtime-privileges
 rebuild-detector
 reflector
