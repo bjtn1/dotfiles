@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Border Color Watcher
+Comment=Re-themes KDE window border colors via pywal whenever the Plasma wallpaper changes
+Exec=bash -c "$HOME/.config/scripts/plasma-border-color-watch.sh"
+X-GNOME-Autostart-enabled=true
+NoDisplay=true

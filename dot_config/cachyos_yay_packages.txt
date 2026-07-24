@@ -196,6 +196,7 @@ python-packaging
 python-pyqt5
 python-pywal16
 python-reportlab
+qt6-tools
 realtime-privileges
 rebuild-detector
 reflector
