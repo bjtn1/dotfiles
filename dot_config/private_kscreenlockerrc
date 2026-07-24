@@ -1,0 +1,7 @@
+[Greeter]
+WallpaperPlugin=org.kde.slideshow
+
+[Greeter][Wallpaper][org.kde.slideshow][General]
+Image=file:///home/bjtn/.config/wallpapers/muichiro-tokito-mist-hashira-demon-slayer-kimetsu-no-yaiba-hd-wallpaper-uhdpaper.com-230@2@a.jpg
+SlideInterval=60
+SlidePaths=/usr/share/wallpapers/,/home/bjtn/.config/wallpapers/
