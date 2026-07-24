@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Pywal Watcher
+Comment=Re-themes kitty via pywal whenever the Plasma wallpaper changes
+Exec=bash -c "$HOME/.config/scripts/plasma-wal-watch.sh"
+X-GNOME-Autostart-enabled=true
+NoDisplay=true
