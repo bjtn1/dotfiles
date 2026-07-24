@@ -110,6 +110,7 @@ iwd
 jfsutils
 kate
 kcalc
+kde-cli-tools
 kde-gtk-config
 kdeconnect
 kdegraphics-thumbnailers
