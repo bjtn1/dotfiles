@@ -14,6 +14,13 @@ Library
 .xinitrc
 .config/dunst
 .config/grub-themes
+.config/hypr
+.config/nwg-look
+.config/rofi
+.config/swaync
+.config/waybar
+.config/waypaper
+.config/wlogout
 .config/arch_pacman_packages.txt
 .config/arch_yay_packages.txt
 .config/endeavouros_pacman_packages.txt
@@ -31,6 +38,13 @@ Library
 .xinitrc
 .config/dunst
 .config/grub-themes
+.config/hypr
+.config/nwg-look
+.config/rofi
+.config/swaync
+.config/waybar
+.config/waypaper
+.config/wlogout
 .config/arch_pacman_packages.txt
 .config/arch_yay_packages.txt
 .config/endeavouros_pacman_packages.txt
