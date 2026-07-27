@@ -28,7 +28,6 @@ Library
 .config/grub-themes
 .config/hypr
 .config/nwg-look
-.config/waypaper
 .config/pi_apt_packages.txt
 {{ end }}
 
@@ -44,5 +43,4 @@ Library
 .config/grub-themes
 .config/hypr
 .config/nwg-look
-.config/waypaper
 {{ end }}
