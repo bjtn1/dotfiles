@@ -14,15 +14,8 @@ hl.on("hyprland.start", function()
   -- enable noctalia-shell (bar, launcher, clipboard, wallpaper, colors)
   hl.exec_cmd("qs -c noctalia-shell")
 
-  -- hyprpaper must be running in the background for waypaper's hyprpaper backend to work
-  hl.exec_cmd("hyprpaper")
-
-  -- set a random wallpaper on boot
-  hl.exec_cmd("waypaper --folder ~/.config/wallpapers/ --random")
-
-  -- change the color scheme (according to previous command's wallpaper)
-  -- not loving this anymore, i want a static wallpaper and to be able to change it myself
-  -- randomize-wallpaper script removed
+  -- wallpaper now fully owned by noctalia-shell (restores its own last-set
+  -- wallpaper on startup) — hyprpaper/waypaper no longer needed here
 
   -- run the script to check if keychron v1 max is connected or not
   -- this doesn't really work LMFAO

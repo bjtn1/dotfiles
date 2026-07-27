@@ -32,11 +32,10 @@ hl.bind("SUPER + Q", hl.dsp.window.close(), { description = "Close window" })
 hl.bind("SUPER + RETURN", hl.dsp.window.fullscreen({ mode = "maximized" }), { description = "Maximize window" })
 
 -- change to random wallpaper
-hl.bind("SUPER + W", hl.dsp.exec_cmd("waypaper --folder ~/.config/wallpapers/ --random"), { description = "Random wallpaper" })
+hl.bind("SUPER + W", hl.dsp.exec_cmd("qs ipc -c noctalia-shell call wallpaper random \"\""), { description = "Random wallpaper" })
 
--- toggle waybar GUI (to pick a wallpaper)
-hl.bind("SUPER + SHIFT + W", hl.dsp.exec_cmd("pkill waypaper || waypaper"), { description = "Toggle wallpaper picker" })
--- hl.bind("SUPER + SHIFT + W", hl.dsp.exec_cmd("pkill rofi || rofi -show -dmenu -config ~/.config/rofi/wallpaper.rasi"))
+-- toggle noctalia's wallpaper picker
+hl.bind("SUPER + SHIFT + W", hl.dsp.exec_cmd("qs ipc -c noctalia-shell call wallpaper toggle"), { description = "Toggle wallpaper picker" })
 
 -- lock screen
 hl.bind("SUPER + SHIFT + L", hl.dsp.exec_cmd("qs ipc -c noctalia-shell call lockScreen lock"), { description = "Lock screen" })

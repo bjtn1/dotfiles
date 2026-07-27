@@ -429,14 +429,14 @@
     "hooks": {
         "colorGeneration": "",
         "darkModeChange": "",
-        "enabled": false,
+        "enabled": true,
         "performanceModeDisabled": "",
         "performanceModeEnabled": "",
         "screenLock": "",
         "screenUnlock": "",
         "session": "",
         "startup": "",
-        "wallpaperChange": ""
+        "wallpaperChange": "wal -i \"$1\" -b 000000 && cp \"$1\" ~/.config/hypr/current_wallpaper && hyprctl reload"
     },
     "idle": {
         "customCommands": "[]",
