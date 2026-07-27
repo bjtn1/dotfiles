@@ -56,64 +56,56 @@ backup_configs() {
   echo
   echo "📦 Backing up configs..."
 
-  # List of directories to back up (relative to $CONFIG_DIR)
-  declare -a config_dirs=(
-    "$CONFIG_DIR/bat"
-    "$CONFIG_DIR/btop"
-    "$CONFIG_DIR/fish"
-    "$CONFIG_DIR/fuzzel"
-    "$CONFIG_DIR/grub-themes"
-    "$CONFIG_DIR/hypr"
-    "$CONFIG_DIR/kitty"
-    "$CONFIG_DIR/noctalia"
-    "$CONFIG_DIR/nvim"
-    "$CONFIG_DIR/nwg-look"
-    "$CONFIG_DIR/scripts"
-    "$CONFIG_DIR/tmux"
-    "$CONFIG_DIR/wal"
-    "$CONFIG_DIR/yazi"
-    "$CONFIG_DIR/fastfetch"
-  )
-
-  declare -a cache_dirs=(
-    "$CACHE_DIR"/wal
-  )
-
-  # Prompt for wallpapers directory
-  read -p "Re-add ~/.config/wallpapers? [y/N] " answer
-  if [[ "$answer" =~ ^[Yy]$ ]]; then
-    config_dirs+=("$CONFIG_DIR/wallpapers")
+  if ! command -v chezmoi >/dev/null; then
+    echo "⚠️ chezmoi not found, skipping config backup"
+    return
   fi
 
-  # Remove and back up config dirs
-  for config_dir in "${config_dirs[@]}"; do
-    # Replace config_dir with chezmoi_dir string
-    chezmoi_config_dir="${config_dir/$CONFIG_DIR/$CHEZMOI_CONFIG_DIR}"
-    echo "🗑️ Removing $chezmoi_config_dir..."
-    rm -rf "$chezmoi_config_dir" || chezmoi add "$config_dir"
-    echo "💾 Backing up $config_dir..."
-    chezmoi add "$config_dir" || echo "⚠️ Failed to back up $config_dir"
-    echo "=============================================================================================================================================================================="
-  done
-
-  # Remove and back up cache dirs
-  for cache_dir in "${cache_dirs[@]}"; do
-    # Replace config_dir with chezmoi_dir string
-    chezmoi_cache_dir="${cache_dir/$CACHE_DIR/$CHEZMOI_CACHE_DIR}"
-    echo "🗑️ Removing $chezmoi_cache_dir..."
-    rm -rf "$chezmoi_cache_dir" || chezmoi add "$cache_dir"
-    echo "💾 Backing up $config_dir..."
-    chezmoi add "$cache_dir" || echo "⚠️ Failed to back up $cache_dir"
-    echo "=============================================================================================================================================================================="
-  done
-
-  # Run chezmoi re-add if chezmoi is available
-  if command -v chezmoi >/dev/null; then
-    echo "⏰ Chezmoi re-adding files..."
-    chezmoi re-add || echo "⚠️ Failed to run chezmoi re-add"
-  else
-    echo "⚠️ chezmoi not found, skipping re-add"
+  # Prompt for wallpapers directory (only matters the first time; once tracked,
+  # it's picked up automatically like everything else below)
+  if ! chezmoi managed 2>/dev/null | grep -q "^\.config/wallpapers$"; then
+    read -p "Re-add ~/.config/wallpapers? [y/N] " answer
+    if [[ "$answer" =~ ^[Yy]$ ]]; then
+      chezmoi add "$CONFIG_DIR/wallpapers"
+    fi
   fi
+
+  # No hardcoded directory list: ask chezmoi what it already tracks and sync
+  # exactly that. Deleted files (status code 'D' in the first column) need
+  # `forget`, since neither `re-add` nor `add` remove entries on their own.
+  echo "🗑️  Forgetting files deleted locally..."
+  while IFS= read -r line; do
+    code="${line:0:1}"
+    path="${line:3}"
+    if [[ "$code" == "D" && -n "$path" ]]; then
+      echo "   $path"
+      chezmoi forget --force "$HOME/$path"
+    fi
+  done < <(chezmoi status)
+
+  # Derive top-level ~/.config directories that already have at least one
+  # tracked file, instead of a hardcoded list -- computed fresh every run.
+  # Directories chezmoi has never touched (gh/, kdeconnect/, browser
+  # profiles, etc.) never appear here, so they stay untouched.
+  declare -A tracked_dirs
+  while IFS= read -r managed_path; do
+    if [[ "$managed_path" == .config/*/* ]]; then
+      top="${managed_path#.config/}"
+      top="${top%%/*}"
+      tracked_dirs["$top"]=1
+    fi
+  done < <(chezmoi managed)
+
+  echo "💾 Re-syncing already-tracked config directories (new + modified files)..."
+  for dir in "${!tracked_dirs[@]}"; do
+    if [ -d "$CONFIG_DIR/$dir" ]; then
+      chezmoi add "$CONFIG_DIR/$dir" || echo "⚠️ Failed to sync $dir"
+    fi
+  done
+
+  # Catch-all for anything tracked directly under ~/.config (not in a
+  # subdirectory) or outside ~/.config entirely, e.g. top-level dotfiles.
+  chezmoi re-add || echo "⚠️ Failed to run chezmoi re-add"
 }
 
 show_help() {
