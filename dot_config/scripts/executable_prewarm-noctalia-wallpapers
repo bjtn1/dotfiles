@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# Warms noctalia-shell's per-wallpaper cache (image resize + Material You colour
+# extraction) for every file in the wallpapers folder, so a random pick via
+# waypaper never hits the one-time processing cost live. Safe to re-run any
+# time new wallpapers are added; already-cached files are effectively instant.
+
+WALLPAPER_DIR="$HOME/.config/wallpapers"
+SLEEP_TIME="${1:-1.5}"
+
+if [[ ! -d "$WALLPAPER_DIR" ]]; then
+    echo "Error: $WALLPAPER_DIR does not exist."
+    exit 1
+fi
+
+total=$(find "$WALLPAPER_DIR" -maxdepth 1 -type f | wc -l)
+count=0
+
+find "$WALLPAPER_DIR" -maxdepth 1 -type f | while read -r f; do
+    count=$((count + 1))
+    qs ipc -c noctalia-shell call wallpaper set "$f" "" >/dev/null 2>&1
+    echo "[$count/$total] $f"
+    sleep "$SLEEP_TIME"
+done
+
+echo "Done warming $total wallpapers."
