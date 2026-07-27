@@ -1,6 +1,7 @@
 # Ignore these shits
 .config/fish/fish_variables
 .config/hypr/current_wallpaper
+.config/noctalia/colors.json
 
 # Nested git repos cloned by plugin managers (tpm, ya pack, etc.) anywhere
 # under the tree — fully regenerable by their own tools, pure bloat/churn if
