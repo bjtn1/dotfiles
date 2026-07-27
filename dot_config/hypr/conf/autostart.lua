@@ -8,8 +8,11 @@ hl.on("hyprland.start", function()
   -- enable hypridle
   hl.exec_cmd("systemctl --user enable --now hypridle.service")
 
-  -- enable waybar (no systemd unit ships with the Arch package, so launch it directly)
-  hl.exec_cmd("waybar")
+  -- waybar replaced by noctalia-shell
+  -- hl.exec_cmd("waybar")
+
+  -- enable noctalia-shell (bar, launcher, clipboard, wallpaper, colors)
+  hl.exec_cmd("qs -c noctalia-shell")
 
   -- hyprpaper must be running in the background for waypaper's hyprpaper backend to work
   hl.exec_cmd("hyprpaper")
@@ -26,9 +29,9 @@ hl.on("hyprland.start", function()
   -- swap_caps_lock_to_esc script removed
 
   -- open these apps in these workspaces
-  hl.exec_cmd("kitty", { workspace = "1 silent" })
+  hl.exec_cmd("kitty", { workspace = "2 silent" })
   -- hl.exec_cmd("librewolf", { workspace = "2 silent" })
-  hl.exec_cmd("mullvad-browser", { workspace = "2 silent" })
+  -- hl.exec_cmd("mullvad-browser", { workspace = "2 silent" })
 
   -- for cliphist
   hl.exec_cmd("wl-paste --type text --watch cliphist store") -- Stores only text data

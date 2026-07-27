@@ -19,8 +19,8 @@ hl.bind("SUPER + ALT + return", hl.dsp.layout("togglesplit"), { description = "T
 -- screenshot region with win + shift + s
 hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd("hyprshot -m region --clipboard-only"), { description = "Screenshot region to clipboard" })
 
--- open clipboard manager with rofi
-hl.bind("SUPER + V", hl.dsp.exec_cmd("pkill rofi || cliphist list | rofi -dmenu -config ~/.config/rofi/clipboard.rasi | cliphist decode | wl-copy"), { description = "Clipboard history" })
+-- open clipboard manager (noctalia)
+hl.bind("SUPER + V", hl.dsp.exec_cmd("qs ipc -c noctalia-shell call launcher clipboard"), { description = "Clipboard history" })
 
 -- kill active window
 hl.bind("SUPER + SHIFT + Q", hl.dsp.exec_cmd("hyprctl activewindow | grep pid | tr -d 'pid:' | xargs kill"), { description = "Force-kill active window" })
@@ -49,8 +49,8 @@ hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(programs.terminal), { description = "
 -- launch file manager (dolphin) with WIN + e
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd(programs.fileManager), { description = "Open file manager" })
 
--- open rofi with WIN + Space
-hl.bind(mainMod .. " + space", hl.dsp.exec_cmd("pkill rofi || rofi -show drun -modi drun,filebrowser,run,window"), { description = "App launcher" })
+-- open app launcher (noctalia)
+hl.bind(mainMod .. " + space", hl.dsp.exec_cmd("qs ipc -c noctalia-shell call launcher toggle"), { description = "App launcher" })
 
 -- fullscreen active window with win + enter
 -- hl.bind("SUPER + return", hl.dsp.window.fullscreen())
