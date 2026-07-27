@@ -12,9 +12,6 @@ hl.window_rule({
   no_focus = true,
 })
 
--- have waypaper open as a floating window in the center
-hl.window_rule({ match = { class = "waypaper" }, maximize = true })
-
 hl.window_rule({ match = { title = "^(Microsoft-edge)$" }, tile = true })
 hl.window_rule({ match = { title = "^(Brave-browser)$" }, tile = true })
 hl.window_rule({ match = { title = "^(Chromium)$" }, tile = true })

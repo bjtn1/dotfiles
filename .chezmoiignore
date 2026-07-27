@@ -24,7 +24,6 @@ Library
 # Linux-only — ignore on macOS
 {{ if ne .chezmoi.os "linux" }}
 .xinitrc
-.config/dunst
 .config/grub-themes
 .config/hypr
 .config/nwg-look
@@ -39,7 +38,6 @@ Library
 # Arch-only — ignore on Pi
 {{ if and (eq .chezmoi.os "linux") (eq .chezmoi.arch "arm64") }}
 .xinitrc
-.config/dunst
 .config/grub-themes
 .config/hypr
 .config/nwg-look
