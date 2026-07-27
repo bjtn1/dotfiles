@@ -2,6 +2,12 @@
 .config/fish/fish_variables
 .config/hypr/current_wallpaper
 
+# Retired per-distro/per-machine package snapshots — only cachyos_yay_packages.txt is tracked now
+.config/arch_pacman_packages.txt
+.config/arch_yay_packages.txt
+.config/endeavouros_pacman_packages.txt
+.config/endeavouros_yay_packages.txt
+
 # macOS-only — ignore on Linux
 {{ if ne .chezmoi.os "darwin" }}
 Library
@@ -21,10 +27,6 @@ Library
 .config/waybar
 .config/waypaper
 .config/wlogout
-.config/arch_pacman_packages.txt
-.config/arch_yay_packages.txt
-.config/endeavouros_pacman_packages.txt
-.config/endeavouros_yay_packages.txt
 .config/pi_apt_packages.txt
 {{ end }}
 
@@ -45,8 +47,4 @@ Library
 .config/waybar
 .config/waypaper
 .config/wlogout
-.config/arch_pacman_packages.txt
-.config/arch_yay_packages.txt
-.config/endeavouros_pacman_packages.txt
-.config/endeavouros_yay_packages.txt
 {{ end }}
