@@ -108,6 +108,7 @@ hdparm
 hplip
 hwdetect
 hwinfo
+hypridle
 hyprland
 hyprlock
 hyprpaper
