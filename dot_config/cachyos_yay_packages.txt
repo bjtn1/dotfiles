@@ -6,6 +6,7 @@ alsa-utils
 amd-ucode
 ark
 awesome-terminal-fonts
+awww
 base
 base-devel
 bash-completion
@@ -45,6 +46,7 @@ cachyos-v3-mirrorlist
 cachyos-v4-mirrorlist
 cachyos-wallpapers
 cachyos-zsh-config
+caffeine-ng
 cantarell-fonts
 char-white
 chezmoi
@@ -106,18 +108,17 @@ hdparm
 hplip
 hwdetect
 hwinfo
-hypridle
 hyprland
 hyprlock
 hyprpaper
 hyprpolkitagent
 hyprshot
 inetutils
+inotify-tools
 iwd
 jfsutils
 kate
 kcalc
-kde-cli-tools
 kde-gtk-config
 kde-material-you-colors
 kdeconnect
@@ -129,8 +130,10 @@ kio-admin
 kitty
 konsole
 kscreen
+kvantum-qt6-git
 kwallet-pam
 kwalletmanager
+lazygit
 less
 lib32-mesa
 lib32-opencl-mesa
@@ -146,6 +149,7 @@ linux-firmware
 logrotate
 lsb-release
 lsscsi
+luarocks
 lvm2
 man-db
 man-pages
@@ -182,6 +186,7 @@ partitionmanager
 pavucontrol
 perl
 phonon-qt6-vlc
+pipes.sh
 pipewire-alsa
 pipewire-pulse
 pkgfile
@@ -216,6 +221,8 @@ ripgrep
 rofi
 rsync
 s-nail
+sddm
+sddm-theme-sugar-candy-git
 sg3_utils
 shelly
 slurp
