@@ -2,6 +2,11 @@
 .config/fish/fish_variables
 .config/hypr/current_wallpaper
 
+# Nested git repos cloned by plugin managers (tpm, ya pack, etc.) anywhere
+# under the tree — fully regenerable by their own tools, pure bloat/churn if
+# hand-tracked. Applies to any future plugin dir too, not just known ones.
+**/.git
+
 # Retired per-distro/per-machine package snapshots — only cachyos_yay_packages.txt is tracked now
 .config/arch_pacman_packages.txt
 .config/arch_yay_packages.txt
