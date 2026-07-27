@@ -10,8 +10,8 @@ hl.bind(mainMod .. " + slash", hl.dsp.exec_cmd("bash ~/.config/hypr/scripts/show
 hl.bind(mainMod .. " + z", hl.dsp.window.tag({ tag = "alpha_0" }), { description = "Tag window transparent" })
 hl.window_rule({ match = { tag = "alpha_0" }, opacity = "0 override" })
 
--- call wlogout
-hl.bind("SUPER + ALT + L", hl.dsp.exec_cmd("wlogout"), { description = "Open logout menu" })
+-- open session/power menu (noctalia)
+hl.bind("SUPER + ALT + L", hl.dsp.exec_cmd("qs ipc -c noctalia-shell call sessionMenu toggle"), { description = "Open session menu" })
 
 -- change orientation with win + alt + enter
 hl.bind("SUPER + ALT + return", hl.dsp.layout("togglesplit"), { description = "Toggle split orientation" })
