@@ -28,11 +28,7 @@ Library
 .config/grub-themes
 .config/hypr
 .config/nwg-look
-.config/rofi
-.config/swaync
-.config/waybar
 .config/waypaper
-.config/wlogout
 .config/pi_apt_packages.txt
 {{ end }}
 
@@ -48,9 +44,5 @@ Library
 .config/grub-themes
 .config/hypr
 .config/nwg-look
-.config/rofi
-.config/swaync
-.config/waybar
 .config/waypaper
-.config/wlogout
 {{ end }}
