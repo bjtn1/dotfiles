@@ -7,6 +7,9 @@ local mainMod = "SUPER"
 
 hl.bind(mainMod .. " + slash", hl.dsp.exec_cmd("bash ~/.config/hypr/scripts/show-keybinds.sh"), { description = "Show keybinds" })
 
+-- open noctalia settings
+hl.bind(mainMod .. " + comma", hl.dsp.exec_cmd("qs ipc -c noctalia-shell call settings open"), { description = "Open noctalia settings" })
+
 hl.bind(mainMod .. " + z", hl.dsp.window.tag({ tag = "alpha_0" }), { description = "Tag window transparent" })
 hl.window_rule({ match = { tag = "alpha_0" }, opacity = "0 override" })
 

@@ -369,7 +369,7 @@
         "autoStartAuth": false,
         "avatarImage": "/home/bjtn/.face",
         "boxRadiusRatio": 1,
-        "clockFormat": "hh\\nmm",
+        "clockFormat": "hh\\nmmHH:mm:ss ",
         "clockStyle": "custom",
         "compactLockScreen": false,
         "dimmerOpacity": 0.2,
