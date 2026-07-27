@@ -632,7 +632,7 @@
     },
     "wallpaper": {
         "automationEnabled": false,
-        "directory": "/home/bjtn/Pictures/Wallpapers",
+        "directory": "/home/bjtn/.config/wallpapers",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
         "favorites": [

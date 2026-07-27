@@ -39,7 +39,7 @@ hl.bind("SUPER + SHIFT + W", hl.dsp.exec_cmd("pkill waypaper || waypaper"), { de
 -- hl.bind("SUPER + SHIFT + W", hl.dsp.exec_cmd("pkill rofi || rofi -show -dmenu -config ~/.config/rofi/wallpaper.rasi"))
 
 -- lock screen
-hl.bind("SUPER + SHIFT + L", hl.dsp.exec_cmd("hyprlock"), { description = "Lock screen" })
+hl.bind("SUPER + SHIFT + L", hl.dsp.exec_cmd("qs ipc -c noctalia-shell call lockScreen lock"), { description = "Lock screen" })
 
 -- open terminal
 hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(programs.terminal), { description = "Open terminal" })
