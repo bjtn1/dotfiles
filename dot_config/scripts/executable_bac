@@ -60,22 +60,19 @@ backup_configs() {
   declare -a config_dirs=(
     "$CONFIG_DIR/bat"
     "$CONFIG_DIR/btop"
-    "$CONFIG_DIR/dunst"
     "$CONFIG_DIR/fish"
+    "$CONFIG_DIR/fuzzel"
     "$CONFIG_DIR/grub-themes"
     "$CONFIG_DIR/hypr"
     "$CONFIG_DIR/kitty"
+    "$CONFIG_DIR/noctalia"
     "$CONFIG_DIR/nvim"
     "$CONFIG_DIR/nwg-look"
-    "$CONFIG_DIR/rofi"
     "$CONFIG_DIR/scripts"
-    "$CONFIG_DIR/swaync"
     "$CONFIG_DIR/tmux"
-    "$CONFIG_DIR/waybar"
+    "$CONFIG_DIR/wal"
     "$CONFIG_DIR/yazi"
-    "$CONFIG_DIR/waypaper"
     "$CONFIG_DIR/fastfetch"
-    "$CONFIG_DIR/wlogout"
   )
 
   declare -a cache_dirs=(
