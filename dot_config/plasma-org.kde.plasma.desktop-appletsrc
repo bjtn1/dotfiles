@@ -158,7 +158,7 @@ plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.slideshow
 
 [Containments][43][Wallpaper][org.kde.slideshow][General]
-Image=file:///usr/share/wallpapers/cachyos-wallpapers/north.png
+Image=file:///usr/share/wallpapers/cachyos-wallpapers/wave.png
 SlideInterval=60
 SlidePaths=/usr/share/wallpapers/,/home/bjtn/.config/wallpapers/
 
@@ -174,7 +174,7 @@ plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.slideshow
 
 [Containments][44][Wallpaper][org.kde.slideshow][General]
-Image=file:///home/bjtn/.config/wallpapers/Wallpaper_Legend_of_Zelda_Tears_of_the_Kingdom_Ganon_1920x1080.jpg
+Image=file:///usr/share/wallpapers/cachyos-wallpapers/wave.png
 SlideInterval=60
 SlidePaths=/usr/share/wallpapers/,/home/bjtn/.config/wallpapers/
 
@@ -186,6 +186,9 @@ lastScreen=2
 location=0
 plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.image
+
+[Containments][46][Wallpaper][org.kde.slideshow][General]
+Image=file:///home/bjtn/.config/wallpapers/japan-background-digital-art.jpg
 
 [Containments][75]
 activityId=
