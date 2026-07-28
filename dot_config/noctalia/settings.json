@@ -429,7 +429,7 @@
         "screenUnlock": "",
         "session": "",
         "startup": "",
-        "wallpaperChange": "wal -i \"$1\" -b 000000 && cp \"$1\" ~/.config/hypr/current_wallpaper && hyprctl reload"
+        "wallpaperChange": "bash ~/.config/scripts/apply-pywal-colorscheme \"$1\""
     },
     "idle": {
         "customCommands": "[]",
