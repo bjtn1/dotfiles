@@ -44,7 +44,7 @@ local opts = {
 require("options")
 require("lazy").setup("plugins", opts)
 
-vim.cmd.colorscheme("tokyonight")
+vim.cmd.colorscheme("tokyonight-night")
 
 require("keymaps")
 require("autocommands")
