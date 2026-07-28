@@ -1,30 +1,24 @@
 #!/bin/bash
-# Installs pacman and yay packages on Arch-based Linux (Arch, EndeavourOS). Runs once per machine.
+# Installs yay/AUR packages on CachyOS. Runs once per machine.
 [[ "$(uname -s)" == "Linux" ]] || exit 0
 command -v pacman &>/dev/null || exit 0
 
 distro_id="$(. /etc/os-release && echo "$ID")"
 
-case "$distro_id" in
-    endeavouros)
-        pacman_file="$HOME/.config/endeavouros_pacman_packages.txt"
-        yay_file="$HOME/.config/endeavouros_yay_packages.txt"
-        ;;
-    arch)
-        pacman_file="$HOME/.config/arch_pacman_packages.txt"
-        yay_file="$HOME/.config/arch_yay_packages.txt"
-        ;;
-    *)
-        echo ">>> Unrecognized Arch-based distro ($distro_id), skipping package install."
-        exit 0
-        ;;
-esac
+if [[ "$distro_id" != "cachyos" ]]; then
+    echo ">>> Unrecognized distro ($distro_id), skipping package install."
+    exit 0
+fi
 
-echo ">>> Installing pacman packages for $distro_id..."
-xargs -a "$pacman_file" sudo pacman -S --needed --noconfirm
+yay_file="$HOME/.config/cachyos_yay_packages.txt"
+
+if [[ ! -f "$yay_file" ]]; then
+    echo ">>> $yay_file not found, skipping package install."
+    exit 0
+fi
 
 if ! command -v yay &>/dev/null; then
-    echo ">>> yay still not available after pacman install, skipping AUR packages."
+    echo ">>> yay not available, skipping package install."
     exit 0
 fi
 
