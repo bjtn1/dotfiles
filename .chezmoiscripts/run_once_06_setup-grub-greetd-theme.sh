@@ -23,6 +23,12 @@ if command -v greetd &>/dev/null; then
     sudo systemctl enable greetd.service
 fi
 
+PAM_SETUP="/usr/share/noctalia-greeter/setup_greetd_pam.sh"
+if [[ -x "$PAM_SETUP" ]]; then
+    echo ">>> Patching PAM for noctalia-greeter session tracking..."
+    sudo "$PAM_SETUP"
+fi
+
 if [[ -x "$HOME/.config/scripts/randomize-grub-theme" ]]; then
     echo ">>> Applying initial grub theme..."
     "$HOME/.config/scripts/randomize-grub-theme" || true
