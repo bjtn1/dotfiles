@@ -26,3 +26,6 @@ require("conf.keybinds")
 
 -- autostart apps
 require("conf.autostart")
+
+-- workspace rules
+require("conf.workspacerules")
