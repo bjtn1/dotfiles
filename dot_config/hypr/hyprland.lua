@@ -18,6 +18,9 @@ require("conf.input")
 -- window rules
 require("conf.windowrules")
 
+-- hyprexpo plugin (workspace overview)
+require("conf.hyprexpo")
+
 -- keybinds
 require("conf.keybinds")
 
