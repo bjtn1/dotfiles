@@ -9,7 +9,7 @@
         "density": "default",
         "enableClipPreview": true,
         "enableClipboardChips": true,
-        "enableClipboardHistory": false,
+        "enableClipboardHistory": true,
         "enableClipboardSmartIcons": true,
         "enableSessionSearch": true,
         "enableSettingsSearch": true,
@@ -183,6 +183,11 @@
                     "useDistroLogo": false
                 },
                 {
+                    "iconColor": "none",
+                    "id": "KeepAwake",
+                    "textColor": "none"
+                },
+                {
                     "compactMode": true,
                     "diskPath": "/",
                     "iconColor": "none",
@@ -214,14 +219,8 @@
                     "useCustomFont": false
                 },
                 {
-                    "colorizeSystemIcon": "none",
-                    "colorizeSystemText": "none",
-                    "customIconPath": "",
-                    "enableColorization": false,
-                    "icon": "rocket",
-                    "iconColor": "none",
-                    "id": "Launcher",
-                    "useDistroLogo": false
+                    "iconColor": "error",
+                    "id": "SessionMenu"
                 }
             ]
         }
