@@ -5,6 +5,11 @@
 .config/kdeglobals
 .local/share/color-schemes
 
+# Hard-block: live Firefox profile data (cookies, saved logins, history).
+# Config lives separately in .config/firefox-custom/, applied via
+# scripts/apply-firefox-config -- never track anything under here directly.
+.config/mozilla
+
 # Nested git repos cloned by plugin managers (tpm, ya pack, etc.) anywhere
 # under the tree — fully regenerable by their own tools, pure bloat/churn if
 # hand-tracked. Applies to any future plugin dir too, not just known ones.
