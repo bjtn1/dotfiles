@@ -85,6 +85,7 @@ foomatic-db-nonfree
 foomatic-db-nonfree-ppds
 foomatic-db-ppds
 fsarchiver
+fuzzel
 fwupd
 ghostscript
 git
