@@ -73,13 +73,17 @@ backup_configs() {
   # No hardcoded directory list: ask chezmoi what it already tracks and sync
   # exactly that. Deleted files (status code 'D' in the first column) need
   # `forget`, since neither `re-add` nor `add` remove entries on their own.
+  # When a whole directory is deleted, chezmoi status lists the dir AND its
+  # files as separate 'D' lines; forgetting the dir first un-manages the
+  # files too, so a file's own forget can legitimately fail with "not
+  # managed" -- that's not an error, just redundancy, so don't let it abort.
   echo "🗑️  Forgetting files deleted locally..."
   while IFS= read -r line; do
     code="${line:0:1}"
     path="${line:3}"
     if [[ "$code" == "D" && -n "$path" ]]; then
       echo "   $path"
-      chezmoi forget --force "$HOME/$path"
+      chezmoi forget --force "$HOME/$path" 2>/dev/null || true
     fi
   done < <(chezmoi status)
 
