@@ -1,0 +1,5 @@
+# Extension IDs, not their live storage/settings -- reinstall each from
+# addons.mozilla.org and sign back into any that need it (Proton Pass).
+uBlock0@raymondhill.net                        # uBlock Origin
+78272b6fa58f4a1abaac99321d503a20@proton.me     # Proton Pass: Free Password Manager
+ipp-activator@mozilla.com                      # IPP Activator

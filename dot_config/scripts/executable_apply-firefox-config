@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+# Copies the chezmoi-tracked user.js into whatever Firefox profile directory
+# is actually in use. Never touches the live profile beyond that one file --
+# everything else in there (cookies, passwords, history) stays untracked.
+set -euo pipefail
+
+INI="$HOME/.config/mozilla/firefox/profiles.ini"
+SOURCE="$HOME/.config/firefox-custom/user.js"
+
+if [[ ! -f "$INI" ]]; then
+    echo "No Firefox profiles.ini found yet -- launch Firefox once first, then re-run this." >&2
+    exit 0
+fi
+
+# The [InstallXXXX] section's Default= is the profile this exact install
+# actually launches -- can differ from any [ProfileN] Default=1 flag.
+rel_path="$(awk '
+    /^\[Install/ { in_install=1; next }
+    /^\[/ { in_install=0 }
+    in_install && /^Default=/ { sub(/^Default=/, ""); print; exit }
+' "$INI")"
+
+if [[ -z "$rel_path" ]]; then
+    echo "Could not determine the default Firefox profile from $INI" >&2
+    exit 1
+fi
+
+PROFILE_DIR="$HOME/.config/mozilla/firefox/$rel_path"
+if [[ ! -d "$PROFILE_DIR" ]]; then
+    echo "Profile directory $PROFILE_DIR doesn't exist" >&2
+    exit 1
+fi
+
+cp "$SOURCE" "$PROFILE_DIR/user.js"
+echo "Applied user.js to $PROFILE_DIR"
