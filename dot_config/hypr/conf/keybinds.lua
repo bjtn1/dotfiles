@@ -5,7 +5,7 @@ local programs = require("conf.programs")
 -- Sets "Windows" key as main modifier
 local mainMod = "SUPER"
 
-hl.bind(mainMod .. " + slash", hl.dsp.exec_cmd("bash ~/.config/hypr/scripts/show-keybinds.sh"), { description = "System: Show keybinds" })
+hl.bind(mainMod .. " + slash", hl.dsp.exec_cmd("bash ~/.config/scripts/show-keybinds.sh"), { description = "System: Show keybinds" })
 
 -- open noctalia settings
 hl.bind(mainMod .. " + comma", hl.dsp.exec_cmd("qs ipc -c noctalia-shell call settings open"), { description = "System: Open noctalia settings" })
@@ -26,7 +26,7 @@ hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd("hyprshot -m region --clipboard-onl
 hl.bind("SUPER + V", hl.dsp.exec_cmd("qs ipc -c noctalia-shell call launcher clipboard"), { description = "Utility: Clipboard history" })
 
 -- kill active window
-hl.bind("SUPER + SHIFT + Q", hl.dsp.exec_cmd("hyprctl activewindow | grep pid | tr -d 'pid:' | xargs kill"), { description = "Windows: Force-kill active window" })
+hl.bind("SUPER + SHIFT + Q", hl.dsp.exec_cmd("bash ~/.config/scripts/force-kill-active.sh"), { description = "Windows: Force-kill active window" })
 
 -- quit active window
 hl.bind("SUPER + Q", hl.dsp.window.close(), { description = "Windows: Close window" })
