@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# Called by noctalia's wallpaperChange hook with the new wallpaper path as $1.
+# plasma-apply-colorscheme no-ops if the requested theme name is already the
+# active one, so reusing one static scheme name would only ever apply once --
+# ping-pong between two names so it always looks "new" to that check.
+set -euo pipefail
+
+WALLPAPER="$1"
+KDE_CACHE_DIR="$HOME/.cache/wal-kde"
+
+# Main cache: background forced to black, drives terminal/Hyprland/fuzzel
+wal -i "$WALLPAPER" -b 000000 -s -q
+[[ "$WALLPAPER" -ef ~/.config/hypr/current_wallpaper ]] || cp "$WALLPAPER" ~/.config/hypr/current_wallpaper
+
+# Separate cache: natural wallpaper-derived background, for dolphin only
+mkdir -p "$KDE_CACHE_DIR"
+wal -i "$WALLPAPER" -n -s -e -q --out-dir "$KDE_CACHE_DIR"
+
+mkdir -p ~/.local/share/color-schemes
+
+current="$(kreadconfig6 --file kdeglobals --group General --key ColorScheme 2>/dev/null || echo "")"
+if [[ "$current" == "PywalA" ]]; then
+    next="PywalB"
+else
+    next="PywalA"
+fi
+
+sed "s/^ColorScheme=.*/ColorScheme=$next/; s/^Name=.*/Name=$next/" \
+    "$KDE_CACHE_DIR/colors-pywal.colors" > ~/.local/share/color-schemes/"$next".colors
+
+plasma-apply-colorscheme "$next"
+hyprctl reload
