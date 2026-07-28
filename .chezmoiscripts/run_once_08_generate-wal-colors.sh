@@ -1,5 +1,7 @@
 #!/bin/bash
-# Seeds ~/.cache/wal/colors-hyprland.conf so windows.conf/hyprlock.conf $colorN vars resolve on first Hyprland launch. Runs once per machine.
+# Seeds ~/.cache/wal/colors-hyprland.conf (so windows.conf/hyprlock.conf $colorN
+# vars resolve) and kdeglobals (so dolphin matches) on first launch. Runs once
+# per machine.
 [[ "$(uname -s)" == "Linux" ]] || exit 0
 command -v pacman &>/dev/null || exit 0
 
@@ -14,5 +16,11 @@ if [[ ! -f "$WALLPAPER" ]]; then
     exit 0
 fi
 
-echo ">>> Generating wal colors from current_wallpaper..."
-wal -q -n -i "$WALLPAPER"
+APPLY_SCRIPT="$HOME/.config/scripts/apply-pywal-colorscheme"
+if command -v plasma-apply-colorscheme &>/dev/null && [[ -x "$APPLY_SCRIPT" ]]; then
+    echo ">>> Generating wal colors and applying to kdeglobals..."
+    "$APPLY_SCRIPT" "$WALLPAPER"
+else
+    echo ">>> Generating wal colors from current_wallpaper..."
+    wal -q -n -i "$WALLPAPER"
+fi
