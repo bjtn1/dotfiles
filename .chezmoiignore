@@ -2,6 +2,8 @@
 .config/fish/fish_variables
 .config/hypr/current_wallpaper
 .config/noctalia/colors.json
+.config/kdeglobals
+.local/share/color-schemes
 
 # Nested git repos cloned by plugin managers (tpm, ya pack, etc.) anywhere
 # under the tree — fully regenerable by their own tools, pure bloat/churn if
