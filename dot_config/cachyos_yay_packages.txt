@@ -6,7 +6,6 @@ alsa-utils
 amd-ucode
 ark
 awesome-terminal-fonts
-awww
 base
 base-devel
 bash-completion
@@ -91,6 +90,7 @@ ghostscript
 git
 github-cli
 glances
+greetd
 grim
 grub
 grub-btrfs-support
@@ -110,8 +110,6 @@ hwdetect
 hwinfo
 hypridle
 hyprland
-hyprlock
-hyprpaper
 hyprpolkitagent
 hyprshot
 inetutils
@@ -172,6 +170,8 @@ networkmanager
 networkmanager-openvpn
 nfs-utils
 nilfs-utils
+noctalia-greeter
+noctalia-shell
 noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
@@ -219,7 +219,6 @@ realtime-privileges
 rebuild-detector
 reflector
 ripgrep
-rofi
 rsync
 s-nail
 sddm
@@ -232,16 +231,17 @@ snapper
 sof-firmware
 spectacle
 sudo
-swaync
 sysfsutils
 system-config-printer
 tesseract-data-eng
 texinfo
 tmux
 ttf-bitstream-vera
+ttf-cascadia-code-nerd
 ttf-dejavu
 ttf-jetbrains-mono-nerd
 ttf-liberation
+ttf-material-symbols-variable
 ttf-meslo-nerd
 ttf-opensans
 ufw
@@ -254,13 +254,10 @@ usbutils
 vim
 vlc-plugins-all
 vulkan-radeon
-waybar
-waypaper
 wget
 which
 wireplumber
 wl-clipboard
-wlogout
 wpa_supplicant
 xdg-desktop-portal-hyprland
 xdg-user-dirs
