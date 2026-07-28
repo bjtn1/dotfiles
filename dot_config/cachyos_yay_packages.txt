@@ -64,6 +64,7 @@ dolphin
 dosfstools
 duf
 e2fsprogs
+easyeffects
 efibootmgr
 efitools
 espeak-ng
@@ -209,6 +210,7 @@ slurp
 smartmontools
 snapper
 sof-firmware
+streamdeck-ui
 sudo
 sysfsutils
 system-config-printer
@@ -231,6 +233,7 @@ upower
 usb_modeswitch
 usbutils
 vim
+visual-studio-code-bin
 vlc-plugins-all
 vulkan-radeon
 wget
