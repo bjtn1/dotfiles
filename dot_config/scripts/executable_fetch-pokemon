@@ -19,6 +19,12 @@ if [[ "${1:-}" == "--forms" ]]; then
   exit 0
 fi
 
+# Lets a concurrent `ff` (see config.fish) wait for an already in-flight
+# fetch instead of showing a stale duplicate image. Removed on any exit.
+LOCK="$CACHE_DIR/fetch.lock"
+echo $$ > "$LOCK"
+trap 'rm -f "$LOCK"' EXIT
+
 # $RANDOM is a bash/zsh builtin -- no external dependency (e.g. shuf, which
 # isn't available on macOS by default) needed for portability.
 random_query() { echo $(( (RANDOM % MAX_ID) + 1 )); }

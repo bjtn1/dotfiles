@@ -37,15 +37,36 @@ case Linux:
   setxkbmap -option "caps:escape"
 end
 
-# fastfetch (fetches a fresh random Pokemon logo from PokeAPI each run --
-# pass a number or name, e.g. `ff pikachu` or `ff 25`, for a specific one;
-# `ff --forms <name>` lists available forms, e.g. `ff --forms charizard`)
+# fastfetch (shows a random Pokemon logo instantly, refetched in the
+# background after every run so it's different next time; if a fetch is
+# still in flight from a very recent call, waits on it instead of showing
+# a stale duplicate. Pass a number or name, e.g. `ff pikachu` or `ff 25`,
+# for a specific one -- that one always waits, since you asked for it
+# specifically. `ff --forms <name>` lists available forms.)
 function ff
-  if test "$argv[1]" = "--forms"
+  if test (count $argv) -gt 0
     ~/.config/scripts/fetch-pokemon $argv
+    if test "$argv[1]" = "--forms"
+      return
+    end
+    fastfetch
     return
   end
-  ~/.config/scripts/fetch-pokemon $argv
+
+  set lock ~/.cache/fastfetch/fetch.lock
+  set waited 0
+  while test -f "$lock" -a $waited -lt 30
+    sleep 0.1
+    set waited (math $waited + 1)
+  end
+
+  if not test -f ~/.cache/fastfetch/pokemon.png
+    # first run ever, nothing cached yet -- have to wait this one time
+    ~/.config/scripts/fetch-pokemon
+  else
+    ~/.config/scripts/fetch-pokemon > /dev/null 2>&1 &
+    disown
+  end
   fastfetch
 end
 
