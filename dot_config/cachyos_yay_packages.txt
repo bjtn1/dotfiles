@@ -213,6 +213,7 @@ slurp
 smartmontools
 snapper
 sof-firmware
+solaar
 streamdeck-ui
 sudo
 sysfsutils
