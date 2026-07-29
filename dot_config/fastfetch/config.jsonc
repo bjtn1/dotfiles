@@ -63,7 +63,7 @@
       "type": "memory"
     },
     {
-      "key": "│ {#37}󰐝 Pokemon {#keys}│",
+      "key": "│ {#37}󰐝 pokemon {#keys}│",
       "type": "command",
       "text": "cat ~/.cache/fastfetch/pokemon.name 2>/dev/null"
     },
