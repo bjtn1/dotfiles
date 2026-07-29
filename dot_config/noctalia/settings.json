@@ -78,17 +78,6 @@
         "widgetSpacing": 6,
         "widgets": {
             "center": [
-                {
-                    "colorizeIcons": false,
-                    "hideMode": "hidden",
-                    "id": "ActiveWindow",
-                    "maxWidth": 575,
-                    "scrollingMode": "hover",
-                    "showIcon": true,
-                    "showText": true,
-                    "textColor": "none",
-                    "useFixedWidth": false
-                }
             ],
             "left": [
                 {
@@ -124,6 +113,17 @@
                     "unfocusedIconsOpacity": 1
                 },
                 {
+                    "colorizeIcons": false,
+                    "hideMode": "hidden",
+                    "id": "ActiveWindow",
+                    "maxWidth": 1e+55,
+                    "scrollingMode": "hover",
+                    "showIcon": true,
+                    "showText": true,
+                    "textColor": "none",
+                    "useFixedWidth": false
+                },
+                {
                     "colorizeDistroLogo": false,
                     "colorizeSystemIcon": "none",
                     "colorizeSystemText": "none",
@@ -143,7 +143,7 @@
                     "showPowerProfiles": false
                 },
                 {
-                    "displayMode": "alwaysShow",
+                    "displayMode": "onhover",
                     "iconColor": "none",
                     "id": "Volume",
                     "middleClickCommand": "pwvucontrol || pavucontrol",
@@ -151,7 +151,7 @@
                 },
                 {
                     "applyToAllMonitors": false,
-                    "displayMode": "alwaysShow",
+                    "displayMode": "onhover",
                     "iconColor": "none",
                     "id": "Brightness",
                     "textColor": "none"
@@ -168,12 +168,6 @@
                 {
                     "displayMode": "onhover",
                     "iconColor": "none",
-                    "id": "Network",
-                    "textColor": "none"
-                },
-                {
-                    "displayMode": "onhover",
-                    "iconColor": "none",
                     "id": "Bluetooth",
                     "textColor": "none"
                 },
@@ -182,18 +176,11 @@
                     "iconColor": "none",
                     "id": "VPN",
                     "textColor": "none"
-                },
-                {
-                    "displayMode": "onhover",
-                    "iconColor": "none",
-                    "id": "Microphone",
-                    "middleClickCommand": "pwvucontrol || pavucontrol",
-                    "textColor": "none"
                 }
             ],
             "right": [
                 {
-                    "compactMode": true,
+                    "compactMode": false,
                     "diskPath": "/",
                     "iconColor": "none",
                     "id": "SystemMonitor",
@@ -217,7 +204,7 @@
                 {
                     "clockColor": "none",
                     "customFont": "",
-                    "formatHorizontal": "dddd, MMMM dd | yyyy-MM-dd | HH:mm:ss",
+                    "formatHorizontal": "dddd | yyyy-MM-dd | HH:mm:ss",
                     "formatVertical": "HH:mm:ss yyyy-MM-dd dddd-MMMM-dd",
                     "id": "Clock",
                     "tooltipFormat": "yyyy-MM-dd dddd, MMMM dd HH:mm:ss",
