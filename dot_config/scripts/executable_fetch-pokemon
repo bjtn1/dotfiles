@@ -47,6 +47,9 @@ curl -s --max-time 5 -o "$IMAGE.tmp" "$sprite_url" && mv "$IMAGE.tmp" "$IMAGE"
 
 id=$(jq -r '.id // empty' <<< "$response")
 name=$(jq -r '.name // empty' <<< "$response")
+# PokeAPI names are always lowercase -- capitalize just the first letter.
+# Using awk (not bash 4+'s ${var^}) since macOS ships bash 3.2 by default.
+name=$(printf '%s' "$name" | awk '{print toupper(substr($0,1,1)) substr($0,2)}')
 echo "#$id $name" > "$CACHE_DIR/pokemon.name"
 
 # fastfetch caches its encoded logo keyed by this file's *path*, not its
