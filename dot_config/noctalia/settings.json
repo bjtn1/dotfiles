@@ -124,6 +124,16 @@
                     "unfocusedIconsOpacity": 1
                 },
                 {
+                    "colorizeDistroLogo": false,
+                    "colorizeSystemIcon": "none",
+                    "colorizeSystemText": "none",
+                    "customIconPath": "",
+                    "enableColorization": false,
+                    "icon": "settings",
+                    "id": "ControlCenter",
+                    "useDistroLogo": false
+                },
+                {
                     "hideWhenZero": false,
                     "hideWhenZeroUnread": false,
                     "iconColor": "none",
@@ -155,18 +165,37 @@
                     "textColor": "none"
                 },
                 {
-                    "colorizeDistroLogo": false,
-                    "colorizeSystemIcon": "none",
-                    "colorizeSystemText": "none",
-                    "customIconPath": "",
-                    "enableColorization": false,
-                    "icon": "settings",
-                    "id": "ControlCenter",
-                    "useDistroLogo": false
+                    "iconColor": "none",
+                    "id": "NightLight"
                 },
                 {
                     "iconColor": "none",
                     "id": "KeepAwake",
+                    "textColor": "none"
+                },
+                {
+                    "displayMode": "onhover",
+                    "iconColor": "none",
+                    "id": "Network",
+                    "textColor": "none"
+                },
+                {
+                    "displayMode": "onhover",
+                    "iconColor": "none",
+                    "id": "Bluetooth",
+                    "textColor": "none"
+                },
+                {
+                    "displayMode": "onhover",
+                    "iconColor": "none",
+                    "id": "VPN",
+                    "textColor": "none"
+                },
+                {
+                    "displayMode": "onhover",
+                    "iconColor": "none",
+                    "id": "Microphone",
+                    "middleClickCommand": "pwvucontrol || pavucontrol",
                     "textColor": "none"
                 }
             ],
@@ -447,11 +476,11 @@
     },
     "location": {
         "analogClockInCalendar": false,
-        "autoLocate": false,
+        "autoLocate": true,
         "firstDayOfWeek": -1,
         "hideWeatherCityName": false,
         "hideWeatherTimezone": false,
-        "name": "",
+        "name": "Rockville",
         "showCalendarEvents": true,
         "showCalendarWeather": true,
         "showWeekNumberInCalendar": false,
@@ -468,7 +497,7 @@
         "bluetoothRssiPollIntervalMs": 60000,
         "bluetoothRssiPollingEnabled": false,
         "disableDiscoverability": false,
-        "networkPanelView": "wifi",
+        "networkPanelView": "ethernet",
         "wifiDetailsViewMode": "grid"
     },
     "nightLight": {
