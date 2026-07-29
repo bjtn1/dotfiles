@@ -37,8 +37,12 @@ case Linux:
   setxkbmap -option "caps:escape"
 end
 
-# fastfetch
-alias ff="fastfetch"
+# fastfetch (fetches a fresh random Pokemon logo from PokeAPI each run --
+# pass a number or name, e.g. `ff pikachu` or `ff 25`, for a specific one)
+function ff
+  ~/.config/scripts/fetch-pokemon $argv
+  fastfetch
+end
 
 # pfetch
 alias pf="pfetch && wal --preview"
