@@ -68,6 +68,11 @@
       // "format": "{ipv4} ({ifname})"
     },
     {
+      "key": "│ {#37} pokedex {#keys}│",
+      "type": "command",
+      "text": "cat ~/.cache/fastfetch/pokemon.name 2>/dev/null"
+    },
+    {
       "key": "├───────────┤",
       "type": "custom"
     },
