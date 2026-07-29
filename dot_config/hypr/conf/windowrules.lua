@@ -21,7 +21,12 @@ hl.window_rule({ match = { title = "^(nm-connection-editor)$" }, float = true })
 hl.window_rule({ match = { title = "^(qalculate-gtk)$" }, float = true })
 
 -- i like it when kitty is semi-transparent
-hl.window_rule({ match = { class = "^(kitty)$" }, opacity = "0.85 override" })
+hl.window_rule({
+  match = {
+    class = "^(kitty)$"
+  },
+  opacity = "0.85 override",
+})
 
 -- Browser Picture in Picture
 hl.window_rule({

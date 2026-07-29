@@ -25,7 +25,7 @@ hl.on("hyprland.start", function()
   -- swap_caps_lock_to_esc script removed
 
   -- open these apps in these workspaces
-  hl.exec_cmd("kitty", { workspace = "2 silent" })
+  hl.exec_cmd("kitty", { workspace = "1 silent" })
   -- hl.exec_cmd("librewolf", { workspace = "2 silent" })
   -- hl.exec_cmd("mullvad-browser", { workspace = "2 silent" })
 
