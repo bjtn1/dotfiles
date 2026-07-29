@@ -237,7 +237,7 @@
         "generationMethod": "tonal-spot",
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
-        "monitorForColors": "",
+        "monitorForColors": "DP-2",
         "predefinedScheme": "Noctalia (default)",
         "schedulingMode": "off",
         "syncGsettings": true,
@@ -627,6 +627,7 @@
     },
     "templates": {
         "activeTemplates": [
+          { "id": "kitty", "enabled": true }
         ],
         "enableUserTheming": false
     },
