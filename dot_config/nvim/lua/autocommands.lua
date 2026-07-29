@@ -45,7 +45,6 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
-{{ if eq .chezmoi.hostname "athena-cos" -}}
 -- Transparent background to match kitty's transparency on this machine.
 -- Must run on ColorScheme (not just once at startup) since loading a
 -- colorscheme resets Normal/NormalFloat to its own opaque background.
@@ -58,4 +57,3 @@ end
 
 vim.api.nvim_create_autocmd("ColorScheme", { callback = make_bg_transparent })
 make_bg_transparent()
-{{ end -}}
