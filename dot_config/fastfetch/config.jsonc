@@ -63,11 +63,6 @@
       "type": "memory"
     },
     {
-      "key": "│ {#36}󰩟 network {#keys}│",
-      "type": "publicip",
-      // "format": "{ipv4} ({ifname})"
-    },
-    {
       "key": "│ {#37}󰐝 Pokemon {#keys}│",
       "type": "command",
       "text": "cat ~/.cache/fastfetch/pokemon.name 2>/dev/null"
