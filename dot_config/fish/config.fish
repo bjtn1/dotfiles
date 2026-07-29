@@ -38,8 +38,13 @@ case Linux:
 end
 
 # fastfetch (fetches a fresh random Pokemon logo from PokeAPI each run --
-# pass a number or name, e.g. `ff pikachu` or `ff 25`, for a specific one)
+# pass a number or name, e.g. `ff pikachu` or `ff 25`, for a specific one;
+# `ff --forms <name>` lists available forms, e.g. `ff --forms charizard`)
 function ff
+  if test "$argv[1]" = "--forms"
+    ~/.config/scripts/fetch-pokemon $argv
+    return
+  end
   ~/.config/scripts/fetch-pokemon $argv
   fastfetch
 end
