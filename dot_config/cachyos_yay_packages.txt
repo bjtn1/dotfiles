@@ -190,6 +190,7 @@ plocate
 plymouth
 poppler-glib
 power-profiles-daemon
+proton-vpn-gtk-app
 pv
 python
 python-defusedxml
