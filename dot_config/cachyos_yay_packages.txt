@@ -115,6 +115,7 @@ inetutils
 inotify-tools
 iwd
 jfsutils
+jq
 kate
 kcalc
 kdeconnect
