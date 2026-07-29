@@ -197,6 +197,7 @@ python-packaging
 python-pyqt5
 python-pywal16
 python-reportlab
+python311
 qt5-wayland
 qt6-wayland
 realtime-privileges
