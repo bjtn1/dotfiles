@@ -44,16 +44,3 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.statuscolumn = ""
   end,
 })
-
--- Transparent background to match kitty's transparency on this machine.
--- Must run on ColorScheme (not just once at startup) since loading a
--- colorscheme resets Normal/NormalFloat to its own opaque background.
--- This file loads after vim.cmd.colorscheme() in init.lua, so also
--- apply it immediately here to cover the initial load.
-local function make_bg_transparent()
-  vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-  vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-end
-
-vim.api.nvim_create_autocmd("ColorScheme", { callback = make_bg_transparent })
-make_bg_transparent()
