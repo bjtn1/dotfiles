@@ -141,7 +141,7 @@
                     "showPowerProfiles": false
                 },
                 {
-                    "displayMode": "onhover",
+                    "displayMode": "alwaysShow",
                     "iconColor": "none",
                     "id": "Volume",
                     "middleClickCommand": "pwvucontrol || pavucontrol",
@@ -149,7 +149,7 @@
                 },
                 {
                     "applyToAllMonitors": false,
-                    "displayMode": "onhover",
+                    "displayMode": "alwaysShow",
                     "iconColor": "none",
                     "id": "Brightness",
                     "textColor": "none"
@@ -627,7 +627,10 @@
     },
     "templates": {
         "activeTemplates": [
-          { "id": "kitty", "enabled": true }
+            {
+                "enabled": true,
+                "id": "kitty"
+            }
         ],
         "enableUserTheming": false
     },
