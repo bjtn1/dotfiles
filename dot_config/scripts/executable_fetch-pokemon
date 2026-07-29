@@ -15,7 +15,7 @@ mkdir -p "$CACHE_DIR"
 if [[ "${1:-}" == "--forms" ]]; then
   species=$(printf '%s' "${2:-}" | tr '[:upper:]' '[:lower:]')
   curl -s --max-time 3 "https://pokeapi.co/api/v2/pokemon-species/$species" \
-    | jq -r '.varieties[]?.pokemon.name // empty'
+    | jq -r '.varieties[]?.pokemon | "#\(.url | split("/")[-2]) \(.name)"'
   exit 0
 fi
 
