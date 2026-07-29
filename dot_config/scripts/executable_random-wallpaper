@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# Picks a random wallpaper and sets it via noctalia's IPC. Exists as a
+# workaround: noctalia's own `wallpaper random` IPC command is broken on
+# this system -- WallpaperService.qml's setRandomWallpaper() unconditionally
+# references a bare, unimported `Screen.name` (not `Quickshell.screens[i]`)
+# whenever wallpaper.enableMultiMonitorDirectories is false, which silently
+# resolves to nothing and no-ops. `wallpaper set` doesn't have this bug (it
+# uses the correct Quickshell.screens pattern), so we pick the file
+# ourselves and call that instead.
+set -uo pipefail
+
+WALLPAPER_DIR="$HOME/.config/wallpapers"
+
+mapfile -t wallpapers < <(find "$WALLPAPER_DIR" -maxdepth 1 -type f \
+  \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" -o -iname "*.webp" \))
+
+if [[ ${#wallpapers[@]} -eq 0 ]]; then
+  exit 0
+fi
+
+# $RANDOM is a bash/zsh builtin -- no external dependency needed.
+pick="${wallpapers[$(( RANDOM % ${#wallpapers[@]} ))]}"
+
+qs ipc -c noctalia-shell call wallpaper set "$pick" ""

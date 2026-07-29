@@ -41,7 +41,9 @@ hl.bind("SUPER + Q", hl.dsp.window.close(), { description = "Windows: Close wind
 hl.bind("SUPER + RETURN", hl.dsp.window.fullscreen({ mode = "maximized" }), { description = "Windows: Maximize window" })
 
 -- change to random wallpaper
-hl.bind("SUPER + W", hl.dsp.exec_cmd("qs ipc -c noctalia-shell call wallpaper random \"\""), { description = "Wallpaper: Random wallpaper" })
+-- noctalia's own "wallpaper random" IPC is broken on this system (see
+-- scripts/random-wallpaper for why) -- using our own workaround instead
+hl.bind("SUPER + W", hl.dsp.exec_cmd("bash ~/.config/scripts/random-wallpaper"), { description = "Wallpaper: Random wallpaper" })
 
 -- toggle noctalia's wallpaper picker
 hl.bind("SUPER + SHIFT + W", hl.dsp.exec_cmd("qs ipc -c noctalia-shell call wallpaper toggle"), { description = "Wallpaper: Toggle wallpaper picker" })
