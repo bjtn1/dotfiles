@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+# Fetches a Pokemon's official artwork from PokeAPI for use as the fastfetch
+# logo. With no argument, picks a random one. With an argument, fetches that
+# specific Pokemon by number or name (e.g. "25" or "pikachu").
+# Leaves the existing cached image untouched on any failure (offline, API
+# down, bad name/number) so fastfetch always has something to show.
+set -uo pipefail
+
+CACHE_DIR="$HOME/.cache/fastfetch"
+IMAGE="$CACHE_DIR/pokemon.png"
+MAX_ID=1025
+
+mkdir -p "$CACHE_DIR"
+
+# $RANDOM is a bash/zsh builtin -- no external dependency (e.g. shuf, which
+# isn't available on macOS by default) needed for portability.
+random_query() { echo $(( (RANDOM % MAX_ID) + 1 )); }
+
+if [[ $# -gt 0 ]]; then
+  # PokeAPI names are lowercase (e.g. "pikachu", "mr-mime"); numbers pass through unchanged.
+  query=$(printf '%s' "$1" | tr '[:upper:]' '[:lower:]')
+else
+  query=$(random_query)
+fi
+
+response=$(curl -s --max-time 3 "https://pokeapi.co/api/v2/pokemon/$query")
+sprite_url=$(jq -r '.sprites.other."official-artwork".front_default // empty' <<< "$response" 2>/dev/null)
+
+if [[ -z "$sprite_url" && $# -gt 0 ]]; then
+  query=$(random_query)
+  response=$(curl -s --max-time 3 "https://pokeapi.co/api/v2/pokemon/$query")
+  sprite_url=$(jq -r '.sprites.other."official-artwork".front_default // empty' <<< "$response" 2>/dev/null)
+fi
+
+if [[ -z "$sprite_url" ]]; then
+  exit 0
+fi
+
+curl -s --max-time 5 -o "$IMAGE.tmp" "$sprite_url" && mv "$IMAGE.tmp" "$IMAGE"
+
+id=$(jq -r '.id // empty' <<< "$response")
+name=$(jq -r '.name // empty' <<< "$response")
+echo "#$id $name" > "$CACHE_DIR/pokemon.name"
+
+# fastfetch caches its encoded logo keyed by this file's *path*, not its
+# content -- since the path never changes (same filename every run), that
+# cache would otherwise keep serving the first-ever Pokemon forever.
+rm -rf "$CACHE_DIR/images"
