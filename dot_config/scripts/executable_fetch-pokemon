@@ -12,6 +12,13 @@ MAX_ID=1025
 
 mkdir -p "$CACHE_DIR"
 
+if [[ "${1:-}" == "--forms" ]]; then
+  species=$(printf '%s' "${2:-}" | tr '[:upper:]' '[:lower:]')
+  curl -s --max-time 3 "https://pokeapi.co/api/v2/pokemon-species/$species" \
+    | jq -r '.varieties[]?.pokemon.name // empty'
+  exit 0
+fi
+
 # $RANDOM is a bash/zsh builtin -- no external dependency (e.g. shuf, which
 # isn't available on macOS by default) needed for portability.
 random_query() { echo $(( (RANDOM % MAX_ID) + 1 )); }
