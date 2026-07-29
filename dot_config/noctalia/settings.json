@@ -134,14 +134,6 @@
                     "useDistroLogo": false
                 },
                 {
-                    "hideWhenZero": false,
-                    "hideWhenZeroUnread": false,
-                    "iconColor": "none",
-                    "id": "NotificationHistory",
-                    "showUnreadBadge": true,
-                    "unreadBadgeColor": "primary"
-                },
-                {
                     "deviceNativePath": "__default__",
                     "displayMode": "graphic-clean",
                     "hideIfIdle": false,
@@ -225,7 +217,7 @@
                 {
                     "clockColor": "none",
                     "customFont": "",
-                    "formatHorizontal": "yyyy-MM-dd dddd, MMMM dd HH:mm:ss",
+                    "formatHorizontal": "dddd, MMMM dd | yyyy-MM-dd | HH:mm:ss",
                     "formatVertical": "HH:mm:ss yyyy-MM-dd dddd-MMMM-dd",
                     "id": "Clock",
                     "tooltipFormat": "yyyy-MM-dd dddd, MMMM dd HH:mm:ss",
@@ -234,6 +226,14 @@
                 {
                     "iconColor": "error",
                     "id": "SessionMenu"
+                },
+                {
+                    "hideWhenZero": false,
+                    "hideWhenZeroUnread": false,
+                    "iconColor": "none",
+                    "id": "NotificationHistory",
+                    "showUnreadBadge": true,
+                    "unreadBadgeColor": "primary"
                 }
             ]
         }
