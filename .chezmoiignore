@@ -4,6 +4,7 @@
 .config/noctalia/colors.json
 .config/kdeglobals
 .local/share/color-schemes
+.config/kitty/current-theme.conf
 
 # Hard-block: live Firefox profile data (cookies, saved logins, history).
 # Config lives separately in .config/firefox-custom/, applied via
