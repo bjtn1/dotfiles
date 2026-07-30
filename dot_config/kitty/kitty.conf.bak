@@ -1462,7 +1462,7 @@ font_size 13.0
 #: yes
 #:     Remote control requests are always accepted.
 
-listen_on unix:/tmp/kitty
+# listen_on none
 
 #: Listen to the specified socket for remote control connections. Note
 #: that this will apply to all kitty instances. It can be overridden
@@ -2599,7 +2599,7 @@ listen_on unix:/tmp/kitty
 
 #: }}}
 
-include ~/.config/kitty/current-theme.conf
+# include ~/.config/kitty/current-theme.conf
 
 allow_remote_control yes
 dynamic_background_opacity yes
@@ -2612,5 +2612,10 @@ background_opacity 0.90
 map ctrl+shift+equal  set_background_opacity +0.1
 map ctrl+shift+minus  set_background_opacity -0.1
 map ctrl+shift+0      kitten toggle_opacity.py
+
+# BEGIN_KITTY_THEME
+# Noctalia
+include current-theme.conf
+# END_KITTY_THEME
 
 background #000000
