@@ -13,7 +13,10 @@ while true; do
 
     # -s skips wal's own terminal color application (including SIGUSR1 to kitty)
     # so we can handle the kitty update ourselves without opacity resets
-    /Users/bjtn/.local/bin/wal -i "$CURRENT" -q -s --backend haishoku
+    # -b 000000 forces the background in colors.json/sequences itself, so
+    # the nvim `wallpaper` colorscheme (colors/wallpaper.lua) matches Linux
+    # instead of picking up the wallpaper's natural background color
+    /Users/bjtn/.local/bin/wal -i "$CURRENT" -q -s -b 000000 --backend haishoku
     cp ~/.cache/wal/colors-kitty.conf ~/.config/kitty/current-theme.conf
     # Force background and terminal black (color0) to stay pure black
     sed -i '' 's/^background[[:space:]].*/background         #000000/' ~/.config/kitty/current-theme.conf
