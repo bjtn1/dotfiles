@@ -37,35 +37,16 @@ case Linux:
   setxkbmap -option "caps:escape"
 end
 
-# fastfetch (shows a random Pokemon logo instantly, refetched in the
-# background after every run so it's different next time; if a fetch is
-# still in flight from a very recent call, waits on it instead of showing
-# a stale duplicate. Pass a number or name, e.g. `ff pikachu` or `ff 25`,
-# for a specific one -- that one always waits, since you asked for it
-# specifically. `ff --forms <name>` lists available forms.)
+# fastfetch (shows a random Pokemon logo, freshly picked every run. Pass a
+# number or name, e.g. `ff pikachu` or `ff 25`, for a specific one.
+# `ff --forms <name>` lists available forms. fetch-pokemon reads from a
+# local sprite cache -- see ~/.config/scripts/download-all-pokemon -- so
+# this is near-instant as long as that cache is populated; it only touches
+# the network on a genuine cache miss.)
 function ff
-  if test (count $argv) -gt 0
-    ~/.config/scripts/fetch-pokemon $argv
-    if test "$argv[1]" = "--forms"
-      return
-    end
-    fastfetch
+  ~/.config/scripts/fetch-pokemon $argv
+  if test (count $argv) -gt 0 -a "$argv[1]" = "--forms"
     return
-  end
-
-  set lock ~/.cache/fastfetch/fetch.lock
-  set waited 0
-  while test -f "$lock" -a $waited -lt 30
-    sleep 0.1
-    set waited (math $waited + 1)
-  end
-
-  if not test -f ~/.cache/fastfetch/pokemon.png
-    # first run ever, nothing cached yet -- have to wait this one time
-    ~/.config/scripts/fetch-pokemon
-  else
-    ~/.config/scripts/fetch-pokemon > /dev/null 2>&1 &
-    disown
   end
   fastfetch
 end
