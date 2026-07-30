@@ -10,7 +10,15 @@ CACHE_DIR="$HOME/.cache/fastfetch"
 IMAGE="$CACHE_DIR/pokemon.png"
 MAX_ID=1025
 
-mkdir -p "$CACHE_DIR"
+# Every Pokemon we've ever displayed gets kept here permanently, keyed by
+# id. Sprite artwork is immutable (same id always means the same image), so
+# once we've fetched one there's never a reason to hit the network for it
+# again -- this is what makes repeat/random `ff` calls fast after the cache
+# warms up.
+PERSIST_DIR="$CACHE_DIR/sprites"
+NAME_INDEX="$PERSIST_DIR/name-index.tsv"
+mkdir -p "$CACHE_DIR" "$PERSIST_DIR"
+touch "$NAME_INDEX"
 
 if [[ "${1:-}" == "--forms" ]]; then
   species=$(printf '%s' "${2:-}" | tr '[:upper:]' '[:lower:]')
@@ -27,38 +35,84 @@ trap 'rm -f "$LOCK"' EXIT
 
 # $RANDOM is a bash/zsh builtin -- no external dependency (e.g. shuf, which
 # isn't available on macOS by default) needed for portability.
-random_query() { echo $(( (RANDOM % MAX_ID) + 1 )); }
+random_id() { echo $(( (RANDOM % MAX_ID) + 1 )); }
+
+# Points pokemon.png/pokemon.name at an already-cached id. Returns 1 if
+# that id isn't cached yet.
+use_cached_id() {
+  local id="$1"
+  if [[ -f "$PERSIST_DIR/$id.png" && -f "$PERSIST_DIR/$id.name" ]]; then
+    cp "$PERSIST_DIR/$id.png" "$IMAGE"
+    cp "$PERSIST_DIR/$id.name" "$CACHE_DIR/pokemon.name"
+    rm -rf "$CACHE_DIR/images"
+    return 0
+  fi
+  return 1
+}
+
+# Fetches a Pokemon fresh from the API by numeric id, populates the persist
+# cache, and points pokemon.png/pokemon.name at it. Returns 1 on any failure
+# (bad id, offline, no artwork).
+fetch_fresh_id() {
+  local id="$1"
+  local response sprite_url name
+  response=$(curl -s --max-time 3 "https://pokeapi.co/api/v2/pokemon/$id")
+  sprite_url=$(jq -r '.sprites.other."official-artwork".front_default // empty' <<< "$response" 2>/dev/null)
+  [[ -z "$sprite_url" ]] && return 1
+
+  curl -s --max-time 5 -o "$PERSIST_DIR/$id.png.tmp" "$sprite_url" || return 1
+  mv "$PERSIST_DIR/$id.png.tmp" "$PERSIST_DIR/$id.png"
+
+  name=$(jq -r '.name // empty' <<< "$response")
+  [[ -z "$name" ]] && return 1
+  # PokeAPI names are always lowercase -- capitalize just the first letter.
+  # Using awk (not bash 4+'s ${var^}) since macOS ships bash 3.2 by default.
+  name=$(printf '%s' "$name" | awk '{print toupper(substr($0,1,1)) substr($0,2)}')
+  echo "#$id $name" > "$PERSIST_DIR/$id.name"
+  printf '%s\t%s\n' "$(printf '%s' "$name" | tr '[:upper:]' '[:lower:]')" "$id" >> "$NAME_INDEX"
+
+  use_cached_id "$id"
+}
 
 if [[ $# -gt 0 ]]; then
   # PokeAPI names are lowercase (e.g. "pikachu", "mr-mime"); numbers pass through unchanged.
   query=$(printf '%s' "$1" | tr '[:upper:]' '[:lower:]')
-else
-  query=$(random_query)
+
+  if [[ "$query" =~ ^[0-9]+$ ]]; then
+    id="$query"
+  else
+    # Named lookup -- check what we've already learned before hitting the API.
+    id=$(awk -F'\t' -v q="$query" '$1 == q { print $2; exit }' "$NAME_INDEX")
+  fi
+
+  if [[ -n "${id:-}" ]] && use_cached_id "$id"; then
+    exit 0
+  fi
+
+  if [[ -n "${id:-}" ]]; then
+    # Numeric id (cache miss) -- fetch it directly.
+    fetch_fresh_id "$id" && exit 0
+  else
+    # Unknown name -- ask the API to resolve it, which also gives us the id.
+    response=$(curl -s --max-time 3 "https://pokeapi.co/api/v2/pokemon/$query")
+    id=$(jq -r '.id // empty' <<< "$response" 2>/dev/null)
+    if [[ -n "$id" ]] && fetch_fresh_id "$id"; then
+      exit 0
+    fi
+  fi
+
+  # Bad name/number -- fall through to a random pick instead of erroring out.
 fi
 
-response=$(curl -s --max-time 3 "https://pokeapi.co/api/v2/pokemon/$query")
-sprite_url=$(jq -r '.sprites.other."official-artwork".front_default // empty' <<< "$response" 2>/dev/null)
-
-if [[ -z "$sprite_url" && $# -gt 0 ]]; then
-  query=$(random_query)
-  response=$(curl -s --max-time 3 "https://pokeapi.co/api/v2/pokemon/$query")
-  sprite_url=$(jq -r '.sprites.other."official-artwork".front_default // empty' <<< "$response" 2>/dev/null)
-fi
-
-if [[ -z "$sprite_url" ]]; then
-  exit 0
-fi
-
-curl -s --max-time 5 -o "$IMAGE.tmp" "$sprite_url" && mv "$IMAGE.tmp" "$IMAGE"
-
-id=$(jq -r '.id // empty' <<< "$response")
-name=$(jq -r '.name // empty' <<< "$response")
-# PokeAPI names are always lowercase -- capitalize just the first letter.
-# Using awk (not bash 4+'s ${var^}) since macOS ships bash 3.2 by default.
-name=$(printf '%s' "$name" | awk '{print toupper(substr($0,1,1)) substr($0,2)}')
-echo "#$id $name" > "$CACHE_DIR/pokemon.name"
-
-# fastfetch caches its encoded logo keyed by this file's *path*, not its
-# content -- since the path never changes (same filename every run), that
-# cache would otherwise keep serving the first-ever Pokemon forever.
-rm -rf "$CACHE_DIR/images"
+# Random: try a locally-cached id first (zero network), then fall back to
+# fetching a fresh random one, retrying a handful of times against transient
+# API hiccups before giving up and leaving the existing image untouched.
+for _ in 1 2 3 4 5; do
+  id=$(random_id)
+  if use_cached_id "$id"; then
+    exit 0
+  fi
+  if fetch_fresh_id "$id"; then
+    exit 0
+  fi
+done
