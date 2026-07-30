@@ -32,7 +32,6 @@ Library
 # Linux-only — ignore on macOS
 {{ if ne .chezmoi.os "linux" }}
 .xinitrc
-.config/grub-themes
 .config/hypr
 .config/nwg-look
 .config/pi_apt_packages.txt
@@ -46,7 +45,6 @@ Library
 # Arch-only — ignore on Pi
 {{ if and (eq .chezmoi.os "linux") (eq .chezmoi.arch "arm64") }}
 .xinitrc
-.config/grub-themes
 .config/hypr
 .config/nwg-look
 {{ end }}
