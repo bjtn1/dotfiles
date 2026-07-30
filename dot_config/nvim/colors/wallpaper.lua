@@ -200,36 +200,54 @@ for group, link in pairs(ts_links) do
   vim.api.nvim_set_hl(0, group, { link = link })
 end
 
--- Auto-repaint: poll the cache file's mtime and reapply this whole file
--- whenever it changes. Guarded so re-running `:colorscheme wallpaper` (which
--- re-executes this file, including this block) doesn't stack up timers.
+-- Auto-repaint: watch the cache directory for changes (fs events, not
+-- polling -- inotify on Linux, FSEvents on macOS) and reapply this whole
+-- file whenever colors.json is written. A short debounce timer absorbs the
+-- multiple events a single write can fire (CREATE/WRITE/RENAME) and avoids
+-- reading the file mid-write. Guarded so re-running `:colorscheme wallpaper`
+-- (which re-executes this file, including this block) doesn't stack up
+-- watchers.
 if not vim.g._wallpaper_colorscheme_watching then
   vim.g._wallpaper_colorscheme_watching = true
 
   local uv = vim.uv or vim.loop
-  local last_mtime = vim.fn.getftime(cache_path)
-  local timer = uv.new_timer()
+  local cache_dir = vim.fn.fnamemodify(cache_path, ":h")
+  local cache_name = vim.fn.fnamemodify(cache_path, ":t")
 
-  timer:start(
-    2000,
-    2000,
-    vim.schedule_wrap(function()
-      if vim.g.colors_name ~= "wallpaper" then
+  local debounce = uv.new_timer()
+  local fs_event = uv.new_fs_event()
+
+  fs_event:start(
+    cache_dir,
+    {},
+    vim.schedule_wrap(function(err, filename)
+      if err or (filename and filename ~= cache_name) then
         return
       end
-      local mtime = vim.fn.getftime(cache_path)
-      if mtime ~= last_mtime then
-        last_mtime = mtime
-        vim.cmd.colorscheme("wallpaper")
-      end
+      debounce:stop()
+      debounce:start(
+        100,
+        0,
+        vim.schedule_wrap(function()
+          if vim.g.colors_name == "wallpaper" then
+            vim.cmd.colorscheme("wallpaper")
+          end
+        end)
+      )
     end)
   )
 
   vim.api.nvim_create_autocmd("ColorScheme", {
     callback = function(args)
-      if args.match ~= "wallpaper" and not timer:is_closing() then
-        timer:stop()
-        timer:close()
+      if args.match ~= "wallpaper" then
+        if not fs_event:is_closing() then
+          fs_event:stop()
+          fs_event:close()
+        end
+        if not debounce:is_closing() then
+          debounce:stop()
+          debounce:close()
+        end
         vim.g._wallpaper_colorscheme_watching = false
       end
     end,
