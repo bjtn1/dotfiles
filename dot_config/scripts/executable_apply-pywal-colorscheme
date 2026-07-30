@@ -12,9 +12,34 @@ KDE_CACHE_DIR="$HOME/.cache/wal-kde"
 wal -i "$WALLPAPER" -b 000000 -s -q
 [[ "$WALLPAPER" -ef ~/.config/hypr/current_wallpaper ]] || cp "$WALLPAPER" ~/.config/hypr/current_wallpaper
 
+# ~/.cache/wal/sequences is shared global state (not namespaced by --out-dir)
+# and fish's config.fish cats it on every new shell startup to live-set the
+# terminal's OSC background color. Save the black-forced version now so it
+# survives the "natural" KDE wal run below, which rewrites this same file.
+cp ~/.cache/wal/sequences ~/.cache/wal/sequences.black
+
+# kitty: pick up the wallpaper-derived palette but keep the background pure
+# black regardless of what wal picks (kitty.conf's trailing `background
+# #000000` also enforces this, but set it here too so `kitty @` queries
+# report the right value before a config reload).
+cp ~/.cache/wal/colors-kitty.conf ~/.config/kitty/current-theme.conf
+sed -i 's/^background[[:space:]].*/background #000000/' ~/.config/kitty/current-theme.conf
+
+# Push the new theme to every already-running kitty instance. kitty does not
+# reload kitty.conf on file change or on SIGUSR1, so this requires talking to
+# each instance's remote-control socket (kitty.conf sets `listen_on unix:/tmp/kitty`,
+# which kitty expands per-instance to /tmp/kitty-<pid>).
+for sock in /tmp/kitty-*; do
+    [[ -S "$sock" ]] || continue
+    kitty @ --to "unix:$sock" set-colors --all --configured ~/.config/kitty/current-theme.conf 2>/dev/null || true
+done
+
 # Separate cache: natural wallpaper-derived background, for dolphin only
 mkdir -p "$KDE_CACHE_DIR"
 wal -i "$WALLPAPER" -n -s -e -q --out-dir "$KDE_CACHE_DIR"
+
+# Restore the black-forced sequences file this run just clobbered.
+mv ~/.cache/wal/sequences.black ~/.cache/wal/sequences
 
 mkdir -p ~/.local/share/color-schemes
 
