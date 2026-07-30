@@ -19,14 +19,65 @@ local function readWalColor(name)
   f:close()
 end
 
-local activeBorder = readWalColor("color11") or "0xffffffff"
-local inactiveBorder = readWalColor("color8") or "0xff444444"
+-- wal's extracted "bright" accent (color11) is often too muted/dark to read
+-- as an active-window indicator, depending on the wallpaper. Force it to a
+-- consistently vivid, bright version of whatever hue it has instead of
+-- using the raw extracted value.
+local function hexToRgb01(str)
+  local hex = str:match("(%x%x%x%x%x%x)")
+  if not hex then return nil end
+  return tonumber(hex:sub(1, 2), 16) / 255, tonumber(hex:sub(3, 4), 16) / 255, tonumber(hex:sub(5, 6), 16) / 255
+end
+
+local function rgbToHue(r, g, b)
+  local max, min = math.max(r, g, b), math.min(r, g, b)
+  if max == min then return 0 end
+  local d = max - min
+  local h
+  if max == r then
+    h = (g - b) / d + (g < b and 6 or 0)
+  elseif max == g then
+    h = (b - r) / d + 2
+  else
+    h = (r - g) / d + 4
+  end
+  return h / 6
+end
+
+local function hue2rgb(p, q, t)
+  if t < 0 then t = t + 1 end
+  if t > 1 then t = t - 1 end
+  if t < 1 / 6 then return p + (q - p) * 6 * t end
+  if t < 1 / 2 then return q end
+  if t < 2 / 3 then return p + (q - p) * (2 / 3 - t) * 6 end
+  return p
+end
+
+local function brighten(str, sat, light)
+  local r, g, b = hexToRgb01(str)
+  if not r then return str end
+  local h = rgbToHue(r, g, b)
+  local q = light < 0.5 and light * (1 + sat) or light + sat - light * sat
+  local p = 2 * light - q
+  local nr = hue2rgb(p, q, h + 1 / 3)
+  local ng = hue2rgb(p, q, h)
+  local nb = hue2rgb(p, q, h - 1 / 3)
+  return string.format(
+    "rgb(%02X%02X%02X)",
+    math.floor(nr * 255 + 0.5),
+    math.floor(ng * 255 + 0.5),
+    math.floor(nb * 255 + 0.5)
+  )
+end
+
+local activeBorder = brighten(readWalColor("color11") or "rgb(ffffff)", 0.8, 0.68)
+local inactiveBorder = readWalColor("color8") or "rgb(444444)"
 
 hl.config({
   general = {
     gaps_in = 1,
     gaps_out = 1,
-    border_size = 4,
+    border_size = 3,
     layout = "dwindle",
     resize_on_border = true,
     col = {
