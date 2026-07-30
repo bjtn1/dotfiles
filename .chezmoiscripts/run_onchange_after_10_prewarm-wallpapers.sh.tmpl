@@ -1,0 +1,12 @@
+#!/bin/bash
+# wallpaper listing checksum: {{ output "sh" "-c" "find \"$HOME/.config/wallpapers\" -maxdepth 1 -type f 2>/dev/null | sort | sha256sum | cut -d' ' -f1" | trim }}
+# Warms noctalia's per-wallpaper cache whenever the wallpaper set actually
+# changes (external repo pull, manually added file). The checksum comment
+# above is what drives that -- chezmoi only re-runs a run_onchange_ script
+# when its rendered content changes, and run_onchange_after_ guarantees this
+# runs after the .config/wallpapers external sync in the same apply.
+[[ "$(uname -s)" == "Linux" ]] || exit 0
+command -v qs &>/dev/null || exit 0
+[[ -x "$HOME/.config/scripts/prewarm-noctalia-wallpapers" ]] || exit 0
+
+"$HOME/.config/scripts/prewarm-noctalia-wallpapers"
