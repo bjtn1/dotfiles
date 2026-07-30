@@ -9,6 +9,8 @@
 - [The wallpaper → color theming pipeline](#the-wallpaper--color-theming-pipeline)
    * [Linux (CachyOS / Hyprland / noctalia)](#linux-cachyos--hyprland--noctalia)
    * [macOS](#macos)
+- [The `wallpaper` nvim colorscheme](#the-wallpaper-nvim-colorscheme)
+- [Pokemon fastfetch (`ff`)](#pokemon-fastfetch-ff)
 - [Manual maintenance commands](#manual-maintenance-commands)
 - [Files chezmoi deliberately does NOT track](#files-chezmoi-deliberately-does-not-track)
 - [macOS-only details](#macos-only-details)
@@ -92,6 +94,8 @@ Every script in `.chezmoiscripts/` also has its own guard at the top (`[[ "$(una
 
 These run in numeric order, once per machine (chezmoi hashes each script and re-runs it only if its content changes). Each one guards itself for the right OS/distro and no-ops otherwise, so this whole list runs unattended on `chezmoi init --apply` regardless of which machine you're on.
 
+Two of them (`10` and `11`) aren't `run_once_`, they're `run_onchange_`/plain `run_once_` with a different re-run trigger — called out below.
+
 | Script | What it does |
 |---|---|
 | `01_install-deps.sh` | **macOS.** Installs everything in `Brewfile`, including `pywal16` and `skhd`. |
@@ -103,6 +107,8 @@ These run in numeric order, once per machine (chezmoi hashes each script and re-
 | `07_set-default-shell.sh` | **Arch-based Linux.** Registers `fish` in `/etc/shells` and `chsh`s you into it. |
 | `08_generate-wal-colors.sh` | **CachyOS.** Runs `apply-pywal-colorscheme` once against `~/.config/hypr/current_wallpaper` so the pywal caches exist before anything tries to read them (Hyprland's `$color*` vars, kdeglobals, etc.). |
 | `09_setup-firefox-config.sh` | **Linux.** If Firefox has no profile yet, launches it headless just long enough to create one, applies the tracked `user.js`, then (if there's an actual display) opens each extension's addons.mozilla.org page so you can one-click install them. |
+| `run_onchange_after_10_prewarm-wallpapers.sh.tmpl` | **Linux.** Runs `prewarm-noctalia-wallpapers`, which sets each wallpaper in `~/.config/wallpapers/` in turn to warm noctalia's per-wallpaper cache. Not a plain `run_once` — it's keyed off a checksum of the wallpaper directory listing embedded as a template comment in the script, so it re-runs automatically whenever the wallpaper set actually changes (e.g. the external repo pulls in new files), not just once ever. `_after_` guarantees it runs after that same apply's `.chezmoiexternal.toml` sync. **Heads up:** since it calls `wallpaper set` on every file with a short sleep between each, this visibly flickers through your entire wallpaper collection and lands on whichever sorts last — not whatever was showing before. |
+| `11_download-pokemon.sh` | **Cross-platform.** Bulk-downloads every Pokemon's fastfetch artwork (normal + shiny, all 1025) via `download-all-pokemon`, so `ff` (see below) is instant from the first use instead of hitting PokeAPI per new Pokemon. |
 
 ---
 
@@ -142,16 +148,40 @@ Parallel, older, simpler pipeline — no noctalia on macOS:
 
 ---
 
+<!-- TOC --><a name="the-wallpaper-nvim-colorscheme"></a>
+# The `wallpaper` nvim colorscheme
+
+`~/.config/nvim/colors/wallpaper.lua` is a real Neovim colorscheme generated live from the same `~/.cache/wal/colors.json` the pipeline above already maintains — same palette as kitty, on both machines. It's the default (`init.lua` calls `vim.cmd.colorscheme("wallpaper")` on startup); switch away any time with `:colorscheme <name>`.
+
+- Maps pywal's 16-slot palette onto base16-style semantics (color1=red/error, color2=green/string, color3=yellow/warning, color4=blue/function, color5=magenta/keyword, color6=cyan/type), then sets every classic highlight group plus the treesitter `@`-capture groups (linked onto the classic ones, not hand-tuned individually) and LSP diagnostic groups.
+- **Repaints automatically when the wallpaper changes** — no polling. It watches `~/.cache/wal/` for filesystem events (inotify on Linux, FSEvents on macOS) via `vim.uv.new_fs_event()`, debounced 100ms to let a write settle before re-reading, then reruns the whole colorscheme. Stops watching cleanly the moment you switch to a different colorscheme, so it won't fight you.
+- If the cache file is missing or unparseable, it `vim.notify`s an error and leaves your current highlights alone rather than crashing.
+- Needs `-b 000000` in whatever `wal` invocation writes `colors.json` for the background to come out pure black — both `apply-pywal-colorscheme` (Linux) and `wal-wallpaper-watch.sh` (macOS) pass it, so this looks identical on both machines.
+
+---
+
+<!-- TOC --><a name="pokemon-fastfetch-ff"></a>
+# Pokemon fastfetch (`ff`)
+
+Run `ff` instead of `fastfetch` and you get a random Pokemon (official artwork, small chance of shiny) as the logo instead of a distro icon.
+
+- `ff` (fish function in `config.fish`) runs `fetch-pokemon` then `fastfetch`.
+- `~/.config/scripts/fetch-pokemon` — with no argument, picks a random Pokemon (id 1–1025); with an argument, fetches a specific one by number or name (`ff 25`, `ff pikachu`). 1-in-10 chance of shiny by default (`SHINY_CHANCE`, real games use 1-in-4096). Checks a persistent local cache first (`~/.cache/fastfetch/sprites/`, keyed by id) so repeat calls hit PokeAPI only on a genuine miss; on any failure (offline, bad name, API down) it leaves the previous image in place instead of erroring.
+- `~/.config/scripts/download-all-pokemon` — bulk-fetches all 1025 into that same persistent cache (10 in parallel), normal + shiny sprites for each. Safe to re-run any time, skips whatever's already cached. This is what `run_once_11` runs automatically on a new machine, so `ff` is instant from day one instead of filling in gradually.
+
+---
+
 <!-- TOC --><a name="manual-maintenance-commands"></a>
 # Manual maintenance commands
 
-These aren't wired to any keybind or hook — you run them by hand.
+These aren't wired to any keybind — you run them by hand. Two of them (marked below) now also fire automatically from `.chezmoiscripts/`, but re-running by hand any time is still fine — both are idempotent.
 
 | Command | What it does |
 |---|---|
 | `bac` (`~/.config/scripts/bac`) | Cross-platform: backs up installed packages (`yay -Qqe` on Linux, `brew bundle dump` on Mac) and re-syncs every already-tracked config directory into the chezmoi source, then `chezmoi re-add`s anything else. This is what actually commits+pushes your day-to-day config edits — chezmoi's `autopush` only fires on chezmoi's own commands (`add`, `forget`, `re-add`, `apply`), not on you editing a file directly, so nothing gets committed until you run `bac`. |
 | `dots` (fish function) | The macOS-only, Homebrew-flavored version of the same idea: `brew update && brew upgrade`, dumps the `Brewfile`, then `chezmoi re-add`. |
-| `~/.config/scripts/prewarm-noctalia-wallpapers` | Calls `qs ipc … wallpaper set` on every file in `~/.config/wallpapers/` once, so noctalia's per-wallpaper cache (resize + Material You color extraction) is already warm and picking a wallpaper never eats the one-time processing cost live. Safe to re-run any time you add wallpapers. |
+| `~/.config/scripts/prewarm-noctalia-wallpapers` | Calls `qs ipc … wallpaper set` on every file in `~/.config/wallpapers/` once, so noctalia's per-wallpaper cache (resize + Material You color extraction) is already warm and picking a wallpaper never eats the one-time processing cost live. *Also runs automatically — see `run_onchange_after_10` above.* |
+| `~/.config/scripts/download-all-pokemon` | Bulk-fetches all 1025 Pokemon sprites into the `ff` cache. *Also runs automatically once — see `run_once_11` above.* |
 | `~/.config/scripts/restore-packages` | The read side of `bac`'s package backup — reinstalls from the saved package list. |
 | `chezmoi status` / `cms` | Shows what would change if you ran `chezmoi apply` right now. |
 | `chezmoi doctor` / `cmd` | Health check — verifies git state, checks for required external tools (`nvim`, `gpg`, etc.), flags config issues. |
