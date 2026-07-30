@@ -3,6 +3,7 @@
 hl.config({
   input = {
     kb_layout = "us",
+    kb_options = "caps:escape",
     follow_mouse = 1,
     sensitivity = 0, -- -1.0 - 1.0, 0 means no modification.
     touchpad = {
@@ -19,7 +20,3 @@ hl.config({
 -- Example per-device config
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Devices/
 hl.device({ name = "epic-mouse-v1", sensitivity = 1 })
-
--- caps_lock_to_escape.conf did nothing (fully commented out) and duplicated this same
--- disabled option; consolidated here as the one place to re-enable it later.
--- kb_options = "caps:swapescape"
