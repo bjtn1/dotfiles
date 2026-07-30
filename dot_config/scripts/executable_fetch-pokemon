@@ -2,6 +2,7 @@
 # Fetches a Pokemon's official artwork from PokeAPI for use as the fastfetch
 # logo. With no argument, picks a random one. With an argument, fetches that
 # specific Pokemon by number or name (e.g. "25" or "pikachu").
+# Every pull has a small chance of being shiny (see SHINY_CHANCE below).
 # Leaves the existing cached image untouched on any failure (offline, API
 # down, bad name/number) so fastfetch always has something to show.
 set -uo pipefail
@@ -9,12 +10,16 @@ set -uo pipefail
 CACHE_DIR="$HOME/.cache/fastfetch"
 IMAGE="$CACHE_DIR/pokemon.png"
 MAX_ID=1025
+# 1 in this many pulls comes back shiny. Real games use 1/4096, which would
+# basically never show up here -- bumped way up since this is just for fun.
+SHINY_CHANCE=10
+STAR="★"
 
 # Every Pokemon we've ever displayed gets kept here permanently, keyed by
-# id. Sprite artwork is immutable (same id always means the same image), so
-# once we've fetched one there's never a reason to hit the network for it
-# again -- this is what makes repeat/random `ff` calls fast after the cache
-# warms up.
+# id -- both its normal and shiny sprite. Sprite artwork is immutable (same
+# id always means the same image), so once we've fetched one there's never
+# a reason to hit the network for it again -- this is what makes
+# repeat/random `ff` calls fast after the cache warms up.
 PERSIST_DIR="$CACHE_DIR/sprites"
 NAME_INDEX="$PERSIST_DIR/name-index.tsv"
 mkdir -p "$CACHE_DIR" "$PERSIST_DIR"
@@ -36,32 +41,47 @@ trap 'rm -f "$LOCK"' EXIT
 # $RANDOM is a bash/zsh builtin -- no external dependency (e.g. shuf, which
 # isn't available on macOS by default) needed for portability.
 random_id() { echo $(( (RANDOM % MAX_ID) + 1 )); }
+roll_shiny() { (( RANDOM % SHINY_CHANCE == 0 )); }
 
-# Points pokemon.png/pokemon.name at an already-cached id. Returns 1 if
-# that id isn't cached yet.
+# Points pokemon.png/pokemon.name at an already-cached id (shiny sprite if
+# requested and available). Returns 1 if that variant isn't cached yet.
 use_cached_id() {
-  local id="$1"
-  if [[ -f "$PERSIST_DIR/$id.png" && -f "$PERSIST_DIR/$id.name" ]]; then
-    cp "$PERSIST_DIR/$id.png" "$IMAGE"
-    cp "$PERSIST_DIR/$id.name" "$CACHE_DIR/pokemon.name"
+  local id="$1" shiny="$2"
+  local sprite="$PERSIST_DIR/$id.png"
+  [[ "$shiny" == 1 ]] && sprite="$PERSIST_DIR/$id.shiny.png"
+
+  if [[ -f "$sprite" && -f "$PERSIST_DIR/$id.name" ]]; then
+    cp "$sprite" "$IMAGE"
+    local name
+    name=$(cat "$PERSIST_DIR/$id.name")
+    [[ "$shiny" == 1 ]] && name="$name $STAR"
+    echo "$name" > "$CACHE_DIR/pokemon.name"
     rm -rf "$CACHE_DIR/images"
     return 0
   fi
   return 1
 }
 
-# Fetches a Pokemon fresh from the API by numeric id, populates the persist
-# cache, and points pokemon.png/pokemon.name at it. Returns 1 on any failure
-# (bad id, offline, no artwork).
+# Fetches a Pokemon fresh from the API by numeric id -- both its normal and
+# shiny sprite, so the persist cache always has both ready for next time --
+# then points pokemon.png/pokemon.name at the requested variant. Returns 1
+# on any failure (bad id, offline, no artwork).
 fetch_fresh_id() {
-  local id="$1"
-  local response sprite_url name
+  local id="$1" shiny="$2"
+  local response sprite_url shiny_url name
   response=$(curl -s --max-time 3 "https://pokeapi.co/api/v2/pokemon/$id")
   sprite_url=$(jq -r '.sprites.other."official-artwork".front_default // empty' <<< "$response" 2>/dev/null)
   [[ -z "$sprite_url" ]] && return 1
 
   curl -s --max-time 5 -o "$PERSIST_DIR/$id.png.tmp" "$sprite_url" || return 1
   mv "$PERSIST_DIR/$id.png.tmp" "$PERSIST_DIR/$id.png"
+
+  shiny_url=$(jq -r '.sprites.other."official-artwork".front_shiny // empty' <<< "$response" 2>/dev/null)
+  if [[ -n "$shiny_url" ]] && curl -s --max-time 5 -o "$PERSIST_DIR/$id.shiny.png.tmp" "$shiny_url"; then
+    mv "$PERSIST_DIR/$id.shiny.png.tmp" "$PERSIST_DIR/$id.shiny.png"
+  else
+    rm -f "$PERSIST_DIR/$id.shiny.png.tmp"
+  fi
 
   name=$(jq -r '.name // empty' <<< "$response")
   [[ -z "$name" ]] && return 1
@@ -71,12 +91,17 @@ fetch_fresh_id() {
   echo "#$id $name" > "$PERSIST_DIR/$id.name"
   printf '%s\t%s\n' "$(printf '%s' "$name" | tr '[:upper:]' '[:lower:]')" "$id" >> "$NAME_INDEX"
 
-  use_cached_id "$id"
+  # If the shiny variant failed to download, fall back to the normal one
+  # rather than erroring out over a cosmetic miss.
+  [[ "$shiny" == 1 && ! -f "$PERSIST_DIR/$id.shiny.png" ]] && shiny=0
+  use_cached_id "$id" "$shiny"
 }
 
 if [[ $# -gt 0 ]]; then
   # PokeAPI names are lowercase (e.g. "pikachu", "mr-mime"); numbers pass through unchanged.
   query=$(printf '%s' "$1" | tr '[:upper:]' '[:lower:]')
+  shiny=0
+  roll_shiny && shiny=1
 
   if [[ "$query" =~ ^[0-9]+$ ]]; then
     id="$query"
@@ -85,18 +110,18 @@ if [[ $# -gt 0 ]]; then
     id=$(awk -F'\t' -v q="$query" '$1 == q { print $2; exit }' "$NAME_INDEX")
   fi
 
-  if [[ -n "${id:-}" ]] && use_cached_id "$id"; then
+  if [[ -n "${id:-}" ]] && use_cached_id "$id" "$shiny"; then
     exit 0
   fi
 
   if [[ -n "${id:-}" ]]; then
     # Numeric id (cache miss) -- fetch it directly.
-    fetch_fresh_id "$id" && exit 0
+    fetch_fresh_id "$id" "$shiny" && exit 0
   else
     # Unknown name -- ask the API to resolve it, which also gives us the id.
     response=$(curl -s --max-time 3 "https://pokeapi.co/api/v2/pokemon/$query")
     id=$(jq -r '.id // empty' <<< "$response" 2>/dev/null)
-    if [[ -n "$id" ]] && fetch_fresh_id "$id"; then
+    if [[ -n "$id" ]] && fetch_fresh_id "$id" "$shiny"; then
       exit 0
     fi
   fi
@@ -109,10 +134,12 @@ fi
 # API hiccups before giving up and leaving the existing image untouched.
 for _ in 1 2 3 4 5; do
   id=$(random_id)
-  if use_cached_id "$id"; then
+  shiny=0
+  roll_shiny && shiny=1
+  if use_cached_id "$id" "$shiny"; then
     exit 0
   fi
-  if fetch_fresh_id "$id"; then
+  if fetch_fresh_id "$id" "$shiny"; then
     exit 0
   fi
 done

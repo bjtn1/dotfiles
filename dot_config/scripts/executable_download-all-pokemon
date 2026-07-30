@@ -24,20 +24,31 @@ fi
 fetch_one() {
   local name="$1" id="$2"
   local persist_dir="$HOME/.cache/fastfetch/sprites"
-  if [[ -f "$persist_dir/$id.png" && -f "$persist_dir/$id.name" ]]; then
-    return 0
-  fi
   local display
   display=$(printf '%s' "$name" | awk '{print toupper(substr($0,1,1)) substr($0,2)}')
-  local url="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/$id.png"
-  if curl -s --max-time 10 -o "$persist_dir/$id.png.tmp" "$url" && [[ -s "$persist_dir/$id.png.tmp" ]]; then
-    mv "$persist_dir/$id.png.tmp" "$persist_dir/$id.png"
-    echo "#$id $display" > "$persist_dir/$id.name"
-    echo "  [$id] $display"
-  else
-    rm -f "$persist_dir/$id.png.tmp"
-    echo "  [$id] $display -- FAILED" >&2
+
+  if [[ ! -f "$persist_dir/$id.png" || ! -f "$persist_dir/$id.name" ]]; then
+    local url="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/$id.png"
+    if curl -s --max-time 10 -o "$persist_dir/$id.png.tmp" "$url" && [[ -s "$persist_dir/$id.png.tmp" ]]; then
+      mv "$persist_dir/$id.png.tmp" "$persist_dir/$id.png"
+      echo "#$id $display" > "$persist_dir/$id.name"
+    else
+      rm -f "$persist_dir/$id.png.tmp"
+      echo "  [$id] $display -- FAILED" >&2
+      return
+    fi
   fi
+
+  if [[ ! -f "$persist_dir/$id.shiny.png" ]]; then
+    local shiny_url="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/$id.png"
+    if curl -s --max-time 10 -o "$persist_dir/$id.shiny.png.tmp" "$shiny_url" && [[ -s "$persist_dir/$id.shiny.png.tmp" ]]; then
+      mv "$persist_dir/$id.shiny.png.tmp" "$persist_dir/$id.shiny.png"
+    else
+      rm -f "$persist_dir/$id.shiny.png.tmp"
+    fi
+  fi
+
+  echo "  [$id] $display"
 }
 export -f fetch_one
 
@@ -54,5 +65,6 @@ for f in "$PERSIST_DIR"/*.name; do
   printf '%s\t%s\n' "$name" "$id" >> "$NAME_INDEX"
 done
 
-total=$(ls "$PERSIST_DIR"/*.png 2>/dev/null | wc -l)
-echo "Done. $total/$MAX_ID Pokemon cached in $PERSIST_DIR."
+total=$(find "$PERSIST_DIR" -maxdepth 1 -name '*.png' ! -name '*.shiny.png' | wc -l)
+shiny_total=$(find "$PERSIST_DIR" -maxdepth 1 -name '*.shiny.png' | wc -l)
+echo "Done. $total/$MAX_ID Pokemon cached ($shiny_total shiny) in $PERSIST_DIR."
