@@ -18,7 +18,16 @@ if [[ ! -f "$yay_file" ]]; then
 fi
 
 if ! command -v yay &>/dev/null; then
-    echo ">>> yay not available, skipping package install."
+    echo ">>> yay not found, bootstrapping it from the AUR..."
+    sudo pacman -S --needed --noconfirm base-devel git
+    yay_build_dir="$(mktemp -d)"
+    git clone --depth 1 https://aur.archlinux.org/yay-bin.git "$yay_build_dir"
+    (cd "$yay_build_dir" && makepkg -si --needed --noconfirm)
+    rm -rf "$yay_build_dir"
+fi
+
+if ! command -v yay &>/dev/null; then
+    echo ">>> yay bootstrap failed, skipping package install."
     exit 0
 fi
 

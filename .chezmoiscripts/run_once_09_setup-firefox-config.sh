@@ -25,3 +25,18 @@ if [[ -x "$APPLY_SCRIPT" ]]; then
     echo ">>> Applying Firefox user.js..."
     "$APPLY_SCRIPT" || echo ">>> Firefox profile still not ready -- run $APPLY_SCRIPT manually later."
 fi
+
+# Open each tracked extension's AMO page so they can be installed with one
+# click. Only makes sense with an actual display to show it on.
+EXT_FILE="$HOME/.config/firefox-custom/extensions.txt"
+if [[ -f "$EXT_FILE" && -n "${DISPLAY:-}${WAYLAND_DISPLAY:-}" ]]; then
+    ext_urls=()
+    while IFS='|' read -r id url _name; do
+        [[ "$id" =~ ^#.*$ || -z "$url" ]] && continue
+        ext_urls+=("$url")
+    done < "$EXT_FILE"
+    if [[ ${#ext_urls[@]} -gt 0 ]]; then
+        echo ">>> Opening extension pages for manual install..."
+        firefox "${ext_urls[@]}" &>/dev/null &disown
+    fi
+fi

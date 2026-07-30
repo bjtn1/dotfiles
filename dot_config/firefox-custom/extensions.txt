@@ -1,5 +1,7 @@
 # Extension IDs, not their live storage/settings -- reinstall each from
 # addons.mozilla.org and sign back into any that need it (Proton Pass).
-uBlock0@raymondhill.net                        # uBlock Origin
-78272b6fa58f4a1abaac99321d503a20@proton.me     # Proton Pass: Free Password Manager
-ipp-activator@mozilla.com                      # IPP Activator
+# Format: id|AMO url|name. run_once_09_setup-firefox-config.sh opens the URL
+# column in Firefox on first run so you can click Install on each.
+uBlock0@raymondhill.net|https://addons.mozilla.org/firefox/addon/ublock-origin/|uBlock Origin
+78272b6fa58f4a1abaac99321d503a20@proton.me|https://addons.mozilla.org/firefox/addon/proton-pass/|Proton Pass: Free Password Manager
+ipp-activator@mozilla.com|https://addons.mozilla.org/firefox/addon/ipp-activator/|IPP Activator
