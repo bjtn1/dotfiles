@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-set -euo pipefail
-
-# Default sleep time = 60 seconds
-SLEEP_TIME=${1:-60}
-
-while true; do sleep "$SLEEP_TIME"; waypaper --folder ~/.config/wallpapers/ --random; done
