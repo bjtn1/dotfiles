@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+# One-time (or re-run anytime) bulk download: fetches every Pokemon's
+# official artwork into the same persistent cache fetch-pokemon reads from,
+# so `ff` never has to hit the network in normal use. Safe to re-run --
+# skips anything already cached, so it only ever fetches what's missing.
+set -uo pipefail
+
+CACHE_DIR="$HOME/.cache/fastfetch"
+PERSIST_DIR="$CACHE_DIR/sprites"
+NAME_INDEX="$PERSIST_DIR/name-index.tsv"
+MAX_ID=1025
+PARALLEL=10
+
+mkdir -p "$PERSIST_DIR"
+touch "$NAME_INDEX"
+
+echo "Fetching Pokemon name list..."
+list=$(curl -s --max-time 15 "https://pokeapi.co/api/v2/pokemon?limit=$MAX_ID")
+if [[ -z "$list" ]]; then
+  echo "Failed to reach PokeAPI, aborting." >&2
+  exit 1
+fi
+
+fetch_one() {
+  local name="$1" id="$2"
+  local persist_dir="$HOME/.cache/fastfetch/sprites"
+  if [[ -f "$persist_dir/$id.png" && -f "$persist_dir/$id.name" ]]; then
+    return 0
+  fi
+  local display
+  display=$(printf '%s' "$name" | awk '{print toupper(substr($0,1,1)) substr($0,2)}')
+  local url="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/$id.png"
+  if curl -s --max-time 10 -o "$persist_dir/$id.png.tmp" "$url" && [[ -s "$persist_dir/$id.png.tmp" ]]; then
+    mv "$persist_dir/$id.png.tmp" "$persist_dir/$id.png"
+    echo "#$id $display" > "$persist_dir/$id.name"
+    echo "  [$id] $display"
+  else
+    rm -f "$persist_dir/$id.png.tmp"
+    echo "  [$id] $display -- FAILED" >&2
+  fi
+}
+export -f fetch_one
+
+jq -r '.results[] | "\(.name)\t\(.url | split("/")[-2])"' <<< "$list" \
+  | xargs -P "$PARALLEL" -n 2 -L 1 bash -c 'fetch_one "$0" "$1"'
+
+# Rebuild the name index fresh from whatever's actually cached, rather than
+# appending -- keeps it correct even after a partial/interrupted run.
+: > "$NAME_INDEX"
+for f in "$PERSIST_DIR"/*.name; do
+  [[ -e "$f" ]] || continue
+  id=$(basename "$f" .name)
+  name=$(cut -d' ' -f2- < "$f" | tr '[:upper:]' '[:lower:]')
+  printf '%s\t%s\n' "$name" "$id" >> "$NAME_INDEX"
+done
+
+total=$(ls "$PERSIST_DIR"/*.png 2>/dev/null | wc -l)
+echo "Done. $total/$MAX_ID Pokemon cached in $PERSIST_DIR."
