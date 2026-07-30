@@ -4,8 +4,4 @@ set -euo pipefail
 
 sudo echo
 
-randomize-sddm-theme
-
-randomize-grub-theme
-
 systemctl reboot
