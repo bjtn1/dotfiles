@@ -25,9 +25,6 @@ hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd("hyprshot -m region --clipboard-onl
 -- open clipboard manager (noctalia)
 hl.bind("SUPER + V", hl.dsp.exec_cmd("qs ipc -c noctalia-shell call launcher clipboard"), { description = "Utility: Clipboard history" })
 
--- toggle workspace overview (hyprexpo plugin)
-hl.bind(mainMod .. " + O", function() hl.plugin.hyprexpo.expo("toggle") end, { description = "Workspaces: Toggle overview" })
-
 -- list all open windows across every workspace (noctalia launcher, >win mode)
 hl.bind(mainMod .. " + SHIFT + Tab", hl.dsp.exec_cmd("qs ipc -c noctalia-shell call launcher windows"), { description = "Windows: List all open windows" })
 

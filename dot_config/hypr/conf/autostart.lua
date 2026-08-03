@@ -5,9 +5,6 @@ hl.on("hyprland.start", function()
   -- polkit agent (Plasma's own agent is tied to the Plasma session, not this one)
   hl.exec_cmd("hyprpolkitagent")
 
-  -- reload hyprpm-managed plugins (hyprexpo) into this fresh Hyprland instance
-  hl.exec_cmd("hyprpm reload")
-
   -- enable hypridle
   hl.exec_cmd("systemctl --user enable --now hypridle.service")
 
