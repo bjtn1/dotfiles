@@ -183,7 +183,6 @@ pavucontrol
 perl
 phonon-qt6-vlc
 pipes.sh
-pipeweaver
 pipeweaver-app
 pipewire-alsa
 pipewire-pulse
@@ -193,6 +192,7 @@ plocate
 plymouth
 poppler-glib
 power-profiles-daemon
+proton-pass
 proton-vpn-gtk-app
 pv
 python
@@ -221,6 +221,8 @@ streamdeck-ui
 sudo
 sysfsutils
 system-config-printer
+tailscale
+tailscaledesktop
 tesseract-data-eng
 texinfo
 tmux
