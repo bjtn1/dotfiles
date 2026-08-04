@@ -14,6 +14,11 @@ hl.on("hyprland.start", function()
   -- enable noctalia-shell (bar, launcher, clipboard, wallpaper, colors)
   hl.exec_cmd("qs -c noctalia-shell")
 
+  -- pipeweaver: Wave Link-style audio mixer/router (Scarlett Solo). Runs in
+  -- the background with a tray icon; open the mixer via the tray, the
+  -- "Pipeweaver" app launcher entry, or `pipeweaver-app`.
+  hl.exec_cmd("pipeweaver-daemon --background")
+
   -- wallpaper now fully owned by noctalia-shell (restores its own last-set
   -- wallpaper on startup) — hyprpaper/waypaper no longer needed here
 
