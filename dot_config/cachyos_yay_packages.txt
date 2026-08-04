@@ -183,6 +183,8 @@ pavucontrol
 perl
 phonon-qt6-vlc
 pipes.sh
+pipeweaver
+pipeweaver-app
 pipewire-alsa
 pipewire-pulse
 pkgfile
