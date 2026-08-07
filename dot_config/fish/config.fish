@@ -22,6 +22,8 @@ function v --description 'Open nvim with files selected by fzf'
   end
 end
 
+set -gx LESS "--mouse --wheel-lines=3"
+
 if status is-interactive
   # Commands to run in interactive sessions can go here
 end
