@@ -1,11 +1,18 @@
 #!/bin/bash
+# CLI package list checksum: {{ include "dot_config/linux_brew_packages.txt" | sha256sum }}
 # Installs Homebrew (Linux) and the curated CLI tools in
 # .config/linux_brew_packages.txt, for non-CachyOS Arch-family Linux boxes
 # (e.g. the Steam Deck) that don't get them from run_once_05's yay list.
 # Everything Homebrew touches lives under /home/linuxbrew, which is on the
 # persistent /home partition, so it survives SteamOS-style atomic OS
-# updates that wipe pacman-installed packages on the read-only root. Runs
-# once per machine.
+# updates that wipe pacman-installed packages on the read-only root.
+#
+# run_onchange_after_ so this (a) runs after linux_brew_packages.txt has
+# actually been written to ~/.config by this same apply -- .chezmoiscripts
+# sorts before dot_config, so a plain run_once_ script here would read a
+# file that doesn't exist yet on a fresh machine -- and (b) re-runs
+# automatically whenever that list's content changes, since the checksum
+# comment above is part of what run_onchange_ hashes.
 [[ "$(uname -s)" == "Linux" ]] || exit 0
 command -v pacman &>/dev/null || exit 0
 
