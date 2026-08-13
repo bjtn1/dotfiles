@@ -4,6 +4,13 @@
 [[ "$(uname -s)" == "Linux" ]] || exit 0
 command -v pacman &>/dev/null || exit 0
 
+distro_id="$(. /etc/os-release && echo "$ID")"
+
+if [[ "$distro_id" != "cachyos" ]]; then
+    echo ">>> Unrecognized distro ($distro_id), skipping greetd setup."
+    exit 0
+fi
+
 GREETD_CONFIG="/etc/greetd/config.toml"
 if command -v greetd &>/dev/null && [[ ! -f "$GREETD_CONFIG" ]]; then
     echo ">>> Writing greetd config for noctalia-greeter..."
