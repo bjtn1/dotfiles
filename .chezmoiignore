@@ -35,6 +35,7 @@ Library
 .config/hypr
 .config/nwg-look
 .config/pi_apt_packages.txt
+.config/linux_brew_packages.txt
 {{ end }}
 
 # Pi-only — ignore on non-Pi (x86) Linux and macOS

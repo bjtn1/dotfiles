@@ -1,0 +1,38 @@
+#!/bin/bash
+# Installs Homebrew (Linux) and the curated CLI tools in
+# .config/linux_brew_packages.txt, for non-CachyOS Arch-family Linux boxes
+# (e.g. the Steam Deck) that don't get them from run_once_05's yay list.
+# Everything Homebrew touches lives under /home/linuxbrew, which is on the
+# persistent /home partition, so it survives SteamOS-style atomic OS
+# updates that wipe pacman-installed packages on the read-only root. Runs
+# once per machine.
+[[ "$(uname -s)" == "Linux" ]] || exit 0
+command -v pacman &>/dev/null || exit 0
+
+distro_id="$(. /etc/os-release && echo "$ID")"
+
+if [[ "$distro_id" == "cachyos" ]]; then
+    echo ">>> CachyOS detected, CLI tools come from run_once_05's yay list -- skipping Homebrew."
+    exit 0
+fi
+
+BREW="/home/linuxbrew/.linuxbrew/bin/brew"
+
+if [[ ! -x "$BREW" ]]; then
+    echo ">>> Installing Homebrew..."
+    NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+if [[ ! -x "$BREW" ]]; then
+    echo ">>> Homebrew install failed, skipping CLI tool install."
+    exit 0
+fi
+
+PKG_FILE="$HOME/.config/linux_brew_packages.txt"
+if [[ ! -f "$PKG_FILE" ]]; then
+    echo ">>> $PKG_FILE not found, skipping CLI tool install."
+    exit 0
+fi
+
+echo ">>> Installing CLI tools via Homebrew..."
+xargs -a "$PKG_FILE" "$BREW" install

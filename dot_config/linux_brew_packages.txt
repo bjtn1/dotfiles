@@ -1,0 +1,13 @@
+zoxide
+fzf
+bat
+eza
+fd
+ripgrep
+lazygit
+yazi
+ncdu
+tmux
+fastfetch
+jq
+neovim
