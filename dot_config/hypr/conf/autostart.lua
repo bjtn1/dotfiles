@@ -19,6 +19,13 @@ hl.on("hyprland.start", function()
   -- "Pipeweaver" app launcher entry, or `pipeweaver-app`.
   hl.exec_cmd("pipeweaver-daemon --background")
 
+  -- easyeffects: mic effects chain (noise gate, compressor, EQ, limiter).
+  -- Must be running for its "easyeffects_source" virtual mic to exist --
+  -- PipeWeaver's Microphone source is wired to that node by name (see
+  -- ~/.config/pipeweaver/pipeweaver-profile.json), so without this,
+  -- PipeWeaver has no mic input until EasyEffects is opened manually.
+  hl.exec_cmd("easyeffects --service-mode")
+
   -- wallpaper now fully owned by noctalia-shell (restores its own last-set
   -- wallpaper on startup) — hyprpaper/waypaper no longer needed here
 
