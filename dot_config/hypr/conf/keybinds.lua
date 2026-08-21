@@ -37,6 +37,9 @@ hl.bind("SUPER + Q", hl.dsp.window.close(), { description = "Windows: Close wind
 -- maximize active window
 hl.bind("SUPER + RETURN", hl.dsp.window.fullscreen({ mode = "maximized" }), { description = "Windows: Maximize window" })
 
+-- toggle floating mode for active window
+hl.bind("SUPER + F", hl.dsp.window.float({ action = "toggle" }), { description = "Windows: Toggle floating" })
+
 -- change to random wallpaper
 -- noctalia's own "wallpaper random" IPC is broken on this system (see
 -- scripts/random-wallpaper for why) -- using our own workaround instead

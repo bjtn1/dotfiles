@@ -141,6 +141,7 @@ linux-cachyos-lts-headers
 linux-firmware
 logrotate
 lsb-release
+lsp-plugins-lv2
 lsscsi
 luarocks
 lvm2
