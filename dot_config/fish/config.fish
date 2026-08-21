@@ -15,18 +15,12 @@ if test -e ~/.cache/wal/sequences && test "$TERM_PROGRAM" != iTerm.app
   cat ~/.cache/wal/sequences
 end
 
-function dc
-    docker compose -f ~/docker/$argv[1]/docker-compose.yml --project-directory ~/docker/$argv[1] $argv[2..-1]
-end
-
 function v --description 'Open nvim with files selected by fzf'
   set files (fzf --preview 'bat --color=always --style=header,grid --line-range :400 {}')
   if test -n "$files"
     nvim $files
   end
 end
-
-set -gx LESS "--mouse --wheel-lines=3"
 
 if status is-interactive
   # Commands to run in interactive sessions can go here
