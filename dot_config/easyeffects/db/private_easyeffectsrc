@@ -8,7 +8,6 @@ visiblePlugin=rnnoise#0
 blocklist=WEBRTC VoiceEngine
 outputDevice=alsa_output.usb-Focusrite_Scarlett_Solo_USB_Y71F9Y10BB2BEC-00.HiFi__Line__sink
 showBlocklistedApps=true
-visiblePage=pluginsPage
 
 [Window]
 height=509
