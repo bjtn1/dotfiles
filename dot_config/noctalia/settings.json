@@ -188,7 +188,7 @@
                     "showCpuFreq": false,
                     "showCpuTemp": true,
                     "showCpuUsage": true,
-                    "showDiskAvailable": true,
+                    "showDiskAvailable": false,
                     "showDiskUsage": true,
                     "showDiskUsageAsPercent": true,
                     "showGpuTemp": false,
