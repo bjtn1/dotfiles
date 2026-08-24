@@ -6,9 +6,10 @@ visiblePlugin=rnnoise#0
 
 [StreamOutputs]
 blocklist=WEBRTC VoiceEngine
-outputDevice=alsa_output.pci-0000_03_00.1.hdmi-stereo
+outputDevice=pipeweaver_system
 showBlocklistedApps=true
+visiblePage=pluginsPage
 
 [Window]
-height=1026
+height=509
 width=952
