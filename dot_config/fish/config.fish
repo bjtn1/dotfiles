@@ -36,6 +36,9 @@ end
 set -U fish_greeting
 set -gx EDITOR nvim
 
+# restic backups password
+set -x RESTIC_PASSWORD_FILE ~/.restic-password
+
 # remap caps lock to escape
 # does not work on Xwayland
 # only meaningful with an actual X session running (skips on headless boxes)
