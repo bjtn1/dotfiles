@@ -2,6 +2,7 @@ bat
 btop
 cmake
 curl
+default-jdk
 eza
 fastfetch
 fd-find
@@ -18,6 +19,7 @@ neovim
 nodejs
 npm
 openssh-server
+python3-venv
 ruby
 smartmontools
 tmux

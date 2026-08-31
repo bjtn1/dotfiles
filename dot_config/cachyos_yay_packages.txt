@@ -114,6 +114,7 @@ hyprshot
 inetutils
 inotify-tools
 iwd
+jdk-openjdk
 jfsutils
 jq
 kate
