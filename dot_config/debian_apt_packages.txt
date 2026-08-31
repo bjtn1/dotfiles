@@ -1,6 +1,7 @@
 bat
 btop
 cmake
+curl
 eza
 fastfetch
 fd-find
@@ -10,7 +11,9 @@ git
 gh
 htop
 imagemagick
+jq
 nano
+ncdu
 neovim
 nodejs
 npm

@@ -1,7 +1,8 @@
 #!/bin/bash
-# Sets fish as the default login shell on Arch-based Linux. Runs once per machine.
+# Sets fish as the default login shell on any Linux box that has it
+# installed (Arch-family via run_once_05, or Debian-family via
+# run_once_04). Runs once per machine.
 [[ "$(uname -s)" == "Linux" ]] || exit 0
-command -v pacman &>/dev/null || exit 0
 
 FISH_PATH="$(command -v fish)"
 if [[ -z "$FISH_PATH" ]]; then

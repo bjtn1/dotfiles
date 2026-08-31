@@ -32,8 +32,8 @@ set -gx EDITOR nvim
 
 # remap caps lock to escape
 # does not work on Xwayland
-switch (uname)
-case Linux:
+# only meaningful with an actual X session running (skips on headless boxes)
+if test (uname) = Linux; and set -q DISPLAY; and command -q setxkbmap
   setxkbmap -option "caps:escape"
 end
 

@@ -26,7 +26,7 @@
 {{ if ne .chezmoi.os "darwin" }}
 Library
 .skhdrc
-.config/brewfile.txt
+.config/Brewfile
 {{ end }}
 
 # Linux-only — ignore on macOS
@@ -34,17 +34,17 @@ Library
 .xinitrc
 .config/hypr
 .config/nwg-look
-.config/pi_apt_packages.txt
+.config/debian_apt_packages.txt
 .config/linux_brew_packages.txt
 {{ end }}
 
-# Pi-only — ignore on non-Pi (x86) Linux and macOS
-{{ if or (ne .chezmoi.os "linux") (eq .chezmoi.arch "amd64") }}
-.config/pi_apt_packages.txt
+# Debian-family-only (Pi OR any other Debian/apt box) — ignore everywhere else
+{{ if ne .distroID "debian" }}
+.config/debian_apt_packages.txt
 {{ end }}
 
-# Arch-only — ignore on Pi
-{{ if and (eq .chezmoi.os "linux") (eq .chezmoi.arch "arm64") }}
+# CachyOS-only — ignore on every other Linux box (Pi, Debian, etc.), not just Pi
+{{ if ne .distroID "cachyos" }}
 .xinitrc
 .config/hypr
 .config/nwg-look

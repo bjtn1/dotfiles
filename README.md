@@ -3,6 +3,7 @@
 - [What this is](#what-this-is)
 - [Quickstart](#quickstart)
    * [New Mac](#new-mac)
+   * [New Debian-family box](#new-debian-family-box)
    * [New CachyOS Linux box](#new-cachyos-linux-box)
 - [How OS-conditional apply works](#how-os-conditional-apply-works)
 - [What `chezmoi apply` actually runs (`run_once_*` scripts)](#what-chezmoi-apply-actually-runs-run_once_-scripts)
@@ -27,12 +28,15 @@
 <!-- TOC --><a name="what-this-is"></a>
 # What this is
 
-One [chezmoi](https://www.chezmoi.io/) repo, two machines:
+One [chezmoi](https://www.chezmoi.io/) repo, several machines:
 
 - **A Mac** — Homebrew, skhd, launchd agents.
-- **A CachyOS Linux box** (Hyprland + [noctalia-shell](https://github.com/noctalia-dev/noctalia-shell)) — the primary daily driver.
+- **Debian-family boxes** (a Raspberry Pi, and now a Debian x86_64 home server) — plain apt CLI tools, no desktop environment.
+- **A CachyOS Linux box** (Hyprland + [noctalia-shell](https://github.com/noctalia-dev/noctalia-shell)) — currently dormant/not in active use, might get picked back up later. Its profile stays intact either way.
 
-Both share the same source repo; `.chezmoiignore` and the OS guards inside `.chezmoiscripts/` decide what actually lands on each machine. If you're reading this because you forgot how any of it works — that's exactly what this file is for. Read top to bottom, it's written in the order things actually happen.
+All share the same source repo; `.chezmoiignore` and the OS/distro guards inside `.chezmoiscripts/` decide what actually lands on each machine, based on a `distroID` computed from `/etc/os-release` (see below) — not just CPU architecture, since two very different Linux setups (CachyOS desktop vs. a headless Debian server) can share the same `amd64` arch. If you're reading this because you forgot how any of it works — that's exactly what this file is for. Read top to bottom, it's written in the order things actually happen.
+
+> **Reviving the CachyOS box**: since `.chezmoi.toml.tmpl` (which computes `distroID`) only runs at `chezmoi init` time, not on a plain `apply`/`update`, that machine's already-generated config predates the `distroID` addition. Re-run `chezmoi init` there (not just `apply`) before trusting `.chezmoiignore` again.
 
 ---
 
@@ -57,6 +61,23 @@ Both share the same source repo; `.chezmoiignore` and the OS guards inside `.che
 
 That single command triggers the whole `run_once_*` chain below — Homebrew packages, key remapping, launchd agents, everything.
 
+<!-- TOC --><a name="new-debian-family-box"></a>
+## New Debian-family box
+
+Covers a Raspberry Pi (Raspberry Pi OS) or a plain Debian box (e.g. the x86_64 home server) alike — both resolve to `distroID = "debian"`.
+
+1. Install chezmoi (not in Debian's own apt repos as of trixie — use the official install script):
+   ```
+   sh -c "$(curl -fsLS get.chezmoi.io)"
+   ```
+   This installs the binary to `~/.local/bin` — make sure that's on `$PATH` before the next step.
+2. Initialize and apply:
+   ```
+   chezmoi init --apply bjtn1
+   ```
+
+This installs every package in `debian_apt_packages.txt` via `apt-get`, applies the generic cross-platform configs (nvim, fish, kitty, tmux, scripts), and skips everything Mac-only or CachyOS-only. No desktop-environment setup happens here at all — this profile is CLI-only, whether the box is a Pi or a headless x86_64 server. Needs `sudo` once, for the apt install step.
+
 <!-- TOC --><a name="new-cachyos-linux-box"></a>
 ## New CachyOS Linux box
 
@@ -76,16 +97,16 @@ This will bootstrap `yay` itself if it isn't already on the system, then install
 <!-- TOC --><a name="how-os-conditional-apply-works"></a>
 # How OS-conditional apply works
 
-`.chezmoiignore` hides whole paths depending on `.chezmoi.os` / `.chezmoi.arch`, so `chezmoi apply` only ever touches files relevant to the machine it's running on:
+`.chezmoiignore` hides whole paths depending on `.chezmoi.os` and a custom `distroID` value, so `chezmoi apply` only ever touches files relevant to the machine it's running on. `distroID` is computed once, in `.chezmoi.toml.tmpl`, at `chezmoi init` time — it shells out to read `/etc/os-release`'s `ID` (and `ID_LIKE`, so Debian-derivatives like Ubuntu would also count as `"debian"`, matching the `/etc/debian_version` check `run_once_04` uses), and stays empty on macOS. This exists specifically because CPU architecture alone can't tell two different x86_64 Linux setups apart — a CachyOS desktop and a headless Debian server are both `linux`/`amd64`, but need opposite treatment:
 
-| Path | macOS | Linux (CachyOS, x86_64) | Linux (Pi, arm64) |
+| Path | macOS | CachyOS (`distroID=cachyos`) | Debian-family (`distroID=debian`, Pi or x86_64) |
 |---|---|---|---|
 | `Library/` (LaunchAgents), `.skhdrc`, `.config/brewfile.txt` | ✅ | ❌ | ❌ |
 | `.xinitrc`, `.config/hypr/`, `.config/nwg-look/` | ❌ | ✅ | ❌ |
-| `.config/pi_apt_packages.txt` | ❌ | ❌ | ✅ |
+| `.config/debian_apt_packages.txt` | ❌ | ❌ | ✅ |
 | Everything else (nvim, fish, kitty, tmux, scripts, …) | ✅ | ✅ | ✅ |
 
-Every script in `.chezmoiscripts/` also has its own guard at the top (`[[ "$(uname -s)" == "Darwin" ]] || exit 0`, etc.), so even if something isn't hidden by `.chezmoiignore`, the wrong-OS scripts still no-op instead of running.
+Every script in `.chezmoiscripts/` also has its own guard at the top (`[[ "$(uname -s)" == "Darwin" ]] || exit 0`, `[[ -f /etc/debian_version ]] || exit 0`, etc.), so even if something isn't hidden by `.chezmoiignore`, the wrong-machine scripts still no-op instead of running.
 
 ---
 
@@ -101,10 +122,10 @@ Two of them (`10` and `11`) aren't `run_once_`, they're `run_onchange_`/plain `r
 | `01_install-deps.sh` | **macOS.** Installs everything in `Brewfile`, including `pywal16` and `skhd`. |
 | `02_setup-macos.sh` | **macOS.** Caps Lock → Escape, Right Cmd → Right Ctrl, `Cmd+Shift+S` for screenshots. |
 | `03_load-agents.sh` | **macOS.** Loads the two launchd agents that shuffle wallpaper and watch for wallpaper changes. |
-| `04_install-pi-deps.sh` | **Raspberry Pi only.** Installs `apt` packages. |
+| `04_install-debian-deps.sh` | **Debian-family only** (Pi or x86_64). Installs `apt` packages from `debian_apt_packages.txt`. |
 | `05_install-arch-deps.sh` | **CachyOS.** Bootstraps `yay` from the AUR if it's missing (`base-devel` + `git` + `yay-bin` + `makepkg -si`), then installs every package in `cachyos_yay_packages.txt`. |
 | `06_setup-greetd.sh` | **CachyOS.** Writes `/etc/greetd/config.toml` pointing at `noctalia-greeter-session`, enables `greetd.service`, disables `sddm.service` if present, and patches PAM via noctalia-greeter's own setup script. This is what gets you an actual login screen. |
-| `07_set-default-shell.sh` | **Arch-based Linux.** Registers `fish` in `/etc/shells` and `chsh`s you into it. |
+| `07_set-default-shell.sh` | **Any Linux with `fish` installed** (Arch-family or Debian-family). Registers `fish` in `/etc/shells` and `chsh`s you into it. |
 | `08_generate-wal-colors.sh` | **CachyOS.** Runs `apply-pywal-colorscheme` once against `~/.config/hypr/current_wallpaper` so the pywal caches exist before anything tries to read them (Hyprland's `$color*` vars, kdeglobals, etc.). |
 | `09_setup-firefox-config.sh` | **Linux.** If Firefox has no profile yet, launches it headless just long enough to create one, applies the tracked `user.js`, then (if there's an actual display) opens each extension's addons.mozilla.org page so you can one-click install them. |
 | `run_onchange_after_10_prewarm-wallpapers.sh.tmpl` | **Linux.** Runs `prewarm-noctalia-wallpapers`, which sets each wallpaper in `~/.config/wallpapers/` in turn to warm noctalia's per-wallpaper cache. Not a plain `run_once` — it's keyed off a checksum of the wallpaper directory listing embedded as a template comment in the script, so it re-runs automatically whenever the wallpaper set actually changes (e.g. the external repo pulls in new files), not just once ever. `_after_` guarantees it runs after that same apply's `.chezmoiexternal.toml` sync. **Heads up:** since it calls `wallpaper set` on every file with a short sleep between each, this visibly flickers through your entire wallpaper collection and lands on whichever sorts last — not whatever was showing before. |
@@ -131,7 +152,7 @@ This is the part that's least obvious from just reading file names, so it gets i
    - Ping-pongs between two KDE color-scheme names (`PywalA`/`PywalB`) and runs `plasma-apply-colorscheme`, because that command no-ops if you ask it to re-apply whatever's already active.
    - Runs `hyprctl reload`.
 
-Wallpapers themselves live in `~/.config/wallpapers/`, pulled from a separate repo ([github.com/bjtn1/wallpapers](https://github.com/bjtn1/wallpapers)) via `.chezmoiexternal.toml` — it's ~750MB, too big to want inside the dotfiles repo proper, and refreshes every 7 days on `chezmoi apply`.
+Wallpapers themselves live in `~/.config/wallpapers/`, pulled from a separate repo ([github.com/bjtn1/wallpapers](https://github.com/bjtn1/wallpapers)) via `.chezmoiexternal.toml.tmpl` — it's ~750MB, too big to want inside the dotfiles repo proper, and refreshes every 7 days on `chezmoi apply`. Skipped entirely (`{{ if ne .distroID "debian" }}`) on Debian-family boxes — no GUI there to show a wallpaper on, not worth the bandwidth/disk.
 
 <!-- TOC --><a name="macos"></a>
 ## macOS

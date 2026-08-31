@@ -1,3 +1,17 @@
+{{- $distroID := "" -}}
+{{- if eq .chezmoi.os "linux" -}}
+{{-   $id := output "sh" "-c" ". /etc/os-release 2>/dev/null; echo -n \"$ID\"" -}}
+{{-   $idLike := output "sh" "-c" ". /etc/os-release 2>/dev/null; echo -n \"$ID_LIKE\"" -}}
+{{-   if or (eq $id "debian") (contains "debian" $idLike) -}}
+{{-     $distroID = "debian" -}}
+{{-   else -}}
+{{-     $distroID = $id -}}
+{{-   end -}}
+{{- end -}}
+
+[data]
+  distroID = {{ $distroID | quote }}
+
 [git]
   autopush = true
 
