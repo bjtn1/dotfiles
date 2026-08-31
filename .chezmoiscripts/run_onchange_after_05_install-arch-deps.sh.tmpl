@@ -1,5 +1,12 @@
 #!/bin/bash
-# Installs yay/AUR packages on CachyOS. Runs once per machine.
+# yay package list checksum: {{ include "dot_config/cachyos_yay_packages.txt" | sha256sum }}
+# Installs yay/AUR packages on CachyOS. run_onchange_after_ (not
+# run_once_) because .chezmoiscripts sorts before dot_config -- a plain
+# run_once_ here would silently never find cachyos_yay_packages.txt on a
+# fresh machine (it self-guards gracefully rather than erroring, but the
+# practical effect was the same: package install never actually ran).
+# The checksum comment above also means this re-runs automatically
+# whenever the package list changes, not just once ever.
 [[ "$(uname -s)" == "Linux" ]] || exit 0
 command -v pacman &>/dev/null || exit 0
 

@@ -1,5 +1,8 @@
 #!/bin/bash
 # Installs Homebrew packages, pywal16, and skhd. Runs once per machine.
+# _after_: reads dot_config/Brewfile, which wouldn't exist yet on a fresh
+# machine in a plain run_once_ script (.chezmoiscripts sorts before
+# dot_config).
 [[ "$(uname -s)" == "Darwin" ]] || exit 0
 
 # Homebrew packages

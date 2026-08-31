@@ -1,7 +1,9 @@
 #!/bin/bash
 # Sets fish as the default login shell on any Linux box that has it
-# installed (Arch-family via run_once_05, or Debian-family via
-# run_once_04). Runs once per machine.
+# installed (Arch-family via run_onchange_after_05, or Debian-family via
+# run_onchange_after_04). Runs once per machine.
+# _after_: needs fish itself already installed, so this has to run after
+# those two in this same _after_ phase (numeric order still applies within it).
 [[ "$(uname -s)" == "Linux" ]] || exit 0
 
 FISH_PATH="$(command -v fish)"

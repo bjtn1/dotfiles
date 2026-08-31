@@ -2,6 +2,9 @@
 # Seeds ~/.cache/wal/colors-hyprland.conf (so windows.conf/hyprlock.conf $colorN
 # vars resolve) and kdeglobals (so dolphin matches) on first launch. Runs once
 # per machine.
+# _after_: needs `wal` (from run_onchange_after_05's yay list) and reads
+# dot_config paths (hypr/current_wallpaper, scripts/apply-pywal-colorscheme),
+# none of which exist yet on a fresh machine in a plain run_once_ script.
 [[ "$(uname -s)" == "Linux" ]] || exit 0
 command -v pacman &>/dev/null || exit 0
 

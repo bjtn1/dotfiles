@@ -1,5 +1,7 @@
 #!/bin/bash
 # Loads launchd agents for wallpaper shuffling and wal-watch. Runs once per machine.
+# _after_: loads plist files chezmoi itself writes to ~/Library/LaunchAgents,
+# which wouldn't exist yet on a fresh machine in a plain run_once_ script.
 [[ "$(uname -s)" == "Darwin" ]] || exit 0
 
 echo ">>> Loading launchd agents..."

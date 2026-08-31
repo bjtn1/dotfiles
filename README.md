@@ -97,11 +97,11 @@ This will bootstrap `yay` itself if it isn't already on the system, then install
 <!-- TOC --><a name="how-os-conditional-apply-works"></a>
 # How OS-conditional apply works
 
-`.chezmoiignore` hides whole paths depending on `.chezmoi.os` and a custom `distroID` value, so `chezmoi apply` only ever touches files relevant to the machine it's running on. `distroID` is computed once, in `.chezmoi.toml.tmpl`, at `chezmoi init` time — it shells out to read `/etc/os-release`'s `ID` (and `ID_LIKE`, so Debian-derivatives like Ubuntu would also count as `"debian"`, matching the `/etc/debian_version` check `run_once_04` uses), and stays empty on macOS. This exists specifically because CPU architecture alone can't tell two different x86_64 Linux setups apart — a CachyOS desktop and a headless Debian server are both `linux`/`amd64`, but need opposite treatment:
+`.chezmoiignore` hides whole paths depending on `.chezmoi.os` and a custom `distroID` value, so `chezmoi apply` only ever touches files relevant to the machine it's running on. `distroID` is computed once, in `.chezmoi.toml.tmpl`, at `chezmoi init` time — it shells out to read `/etc/os-release`'s `ID` (and `ID_LIKE`, so Debian-derivatives like Ubuntu would also count as `"debian"`, matching the `/etc/debian_version` check `run_onchange_after_04` uses), and stays empty on macOS. This exists specifically because CPU architecture alone can't tell two different x86_64 Linux setups apart — a CachyOS desktop and a headless Debian server are both `linux`/`amd64`, but need opposite treatment:
 
 | Path | macOS | CachyOS (`distroID=cachyos`) | Debian-family (`distroID=debian`, Pi or x86_64) |
 |---|---|---|---|
-| `Library/` (LaunchAgents), `.skhdrc`, `.config/brewfile.txt` | ✅ | ❌ | ❌ |
+| `Library/` (LaunchAgents), `.skhdrc`, `.config/Brewfile` | ✅ | ❌ | ❌ |
 | `.xinitrc`, `.config/hypr/`, `.config/nwg-look/` | ❌ | ✅ | ❌ |
 | `.config/debian_apt_packages.txt` | ❌ | ❌ | ✅ |
 | Everything else (nvim, fish, kitty, tmux, scripts, …) | ✅ | ✅ | ✅ |
@@ -115,21 +115,24 @@ Every script in `.chezmoiscripts/` also has its own guard at the top (`[[ "$(una
 
 These run in numeric order, once per machine (chezmoi hashes each script and re-runs it only if its content changes). Each one guards itself for the right OS/distro and no-ops otherwise, so this whole list runs unattended on `chezmoi init --apply` regardless of which machine you're on.
 
-Two of them (`10` and `11`) aren't `run_once_`, they're `run_onchange_`/plain `run_once_` with a different re-run trigger — called out below.
+**Every script here is `_after_`** (`run_once_after_` or `run_onchange_after_`), not plain `run_once_` — `.chezmoiscripts` sorts before `dot_config` in chezmoi's apply order, so on a genuinely fresh machine a plain `run_once_` script would try to read a `dot_config`-tracked file (a package list, a script under `scripts/`, a `Library/LaunchAgents` plist, etc.) *before chezmoi has actually written it to disk yet*. Found this the hard way, on a real first `chezmoi init --apply` on a fresh Debian box — `xargs: Cannot open input file 'debian_apt_packages.txt': No such file or directory`. `_after_` guarantees the whole regular file/dotfile apply finishes first; within that phase, scripts still run in their numeric order relative to each other.
+
+Four of them (`04`, `05`, `10`, `12`) are `run_onchange_` rather than `run_once_` — keyed off a checksum of the file/directory they depend on (embedded as a template comment), so they re-run automatically whenever that content actually changes, not just once ever.
 
 | Script | What it does |
 |---|---|
-| `01_install-deps.sh` | **macOS.** Installs everything in `Brewfile`, including `pywal16` and `skhd`. |
-| `02_setup-macos.sh` | **macOS.** Caps Lock → Escape, Right Cmd → Right Ctrl, `Cmd+Shift+S` for screenshots. |
-| `03_load-agents.sh` | **macOS.** Loads the two launchd agents that shuffle wallpaper and watch for wallpaper changes. |
-| `04_install-debian-deps.sh` | **Debian-family only** (Pi or x86_64). Installs `apt` packages from `debian_apt_packages.txt`. |
-| `05_install-arch-deps.sh` | **CachyOS.** Bootstraps `yay` from the AUR if it's missing (`base-devel` + `git` + `yay-bin` + `makepkg -si`), then installs every package in `cachyos_yay_packages.txt`. |
-| `06_setup-greetd.sh` | **CachyOS.** Writes `/etc/greetd/config.toml` pointing at `noctalia-greeter-session`, enables `greetd.service`, disables `sddm.service` if present, and patches PAM via noctalia-greeter's own setup script. This is what gets you an actual login screen. |
-| `07_set-default-shell.sh` | **Any Linux with `fish` installed** (Arch-family or Debian-family). Registers `fish` in `/etc/shells` and `chsh`s you into it. |
-| `08_generate-wal-colors.sh` | **CachyOS.** Runs `apply-pywal-colorscheme` once against `~/.config/hypr/current_wallpaper` so the pywal caches exist before anything tries to read them (Hyprland's `$color*` vars, kdeglobals, etc.). |
-| `09_setup-firefox-config.sh` | **Linux.** If Firefox has no profile yet, launches it headless just long enough to create one, applies the tracked `user.js`, then (if there's an actual display) opens each extension's addons.mozilla.org page so you can one-click install them. |
-| `run_onchange_after_10_prewarm-wallpapers.sh.tmpl` | **Linux.** Runs `prewarm-noctalia-wallpapers`, which sets each wallpaper in `~/.config/wallpapers/` in turn to warm noctalia's per-wallpaper cache. Not a plain `run_once` — it's keyed off a checksum of the wallpaper directory listing embedded as a template comment in the script, so it re-runs automatically whenever the wallpaper set actually changes (e.g. the external repo pulls in new files), not just once ever. `_after_` guarantees it runs after that same apply's `.chezmoiexternal.toml` sync. **Heads up:** since it calls `wallpaper set` on every file with a short sleep between each, this visibly flickers through your entire wallpaper collection and lands on whichever sorts last — not whatever was showing before. |
-| `11_download-pokemon.sh` | **Cross-platform.** Bulk-downloads every Pokemon's fastfetch artwork (normal + shiny, all 1025) via `download-all-pokemon`, so `ff` (see below) is instant from the first use instead of hitting PokeAPI per new Pokemon. |
+| `run_once_after_01_install-deps.sh` | **macOS.** Installs everything in `Brewfile`, including `pywal16` and `skhd`. |
+| `run_once_after_02_setup-macos.sh` | **macOS.** Caps Lock → Escape, Right Cmd → Right Ctrl, `Cmd+Shift+S` for screenshots. |
+| `run_once_after_03_load-agents.sh` | **macOS.** Loads the two launchd agents that shuffle wallpaper and watch for wallpaper changes. |
+| `run_onchange_after_04_install-debian-deps.sh.tmpl` | **Debian-family only** (Pi or x86_64). Installs `apt` packages from `debian_apt_packages.txt`. |
+| `run_onchange_after_05_install-arch-deps.sh.tmpl` | **CachyOS.** Bootstraps `yay` from the AUR if it's missing (`base-devel` + `git` + `yay-bin` + `makepkg -si`), then installs every package in `cachyos_yay_packages.txt`. |
+| `run_once_after_06_setup-greetd.sh` | **CachyOS.** Writes `/etc/greetd/config.toml` pointing at `noctalia-greeter-session`, enables `greetd.service`, disables `sddm.service` if present, and patches PAM via noctalia-greeter's own setup script. This is what gets you an actual login screen. Runs after `05` in the same `_after_` phase, since it needs the `greetd` package that installs. |
+| `run_once_after_07_set-default-shell.sh` | **Any Linux with `fish` installed** (Arch-family or Debian-family). Registers `fish` in `/etc/shells` and `chsh`s you into it. Runs after `04`/`05`, since it needs `fish` itself already installed. |
+| `run_once_after_08_generate-wal-colors.sh` | **CachyOS.** Runs `apply-pywal-colorscheme` once against `~/.config/hypr/current_wallpaper` so the pywal caches exist before anything tries to read them (Hyprland's `$color*` vars, kdeglobals, etc.). Runs after `05`, since it needs `wal` itself already installed. |
+| `run_once_after_09_setup-firefox-config.sh` | **Linux.** If Firefox has no profile yet, launches it headless just long enough to create one, applies the tracked `user.js`, then (if there's an actual display) opens each extension's addons.mozilla.org page so you can one-click install them. |
+| `run_onchange_after_10_prewarm-wallpapers.sh.tmpl` | **Linux.** Runs `prewarm-noctalia-wallpapers`, which sets each wallpaper in `~/.config/wallpapers/` in turn to warm noctalia's per-wallpaper cache. Keyed off a checksum of the wallpaper directory listing, so it re-runs automatically whenever the wallpaper set actually changes (e.g. the external repo pulls in new files), not just once ever — and specifically runs after that same apply's `.chezmoiexternal.toml` sync. **Heads up:** since it calls `wallpaper set` on every file with a short sleep between each, this visibly flickers through your entire wallpaper collection and lands on whichever sorts last — not whatever was showing before. |
+| `run_once_after_11_download-pokemon.sh` | **Cross-platform.** Bulk-downloads every Pokemon's fastfetch artwork (normal + shiny, all 1025) via `download-all-pokemon`, so `ff` (see below) is instant from the first use instead of hitting PokeAPI per new Pokemon. |
+| `run_onchange_after_12_install-linuxbrew-cli.sh.tmpl` | **Non-CachyOS Arch-family Linux** (e.g. Steam Deck). Installs Homebrew (Linux) and the CLI tools in `linux_brew_packages.txt`. Keyed off that file's checksum, same re-run-on-change behavior as `04`/`05`/`10`. |
 
 ---
 
@@ -235,12 +238,12 @@ Listed in `.chezmoiignore`, these are generated fresh on every machine and would
 - **Caps Lock → Escape**
 - **Right Command → Right Control**
 
-Applied by `~/.config/scripts/setup-key-remapping.sh` (run automatically by `run_once_02`), which writes `~/Library/LaunchAgents/com.local.KeyRemapping.plist` and loads it via `launchctl`. Runs automatically at every login after that.
+Applied by `~/.config/scripts/setup-key-remapping.sh` (run automatically by `run_once_after_02`), which writes `~/Library/LaunchAgents/com.local.KeyRemapping.plist` and loads it via `launchctl`. Runs automatically at every login after that.
 
 <!-- TOC --><a name="screenshot-shortcut"></a>
 ## Screenshot shortcut
 
-Selected-area screenshot remapped to **Cmd+Shift+S** (macOS default is Cmd+Shift+4), via `~/.config/scripts/setup-screenshot-shortcut.sh` (also run by `run_once_02`). It edits `~/Library/Preferences/com.apple.symbolichotkeys.plist` directly and takes effect immediately, no logout needed. The full plist isn't tracked by chezmoi — too volatile — only this one script touches only the relevant entry.
+Selected-area screenshot remapped to **Cmd+Shift+S** (macOS default is Cmd+Shift+4), via `~/.config/scripts/setup-screenshot-shortcut.sh` (also run by `run_once_after_02`). It edits `~/Library/Preferences/com.apple.symbolichotkeys.plist` directly and takes effect immediately, no logout needed. The full plist isn't tracked by chezmoi — too volatile — only this one script touches only the relevant entry.
 
 <!-- TOC --><a name="launchd-agents"></a>
 ## launchd agents
@@ -307,5 +310,5 @@ Linux/Hyprland keybinds are all in `~/.config/hypr/conf/keybinds.lua`. Press `SU
 Things this repo does **not** cover, on purpose or otherwise — worth knowing before assuming a nuke-and-restore is 100% turnkey:
 
 - **No secrets management.** No SSH keys, GPG keys, or password-manager integration (`chezmoi doctor` confirms: no `age`, no `pass`/`bitwarden`/etc. configured). A fresh machine needs those restored through some other channel before things like `git push` from the chezmoi repo will even authenticate.
-- **Firefox extensions** are one click away, not fully automatic — `run_once_09` opens each tracked extension's AMO page in a browser tab (if there's a display to show it on), but you still have to click "Add to Firefox" yourself. Bookmarks, saved logins, and history are never tracked at all (see `.config/mozilla` above).
-- **`yay` bootstrap in `run_once_05`** assumes `base-devel` + `git` + a working AUR are reachable — fine on a normal CachyOS install, but the very first `sudo pacman -S` in there is a real network + package operation, not a no-op guard like most of these scripts.
+- **Firefox extensions** are one click away, not fully automatic — `run_once_after_09` opens each tracked extension's AMO page in a browser tab (if there's a display to show it on), but you still have to click "Add to Firefox" yourself. Bookmarks, saved logins, and history are never tracked at all (see `.config/mozilla` above).
+- **`yay` bootstrap in `run_onchange_after_05`** assumes `base-devel` + `git` + a working AUR are reachable — fine on a normal CachyOS install, but the very first `sudo pacman -S` in there is a real network + package operation, not a no-op guard like most of these scripts.

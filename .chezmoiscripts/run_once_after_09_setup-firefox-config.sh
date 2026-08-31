@@ -3,6 +3,9 @@
 # default profile. On a fresh install Firefox has never run, so there's no
 # profile yet -- briefly launch it headless just to create one, then apply.
 # Runs once per machine.
+# _after_: reads dot_config/firefox-custom/* and calls
+# dot_config/scripts/apply-firefox-config, none of which exist yet on a
+# fresh machine in a plain run_once_ script.
 [[ "$(uname -s)" == "Linux" ]] || exit 0
 command -v firefox &>/dev/null || exit 0
 

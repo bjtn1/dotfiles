@@ -1,6 +1,8 @@
 #!/bin/bash
 # Seeds greetd config so noctalia-greeter works, and disables sddm in favor
 # of it. Runs once per machine.
+# _after_: needs the `greetd` package, which run_onchange_after_05 installs
+# earlier in this same _after_ phase (numeric order still applies within it).
 [[ "$(uname -s)" == "Linux" ]] || exit 0
 command -v pacman &>/dev/null || exit 0
 

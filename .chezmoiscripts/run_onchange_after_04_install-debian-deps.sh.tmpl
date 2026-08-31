@@ -1,0 +1,17 @@
+#!/bin/bash
+# apt package list checksum: {{ include "dot_config/debian_apt_packages.txt" | sha256sum }}
+# Installs apt packages on any Debian-family box (Raspberry Pi OS, plain
+# Debian, etc.). run_onchange_after_ (not run_once_) because
+# .chezmoiscripts sorts before dot_config -- a plain run_once_ here would
+# try to read debian_apt_packages.txt before chezmoi has actually written
+# it to disk on a fresh machine (confirmed the hard way: xargs errors with
+# "No such file or directory" on a real first-time `chezmoi init --apply`).
+# The checksum comment above also means this re-runs automatically
+# whenever the package list changes, not just once ever.
+[[ -f /etc/debian_version ]] || exit 0
+
+echo ">>> Installing apt packages..."
+sudo apt-get update
+xargs -a "$HOME/.config/debian_apt_packages.txt" sudo apt-get install -y
+
+echo ">>> Debian apt dependencies installed."
