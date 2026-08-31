@@ -39,6 +39,17 @@ local opts = {
   checker = {
     enabled = true,
   },
+  rocks = {
+    -- Nothing in this config actually needs luarocks; leaving it enabled
+    -- makes lazy.nvim try to bootstrap its own Lua 5.1 via hererocks on
+    -- every startup to build neorg's tree-sitter-norg(-meta) rockspecs.
+    -- When that bootstrap can't succeed (no working lua5.1/luarocks on the
+    -- host, as on this machine), it silently fails and retries each
+    -- startup until it hits lazy's 5-round cap and errors with "Too many
+    -- rounds of missing plugins". Disabling rocks entirely avoids
+    -- depending on any host having a Lua/luarocks build toolchain at all.
+    enabled = false,
+  },
 }
 
 require("options")
