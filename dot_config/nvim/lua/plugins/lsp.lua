@@ -5,6 +5,12 @@ return {
   -- For key notation, see
   -- https://vimdoc.sourceforge.net/htmldoc/intro.html#key-notation
   "neovim/nvim-lspconfig",
+  -- Pinned: master already warns that support for Nvim 0.10 and older is
+  -- deprecated and will be removed in v3.0.0. This system is on 0.10.4
+  -- (Debian trixie's package, no newer one available yet), so pin to the
+  -- latest tag that still supports it instead of tracking master straight
+  -- into that removal. Bump this once Nvim is upgraded to 0.11+.
+  tag = "v2.9.0",
   priority = 1000,
   dependencies = {
     -- LSP support
@@ -177,6 +183,11 @@ return {
     -- Mason-lspconfig
     ---------------------
     mason_lsp_config.setup({
+      -- mason-lspconfig defaults this to true now, which auto-enables every
+      -- installed server via `vim.lsp.enable` -- an Nvim 0.11+-only API that
+      -- doesn't exist on this system's Nvim 0.10.4 and crashes setup(). It's
+      -- also redundant: the loop below already sets each server up by hand.
+      automatic_enable = false,
       ensure_installed = {
         -- "arduino_language_server",
         -- "asm_lsp",

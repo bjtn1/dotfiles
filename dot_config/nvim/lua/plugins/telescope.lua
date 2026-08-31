@@ -1,6 +1,10 @@
 return {
   "nvim-telescope/telescope.nvim",
-  branch = 'master',
+  -- Pinned instead of tracking `branch = "master"`: master now requires
+  -- Nvim 0.11+ (this system, and Debian trixie in general, is on 0.10.4 --
+  -- no newer package exists yet). v0.2.2 is the latest tag that still only
+  -- requires 0.10.4. Bump this once Nvim is upgraded to 0.11+.
+  tag = "v0.2.2",
   dependencies = {
     "nvim-lua/plenary.nvim",
     "BurntSushi/ripgrep",

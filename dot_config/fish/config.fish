@@ -16,7 +16,13 @@ if test -e ~/.cache/wal/sequences && test "$TERM_PROGRAM" != iTerm.app
 end
 
 function v --description 'Open nvim with files selected by fzf'
-  set files (fzf --preview 'bat --color=always --style=header,grid --line-range :400 {}')
+  # fzf runs --preview via $SHELL (not fish), so it won't see the `bat`
+  # fish function/fallback -- resolve the real binary name up front.
+  set -l batcmd bat
+  if not command -q bat; and command -q batcat
+    set batcmd batcat
+  end
+  set files (fzf --preview "$batcmd --color=always --style=header,grid --line-range :400 {}")
   if test -n "$files"
     nvim $files
   end
